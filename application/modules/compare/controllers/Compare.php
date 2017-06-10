@@ -9,11 +9,14 @@ class Compare extends MX_Controller {
         // $this->load->model('vendor/Vendor_model');
     }
 
+	public function go_index() {
+		$data['content']='dashboard/dashboard';
+		$this->init_sys->content($data);
+	}
+
 	public function choose_menu() {
 		$data['content']='compare/choose-menu';
-		// print_r($data) ;
 		$this->init_sys->content($data);
-		// echo "string";
 	}
 
 

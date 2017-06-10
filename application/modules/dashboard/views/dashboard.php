@@ -8,7 +8,7 @@
 <div class="row">
     <div class="card col-sm-3 text-center">
       <div class="card-header">
-        <a href="<?php echo site_url('food/food_page');?>"><h2>Menu</h2></a>
+        <a href="<?php echo site_url('food/food_page');?>"><h2>Food Menu</h2></a>
       </div>
     </div>
 

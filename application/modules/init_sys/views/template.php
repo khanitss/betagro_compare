@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <!--[if IE 9 ]><html class="ie9"><![endif]-->
+<html>
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -49,18 +50,20 @@
       <div class="tab-content">
         <div role="tabpanel" class="tab-pane active p-l-25 p-r-25 p-b-25 p-t-10" id="control-tab-contacts">
           <div class="list-group">
-            <?php for ($i=0; $i < 9; $i++) { ?>
+            <?php for ($i=0; $i < 9; $i++) {
+    ?>
             <a class="list-group-item media" href="">
               <div class="pull-left p-relative">
-                <img class="lg-item-img" src="<?php echo base_url('dist/images/profile-pics/2.jpg');?>" alt="">
+                <img class="lg-item-img" src="<?php echo base_url('dist/images/profile-pics/2.jpg'); ?>" alt="">
                 <!-- <i class="chat-status-busy"></i> -->
               </div>
               <div class="media-body">
-                <div class="lg-item-heading">(<?php echo ($i+1);?>) Thomas Douglas</div>
+                <div class="lg-item-heading">(<?php echo($i+1); ?>) Thomas Douglas</div>
                 <small class="lg-item-text">Available</small>
               </div>
             </a>
-            <?php } ?>
+            <?php
+} ?>
           </div>
         </div>
       </div>
@@ -79,9 +82,9 @@
       <div class="container col-lg-12">
         <?php
           if (isset($nav) && $rows_nav !='') {
-            $this->load->view('init_sys/nav_bar');
+              $this->load->view('init_sys/nav_bar');
           }
-          
+
           $this->load->view($content);
           ?>
         <!-- Card Content -->
@@ -116,7 +119,7 @@
     $(document).ready(function() {
       bootgrid();
     });
-  </script>  
+  </script>
 
 </body>
 </html>

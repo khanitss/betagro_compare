@@ -1,71 +1,40 @@
 <div class="block-header clearfix">
   <h2 class="pull-left">Dashboard</h2>
   <ul class="breadcrumb pull-right">
-    <li><a href="<?php echo site_url('dashboard');?>">Home</a></li>
-    <li>Dashboard</li>
-    <!-- <li><a href="">Dashboard</a></li> -->
+    <li><a href="<?php echo site_url('dashboard');?>">Dashboard</a></li>
   </ul>
 </div>
 
 <div class="row">
-  <div class="col-md-12">
-    <div class="card">
+    <div class="card col-sm-3 text-center">
       <div class="card-header">
-        <a href="<?php echo site_url ('food/food_page');?>"><h2>Menu</h2></a>
+        <a href="<?php echo site_url('food/food_page');?>"><h2>Menu</h2></a>
       </div>
-      <div class="card-body card-padding">
+    </div>
 
-        <!-- <div class="chart">
-          <canvas id="lineChart" height="250"></canvas>
-        </div> -->
-      </div>
-      <!-- <div id="doc-line-chart" style="width:50%;height:300px" class="flot-chart-line"></div> -->
-    </div>    <!-- div class="card" -->
-
-    <div class="card">
+    <div class="card col-sm-3 text-center">
       <div class="card-header">
-        <a href="<?php echo site_url ('material/material_page');?>"><h2>Material</h2></a>
+        <a href="<?php echo site_url('material/material_page');?>"><h2>Material</h2></a>
       </div>
-      <div class="card-body card-padding">
-        <!-- <div class="chart">
-          <canvas id="pieChart"></canvas>
-        </div> -->
+    </div>
+
+    <div class="card col-sm-3 text-center">
+      <div class="card-header">
+        <a href="<?php echo site_url('man/man_page');?>"><h2>Man/Equipment</h2></a>
       </div>
-      <!-- <div id="doc-line-chart" style="width:50%;height:300px" class="flot-chart-line"></div> -->
-    </div>    <!-- div class="card" -->
+    </div>
+
+    <div class="card col-sm-3 text-center">
+      <div class="card-header">
+        <a href="<?php echo site_url('product/product_page');?>"><h2>Product</h2></a>
+      </div>
+    </div>
   </div>
-    <div class="col-md-12">
-    <div class="card">
-      <div class="card-header">
-        <a href="<?php echo site_url ('man/man_page');?>"><h2>Man/Equipment</h2></a>
-      </div>
-      <div class="card-body card-padding">
-        <!-- <div class="chart">
-          <canvas id="lineChart" height="250"></canvas>
-        </div> -->
-      </div>
-      <!-- <div id="doc-line-chart" style="width:50%;height:300px" class="flot-chart-line"></div> -->
-    </div>    <!-- div class="card" -->
 
-    <div class="card">
-      <div class="card-header">
-        <a href="<?php echo site_url ('product/product_page');?>"><h2>Product</h2></a>
-      </div>
-      <div class="card-body card-padding">
-        <!-- <div class="chart">
-          <canvas id="pieChart"></canvas>
-        </div> -->
-      </div>
-      <!-- <div id="doc-line-chart" style="width:50%;height:300px" class="flot-chart-line"></div> -->
-    </div>    <!-- div class="card" -->
-  </div>
-</div>
 <div class="row">
-          <div class="col-sm-8">
-            <div class="row">
-              <div class="col-sm-6">
+              <div class="col-sm-4">
                 <!-- Todo -->
-                <div id="todo1" class="card card-todo-list" style="min-height: 256px">
+                <div id="todo1" class="card card-todo-list" style="min-height: 512px">
                   <div class="card-header ch-alt">
                     <h2>Todo Lists <small>Manage your Todo Lists</small></h2>
                   </div>
@@ -170,9 +139,9 @@
                 </div>
               </div>
 
-              <div class="col-sm-6">
+              <div class="col-sm-4">
                 <!-- activities -->
-                <div class="card" style="min-height: 500px">
+                <div class="card" style="min-height: 512px">
                   <div class="card-body card-padding">
                     <div class="widget">
                       <header class="widget-header">
@@ -224,13 +193,9 @@
                   </div>
                 </div>
               </div>
-            </div>
-
-            <div class="row">
-
-              <div class="col-sm-12">
+              <div class="col-sm-4">
                 <!-- contacts -->
-                <div class="card card-contact-list" style="min-height: 256px">
+                <div class="card card-contact-list" style="min-height: 512px">
                   <div class="card-header">
                     <h2>Contacts</h2>
                   </div>
@@ -238,7 +203,7 @@
                     <div class="list-group">
                       <a class="list-group-item media" href="">
                         <div class="pull-left">
-                          <img class="lg-item-img" src="dist/images/profile-pics/1.jpg" alt="">
+                          <img class="lg-item-img" src="<?php echo base_url('dist/images/profile-pics/1.jpg');?>" alt="">
                         </div>
                         <div class="media-body">
                           <div class="pull-left">
@@ -252,7 +217,7 @@
                       </a>
                       <a class="list-group-item media" href="">
                         <div class="pull-left">
-                          <img class="lg-item-img" src="dist/images/profile-pics/2.jpg" alt="">
+                          <img class="lg-item-img" src="<?php echo base_url('dist/images/profile-pics/2.jpg');?>" alt="">
                         </div>
                         <div class="media-body">
                           <div class="pull-left">
@@ -266,7 +231,7 @@
                       </a>
                       <a class="list-group-item media" href="">
                         <div class="pull-left">
-                          <img class="lg-item-img" src="dist/images/profile-pics/3.jpg" alt="">
+                          <img class="lg-item-img" src="<?php echo base_url('dist/images/profile-pics/3.jpg');?>" alt="">
                         </div>
                         <div class="media-body">
                           <div class="pull-left">
@@ -280,7 +245,7 @@
                       </a>
                       <a class="list-group-item media" href="">
                         <div class="pull-left">
-                          <img class="lg-item-img" src="dist/images/profile-pics/4.jpg" alt="">
+                          <img class="lg-item-img" src="<?php echo base_url('dist/images/profile-pics/4.jpg');?>" alt="">
                         </div>
                         <div class="media-body">
                           <div class="pull-left">
@@ -294,7 +259,7 @@
                       </a>
                       <a class="list-group-item media" href="">
                         <div class="pull-left">
-                          <img class="lg-item-img" src="dist/images/profile-pics/4.jpg" alt="">
+                          <img class="lg-item-img" src="<?php echo base_url('dist/images/profile-pics/4.jpg');?>" alt="">
                         </div>
                         <div class="media-body">
                           <div class="pull-left">
@@ -308,7 +273,7 @@
                       </a>
                       <a class="list-group-item media" href="">
                         <div class="pull-left">
-                          <img class="lg-item-img" src="dist/images/profile-pics/2.jpg" alt="">
+                          <img class="lg-item-img" src="<?php echo base_url('dist/images/profile-pics/2.jpg');?>" alt="">
                         </div>
                         <div class="media-body">
                           <div class="pull-left">
@@ -324,64 +289,4 @@
                   </div>
                 </div>
               </div>
-
             </div>
-
-          </div>
-
-          <div class="col-sm-4">
-            <!-- calendar -->
-            <div class="card" id="calendar-widget" style="min-height: 256px">
-              <div class="card-header ch-alt md-bg-purple-500">
-                <div class="cwh-year"></div>
-                <div class="cwh-day"></div>
-              </div>
-              <div class="card-body card-padding-sm">
-                <div id="cw-body"></div>
-              </div>
-            </div>
-          </div>
-
-        </div>
-
-<!--  
-<script type="text/javascript">
-        var barChartCanvas = $("#docMyChart").get(0).getContext("2d");
-        var barChart = new Chart(barChartCanvas);
-        var barChartData = {
-          labels: ["Red", "Blue", "Yellow", "Green", "Purple", "Orange"],
-          datasets: [{
-            label: '# of Votes',
-            data: [12, 19, 3, 5, 2, 3],
-            backgroundColor: [
-              'rgba(255, 99, 132, 0.2)',
-              'rgba(54, 162, 235, 0.2)',
-              'rgba(255, 206, 86, 0.2)',
-              'rgba(75, 192, 192, 0.2)',
-              'rgba(153, 102, 255, 0.2)',
-              'rgba(255, 159, 64, 0.2)'
-            ],
-            borderColor: [
-              'rgba(255,99,132,1)',
-              'rgba(54, 162, 235, 1)',
-              'rgba(255, 206, 86, 1)',
-              'rgba(75, 192, 192, 1)',
-              'rgba(153, 102, 255, 1)',
-              'rgba(255, 159, 64, 1)'
-            ],
-            borderWidth: 1
-          }]
-        };
-        var barChartOptions = {
-          scales: {
-            yAxes: [{
-              ticks: {
-                beginAtZero:true
-              }
-            }]
-          }
-        };
- 
-        barChart.Bar(barChartData, barChartOptions);
-</script>
--->

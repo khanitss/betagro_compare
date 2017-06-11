@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Man extends MX_Controller {
+class Product extends MX_Controller {
 
 	public function __construct() {
     	parent::__construct();
@@ -9,18 +9,18 @@ class Man extends MX_Controller {
         // $this->load->model('vendor/Vendor_model');
     }
 
-	public function man_page() {
-		$data['content']='man/man';
+	public function product_page() {
+		$data['content']='product/product';
 		// print_r($data) ;
 		$this->init_sys->content($data);
 		// echo "string";
 	}
-	public function man_add(){
-		$data['content']='man/add-man';
+	public function product_add(){
+		$data['content']='product/add-product';
 		$this->init_sys->content($data);
 	}
-	public function man_edit(){
-		$data['content']='man/edit-man';
+	public function product_edit(){
+		$data['content']='product/edit-product';
 		$this->init_sys->content($data);
 	}
 

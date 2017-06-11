@@ -11,9 +11,7 @@ class Compare extends MX_Controller {
 
 	public function choose_menu1_page() {
 		$data['content']='compare/choose-menu';
-		// print_r($data) ;
 		$this->init_sys->content($data);
-		// echo "string";
 	}
 
 	public function choose_menu2_page() {

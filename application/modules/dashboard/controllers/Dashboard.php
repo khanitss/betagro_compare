@@ -8,7 +8,7 @@ class Dashboard extends MX_Controller {
     $this->load->module('init_sys/Init_sys');
   }
 
-  public function index() {
+  public function home() {
     $data['content'] ='dashboard/dashboard';
     $this->init_sys->content($data);
   }

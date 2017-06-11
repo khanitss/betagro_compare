@@ -7,13 +7,13 @@
     <div class="nav-menu-wrapper mcs-overflow1">
         <ul class="nav-menu">
             <li class="nav-item">
-                <a href="<?php echo site_url('food/go_index');?>"><i class="zmdi zmdi-palette"></i>&nbsp;
+                <a href="<?php echo site_url('dashboard/home');?>"><i class="zmdi zmdi-palette"></i>&nbsp;
                     <span>Home</span>
                 </a>
             </li>
 
             <li class="nav-item">
-                <a href="<?php echo site_url('compare/choose_menu');?>"><i class="zmdi zmdi-apps"></i>&nbsp;
+                <a href="<?php echo site_url('compare/choose_menu1_page');?>"><i class="zmdi zmdi-apps"></i>&nbsp;
                     <span>Compare</span>
                 </a>
             </li>

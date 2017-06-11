@@ -21,60 +21,13 @@
     <link href="<?php echo base_url('dist/css/dashplus_2.min.css');?>" rel="stylesheet">
 
 </head>
+
 <body class="layout-fixed-left-menu left-sidebar-toggled">
     <!-- HEADER/TOPBAR SECTION -->
-    <header id="header" class="clearfix" data-dp-theme="bluegrey">
-        <ul class="main-header">
-            <li class="dp-trigger" data-dp-action="left-sidebar-toggle" data-dp-target="#sidebar-left">
-                <a href=""><i class="menu-icon zmdi zmdi-arrow-left"></i></a>
-            </li>
-            <li class="header-logo hidden-xs">
-                <a href="<?php echo site_url('');?>">BETAGRO compare</a>
-            </li>
-        </ul>
-    </header>
-
-    <!-- Right Side Bar -->
-    <aside id="sidebar-right" class="sidebar">
-        <div class="lg-body mcs-overflow">
-            <ul class="tab-nav m-t-10 p-l-15 p-r-15" role="tablist">
-                <li class="active">
-                    <a href="#control-tab-contacts" aria-controls="control-tab-contacts" role="tab" data-toggle="tab"><i class="him-icon zmdi zmdi-accounts"></i></a>
-                </li>
-                <!-- <li>&nbsp;</li> -->
-                <li class="close-btn">
-                    <a href="" data-dp-action="sidebar-close" data-dp-target="#sidebar-right"><i class="zmdi zmdi-close"></i></a>
-                </li>
-            </ul>
-
-            <div class="tab-content">
-                <div role="tabpanel" class="tab-pane active p-l-25 p-r-25 p-b-25 p-t-10" id="control-tab-contacts">
-                    <div class="list-group">
-                        <?php for ($i=0; $i < 9; $i++) {
-                            ?>
-                            <a class="list-group-item media" href="">
-                                <div class="pull-left p-relative">
-                                    <img class="lg-item-img" src="<?php echo base_url('dist/images/profile-pics/2.jpg'); ?>" alt="">
-                                    <!-- <i class="chat-status-busy"></i> -->
-                                </div>
-                                <div class="media-body">
-                                    <div class="lg-item-heading">(<?php echo($i+1); ?>) Thomas Douglas</div>
-                                    <small class="lg-item-text">Available</small>
-                                </div>
-                            </a>
-                            <?php
-
-                        } ?>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </aside>
+    <?php $this->load->view('header'); ?>
 
     <section id="main">
         <!-- Main Nav Bar -->
-
-        <!-- Left Side Bar -->
         <?php $this->load->view('left_menu'); ?>
 
         <!-- Content Section START -->
@@ -92,33 +45,26 @@
         <!-- Content Section END -->
     </section>
 
-    <!-- Footer -->
-    <!-- <footer id="footer">
-    Copyright &copy; 2016
-</footer> -->
+    <!-- Javascript Libraries -->
+    <script src="<?php echo base_url('vendors/moment/min/moment.min.js');?>"></script>
+    <script src="<?php echo base_url('vendors/Waves/dist/waves.min.js');?>"></script>
+    <script src="<?php echo base_url('vendors/sweetalert/dist/sweetalert.min.js');?>"></script>
+    <!-- <script src="<?php echo base_url('vendors/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.concat.min.js');?>"></script> -->
+    <!-- <script src="<?php echo base_url('vendors/bootstrap-growl/bootstrap-growl.min.js');?>"></script> -->
+    <!-- <script src="<?php echo base_url('vendors/bootstrap-wizard/jquery.bootstrap.wizard.min.js');?>"></script> -->
+    <!-- <script src="<?php echo base_url('vendors/bootgrid/jquery.bootgrid.updated.min.js');?>"></script> -->
+    <!-- <script src="<?php echo base_url('vendors/fileinput/fileinput.min.js');?>"></script> -->
+    <!-- <script src="<?php echo base_url('vendors/bootstrap-select/dist/js/bootstrap-select.js');?>"></script> -->
+    <!-- <script src="<?php echo base_url('vendors/eonasdan-bootstrap-datetimepicker/build/js/bootstrap-datetimepicker.min.js');?>"></script> -->
 
-<!-- Javascript Libraries -->
-<script src="<?php echo base_url('vendors/moment/min/moment.min.js');?>"></script>
-<script src="<?php echo base_url('vendors/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.concat.min.js');?>"></script>
-<script src="<?php echo base_url('vendors/Waves/dist/waves.min.js');?>"></script>
-<script src="<?php echo base_url('vendors/bootstrap-growl/bootstrap-growl.min.js');?>"></script>
-<script src="<?php echo base_url('vendors/sweetalert/dist/sweetalert.min.js');?>"></script>
-<script src="<?php echo base_url('vendors/bootstrap-wizard/jquery.bootstrap.wizard.min.js');?>"></script>
-<script src="<?php echo base_url('vendors/bootgrid/jquery.bootgrid.updated.min.js');?>"></script>
-<script src="<?php echo base_url('vendors/fileinput/fileinput.min.js');?>"></script>
-<script src="<?php echo base_url('vendors/bootstrap-select/dist/js/bootstrap-select.js');?>"></script>
-<script src="<?php echo base_url('vendors/eonasdan-bootstrap-datetimepicker/build/js/bootstrap-datetimepicker.min.js');?>"></script>
+    <!-- <script src="<?php echo base_url('dist/js/dashplus.min.js');?>"></script> -->
+    <!-- <script src="<?php echo base_url('dist/js/my-bootgrid.js');?>"></script> -->
 
-<script src="<?php echo base_url('dist/js/dashplus.min.js');?>"></script>
-
-<!-- my customs js -->
-<script src="<?php echo base_url('dist/js/my-bootgrid.js');?>"></script>
-
-<script type="text/javascript">
-$(document).ready(function() {
-    bootgrid();
-});
-</script>
+    <!-- <script type="text/javascript">
+    $(document).ready(function() {
+        bootgrid();
+    });
+    </script> -->
 
 </body>
 </html>

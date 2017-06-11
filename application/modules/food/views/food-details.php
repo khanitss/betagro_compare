@@ -2,7 +2,7 @@
 <div class="block-header clearfix">
     <h2 class="pull-left">Food Detail</h2>
     <ul class="breadcrumb pull-right">
-        <li><a href="<?php echo site_url('food/go_index');?>">Home</a></li>
+        <li><a href="<?php echo site_url('dashboard/home');?>">Home</a></li>
         <li><a href="<?php echo site_url('food/food_page');?>">Food Menu</a></li>
         <li><a href="<?php echo site_url('food/food_details');?>">Food Details</a></li>
     </ul>
@@ -16,24 +16,24 @@
                 <h2>ขาหมูน้ำแดง</h2>
             </div>
             <div class="card-body card-padding">
-                <img class="center-block" src="http://www.manager.co.th/asp-bin/Image.aspx?ID=3128966" class="img-thumbnail" style="width:100%">
+                <img class="center-block" src="<?php echo base_url('dist/images/menu/s_ขาหมู.jpg');?>" class="img-thumbnail" style="width:75%">
             </br>
             <form class="form-horizontal">
                 <div class="form-group">
-                    <label class="col-sm-3 col-xs-2 control-label">For :</label>
-                    <div class="col-sm-9 col-xs-10">
+                    <label class="col-sm-3 col-xs-3 text-right control-label">For :</label>
+                    <div class="col-sm-9 col-xs-9">
                         <p class="form-control-static">1</p>
                     </div>
-                    <label class="col-sm-3 col-xs-2 control-label">Unit :</label>
-                    <div class="col-sm-9 col-xs-10">
+                    <label class="col-sm-3 col-xs-3 text-right control-label">Unit :</label>
+                    <div class="col-sm-9 col-xs-9">
                         <p class="form-control-static">Dish</p>
                     </div>
-                    <label class="col-sm-3 col-xs-2 control-label">Time :</label>
-                    <div class="col-sm-9 col-xs-10">
+                    <label class="col-sm-3 col-xs-3 text-right control-label">Time :</label>
+                    <div class="col-sm-9 col-xs-9">
                         <p class="form-control-static">30 Minutes</p>
                     </div>
-                    <label class="col-sm-3 col-xs-2 control-label">Total :</label>
-                    <div class="col-sm-9 col-xs-10">
+                    <label class="col-sm-3 col-xs-3 text-right control-label">Total :</label>
+                    <div class="col-sm-9 col-xs-9">
                         <p class="form-control-static">300 Baht</p>
                     </div>
                 </div>
@@ -43,7 +43,7 @@
 </div>
 <div class="col-sm-6">
     <div class="card">
-        
+
         <div class="card-header">
             <h2>รายละเอียดของเมนู Raw Material</h2>
         </div>

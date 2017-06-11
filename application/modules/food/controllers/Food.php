@@ -8,11 +8,6 @@ class Food extends MX_Controller {
 		$this->load->module('init_sys/Init_sys');
 	}
 
-	public function go_index() {
-		$data['content']='dashboard/dashboard';
-		$this->init_sys->content($data);
-	}
-
 	public function food_page() {
 		$data['content']='food/food-page';
 		$this->init_sys->content($data);

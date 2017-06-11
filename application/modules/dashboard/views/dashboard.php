@@ -1,7 +1,7 @@
 <div class="block-header clearfix">
     <h2 class="pull-left">Dashboard</h2>
     <ul class="breadcrumb pull-right">
-        <li><a href="<?php echo site_url('dashboard');?>">Dashboard</a></li>
+        <li><a href="<?php echo site_url('dashboard/home');?>">Dashboard</a></li>
     </ul>
 </div>
 

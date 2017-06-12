@@ -2,13 +2,16 @@
             <h2 class="pull-left">Edit Material</h2>
             <ul class="breadcrumb pull-right">
                 <li><a href="index.html">Home</a></li>
-                <li><a href="<?php echo site_url ('material/material_page');?>">Add Raw Material Group</a></li>
-                <li><a href="<?php echo site_url ('material/material_d_page');?>">Add Raw Material</a></li>
+                <li><a href="">Setting</a></li>
+                <li><a href="<?php echo site_url ('material/material_page');?>"> Raw Material Group</a></li>
+                <li><a href="<?php echo site_url ('material/material_d_page');?>"> Raw Material</a></li>
                 <li><a href="#">Edit Material</a></li>
             </ul>
         </div>
         <div class="container">
             <div class="row">
+                <div class="col-sm-3"></div>
+                <div class="col-sm-6">
                     <div class="card ">
                         <div class="card-body card-padding "> 
                             <h2>Edit Material</h2></br>
@@ -49,6 +52,8 @@
                             </div>
                         </div>
                     </div>
+                </div>
+                <div class="col-sm-3"></div>
                 </div>
             </div>
         

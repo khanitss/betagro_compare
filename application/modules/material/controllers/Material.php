@@ -21,5 +21,13 @@ class Material extends MX_Controller {
         $data['content']='material/edit-material';
         $this->init_sys->content($data);
     }
+    public function raw_page() {
+        $data['content']='material/raw-material';
+        $this->init_sys->content($data);
+    }
+    public function material_group_page() {
+        $data['content']='material/material-group';
+        $this->init_sys->content($data);
+    }
 
 }//end class

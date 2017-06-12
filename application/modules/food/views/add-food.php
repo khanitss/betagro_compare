@@ -2,7 +2,7 @@
 <div class="block-header clearfix">
     <h2 class="pull-left">Add Food</h2>
     <ul class="breadcrumb pull-right">
-        <li><a href="<?php echo site_url('food/go_index');?>">Home</a></li>
+        <li><a href="<?php echo site_url('dashboard/home');?>">Home</a></li>
         <li><a href="<?php echo site_url('food/food_page');?>">Food Menu</a></li>
         <li><a href="<?php echo site_url('food/add_food');?>">Add Food</a></li>
     </ul>

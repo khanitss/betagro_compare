@@ -17,8 +17,6 @@
   <link href="<?php echo base_url('dist/css/dashplus_1.min.css'); ?>" rel="stylesheet">
   <link href="<?php echo base_url('dist/css/dashplus_2.min.css'); ?>" rel="stylesheet">
 
-
-
   <style>
     .lc-block {
       max-width: 400px;
@@ -102,6 +100,6 @@
   <script src="<?php echo base_url('vendors/bootstrap/dist/js/bootstrap.min.js'); ?>"></script>
   <script src="<?php echo base_url('vendors/Waves/dist/waves.min.js'); ?>"></script>
 
-  <script src="<?php echo base_url('dist/js/dashplus.min.js'); ?>"></script>
+  <script src="<?php echo base_url('dist/js/dashplus.min.js');?>"></script>
 </body>
 </html>

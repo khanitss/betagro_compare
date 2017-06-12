@@ -15,7 +15,7 @@ class Authen extends MX_Controller {
 	}
 
 	public function login() {
-		redirect('dashboard');
+		redirect('dashboard/home');
 		// echo "Yeh!!";
 	}
 

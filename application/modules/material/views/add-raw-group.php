@@ -6,8 +6,14 @@
                     <li><a href="<?php echo site_url ('material/material_page');?>">Add Raw Material Group</a></li>
                 </ul>
           </div>
-          </br>
-          </br>
+         
+          <div class="row">
+            <div class="col-sm-10 col-xs-8"></div>
+            <div class="col-sm-2 col-xs-4 text-center">
+            <button class="btn btn-success" data-toggle="modal" data-target="#myAddRawModal" alt="addRaw">Add Raw Material Group</button>
+        </a>
+            </div>
+          </div>
 
       <div class="row">
 
@@ -22,26 +28,15 @@
             </lable>
           </div>
         </div>
-
-        <div class="col-sm-3">
-          <div class="card">
-            <div class="card-header">
-              <h2>Add Raw Material Group</h2>
-            </div>
-            <div align="center">
-              <a href="#">
-                <img src="<?php echo base_url ('dist/images/icons/addButton.png');?>" data-toggle="modal" data-target="#myAddRawModal" alt="addRaw" style="width:30%">
-              </a>
-            </div>
-
+            
 
             <!-- Modal -->
             <div id="myAddRawModal" class="modal fade" role="dialog">
               <div class="modal-dialog">
 
                 <!-- Modal content-->
-                <div class="modal-content">
-                  <div class="modal-header">
+                <div class="modal-content text-center">
+                  <div class="modal-header text-center">
                     <button type="button" class="close" data-dismiss="modal">&times;</button>
                     <h4 class="modal-title">Add Raw Material Group</h4>
                   </div>
@@ -60,7 +55,7 @@
                       <h4>Add Picture</h4></center>
 
                       <!-- add name-->
-                      <div class="col-sm-6"> </div>
+                      
                       <div class="card-body card-padding">
                         <form class="form-horizontal">
                           <div class="form-group">
@@ -92,5 +87,4 @@
           </div>
         </div>
       </div>
-      <div class="col-sm-2"></div>
     </div>

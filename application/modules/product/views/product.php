@@ -6,6 +6,14 @@
         </ul>
     </div>
     <div class="row">
+        <div class="col-sm-10 col-xs-8"></div>
+        <div class="col-sm-2 col-xs-4 text-center">
+            <a href="<?php echo site_url('product/product_add');?>">
+                <button class="btn btn-success">Add Betagro Product</button>
+            </a>
+        </div>
+    </div>
+    <div class="row">
         <form method="get">
             <div class="form-group">
                 <div class="col-md-3">
@@ -54,14 +62,6 @@
                         <div class="caption">
                             <center><p>น้ำซุปไก่เข้มข้น : 35 / ซอง</p></center>
                         </div>
-                    </div>
-                </div>
-                <div class="col-md-3">
-                    <div class="thumbnail img-check">
-                        <label class=" btn btn-light">
-                            <a href="<?php echo site_url ('product/product_add');?>" type="button" class="btn btn-link"><center><img src="<?php echo base_url ('dist/images/icons/addButton.png');?>" width="50%"></center></a>
-                            <p>Add Betagro Product</p>
-                        </label>
                     </div>
                 </div>
             </div>

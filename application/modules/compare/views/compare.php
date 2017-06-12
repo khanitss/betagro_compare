@@ -4,8 +4,9 @@
 
             <ul class="breadcrumb pull-right">
                 <li><a href="<?php echo site_url('dashboard/home');?>">Home</a></li>
-                <li><a href="<?php echo site_url('compare/compare_page');?>">Choose Menu Standard</a></li>
+                <li><a href="<?php echo site_url('compare/choose_menu1_page');?>">Choose Menu Standard</a></li>
                 <li><a href="<?php echo site_url('compare/choose_menu2_page');?>">Choose Betagro Menu</a></li>
+                <li><a href="<?php echo site_url('compare/compare_page');?>">Compare</a></li>
             </ul>
         </div>
 <!-- col standard-->

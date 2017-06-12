@@ -23,4 +23,9 @@ class Food extends MX_Controller {
 		$this->init_sys->content($data);
 	}
 
+	public function edit_food() {
+		$data['content']='food/edit-food';
+		$this->init_sys->content($data);
+	}
+
 }//end class

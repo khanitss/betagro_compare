@@ -12,9 +12,5 @@ class Material extends MX_Controller {
         $data['content']='material/add-raw-group';
         $this->init_sys->content($data);
     }
-    public function material_d_page() {
-        $data['content']='material/add-raw-material-page';
-        $this->init_sys->content($data);
-    }
 
 }//end class

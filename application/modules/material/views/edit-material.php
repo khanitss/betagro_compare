@@ -14,8 +14,7 @@
                 <div class="col-sm-6">
                     <div class="card ">
                         <div class="card-body card-padding "> 
-                            <h2>Edit Material</h2></br>
-                            <img class="center-block" src="http://my.haijai.com/article/food/20140919_health-food_1.jpg" class="img-thumbnail" alt="Cinque Terre" style="width:45%" >
+                            <img class="center-block" src="<?php echo base_url('dist/images/material/sunnok.jpg');?>" class="img-thumbnail" alt="Cinque Terre" style="width:45%" >
                             <div class="card-body card-padding">
                                 <form class="form-horizontal">
                                     <div class="form-group">

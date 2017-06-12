@@ -60,7 +60,7 @@
                     <img src="<?php echo base_url('dist/images/material/fruit.jpg');?>" alt="light" style="width:87%" class="img-thumbnail">
                     <input id="item1" value="val1" class="hidden" autocomplete="off">
                     <div class="caption">
-                        <h4>ผัก</h4>
+                        <h4>ผลไม้</h4>
                     </div>
                 </a>
             </div>

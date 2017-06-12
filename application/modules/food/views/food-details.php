@@ -44,9 +44,6 @@
 <div class="col-sm-6">
     <div class="card">
 
-        <div class="card-header">
-            <h2>รายละเอียดของเมนู Raw Material</h2>
-        </div>
         <div class="card-body card-padding">
             <table class="table">
                 <thead>
@@ -98,9 +95,6 @@
             </table>
         </div>
 
-        <div class="card-header">
-            <h2>รายละเอียดของเมนู Man/Equipment</h2>
-        </div>
         <div class="card-body card-padding">
             <table class="table">
                 <thead>

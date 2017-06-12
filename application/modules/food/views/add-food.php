@@ -96,54 +96,46 @@
                         <h4 class="modal-title">Add Raw Material</h4>
                     </div>
                     <div class="modal-body">
-                        <div id="myCarousel" class="carousel slide" data-ride="carousel">
-                            <!-- Indicators -->
-                            <ol class="carousel-indicators">
-                                <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-                                <li data-target="#myCarousel" data-slide-to="1"></li>
-                                <li data-target="#myCarousel" data-slide-to="2"></li>
-                            </ol>
-
-                            <!-- Wrapper for slides -->
-                            <div class="carousel-inner" align="center">
-                                <div class="item active">
-                                    <img src="<?php echo base_url('dist/images/contacts/1.jpg');?>" width="50%" alt="1">
-                                </div>
-
-                                <div class="item">
-                                    <img src="<?php echo base_url('dist/images/contacts/2.jpg');?>" width="50%" alt="2">
-                                </div>
-
-                                <div class="item">
-                                    <img src="<?php echo base_url('dist/images/contacts/3.jpg');?>" width="50%" alt="3">
-                                </div>
+                        <div class="col-md-4 text-center">
+                            <a href="#">
+                                <img src="<?php echo base_url('dist/images/material/sunnok.jpg');?>" alt="light" style="max-height:100px" class="img-thumbnail">
+                            </a>
+                            <input id="item1" value="val1" class="hidden" autocomplete="off">
+                            <div class="caption">
+                                <p>สันนอก</p>
                             </div>
-
-                            <!-- Left and right controls -->
-                            <a class="left carousel-control" href="#myCarousel" data-slide="prev">
-                                <span class="glyphicon glyphicon-chevron-left"></span>
-                                <span class="sr-only">Previous</span>
+                        </div>
+                        <div class="col-md-4 text-center">
+                            <a href="#">
+                                <img src="<?php echo base_url('dist/images/material/sunnai.jpg');?>" alt="light" style="max-height:100px" class="img-thumbnail">
                             </a>
-                            <a class="right carousel-control" href="#myCarousel" data-slide="next">
-                                <span class="glyphicon glyphicon-chevron-right"></span>
-                                <span class="sr-only">Next</span>
+                            <input id="item2" value="val1" class="hidden" autocomplete="off">
+                            <div class="caption">
+                                <p>สันใน</p>
+                            </div>
+                        </div>
+                        <div class="col-md-4 text-center">
+                            <a href="#">
+                                <img src="<?php echo base_url('dist/images/material/porkmin.jpg');?>" alt="light" style="max-height:100px" class="img-thumbnail">
                             </a>
+                            <input id="item3" value="val1" class="hidden" autocomplete="off">
+                            <div class="caption">
+                                <p>หมูบด</p>
+                            </div>
+                        </div>
+                        <div class="col-md-4 text-center">
+                            <a href="#">
+                                <img src="<?php echo base_url('dist/images/material/khapig.png');?>" alt="light" style="max-height:100px" class="img-thumbnail">
+                            </a>
+                            <input id="item4" value="val1" class="hidden" autocomplete="off">
+                            <div class="caption">
+                                <p>ขาหมู</p>
+                            </div>
                         </div>
                     </div>
                     <div class="modal-footer">
-                        <div class="row">
-                            <div class="col-sm-2 col-xs-2"></div>
-                            <div class="col-sm-4 col-xs-4">
-                                <a type="button" class="btn btn-success btn-block " data-dismiss="modal">Add</a>
-                            </div>
-                            <div class="col-sm-4 col-xs-4">
-                                <a type="button" class="btn btn-danger btn-block " data-dismiss="modal">Close</a>
-                            </div>
-                            <div class="col-sm-2 col-xs-2"></div>
-                        </div>
                     </div>
                 </div>
-
             </div>
         </div>
     </div>
@@ -169,54 +161,56 @@
             <div class="modal-content">
                 <div class="modal-header">
                     <button type="button" class="close" data-dismiss="modal">&times;</button>
-                    <h4 class="modal-title">Add Man/Equipment</h4>
+                    <h4 class="modal-title">Add Raw Material</h4>
                 </div>
                 <div class="modal-body">
-                    <div id="myCarousel" class="carousel slide" data-ride="carousel">
-                        <!-- Indicators -->
-                        <ol class="carousel-indicators">
-                            <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-                            <li data-target="#myCarousel" data-slide-to="1"></li>
-                            <li data-target="#myCarousel" data-slide-to="2"></li>
-                        </ol>
-
-                        <!-- Wrapper for slides -->
-                        <div class="carousel-inner" align="center">
-                            <div class="item active">
-                                <img src="<?php echo base_url('dist/images/contacts/1.jpg');?>" width="50%" alt="1">
-                            </div>
-
-                            <div class="item">
-                                <img src="<?php echo base_url('dist/images/contacts/2.jpg');?>" width="50%" alt="2">
-                            </div>
-
-                            <div class="item">
-                                <img src="<?php echo base_url('dist/images/contacts/3.jpg');?>" width="50%" alt="3">
-                            </div>
+                    <div class="col-md-4 text-center">
+                        <a href="#">
+                            <img src="<?php echo base_url('dist/images/menu/12041301524825.jpg');?>" alt="light" style="max-height:100px" class="img-thumbnail">
+                        </a>
+                        <input id="item1" value="val1" class="hidden" autocomplete="off">
+                        <div class="caption">
+                            <p>Helper : 250 / hour</p>
                         </div>
-
-                        <!-- Left and right controls -->
-                        <a class="left carousel-control" href="#myCarousel" data-slide="prev">
-                            <span class="glyphicon glyphicon-chevron-left"></span>
-                            <span class="sr-only">Previous</span>
+                    </div>
+                    <div class="col-md-4 text-center">
+                        <a href="#">
+                            <img src="<?php echo base_url('dist/images/menu/images.jpg');?>" alt="light" style="max-height:100px" class="img-thumbnail">
                         </a>
-                        <a class="right carousel-control" href="#myCarousel" data-slide="next">
-                            <span class="glyphicon glyphicon-chevron-right"></span>
-                            <span class="sr-only">Next</span>
+                        <input id="item2" value="val1" class="hidden" autocomplete="off">
+                        <div class="caption">
+                            <p>Cheff : 300 / hour</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4 text-center">
+                        <a href="#">
+                            <img src="<?php echo base_url('dist/images/menu/930660_91485537.jpg');?>" alt="light" style="max-height:100px" class="img-thumbnail">
                         </a>
+                        <input id="item3" value="val1" class="hidden" autocomplete="off">
+                        <div class="caption">
+                            <p>Cheff : 250 / hour</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4 text-center">
+                        <a href="#">
+                            <img src="<?php echo base_url('dist/images/menu/gas-refill.jpg');?>" alt="light" style="max-height:100px" class="img-thumbnail">
+                        </a>
+                        <input id="item4" value="val1" class="hidden" autocomplete="off">
+                        <div class="caption">
+                            <p>Gas : 60 / hour</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4 text-center">
+                        <a href="#">
+                            <img src="<?php echo base_url('dist/images/menu/worldgas-15-kg.jpg');?>" alt="light" style="max-height:100px" class="img-thumbnail">
+                        </a>
+                        <input id="item5" value="val1" class="hidden" autocomplete="off">
+                        <div class="caption">
+                            <p>Gas : 35 / hour</p>
+                        </div>
                     </div>
                 </div>
                 <div class="modal-footer">
-                    <div class="row">
-                        <div class="col-sm-2 col-xs-2"></div>
-                        <div class="col-sm-4 col-xs-4">
-                            <a type="button" class="btn btn-success btn-block" data-dismiss="modal">Add</a>
-                        </div>
-                        <div class="col-sm-4 col-xs-4">
-                            <a type="button" class="btn btn-danger btn-block" data-dismiss="modal">Close</a>
-                        </div>
-                        <div class="col-sm-2 col-xs-2"></div>
-                    </div>
                 </div>
             </div>
         </div>

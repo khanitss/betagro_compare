@@ -1,6 +1,6 @@
 <!-- Content Section START -->
         <div class="block-header clearfix">
-          <h2 class="pull-left">Choose Standard Menu</h2>
+          <h2 class="pull-left">Choose Betrago Menu</h2>
           <ul class="breadcrumb pull-right">
             <li><a href="<?php echo site_url('dashboard/home');?>">Home</a></li>
             <li><a href="<?php echo site_url('compare/choose_menu1_page');?>">Choose Standard Menu</a></li><li><a href="<?php echo site_url('compare/choose_menu2_page');?>">Choose Betagro Menu</a></li>

@@ -6,6 +6,16 @@
             <li><a href="<?php echo site_url('compare/choose_menu1_page');?>">Choose Standard Menu</a></li><li><a href="<?php echo site_url('compare/choose_menu2_page');?>">Choose Betagro Menu</a></li>
           </ul>
         </div>
+<!-- back -->
+        <div class="row">
+            <div class="col-sm-10 col-xs-8"></div>
+                <div class="col-sm-2 col-xs-4 text-center">
+                    <a href="<?php echo site_url('compare/compare_page');?>">
+                        <button class="btn btn-success">Compare</button>
+                    </a>
+                </div>
+        </div></br>
+<!-- choose menu -->
         <div class="row">
                     <form method="get">
                         <div class="form-group">
@@ -98,12 +108,7 @@
                                     </div>
                                 </div>
                             </div>
-                        <div class="form-group">
-                            <div class="col-sm-10"></div>
-                            <div class="col-sm-2 text-right">
-                            <a href="<?php echo site_url('compare/compare_page'); ?>" type='submit' type="radio" class="btn btn-info btn-block">COMPARE</a>
-                            </div>
-                        </div>
+                        
                     </form>
         </div>
 

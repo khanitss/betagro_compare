@@ -7,15 +7,21 @@
               <li><a href="<?php echo site_url('material/material_d_page');?>">Add Raw Material </a></li>
             </ul>
           </div>
-          </br>
-          </br>
+          
+          <div class="row">
+            <div class="col-sm-10 col-xs-8"></div>
+            <div class="col-sm-2 col-xs-4 text-center">
+            <button class="btn btn-success" data-toggle="modal" data-target="#myAddRawModal" alt="addRaw">Add Raw Material</button>
+       
+            </div>
+          </div>
 
       <div class="row">
 
         <div class="col-sm-4">
           <div class="thumbnail img-check">
             <label class=" btn btn-light">
-              <label for="cb3"><a href="add-raw-material-page.html"><img src="http://my.haijai.com/article/food/20140919_health-food_1.jpg" alt="Nature" style="width:90%"></a>
+              <label for="cb3"><a href="<?php echo site_url ('material/edit_page');?>"><img src="http://my.haijai.com/article/food/20140919_health-food_1.jpg" alt="Nature" style="width:90%"></a>
                 <div class="caption">
                   <h3>เนื้อหมู</h3>
                 </div></label>
@@ -23,17 +29,7 @@
             </lable>
           </div>
         </div>
-        <div class="col-sm-4">
-          <div class="card">
-            <div class="card-header">
-              <h2>Add Raw Material</h2>
-            </div>
-            <div align="center">
-              <a href="#">
-                <img src="<?php echo base_url('dist/images/icons/addButton.png');?>" style="width:30%">
-              </a>
-            </div>
-
+        
             <!-- Modal -->
             <div id="myAddRawModal" class="modal fade" role="dialog">
               <div class="modal-dialog">
@@ -46,26 +42,25 @@
                   </div>
 
                   <!-- add image-->
-                  <div class="fileinput fileinput-new card-body card-padding" data-provides="fileinput">
-                    <span class="btn btn-default btn-file m-r-10">
-                      <span class="fileinput-new"><img src="dist/images/icons/addButton.png" width="30%" alt=""></span>
+                  
+                  <div class="fileinput fileinput-new card-body card-padding text-center"  data-provides="fileinput">
+                    <span class="btn btn-default btn-file m-r-10 text-center">
+                      <span class="fileinput-new text-center"><img src="<?php echo base_url ('dist/images/icons/addButton.png');?> " width="30%" alt=""></span >
                       <span class="fileinput-exists">Change</span>
                       <input type="file" name="...">
                     </span>
                     <span class="fileinput-filename"></span>
                     <a href="#" class="close fileinput-exists" data-dismiss="fileinput">&times;</a>
-                    <center>
-                      <h4>Add Picture</h4></center>
+                    <center><h4>Add Picture</h4></center>
 
                       <!-- add name-->
-                      <div class="col-sm-6"> </div>
                       <div class="card-body card-padding">
                         <form class="form-horizontal">
                           <div class="row">
 
                             <div class="form-group">
                               <div class="row">
-                                <label class="col-sm-3 col-xs-3 control-label">Material Name :</label>
+                              <label class="col-sm-3 col-xs-3 control-label">Material Name :</label>
                                 <div class="col-sm-9 col-xs-9">
                                   <input class="form-control" id="focusedInput" type="text" placeholder="Material Name">
                                 </div>
@@ -101,8 +96,7 @@
 
                           </div>
                         </form>
-                      </br>
-
+                      
                       <div class="row">
                         <div class="col-sm-2"></div>
                         <div class="col-sm-3">
@@ -120,6 +114,6 @@
                 </div>
               </div>
             </div>
-          </div>
+         
         </div>
       </div>

@@ -8,6 +8,16 @@
     <li><a href="<?php echo site_url('compare/choose_menu1_page');?>">Choose Standard Menu</a></li>
   </ul>
 </div>
+<!-- back -->
+        <div class="row">
+            <div class="col-sm-10 col-xs-8"></div>
+                <div class="col-sm-2 col-xs-4 text-center">
+                    <a href="<?php echo site_url('compare/choose_menu2_page');?>">
+                        <button class="btn btn-success">Next</button>
+                    </a>
+                </div>
+        </div></br>
+<!-- choose menu -->
             <div class="row">
                 <form method="get">
                     <div class="form-group">
@@ -37,7 +47,7 @@
                                 <label class="btn btn-light">
                                    <input type="radio" name="rad" id="item3" value="3" />
                                    <label for="item3"><img src="<?php echo base_url('dist/images/menu/s_ซี่โครงหมูตุ่นเยิ่อไผ่.jpg');?>" alt="Nature" style="width:90%">
-                                       <div class="caption"><h4>ซี่โครงหมูตุ๋นเยื่อไผ่</h4></div>
+                                       <div class="caption">ซี่โครงหมูตุ๋นเยื่อไผ่</div>
                                    </label>
                                </lable>
                            </div>
@@ -94,13 +104,5 @@
                             </div>
                         </div>
                     </div>
-
-                    <div class="form-group">
-                        <div class="col-sm-10"></div>
-                        <div class="col-sm-2 text-right">
-                            <a href="<?php echo site_url('compare/choose_menu2_page'); ?>" type='submit' type="radio" class="btn btn-info btn-block">NEXT</a>
-                        </div>
-                    </div>
-
                 </form>
             </div>

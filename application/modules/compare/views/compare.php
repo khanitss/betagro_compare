@@ -9,6 +9,15 @@
                 <li><a href="<?php echo site_url('compare/compare_page');?>">Compare</a></li>
             </ul>
         </div>
+<!-- back -->
+        <div class="row">
+            <div class="col-sm-10 col-xs-8"></div>
+                <div class="col-sm-2 col-xs-4 text-center">
+                    <a href="<?php echo site_url('compare/choose_menu1_page');?>">
+                        <button class="btn btn-success">Back</button>
+                    </a>
+                </div>
+        </div></br>
 <!-- col standard-->
         <div class="col-sm-6">
             <div class="card ">
@@ -234,12 +243,4 @@
                         </table></br>
                 </div>
             </div>
-        </div>
-<!-- back -->
-        <div class="form-group">
-            <div class="col-sm-4"></div>
-            <div class="col-sm-4">
-                <a href="<?php echo site_url('compare/choose_menu1_page'); ?>" type='submit'  class="btn btn-info btn-block center-block">Back</a>
-            </div>
-            <div class="col-sm-4"></div>
         </div>

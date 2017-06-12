@@ -108,12 +108,7 @@
                                     </div>
                                 </div>
                             </div>
-                        <div class="form-group">
-                            <div class="col-sm-10"></div>
-                            <div class="col-sm-2 text-right">
-                            <a href="<?php echo site_url('compare/compare_page'); ?>" type='submit' type="radio" class="btn btn-info btn-block">COMPARE</a>
-                            </div>
-                        </div>
+                        
                     </form>
         </div>
 

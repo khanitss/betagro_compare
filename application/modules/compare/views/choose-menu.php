@@ -16,7 +16,7 @@
                         <button class="btn btn-success">Next</button>
                     </a>
                 </div>
-        </div></br>
+        </div>
 <!-- choose menu -->
             <div class="row">
                 <form method="get">

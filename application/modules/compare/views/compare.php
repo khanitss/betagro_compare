@@ -53,7 +53,6 @@
                         <div class="col-sm-3 d-inline-flex p-2"><pre>300 Minutes</pre></div>      
                     </div></br>
 
-                    <h4>Raw Material</h4>
                         <table class="table">
                             <thead>
                                 <tr>
@@ -107,8 +106,7 @@
 
                             </tbody>
                         </table></br>
-
-                    <h4>Man/Equipment Material</h4>
+                        
                         <table class="table">
                             <thead>
                                 <tr>
@@ -177,7 +175,6 @@
                         <div class="col-sm-3 d-inline-flex p-2"><pre>90 Minutes</pre></div>      
                     </div></br>
 
-                    <h4>Raw Material</h4>
                         <table class="table">
                             <thead>
                                 <tr>
@@ -213,7 +210,6 @@
                             </tbody>
                         </table></br>
 
-                    <h4>Man/Equipment Material</h4>
                         <table class="table">
                             <thead>
                                 <tr>

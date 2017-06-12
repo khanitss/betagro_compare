@@ -6,32 +6,6 @@
 </div>
 
 <div class="row">
-        <div class="card col-sm-3 text-center">
-            <div class="card-header">
-                <a href="<?php echo site_url('food/food_page');?>"><h2>Food Menu</h2></a>
-            </div>
-        </div>
-
-        <div class="card col-sm-3 text-center">
-            <div class="card-header">
-                <a href="<?php echo site_url('material/material_page');?>"><h2>Material</h2></a>
-            </div>
-        </div>
-
-        <div class="card col-sm-3 text-center">
-            <div class="card-header">
-                <a href="<?php echo site_url('man/man_page');?>"><h2>Man/Equipment</h2></a>
-            </div>
-        </div>
-
-        <div class="card col-sm-3 text-center">
-            <div class="card-header">
-                <a href="<?php echo site_url('product/product_page');?>"><h2>Product</h2></a>
-            </div>
-        </div>
-</div>
-
-<div class="row">
     <div class="col-sm-4">
         <!-- Todo -->
         <div id="todo1" class="card card-todo-list" style="min-height: 512px">

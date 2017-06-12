@@ -47,7 +47,7 @@
                                 <label class="btn btn-light">
                                    <input type="radio" name="rad" id="item3" value="3" />
                                    <label for="item3"><img src="<?php echo base_url('dist/images/menu/s_ซี่โครงหมูตุ่นเยิ่อไผ่.jpg');?>" alt="Nature" style="width:90%">
-                                       <div class="caption"><h4>ซี่โครงหมูตุ๋นเยื่อไผ่</h4></div>
+                                       <div class="caption">ซี่โครงหมูตุ๋นเยื่อไผ่</div>
                                    </label>
                                </lable>
                            </div>

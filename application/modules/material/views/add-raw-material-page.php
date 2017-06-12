@@ -28,7 +28,7 @@
                     <img src="<?php echo base_url('dist/images/material/sunnok.jpg');?>" alt="light" style="width:65%" class="img-thumbnail">
                     <input id="item1" value="val1" class="hidden" autocomplete="off">
                     <div class="caption">
-                        <h4>สันนอก</h4>
+                        <h4>สันนอก 1 กก.</h4>
                     </div>
                 </a>
             </div>
@@ -39,7 +39,7 @@
                     <img src="<?php echo base_url('dist/images/material/sunnai.jpg');?>" alt="light" style="width:98%" class="img-thumbnail">
                     <input id="item1" value="val1" class="hidden" autocomplete="off">
                     <div class="caption">
-                        <h4>สันใน</h4>
+                        <h4>สันใน 1 กก.</h4>
                     </div>
                 </a>
             </div>
@@ -50,7 +50,7 @@
                     <img src="<?php echo base_url('dist/images/material/porkmin.jpg');?>" alt="light" style="width:100%" class="img-thumbnail">
                     <input id="item1" value="val1" class="hidden" autocomplete="off">
                     <div class="caption">
-                        <h4>หมูบด</h4>
+                        <h4>หมูบด 500 กรัม</h4>
                     </div>
                 </a>
             </div>
@@ -61,7 +61,7 @@
                     <img src="<?php echo base_url('dist/images/material/khapig.png');?>" alt="light" style="width:96%" class="img-thumbnail">
                     <input id="item1" value="val1" class="hidden" autocomplete="off">
                     <div class="caption">
-                        <h4>ขาหมู</h4>
+                        <h4>ขาหมู 2 ขา</h4>
                     </div>
                 </a>
             </div>

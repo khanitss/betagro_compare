@@ -19,7 +19,7 @@
                 <a href="" class="mega-menu-toggle" data-dp-action="submenu-toggle"><i class="multi-level zmdi zmdi-border-color"></i>&nbsp;<span>Setting</span></a>
                 <ul class="mega-menu">
                     <li><a href="<?php echo site_url('food/food_page');?>">Foods</a></li>
-                    <li><a href="<?php echo site_url('material/raw_page');?>">Materials</a></li>
+                    <li><a href="<?php echo site_url('material/material_page');?>">Materials</a></li>
                     <li><a href="<?php echo site_url('product/product_page');?>">Betagro Products</a></li>
                     <li><a href="<?php echo site_url('man/man_page');?>">Man & Equipments</a></li>
                 </ul>

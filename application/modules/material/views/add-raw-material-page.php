@@ -2,17 +2,16 @@
           <div class="block-header clearfix">
             <h2 class="pull-left">Add Raw Material </h2>
             <ul class="breadcrumb pull-right">
-              <li><a href="../../index.html">Home</a></li>
-              <li><a href="">Setting</a></li>
-              <li><a href="<?php echo site_url ('material/material_page');?>">Add Raw Material Group</a></li>
-              <li><a href="">Add Raw Material </a></li>
+              <li><a href="<?php echo site_url ('dashboard/home');?>">Home</a></li>
+              <li><a href="<?php echo site_url('material/material_page');?>">Add Raw Material Group</a></li>
+              <li><a href="<?php echo site_url('material/material_d_page');?>">Add Raw Material </a></li>
             </ul>
-          </div>  
+          </div>
           </br>
           </br>
-      
+
       <div class="row">
-        
+
         <div class="col-sm-4">
           <div class="thumbnail img-check">
             <label class=" btn btn-light">
@@ -124,5 +123,3 @@
           </div>
         </div>
       </div>
-    
-  

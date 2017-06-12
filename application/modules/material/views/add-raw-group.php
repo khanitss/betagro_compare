@@ -2,16 +2,15 @@
           <div class="block-header clearfix">
             <h2 class="pull-left">Add Raw Material Group</h2>
                 <ul class="breadcrumb pull-right">
-                    <li><a href="../../index.html">Home</a></li>
-                    <li><a href="">Setting</a></li>
+                    <li><a href="<?php echo site_url ('dashboard/home');?>">Home</a></li>
                     <li><a href="<?php echo site_url ('material/material_page');?>">Add Raw Material Group</a></li>
                 </ul>
           </div>
           </br>
           </br>
-      
+
       <div class="row">
-        
+
         <div class="col-sm-3">
           <div class="thumbnail img-check">
             <label class=" btn btn-light">
@@ -23,7 +22,7 @@
             </lable>
           </div>
         </div>
-        
+
         <div class="col-sm-3">
           <div class="card">
             <div class="card-header">
@@ -34,7 +33,7 @@
                 <img src="<?php echo base_url ('dist/images/icons/addButton.png');?>" data-toggle="modal" data-target="#myAddRawModal" alt="addRaw" style="width:30%">
               </a>
             </div>
-          
+
 
             <!-- Modal -->
             <div id="myAddRawModal" class="modal fade" role="dialog">
@@ -95,4 +94,3 @@
       </div>
       <div class="col-sm-2"></div>
     </div>
-  

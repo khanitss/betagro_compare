@@ -107,15 +107,15 @@
                             <!-- Wrapper for slides -->
                             <div class="carousel-inner" align="center">
                                 <div class="item active">
-                                    <img src="dist/images/contacts/1.jpg" width="50%" alt="1">
+                                    <img src="<?php echo base_url('dist/images/contacts/1.jpg');?>" width="50%" alt="1">
                                 </div>
 
                                 <div class="item">
-                                    <img src="dist/images/contacts/2.jpg" width="50%" alt="2">
+                                    <img src="<?php echo base_url('dist/images/contacts/2.jpg');?>" width="50%" alt="2">
                                 </div>
 
                                 <div class="item">
-                                    <img src="dist/images/contacts/3.jpg" width="50%" alt="3">
+                                    <img src="<?php echo base_url('dist/images/contacts/3.jpg');?>" width="50%" alt="3">
                                 </div>
                             </div>
 
@@ -183,15 +183,15 @@
                         <!-- Wrapper for slides -->
                         <div class="carousel-inner" align="center">
                             <div class="item active">
-                                <img src="dist/images/contacts/1.jpg" width="50%" alt="1">
+                                <img src="<?php echo base_url('dist/images/contacts/1.jpg');?>" width="50%" alt="1">
                             </div>
 
                             <div class="item">
-                                <img src="dist/images/contacts/2.jpg" width="50%" alt="2">
+                                <img src="<?php echo base_url('dist/images/contacts/2.jpg');?>" width="50%" alt="2">
                             </div>
 
                             <div class="item">
-                                <img src="dist/images/contacts/3.jpg" width="50%" alt="3">
+                                <img src="<?php echo base_url('dist/images/contacts/3.jpg');?>" width="50%" alt="3">
                             </div>
                         </div>
 

@@ -9,7 +9,7 @@
     <div class="col-sm-6">
         <div class="card ">
             <div class="card-body card-padding"> 
-                <h2>ปีกไก่บน</h2>
+                <h2>ปีกไก่บน <a href="<?php echo site_url ('man/man_page');?>" type="save" class="btn btn-warning">DELETE</a></h2>
                 <img class="center-block" src="http://www.th.all.biz/img/th/catalog/13699.jpeg" class="img-thumbnail" alt="Cinque Terre" style="width:45%" >
                     <div class="card-body card-padding">
                         <form class="form-horizontal">

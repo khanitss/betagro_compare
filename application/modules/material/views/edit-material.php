@@ -8,13 +8,24 @@
                 <li><a href="#">Edit Material</a></li>
             </ul>
         </div>
+
+        
+
         <div class="container">
             <div class="row">
                 <div class="col-sm-3"></div>
                 <div class="col-sm-6">
                     <div class="card ">
+                        <div class="row">
+                            </br>
+                            <div class="col-sm-9 col-xs-8"></div>
+                            <div class="col-sm-3 col-xs-4 text-center">
+                                <a href ="<?php echo site_url ('material/material_d_page');?>" class="btn btn-warning" >DELETE</a>
+                            </div>
+                        </div>
                         <div class="card-body card-padding "> 
                             <img class="center-block" src="<?php echo base_url('dist/images/material/sunnok.jpg');?>" class="img-thumbnail" alt="Cinque Terre" style="width:45%" >
+
                             <div class="card-body card-padding">
                                 <form class="form-horizontal">
                                     <div class="form-group">
@@ -38,16 +49,14 @@
                                 </form>
                             </div>
                             <div class="row">
-                                <div class="col-sm-2">
+                                <div class="col-sm-4"></div>
+                                <div class="col-sm-3">
+                                    <a href="<?php echo site_url ('material/material_d_page');?>" type="save" class="btn btn-success ">SAVE</a>
                                 </div>
                                 <div class="col-sm-3">
-                                </div>
-                                <a href="<?php echo site_url ('material/material_d_page');?>" type="save" class="btn btn-success ">SAVE</a>
-                                <div class="col-sm-4">
-                                </div>
-                                <div class="col-sm-3"></div>
                                 <a href="<?php echo site_url ('material/material_d_page');?>" type="save" class="btn btn-danger">BACK</a>
                                 </div>
+                                
                             </div>
                         </div>
                     </div>

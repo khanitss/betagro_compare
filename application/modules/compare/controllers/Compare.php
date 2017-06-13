@@ -40,6 +40,14 @@ class Compare extends MX_Controller {
 		$this->init_sys->content($data);
 	}
 
+	private function set_standard_food_id()
+	{
+		$id=($this->uri->segment(3)!=''? $this->uri->segment(3) : 0);
+		$qstr=array('select_items_one'=>$id);
+
+		$this->session->set_userdata($qstr);
+	}
+
 	public function compare_page() {
 		print_r($this->session->userdata('select_items_one'));exit();
 

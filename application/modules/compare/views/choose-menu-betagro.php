@@ -10,24 +10,29 @@
         <div class="row">
             <div class="col-sm-10 col-xs-8"></div>
                 <div class="col-sm-2 col-xs-4 text-center">
-                    <a href="<?php echo site_url('compare/compare_page');?>">
-                        <button class="btn btn-success">Compare</button>
+                    <a href="<?php echo site_url('compare/choose_menu1_page');?>">
+                        <button class="btn btn-success">Back</button>
                     </a>
                 </div>
-        </div>
+        </div></br>
 <!-- choose menu -->
 <div class="row">
   <?php foreach ($food_standard_list as $key => $value) {?>
-    <div class="col-md-4">
-      <a href="<?php echo site_url('compare/choose_menu2_page/'.$value['food_id']);?>">
-        <div class="row">
-          <img src="<?php echo base_url('file/items_img/008.jpg');?>" class="img-responsive" style="width:90%" />
-        </div>
-
-        <div class="row text-center" style="margin-top: 10px;">
-          <strong><?php echo $value['food_name'];?></strong>
-        </div>
-      </a>
-    </div>
+      <div class="col-md-3">
+        <div class="card">
+          <div class="card card-padding">
+            <a href="<?php echo site_url('compare/choose_menu2_page/'.$value['food_id']);?>">
+            <div class="row">
+              <div class="col-md-12">
+                  <img src="<?php echo base_url('file/items_img/008.jpg');?>" class="img-responsive img-thumbnail " />
+              </div>
+            </div>
+            <div class="row text-center" style="margin-top: 10px;">
+              <strong><?php echo $value['food_name'];?></strong>
+            </div>
+            </a>
+          </div>
+         </div>
+      </div>
   <?php }?>
 </div>

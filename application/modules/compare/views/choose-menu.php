@@ -7,21 +7,28 @@
   </ul>
 </div>
 
-<div class="row">
-  <?php foreach ($food_standard_list as $key => $value) {?>
-    <div class="col-md-4">
-      <a href="<?php echo site_url('compare/choose_menu2_page/'.$value['food_id']);?>">
-        <div class="row">
-          <img src="<?php echo base_url('file/items_img/008.jpg');?>" class="img-responsive" style="width:90%"/>
-        </div>
-
-        <div class="row text-center" style="margin-top: 10px;">
-          <strong><?php echo $value['food_name'];?></strong>
-        </div>
-      </a>
+    <div class="row">
+      <?php foreach ($food_standard_list as $key => $value) {?>
+          <div class="col-md-3">
+            <div class="card">
+              <div class="card card-padding">
+                <a href="<?php echo site_url('compare/choose_menu2_page/'.$value['food_id']);?>">
+                <div class="row">
+                  <div class="col-md-12">
+                      <img src="<?php echo base_url('file/items_img/008.jpg');?>" class="img-responsive img-thumbnail" />
+                  </div>
+                </div>
+                <div class="row text-center" style="margin-top: 10px;">
+                  <strong><?php echo $value['food_name'];?></strong>
+                </div>
+                </a>
+              </div>
+             </div>
+          </div>
+      <?php }?>
     </div>
-  <?php }?>
-</div>
+
+
 
 <!-- <label for="item1">
 

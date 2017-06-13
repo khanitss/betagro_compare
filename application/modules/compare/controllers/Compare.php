@@ -7,10 +7,15 @@ class Compare extends MX_Controller {
 	{
     	parent::__construct();
       $this->load->module('init_sys/Init_sys');
-      // $this->load->model('vendor/Vendor_model');
+      $this->load->model('compare/Compare_model');
   }
 
-	public function choose_menu1_page() {
+	public function choose_menu1_page()
+	{
+		$qstr=array('food_type'=>0);
+		$results = $this->Compare_model->get_food_list($qstr);
+		// echo '<pre>', print_r($results);exit();
+
 		$data['content']='compare/choose-menu';
 		$this->init_sys->content($data);
 	}

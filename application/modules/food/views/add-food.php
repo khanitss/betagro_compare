@@ -7,12 +7,8 @@
         <li><a href="<?php echo site_url('food/add_food');?>">Add Food</a></li>
     </ul>
 </div>
-
-<form>
-    <label class="radio-inline"><input type="radio" name="optradio" value="">Standard Recipe</label>
-    <label class="radio-inline"><input type="radio" name="optradio" value="">Betagro Recipe</label>
-</form>
 </br>
+
 <div class="row">
     <div class="col-sm-4">
         <div class="card">
@@ -36,37 +32,53 @@
     <div class="col-sm-8">
         <div class="card">
             <div class="card-body card-padding">
-                <form class="form-horizontal">
+
+                    <?php $attr = array('class' => 'form-horizontal');
+                    echo form_open('food/set_food_menu', $attr);?>
+                    
+                    <div class="form-group">
+                        <label class="radio-inline"><input type="radio" name="food_type" checked="checked" value="0">Standard Recipe</label>
+                        <label class="radio-inline"><input type="radio" name="food_type" value="1">Betagro Recipe</label>
+                    </div>
                     <div class="form-group">
                         <label class="col-sm-2 col-xs-3 control-label">Name :</label>
                         <div class="col-sm-9 col-xs-9">
-                            <input class="form-control" id="focusedInput" type="text" placeholder="Food Name">
+                            <input class="form-control" id="focusedInput" type="text" placeholder="Food Name" name="food_name">
                         </div>
                     </div>
 
                     <div class="form-group">
                         <label class="col-sm-2 col-xs-3 control-label">For :</label>
                         <div class="col-sm-9 col-xs-9">
-                            <input class="form-control" id="focusedInput" type="text" placeholder="Number">
+                            <input class="form-control" id="focusedInput" type="text" placeholder="Number" name="food_for">
                         </div>
                     </div>
 
                     <div class="form-group">
                         <label class="col-sm-2 col-xs-3 control-label">Unit :</label>
                         <div class="col-sm-9 col-xs-9">
-                            <input class="form-control" id="focusedInput" type="text" placeholder="Unit">
+                            <input class="form-control" id="focusedInput" type="text" placeholder="Unit" name="food_unit">
                         </div>
                     </div>
 
                     <div class="form-group">
                         <label class="col-sm-2 col-xs-3 control-label">Time :</label>
                         <div class="col-sm-8 col-xs-6">
-                            <input class="form-control" id="focusedInput" type="text" placeholder="Number">
+                            <input class="form-control" id="focusedInput" type="text" placeholder="Number" name="food_time">
                         </div>
                         <label class="col-sm-1 col-xs-2 control-label">Minutes</label>
                         <div class="col-sm-1"></div>
                     </div>
-                </form>
+
+                    <div class="form-group">
+                        <div class="col-sm-10"></div>
+                        <div class="col-sm-2">
+                            <button type="submit" class="btn btn-success btn-lg">submit</button>
+                        </div>
+                    </div>
+
+                    <?php echo form_close();?>
+
             </div>
         </div>
     </div>

@@ -28,4 +28,28 @@ class Food extends MX_Controller {
 		$this->init_sys->content($data);
 	}
 
+	public function get_food_menu(){
+		$this->load->model('Food_model');
+		$result = $this->Food_model->get_food_menu();
+		// echo '<pre>', print_r($result);
+		// exit;
+		return $result;
+	}
+
+	public function set_food_menu(){
+		$this->load->model('Food_model');
+		$timestam = date('Y-m-d H:i:s');
+		$input = array(	'food_name' 	=> $this->input->post('food_name'),
+						'food_type'		=> $this->input->post('food_type'),
+						'food_for'		=> $this->input->post('food_for'),
+						'food_unit'		=> $this->input->post('food_unit'),
+						'food_time'		=> $this->input->post('food_time'),
+						'food_status'	=> '1',
+						'created' 		=> $timestam,
+						'lastupdate'	=> $timestam,
+					);
+		$this->Food_model->set_food_menu($input);
+		redirect('food/food_page');
+	}
+
 }//end class

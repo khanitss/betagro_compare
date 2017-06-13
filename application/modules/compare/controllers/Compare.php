@@ -24,20 +24,25 @@ class Compare extends MX_Controller {
 	private function set_standard_food_id()
 	{
 		$id=($this->uri->segment(3)!=''? $this->uri->segment(3) : 0);
-		$this->session->set_userdata('selected_food_standard_id', $id);
+		$qstr=array('select_items_one'=>$id);
+
+		$this->session->set_userdata($qstr);
 	}
 
-	public function choose_menu2_page() {
-		$this->set_standard_food_id();
+	public function choose_menu2_page()
+	{
+		$qstr=array('food_type'=>1);
+		$results = $this->Compare_model->get_food_list($qstr);
+		$data['food_standard_list'] = $results;
+
+		// echo '<pre>', print_r($results);exit();
 		$data['content']='compare/choose-menu-betagro';
-		// print_r($data) ;
 		$this->init_sys->content($data);
-		// echo "string";
 	}
 
 	public function compare_page() {
-		print_r($this->session->userdata());exit();
-		
+		print_r($this->session->userdata('select_items_one'));exit();
+
 		$data['content']='compare/compare';
 		// print_r($data) ;
 		$this->init_sys->content($data);

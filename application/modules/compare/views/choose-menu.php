@@ -12,7 +12,7 @@
     <div class="col-md-4">
       <a href="<?php echo site_url('compare/choose_menu2_page/'.$value['food_id']);?>">
         <div class="row">
-          <img src="<?php echo base_url('file/items_img/008.jpg');?>" class="img-responsive" />
+          <img src="<?php echo base_url('file/items_img/008.jpg');?>" class="img-responsive" style="width:90%"/>
         </div>
 
         <div class="row text-center" style="margin-top: 10px;">

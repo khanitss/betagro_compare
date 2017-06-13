@@ -35,7 +35,7 @@
 
                     <?php $attr = array('class' => 'form-horizontal');
                     echo form_open('food/set_food_menu', $attr);?>
-                    
+
                     <div class="form-group">
                         <label class="radio-inline"><input type="radio" name="food_type" checked="checked" value="0">Standard Recipe</label>
                         <label class="radio-inline"><input type="radio" name="food_type" value="1">Betagro Recipe</label>

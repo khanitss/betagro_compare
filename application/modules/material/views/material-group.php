@@ -1,3 +1,9 @@
+ <?php 
+
+  $attr = array('class'=>'form-horizontal');
+  echo form_open('material/add_mate_group',$attr);
+ ?>
+
 <div class="block-header clearfix">
   <h2 class="pull-left">Add Raw Material</h2>
   <ul class="breadcrumb pull-right">
@@ -28,12 +34,12 @@
                 <div class="form-group">
                   <label class="col-sm-2 col-xs-2 control-label">Name :</label>
                   <div class="col-sm-10 col-xs-10">
-                    <input class="form-control" id="focusedInput" type="text" placeholder="Material Group Name">
+                    <input class="form-control" id="focusedInput" type="text" placeholder="Material Group Name" name="cat_name">
                   </div>
                 </div>
                   <div class="row">
                     <div class="col-sm-6">
-                      <a href="<?php echo site_url ('material/material_page');?>" type="save" class="btn btn-success">Save</a>
+                      <button type="save" class="btn btn-success">Save</button>
                     </div>
                     <div class="col-sm-6">
                       <a href="<?php echo site_url ('material/material_page');?>" type="cancel" class="btn btn-danger">Cancel</a>
@@ -41,3 +47,5 @@
                   </div>
               </form>
             </div>
+
+<?php echo form_close();?>

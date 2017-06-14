@@ -12,7 +12,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 			return $result;
 		}
 
-		// public function delete_man($id){
-		// 	$this->db->delete('equipment', array('eq_id' => $id));
-		// }
+
+		public function delete_man($id){
+			$this->db->delete('equipment', array('eq_id' => $id));
+ 
+		 }
 }

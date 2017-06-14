@@ -26,6 +26,9 @@
                             </center>
                             <div class="caption">
                                 <center><p><?php echo $value['eq_name'];?> : <?php echo $value['eq_cost'];?> Baht</p></center>
+                                <div class="col-sm-8">
+                                </div>
+                                <a href="<?php echo site_url('man/delete_man/'.$value['eq_id']);?>" type="delete" class="btn btn-danger">DELETE</a>
                             </div>
                     </div>
                 </div>

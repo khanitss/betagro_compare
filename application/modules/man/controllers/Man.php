@@ -44,11 +44,11 @@ class Man extends MX_Controller {
 		return $result;
 		
 	}
-	// public function delete_man(){
-	// 	$this->load->model('Man_models');
-	// 	$id = $this->uri->segment(3);
-	// 	$this->Man_models->delete_man($id);
-	// 	redirect('man/man_page');
-	// }
+	public function delete_man(){
+		$this->load->model('Man_models');
+		$id = $this->uri->segment(3);
+		$this->Man_models->delete_man($id);
+		redirect('man/man_page');
+	}
 
 }//end class

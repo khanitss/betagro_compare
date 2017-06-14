@@ -24,6 +24,9 @@
                         <center><a href= "<?php echo site_url ('product/product_edit');?>"><label for="cb1"><img src="<?php echo base_url('dist/images/menu/13699.jpeg');?>" alt="light" width="260" height="260"></label></a></center>
                         <div class="caption">
                             <center><p><?php echo $value['mat_name'];?> : <?php echo $value['mat_quantity'];?> <?php echo $value['mat_unit'];?> <?php echo $value['mat_cost'];?> Baht </p></center>
+                            <div class="col-sm-8">
+                                </div>
+                                <a href="<?php echo site_url('product/delete_product/'.$value['mat_id']);?>" type="delete" class="btn btn-danger">DELETE</a>
                         </div>
                     </div>
                 </div>

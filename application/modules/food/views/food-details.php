@@ -1,4 +1,7 @@
 <!-- Content Section START -->
+<?php
+$id = $this->uri->segment(3);
+?>
 <div class="block-header clearfix">
     <h2 class="pull-left">Food Detail</h2>
     <ul class="breadcrumb pull-right">
@@ -12,6 +15,7 @@
 <div class="row">
     <div class="col-sm-6">
         <div class="card ">
+
             <?php foreach ($food_details as $key => $value)
             {
                 ?>
@@ -21,24 +25,27 @@
                 <div class="card-body card-padding">
                     <img class="center-block" src="<?php echo base_url('dist/images/menu/s_ขาหมู.jpg');?>" class="img-thumbnail" style="width:75%">
                     <p></p>
-
                     <form class="form-horizontal">
                         <div class="form-group">
-                            <label class="col-sm-3 col-xs-3 text-right control-label">For :</label>
-                            <div class="col-sm-9 col-xs-9">
+                            <label class="col-sm-4 col-xs-3 text-right control-label">For :</label>
+                            <div class="col-sm-8 col-xs-9">
                                 <p class="form-control-static"><?php echo $value['food_for'];?></p>
                             </div>
-                            <label class="col-sm-3 col-xs-3 text-right control-label">Unit :</label>
-                            <div class="col-sm-9 col-xs-9">
+                            <label class="col-sm-4 col-xs-3 text-right control-label">Unit :</label>
+                            <div class="col-sm-8 col-xs-9">
                                 <p class="form-control-static"><?php echo $value['food_unit'];?></p>
                             </div>
-                            <label class="col-sm-3 col-xs-3 text-right control-label">Time :</label>
-                            <div class="col-sm-9 col-xs-9">
+                            <label class="col-sm-4 col-xs-3 text-right control-label">Time :</label>
+                            <div class="col-sm-8 col-xs-9">
                                 <p class="form-control-static"><?php echo $value['food_time'];?> Minutes</p>
+                                <br></br>
                             </div>
-                            <label class="col-sm-3 col-xs-3 text-right control-label">Total :</label>
-                            <div class="col-sm-9 col-xs-9">
-                                <p class="form-control-static">300 Baht</p>
+                            <div class="col-sm-4 col-xs-4"></div>
+                            <div class="col-sm-2 col-xs-2 text-center" >
+                                <img src=<?php echo base_url('dist/images/icons/Dollar-Sign-icon.png'); ?> alt="Cinque Terre" width="40px" height="40px">
+                            </div>
+                            <div class="col-sm-6 col-xs-6">
+                                <p class="form-control-static"><strong>300 Baht<strong></p>
                             </div>
                         </div>
                     </form>

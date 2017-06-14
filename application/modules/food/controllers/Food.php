@@ -12,6 +12,8 @@ class Food extends MX_Controller {
 		$data['alert'] = $this->session->flashdata('alert');
 		$data['content']='food/food-page';
 		$data['food_list'] = $this->get_food_menu();
+		// echo $data['food_list'];
+		// exit;
 		$this->init_sys->content($data);
 	}
 
@@ -23,11 +25,10 @@ class Food extends MX_Controller {
 	public function food_details() {
 		$this->load->model('Food_model');
 		$data['content']='food/food-details';
-		$id = $this->uri->segment(3);
-		// echo $id;
-		// exit;
-		$results = $this->Food_model->get_food_details($id);
-		$data['food_details'] = $results;
+		$food_id = $this->uri->segment(3);
+		$data['food_details'] = $this->Food_model->get_food_details($food_id);
+		// echo '<pre>', print_r($data['food_details']);
+		// exit();
 		$this->init_sys->content($data);
 	}
 
@@ -48,23 +49,23 @@ class Food extends MX_Controller {
 		$this->load->model('Food_model');
 		$timestam = date('Y-m-d H:i:s');
 		$input = array(	'food_name' 	=> $this->input->post('food_name'),
-						'food_type'		=> $this->input->post('food_type'),
-						'food_for'		=> $this->input->post('food_for'),
-						'food_unit'		=> $this->input->post('food_unit'),
-						'food_time'		=> $this->input->post('food_time'),
-						'food_status'	=> '1',
-						'created' 		=> $timestam,
-						'lastupdate'	=> $timestam,
-					);
-		$this->Food_model->set_food_menu($input);
-		$this->session->set_flashdata('alert', 1);
-		redirect('food/food_page');
-	}
+		'food_type'		=> $this->input->post('food_type'),
+		'food_for'		=> $this->input->post('food_for'),
+		'food_unit'		=> $this->input->post('food_unit'),
+		'food_time'		=> $this->input->post('food_time'),
+		'food_status'	=> '1',
+		'created' 		=> $timestam,
+		'lastupdate'	=> $timestam,
+	);
+	$this->Food_model->set_food_menu($input);
+	$this->session->set_flashdata('alert', 1);
+	redirect('food/food_page');
+}
 
-	public function get_food_details(){
-		$this->load->model('Food_model');
-		$id = $this->uri->segment(3);
-		$this->Student_model->get_food_details($id);
-	}
+public function get_food_details(){
+	$this->load->model('Food_model');
+	$id = $this->uri->segment(3);
+	$this->Student_model->get_food_details($id);
+}
 
 }//end class

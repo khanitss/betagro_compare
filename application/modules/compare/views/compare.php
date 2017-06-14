@@ -20,7 +20,7 @@
         </div></br>
 <!-- col standard-->
         <div class="col-sm-6">
-          <?php foreach($food_standard_list as $key => $value){?>
+          <?php foreach($standard as $key => $value){?>
             <div class="card ">
               <div class="card-body card-padding">
                   <div class="row" >
@@ -63,13 +63,13 @@
                                 </tr>
                             </thead>
                             <tbody>
-                              <?php foreach($get_food_list as $key => $value):?>
+                              <?php foreach($standard as $key => $value){?>
                                 <tr align="center">
                                   <td><?php echo $value['mat_name']; ?></td>
                                   <td><?php echo $value['mat_quantity']; ?></td>
                                   <td><?php echo $value['mat_unit']; ?></td>
                                   <td><?php echo $value['mat_cost']; ?></td>
-                            <?php endforeach; ?>
+                            <?php } ?>
                                 </tr>
                             </tbody>
                           </table>
@@ -84,13 +84,13 @@
                               </tr>
                           </thead>
                           <tbody>
-                            <?php foreach($get_food_list as $key => $value):?>
+                            <?php foreach($standard as $key => $value){?>
                               <tr align="center">
                                 <td><?php echo $value['eq_name']; ?></td>
                                 <td><?php echo $value['eq_quantity']; ?></td>
                                 <td><?php echo $value['eq_unit']; ?></td>
                                 <td><?php echo $value['eq_cost']; ?></td>
-                                <?php endforeach; ?>
+                                <?php } ?>
                               </tr>
                           </tbody>
                         </table>
@@ -146,13 +146,13 @@
                                           </tr>
                                       </thead>
                                       <tbody>
-                                        <?php foreach($get_food_list as $key => $value):?>
+                                        <?php foreach($betagro as $key => $value){?>
                                           <tr align="center">
                                             <td><?php echo $value['mat_name']; ?></td>
                                             <td><?php echo $value['mat_quantity']; ?></td>
                                             <td><?php echo $value['mat_unit']; ?></td>
                                             <td><?php echo $value['mat_cost']; ?></td>
-                                      <?php endforeach; ?>
+                                      <?php } ?>
                                           </tr>
                                       </tbody>
                                     </table>
@@ -167,13 +167,13 @@
                                         </tr>
                                     </thead>
                                     <tbody>
-                                      <?php foreach($food_betagro_list as $key => $value):?>
+                                      <?php foreach($betagro as $key => $value){?>
                                         <tr align="center">
                                           <td><?php echo $value['eq_name']; ?></td>
                                           <td><?php echo $value['eq_quantity']; ?></td>
                                           <td><?php echo $value['eq_unit']; ?></td>
                                           <td><?php echo $value['eq_cost']; ?></td>
-                                          <?php endforeach; ?>
+                                          <?php }?>
                                         </tr>
                                     </tbody>
                                   </table>

@@ -11,11 +11,18 @@ class Compare_model extends CI_Model {
                     ->where($qstr)
                     ->get()
                     ->result_array();
-    $results2 =$this->db->get('material')->result_array();
-    $results3 =$this->db->get('equipment')->result_array();
 
     return $results;
-    return $results2;
-    return $results3;
+  }
+  public function get_food_detail($food_id)
+  {
+    $items='*';
+    $results = $this->db->select($items)
+                    ->from('food')
+                    ->where('food_id',$food_id)
+                    ->get()
+                    ->result_array();
+
+    return $results;
   }
 } // end class

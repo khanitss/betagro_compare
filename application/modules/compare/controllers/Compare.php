@@ -34,13 +34,11 @@ class Compare extends MX_Controller {
 		$qstr=array('food_type'=>1);
 		$results = $this->Compare_model->get_food_list($qstr);
 		$data['food_standard_list'] = $results;
-
-		// echo '<pre>', print_r($results);exit();
 		$data['content']='compare/choose-menu-betagro';
 		$this->init_sys->content($data);
 	}
 
-	private function set_standard_food_id()
+	private function set_betagro_food_id()
 	{
 		$id=($this->uri->segment(3)!=''? $this->uri->segment(3) : 0);
 		$qstr=array('select_items_one'=>$id);
@@ -49,7 +47,7 @@ class Compare extends MX_Controller {
 	}
 
 	public function compare_page() {
-		print_r($this->session->userdata('select_items_one'));exit();
+	//	print_r($this->session->userdata('select_items_one'));exit();
 
 		$data['content']='compare/compare';
 		// print_r($data) ;

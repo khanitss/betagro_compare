@@ -15,7 +15,7 @@
                 <a href="<?php echo site_url('compare/choose_menu2_page/'.$value['food_id']);?>">
                 <div class="row">
                   <div class="col-md-12">
-                      <img src="<?php echo base_url('file/items_img/008.jpg');?>" class="img-responsive img-thumbnail" />
+                      <img src="<?php echo base_url('file/items_img/003.jpg');?>" class="img-responsive img-thumbnail" />
                   </div>
                 </div>
                 <div class="row text-center" style="margin-top: 10px;">
@@ -27,10 +27,3 @@
           </div>
       <?php }?>
     </div>
-
-
-
-<!-- <label for="item1">
-
-  <div class="caption">ขาหมูน้ำแดง</div>
-</lable> -->

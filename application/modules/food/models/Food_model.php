@@ -12,4 +12,14 @@ class Food_model extends CI_Model{
         $this->db->insert('food',$input);
     }
 
+    public function get_food_details($id){
+        // $result = $this->db->get('food')->result_array();
+        $result = $this->db->select($items)
+                        ->from('food')
+                        ->where($id)
+                        ->get()
+                        ->result_array();
+        return $result;
+    }
+
 }

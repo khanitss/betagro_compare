@@ -12,25 +12,29 @@
 <div class="row">
     <div class="col-sm-6">
         <div class="card ">
+            <?php foreach ($food_details as $key => $value)
+            {
+                ?>
                 <div class="card-header">
-                    <h2>ขาหมูน้ำแดง</h2>
+                    <h2><?php echo $value['food_name'];?></h2>
                 </div>
                 <div class="card-body card-padding">
                     <img class="center-block" src="<?php echo base_url('dist/images/menu/s_ขาหมู.jpg');?>" class="img-thumbnail" style="width:75%">
                     <p></p>
+
                     <form class="form-horizontal">
                         <div class="form-group">
                             <label class="col-sm-3 col-xs-3 text-right control-label">For :</label>
                             <div class="col-sm-9 col-xs-9">
-                                <p class="form-control-static">1</p>
+                                <p class="form-control-static"><?php echo $value['food_for'];?></p>
                             </div>
                             <label class="col-sm-3 col-xs-3 text-right control-label">Unit :</label>
                             <div class="col-sm-9 col-xs-9">
-                                <p class="form-control-static">Dish</p>
+                                <p class="form-control-static"><?php echo $value['food_unit'];?></p>
                             </div>
                             <label class="col-sm-3 col-xs-3 text-right control-label">Time :</label>
                             <div class="col-sm-9 col-xs-9">
-                                <p class="form-control-static">30 Minutes</p>
+                                <p class="form-control-static"><?php echo $value['food_time'];?> Minutes</p>
                             </div>
                             <label class="col-sm-3 col-xs-3 text-right control-label">Total :</label>
                             <div class="col-sm-9 col-xs-9">
@@ -39,6 +43,9 @@
                         </div>
                     </form>
                 </div>
+                <?php
+            }
+            ?>
         </div>
     </div>
     <div class="col-sm-6">

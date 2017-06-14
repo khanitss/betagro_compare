@@ -1,13 +1,10 @@
 <!-- Content Section START -->
-<?php
-$id = $this->uri->segment(3);
-?>
 <div class="block-header clearfix">
-    <h2 class="pull-left">Food Detail</h2>
+    <h2 class="pull-left">Food Details</h2>
     <ul class="breadcrumb pull-right">
         <li><a href="<?php echo site_url('dashboard/home');?>">Home</a></li>
         <li><a href="<?php echo site_url('food/food_page');?>">Food Menu</a></li>
-        <li><a href="<?php echo site_url('food/food_details');?>">Food Details</a></li>
+        <li><a href="<?php echo site_url('food/food_details/'.$this->uri->segment(3));?>">Food Details</a></li>
     </ul>
 </div>
 
@@ -145,7 +142,7 @@ $id = $this->uri->segment(3);
     <div class="row">
         <div class="col-sm-7 col-xs-1"></div>
         <div class="col-sm-2 col-xs-5">
-            <a href="<?php echo site_url('food/edit_food');?>" type="button" class="btn btn-success btn-lg btn-block">Edit</a>
+            <a href="<?php echo site_url('food/edit_food/'.$value['food_id']);?>" type="button" class="btn btn-success btn-lg btn-block">Edit</a>
         </div>
         <div class="col-sm-2 col-xs-5">
             <a href="<?php echo site_url('food/food_page');?>" type="button" class="btn btn-danger btn-lg btn-block">BACK</a>

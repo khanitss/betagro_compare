@@ -9,7 +9,9 @@ class Food extends MX_Controller {
 	}
 
 	public function food_page() {
+		$data['alert'] = $this->session->flashdata('alert');
 		$data['content']='food/food-page';
+		$data['food_list'] = $this->get_food_menu();
 		$this->init_sys->content($data);
 	}
 
@@ -20,6 +22,7 @@ class Food extends MX_Controller {
 
 	public function food_details() {
 		$data['content']='food/food-details';
+		$data['food_detail'] = $this->get_food_menu();
 		$this->init_sys->content($data);
 	}
 
@@ -49,6 +52,7 @@ class Food extends MX_Controller {
 						'lastupdate'	=> $timestam,
 					);
 		$this->Food_model->set_food_menu($input);
+		$this->session->set_flashdata('alert', 1);
 		redirect('food/food_page');
 	}
 

@@ -13,47 +13,47 @@
         <div class="row">
             <div class="col-sm-10 col-xs-8"></div>
                 <div class="col-sm-2 col-xs-4 text-center">
-                    <a href="<?php echo site_url('compare/choose_menu1_page');?>">
-                        <button class="btn btn-success">Back</button>
+                  <a href="<?php echo site_url('compare/choose_menu1_page');?>">
+                      <button class="btn btn-success">Back</button>
                     </a>
                 </div>
         </div></br>
 <!-- col standard-->
         <div class="col-sm-6">
+          <?php foreach($food_standard_list as $key => $value){?>
             <div class="card ">
-                <div class="card-body card-padding"> 
+              <div class="card-body card-padding">
+                  <div class="row" >
+                      <div class=" col-sm-7  "><h2><?php echo $value['food_name']; ?></h2></div>
+                      <div class="col-sm-3 text-right">
+                              <h2><img class="center-block" src="<?php echo base_url('dist/images/icons/Dollar-Sign-icon.png'); ?>"
+                                        class="img-thumbnail"  width="40px" height="40px"></h2></div>
+                      <div class=" col-sm-2 d-inline-flex p-2"><h1>511</h1></div>
+                  </div></br>
 
-                    <div class="row" >
-                        <div class=" col-sm-7 "><h2>ขาหมูน้ำแดง</h2></div>
-                        <div class="col-sm-2 text-right">
-                            <h2><img class="center-block" src=<?php echo base_url('dist/images/icons/Dollar-Sign-icon.png'); ?> class="img-thumbnail" alt="Cinque Terre" width="40px" height="40px"></h2>
-                        </div>
-                        
-                        <div class=" col-sm-3 d-inline-flex p-2"><h1>511</h1></div>
-                    </div></br>
+                  <div><img class="center-block" src="<?php echo base_url('file/items_img/003.jpg');?>"
+                            class="img-thumbnail" alt="Cinque Terre" style="width:75%" ></div></br>
 
-                    <img class="center-block" src="<?php echo base_url('dist/images/menu/s_ขาหมู.jpg');?>"  class="img-thumbnail" alt="Cinque Terre" style="width:75%" ></br>
+                  <div class="row" >
+                          <div class="col-sm-3">
+                              <img class="center-block" src="<?php echo base_url('dist/images/icons/checkin.png');?>" class="img-thumbnail" alt="Cinque Terre" width="50px" height="50px">
+                          </div>
+                          <div class="col-sm-3 d-inline-flex p-2"><pre><?php echo $value['food_for'];?></pre></div>
+                      </div></br>
 
-                    <div class="row" >
-                        <div class="col-sm-3">
-                            <img class="center-block" src="<?php echo base_url('dist/images/icons/checkin.png');?>" class="img-thumbnail" alt="Cinque Terre" width="50px" height="50px">
-                        </div>
-                        <div class="col-sm-3 d-inline-flex p-2"><pre>1</pre></div>
-                    </div></br>
+                  <div class="row" >
+                          <div class="col-sm-3"></div>
+                          <div class=" col-sm-3 d-inline-flex p-2"><pre><?php echo $value['food_unit'];?></pre></div>
+                      </div></br>
 
-                    <div class="row" >
-                        <div class="col-sm-3"></div>
-                        <div class=" col-sm-3 d-inline-flex p-2"><pre>Dish</pre></div>
-                    </div></br>
-
-                    <div class="row" >
-                        <div class="col-sm-3"> 
-                            <img class="center-block" src="<?php echo base_url('dist/images/icons/time.png');?>" class="img-thumbnail" alt="Cinque Terre" width="50px" height="50">
-                        </div> 
-                        <div class="col-sm-3 d-inline-flex p-2"><pre>300 Minutes</pre></div>      
-                    </div></br>
-
-                        <table class="table">
+                  <div class="row" >
+                          <div class="col-sm-3">
+                              <img class="center-block" src="<?php echo base_url('dist/images/icons/time.png');?>" class="img-thumbnail" alt="Cinque Terre" width="50px" height="50">
+                          </div>
+                          <div class="col-sm-3 d-inline-flex p-2"><pre><?php echo $value['food_time'];?></pre></div>
+                      </div></br>
+          <!-- //raw material-->
+                    <table class="table">
                             <thead>
                                 <tr>
                                     <th>Raw Material</th>
@@ -63,180 +63,121 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr>
-                                    <td>ขาหมู</td>
-                                    <td>1</td>
-                                    <td>ขา</td>
-                                    <td>300</td>
+                              <?php foreach($get_food_list as $key => $value):?>
+                                <tr align="center">
+                                  <td><?php echo $value['mat_name']; ?></td>
+                                  <td><?php echo $value['mat_quantity']; ?></td>
+                                  <td><?php echo $value['mat_unit']; ?></td>
+                                  <td><?php echo $value['mat_cost']; ?></td>
+                            <?php endforeach; ?>
                                 </tr>
-                                <tr>
-                                    <td>คะน้า</td>
-                                    <td>0.5</td>
-                                    <td>กก.</td>
-                                    <td>10</td>
-                                </tr>
-                                <tr>
-                                    <td>ลูกกระวาน</td>
-                                    <td>1</td>
-                                    <td>กรัม</td>
-                                    <td>1.5</td>
-                                </tr>
-                                <tr>
-                                    <td>ไข่</td>
-                                    <td>1</td>
-                                    <td>ฟอง</td>
-                                    <td>4</td>
-                                </tr>
-                                <tr>
-                                    <td>อบเชย</td>
-                                    <td>2.5</td>
-                                    <td>กรัม</td>
-                                    <td>2.5</td>
-                                </tr>
-                                <tr>
-                                    <td>โปั๊ยกั๊ก</td>
-                                    <td>2.5</td>
-                                    <td>กรัม</td>
-                                    <td>2.5</td>
-                                </tr>
-                                <tr>
-                                    <td colspan="3" class="text-center">Total Raw material cost </td>
-                                    <td>263</td>
-                                </tr>
-
                             </tbody>
-                        </table></br>
-                        
+                          </table>
+                        loop Man eqiupment
                         <table class="table">
-                            <thead>
-                                <tr>
-                                    <th>Man/Equipment</th>
-                                    <th>Time</th>
-                                    <th>Unit</th>
-                                    <th>Cost</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td>Helper</td>
-                                    <td>120</td>
-                                    <td>Min</td>
-                                    <td>240</td>
-                                </tr>
-                                <tr>
-                                    <td>Gas</td>
-                                    <td>240</td>
-                                    <td>Min.</td>
-                                    <td>8</td>
-                                </tr>
-                                <tr>
-                                    <td colspan="3" class="text-center">Total Man/Equipment cost </td>
-                                    <td>248</td>
-                                </tr>
-
-                            </tbody>
+                          <thead>
+                              <tr>
+                                  <th>Man/Equipment</th>
+                                  <th>Quantity</th>
+                                  <th>Unit</th>
+                                  <th>Cost</th>
+                              </tr>
+                          </thead>
+                          <tbody>
+                            <?php foreach($get_food_list as $key => $value):?>
+                              <tr align="center">
+                                <td><?php echo $value['eq_name']; ?></td>
+                                <td><?php echo $value['eq_quantity']; ?></td>
+                                <td><?php echo $value['eq_unit']; ?></td>
+                                <td><?php echo $value['eq_cost']; ?></td>
+                                <?php endforeach; ?>
+                              </tr>
+                          </tbody>
                         </table>
-
-                </div>
-            </div>
+                  </div>
+               </div>
+          <?php }?>
         </div>
+
 <!-- col betagro-->
         <div class="col-sm-6">
-            <div class="card ">
-                <div class="card-body card-padding"> 
-
+            <?php foreach($food_betagro_list as $key => $value){?>
+              <div class="card ">
+                <div class="card-body card-padding">
                     <div class="row" >
                         <div class="col-sm-2">
-                            <h2><img class="center-block" src=<?php echo base_url('dist/images/icons/Dollar-Sign-icon.png'); ?> class="img-thumbnail" alt="Cinque Terre" width="40px" height="40px"></h2>
+                            <h2><img class="center-block" src="<?php echo base_url('dist/images/icons/Dollar-Sign-icon.png'); ?>" class="img-thumbnail" alt="Cinque Terre" width="40px" height="40px"></h2>
                         </div>
                         <div class=" col-sm-3 d-inline-flex p-2"><h1>442</h1></div>
-                        <div class=" col-sm-7 text-right"><h2>ขาหมูน้ำแดง</h2></div>
+                        <div class=" col-sm-7 text-right"><h2><?php echo $value['food_name']; ?></h2></div>
                     </div></br>
 
-                    <img class="center-block" src="<?php echo base_url('dist/images/menu/b_ขาหมู.jpg');?>" class="img-thumbnail" alt="Cinque Terre" style="width:75%" ></br>
+                    <div><img class="center-block" src="<?php echo base_url('file/items_img/008.jpg');?>"
+                              class="img-thumbnail" alt="Cinque Terre" style="width:75%" ></div></br>
 
 
                     <div class="row" >
                         <div class="col-sm-3">
-                            <img class="center-block" src="<?php echo base_url('dist/images/icons/checkin.png');?>" class="img-thumbnail" alt="Cinque Terre" width="50px" height="50px">
-                        </div>
-                        <div class="col-sm-3 d-inline-flex p-2"><pre>1 </pre></div>
+                            <img class="center-block" src="<?php echo base_url('dist/images/icons/checkin.png');?>"
+                                  class="img-thumbnail" alt="Cinque Terre" width="50px" height="50px"></div>
+                        <div class="col-sm-3 d-inline-flex p-2"><pre><?php echo $value['food_for'];?></pre></div>
                     </div></br>
 
                     <div class="row" >
                         <div class="col-sm-3"></div>
-                        <div class=" col-sm-3 d-inline-flex p-2"><pre>Dish</pre></div>
+                        <div class=" col-sm-3 d-inline-flex p-2"><pre><?php echo $value['food_unit']; ?></pre></div>
                     </div></br>
 
                     <div class="row" >
-                        <div class="col-sm-3"> 
-                            <img class="center-block" src="<?php echo base_url('dist/images/icons/time.png');?>" class="img-thumbnail" alt="Cinque Terre" width="50px" height="50">
-                        </div> 
-                        <div class="col-sm-3 d-inline-flex p-2"><pre>90 Minutes</pre></div>      
+                        <div class="col-sm-3">
+                            <img class="center-block" src="<?php echo base_url('dist/images/icons/time.png');?>"
+                                  class="img-thumbnail" alt="Cinque Terre" width="50px" height="50"></div>
+                        <div class="col-sm-3 d-inline-flex p-2"><pre><?php echo $value['food_time']; ?></pre></div>
                     </div></br>
 
-                        <table class="table">
-                            <thead>
-                                <tr>
-                                    <th>Raw Material</th>
-                                    <th>Quantity</th>
-                                    <th>Unit</th>
-                                    <th>Cost</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td>ขาหมู</td>
-                                    <td>1</td>
-                                    <td>ขา</td>
-                                    <td>300</td>
-                                </tr>
-                                <tr>
-                                    <td>คะน้า</td>
-                                    <td>0.5</td>
-                                    <td>กก.</td>
-                                    <td>10</td>
-                                </tr>
-                                <tr>
-                                    <td>ไข่</td>
-                                    <td>1</td>
-                                    <td>ฟอง</td>
-                                    <td>4</td>
-                                </tr>
-                                <tr>
-                                    <td colspan="3" class="text-center">Total Raw material cost </td>
-                                    <td>314</td>
-                                </tr>
-                            </tbody>
-                        </table></br>
-
-                        <table class="table">
-                            <thead>
-                                <tr>
-                                    <th>Man/Equipment</th>
-                                    <th>Time</th>
-                                    <th>Unit</th>
-                                    <th>Cost</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td>Helper</td>
-                                    <td>60</td>
-                                    <td>Min</td>
-                                    <td>120</td>
-                                </tr>
-                                <tr>
-                                    <td>Gas</td>
-                                    <td>60</td>
-                                    <td>Min.</td>
-                                    <td>8</td>
-                                </tr>
-                                <tr>
-                                    <td colspan="3" class="text-center">Total Man/Equipment cost </td>
-                                    <td>128</td>
-                                </tr>
-                        </table></br>
-                </div>
-            </div>
+                    <!-- //raw material-->
+                              <table class="table">
+                                      <thead>
+                                          <tr>
+                                              <th>Raw Material</th>
+                                              <th>Quantity</th>
+                                              <th>Unit</th>
+                                              <th>Cost</th>
+                                          </tr>
+                                      </thead>
+                                      <tbody>
+                                        <?php foreach($get_food_list as $key => $value):?>
+                                          <tr align="center">
+                                            <td><?php echo $value['mat_name']; ?></td>
+                                            <td><?php echo $value['mat_quantity']; ?></td>
+                                            <td><?php echo $value['mat_unit']; ?></td>
+                                            <td><?php echo $value['mat_cost']; ?></td>
+                                      <?php endforeach; ?>
+                                          </tr>
+                                      </tbody>
+                                    </table>
+                                  loop Man eqiupment
+                                  <table class="table">
+                                    <thead>
+                                        <tr>
+                                            <th>Man/Equipment</th>
+                                            <th>Quantity</th>
+                                            <th>Unit</th>
+                                            <th>Cost</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                      <?php foreach($food_betagro_list as $key => $value):?>
+                                        <tr align="center">
+                                          <td><?php echo $value['eq_name']; ?></td>
+                                          <td><?php echo $value['eq_quantity']; ?></td>
+                                          <td><?php echo $value['eq_unit']; ?></td>
+                                          <td><?php echo $value['eq_cost']; ?></td>
+                                          <?php endforeach; ?>
+                                        </tr>
+                                    </tbody>
+                                  </table>
+                  </div>
+               </div>
+          <?php }?>
         </div>

@@ -17,7 +17,7 @@
         </div></br>
 <!-- choose menu -->
 <div class="row">
-  <?php foreach ($food_standard_list as $key => $value) {?>
+  <?php foreach ($food_betagro_list as $key => $value) {?>
       <div class="col-md-3">
         <div class="card">
           <div class="card card-padding">

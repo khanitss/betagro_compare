@@ -1,4 +1,8 @@
-<div class="block-header clearfix">
+ <?php 
+          $attr = array('class' => 'form-horizontal');
+          echo form_open('product/add_product',$attr);
+  ?>
+  <div class="block-header clearfix">
   <h2 class="pull-left">Add Betagro Product</h2>
   <ul class="breadcrumb pull-right">
     <li><a href="index.html">Home</a></li>
@@ -6,6 +10,7 @@
     <li><a href="#">Add Betagro Product</a></li>
   </ul>
 </div>
+
 <div class="row">
   <div class="col-sm-2"></div>
     <div class="col-sm-8">
@@ -27,24 +32,24 @@
                 <div class="form-group">
                   <label class="col-sm-2 col-xs-2 control-label">Name :</label>
                   <div class="col-sm-10 col-xs-10">
-                    <input class="form-control" id="focusedInput" type="text" placeholder="Product Name">
+                    <input class="form-control" id="focusedInput" type="text" placeholder="Product Name" name="mat_name">
                   </div>
                   <label class="col-sm-2 col-xs-2 control-label">Quanlity :</label>
                   <div class="col-sm-10 col-xs-10">
-                    <input class="form-control" id="focusedInput" type="text" placeholder="Quanlity">
+                    <input class="form-control" id="focusedInput" type="text" placeholder="Quanlity" name="mat_quantity">
                   </div>
                   <label class="col-sm-2 col-xs-2 control-label">Unit :</label>
                   <div class="col-sm-10 col-xs-10">
-                    <input class="form-control" id="focusedInput" type="text" placeholder="Unit">
+                    <input class="form-control" id="focusedInput" type="text" placeholder="Unit" name="mat_unit" >
                   </div>
                   <label class="col-sm-2 col-xs-2 control-label">Cost :</label>
                   <div class="col-sm-10 col-xs-10">
-                    <input class="form-control" id="focusedInput" type="text" placeholder="Bath">
+                    <input class="form-control" id="focusedInput" type="text" placeholder="Bath" name="mat_cost">
                   </div>
                 </div>
                   <div class="row">
                     <div class="col-sm-6">
-                      <a href="<?php echo site_url ('product/product_page');?>" type="save" class="btn btn-success">Save</a>
+                      <button type="save" class="btn btn-success">Save</button>
                     </div>
                     <div class="col-sm-4">
                       <a href="<?php echo site_url ('product/product_page');?>" type="cancel" class="btn btn-danger">Cancel</a>
@@ -52,3 +57,4 @@
                   </div>
               </form>
             </div>
+          <?php echo form_close();?>

@@ -11,7 +11,7 @@ class Product extends MX_Controller {
 
 	public function product_page() {
 		$data['content']='product/product';
-		// print_r($data) ;
+		$data['product_list'] = $this->get_product();
 		$this->init_sys->content($data);
 		// echo "string";
 	}
@@ -22,6 +22,30 @@ class Product extends MX_Controller {
 	public function product_edit(){
 		$data['content']='product/edit-product';
 		$this->init_sys->content($data);
+	}
+	public function add_product(){
+		$timestam = date('Y-m-d H:i:s');
+		$this->load->model('Product_models');
+		$input = array(	'mat_name' => $this->input->post('mat_name'),
+			'mat_quantity' => $this->input->post('mat_quantity'),
+			'mat_cost' => $this->input->post('mat_cost'),
+			'mat_unit' => $this->input->post('mat_unit'),
+			'mat_type' => '1',
+			'mat_status' => '1',
+			'created'       => $timestam,
+			'lastupdate'    => $timestam,
+			);
+		$this->Product_models->add_product($input);
+	// $this->session->set_flashdata('alert',true);
+		redirect('product/product_page');
+
+	}
+	public function get_product(){
+		$this->load->model('Product_models');
+		$result = $this->Product_models->get_product();
+		//echo '<pre>', print_r($result);
+		return $result;
+		
 	}
 
 

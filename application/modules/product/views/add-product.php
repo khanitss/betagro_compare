@@ -1,10 +1,10 @@
 
   <div class="block-header clearfix">
-  <h2 class="pull-left">Add Betagro Product</h2>
+  <h2 class="pull-left">เพิ่ม ผลิตภัณฑ์เบทาโกร</h2>
   <ul class="breadcrumb pull-right">
-    <li><a href="index.html">Home</a></li>
-    <li><a href="<?php echo site_url ('product/product_page');?>">Betagro Product</a></li>
-    <li><a href="#">Add Betagro Product</a></li>
+    <li><a href="index.html">หน้าหลัก</a></li>
+    <li><a href="<?php echo site_url ('product/product_page');?>">ผลิตภัณฑ์เบทาโกร</a></li>
+    <li><a href="#">เพิ่ม ผลิตภัณฑ์เบทาโกร</a></li>
   </ul>
 </div>
  <?php
@@ -26,33 +26,33 @@
           <span class="fileinput-filename">
           </span>
             <a href="#" class="close fileinput-exists" data-dismiss="fileinput">&times;</a>
-            <h4>Add Betagro Product</h4>
+            <h4>เพิ่ม รูปผลิตภัณฑ์เบทาโกร</h4>
             <div class="card-body card-padding">
               <form class="form-horizontal">
                 <div class="form-group">
-                  <label class="col-sm-2 col-xs-2 control-label">Name :</label>
+                  <label class="col-sm-2 col-xs-2 control-label">ชื่อ :</label>
                   <div class="col-sm-10 col-xs-10">
-                    <input class="form-control" id="focusedInput" type="text" placeholder="Product Name" name="mat_name">
+                    <input class="form-control" id="focusedInput" type="text" placeholder="ชื่อผลิตภัณฑ์" name="mat_name">
                   </div>
-                  <label class="col-sm-2 col-xs-2 control-label">Quanlity :</label>
+                  <label class="col-sm-2 col-xs-2 control-label">จำนวน :</label>
                   <div class="col-sm-10 col-xs-10">
-                    <input class="form-control" id="focusedInput" type="text" placeholder="Quanlity" name="mat_quantity">
+                    <input class="form-control" id="focusedInput" type="text" placeholder="จำนวนของผลิตภัณฑ์" name="mat_quantity">
                   </div>
-                  <label class="col-sm-2 col-xs-2 control-label">Unit :</label>
+                  <label class="col-sm-2 col-xs-2 control-label">หน่วย :</label>
                   <div class="col-sm-10 col-xs-10">
-                    <input class="form-control" id="focusedInput" type="text" placeholder="Unit" name="mat_unit" >
+                    <input class="form-control" id="focusedInput" type="text" placeholder="หน่วยของผลิตภัณฑ์" name="mat_unit" >
                   </div>
-                  <label class="col-sm-2 col-xs-2 control-label">Cost :</label>
+                  <label class="col-sm-2 col-xs-2 control-label">ราคา :</label>
                   <div class="col-sm-10 col-xs-10">
-                    <input class="form-control" id="focusedInput" type="text" placeholder="Bath" name="mat_cost">
+                    <input class="form-control" id="focusedInput" type="text" placeholder="ราคาของผลิตภัณฑ์" name="mat_cost">
                   </div>
                 </div>
                   <div class="row">
                     <div class="col-sm-6">
-                      <button type="save" class="btn btn-success">SAVE</button>
+                      <button type="save" class="btn btn-success">บันทึก</button>
                     </div>
                     <div class="col-sm-4">
-                      <a href="<?php echo site_url ('product/product_page');?>" type="cancel" class="btn btn-danger">CANCEL</a>
+                      <a href="<?php echo site_url ('product/product_page');?>" type="cancel" class="btn btn-danger">ยกเลิก</a>
                     </div>
                   </div>
               </form>

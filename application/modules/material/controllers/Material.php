@@ -58,6 +58,16 @@ class Material extends MX_Controller {
         
     }
     public function add_raw_material(){
+        $this->load->module('upload/myupload');
+        $prop = array(
+                    'upload_path'   =>'./images_compare/',
+                    'allowed_types' =>'jpg|jpeg|png',
+                    'txt_upload'    =>'upload_file',
+                    'txt_unlink'    =>$this->input->post('file_old'),
+                    'default_file'  =>'default.jpg',
+                );
+
+    $file_name = $this->myupload->upload_file($prop);
         $timestam = date('Y-m-d H:i:s');    
         $this->load->model('Material_models');
         $input = array('mat_name' => $this->input->post('mat_name'),

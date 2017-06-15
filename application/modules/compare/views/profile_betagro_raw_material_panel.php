@@ -3,10 +3,10 @@
     <table class="table">
       <thead>
         <tr>
-          <th>Raw Material</th>
-          <th>Quantity</th>
-          <th>Unit</th>
-          <th>Cost</th>
+          <th>วัตถุดิบ</th>
+          <th>จำนวน</th>
+          <th>หน่วย</th>
+          <th>ราคา</th>
         </tr>
       </thead>
 

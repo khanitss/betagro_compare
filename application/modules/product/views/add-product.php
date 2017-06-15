@@ -1,4 +1,4 @@
- <?php 
+ <?php
           $attr = array('class' => 'form-horizontal');
           echo form_open('product/add_product',$attr);
   ?>
@@ -12,6 +12,11 @@
 </div>
 
 <div class="row">
+
+        <?php
+        $attr = array('class' => 'form-horizontal');
+        echo form_open_multipart('product/add_product',$attr);
+        ?>
   <div class="col-sm-2"></div>
     <div class="col-sm-8">
       <div class="card" align="center">

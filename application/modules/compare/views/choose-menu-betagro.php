@@ -1,8 +1,9 @@
 <div class="block-header clearfix">
-  <h2 class="pull-left">Choose Betrago Menu</h2>
+  <h2 class="pull-left">เมนูเบทาโกร</h2>
   <ul class="breadcrumb pull-right">
-    <li><a href="<?php echo site_url('dashboard/home');?>">Home</a></li>
-    <li><a href="<?php echo site_url('compare/choose_menu1_page');?>">Choose Standard Menu</a></li><li><a href="<?php echo site_url('compare/choose_menu2_page');?>">Choose Betagro Menu</a></li>
+    <li><a href="<?php echo site_url('dashboard/home');?>">หน้าหลัก</a></li>
+    <li><a href="<?php echo site_url('compare/choose_menu1_page');?>">เมนูทั่วไป</a></li>
+    <li><a href="<?php echo site_url('compare/choose_menu2_page');?>">เมนูเบทาโกร</a></li>
   </ul>
 </div>
 
@@ -10,7 +11,7 @@
   <div class="col-sm-10 col-xs-8"></div>
   <div class="col-sm-2 col-xs-4 text-right">
     <a href="<?php echo site_url('compare/choose_menu1_page');?>">
-      <button class="btn btn-success">Back</button>
+      <button class="btn btn-success">กลับ</button>
     </a>
   </div>
 </div>

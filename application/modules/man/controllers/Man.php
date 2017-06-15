@@ -4,6 +4,7 @@ class Man extends MX_Controller {
 	public function __construct() {
 		parent::__construct();
 		$this->load->module('init_sys/Init_sys');
+		$this->load->model('man/Man_models');
         // $this->load->model('vendor/Vendor_model');
 	}
 	public function man_page() {
@@ -21,15 +22,11 @@ class Man extends MX_Controller {
 		$this->init_sys->content($data);
 	}
 	public function add_man(){
-		$timestam = date('Y-m-d H:i:s');
-		$this->load->model('Man_models');
-		$input = array(	'eq_name' => $this->input->post('eq_name'),
-			'eq_cost' => $this->input->post('eq_cost'),
-			'eq_status' => '1',
-			'created'       => $timestam,
-			'lastupdate'    => $timestam,
-			);
-		$this->Man_models->add_man($input);
+		$data['man_list'] = $this->get_man();
+        
+        $this->load->model('Man_models');
+        $timestam = date('Y-m-d H:i:s');
+        $this->Man_models->add_man();
 	// $this->session->set_flashdata('alert',true);
 		redirect('man/man_page');
 	}

@@ -1,19 +1,20 @@
 <div class="block-header clearfix">
-    <h2 class="pull-left">Add Man/Equipment</h2>
+    <h2 class="pull-left">เพิ่ม คน/อุปกรณ์</h2>
     <ul class="breadcrumb pull-right">
-        <li><a href="index.html">Home</a></li>
-        <li><a href="<?php echo site_url ('man/man_page');?>">Man/Equipment</a></li>
-        <li><a href="#">Add Man/Equipment</a></li>
+        <li><a href="index.html">หน้าหลัก</a></li>
+        <li><a href="<?php echo site_url ('man/man_page');?>">คน/อุปกรณ์</a></li>
+        <li><a href="#">เพิ่ม คน/อุปกรณ์</a></li>
     </ul>
 </div>
+<div class="row">
           <?php 
           $attr = array('class' => 'form-horizontal');
-          echo form_open('man/add_man',$attr);
+          echo form_open_multipart('man/add_man',$attr);
           ?>
-<div class="row">
     <div class="col-sm-2"></div>
     <div class="col-sm-8">
         <div class="card" align="center">
+
             <div class="fileinput fileinput-new card-body card-padding" data-provides="fileinput">
                 <span class="btn btn-default btn-file m-r-5">
                     <span class="fileinput-new"><img src="<?php echo base_url ('dist/images/icons/addButton.png');?>" width="50%" alt="">
@@ -24,24 +25,25 @@
                 <span class="fileinput-filename">
                 </span>
                 <a href="#" class="close fileinput-exists" data-dismiss="fileinput">&times;</a>
-                <h4>Add Man/Equipment</h4>
+                <h5>เพิ่ม รูปภาพคน/อุปกรณ์</h5>
+
                 <div class="card-body card-padding">
                     <form class="form-horizontal">
                         <div class="form-group">
-                            <label class="col-sm-4 col-xs-4 control-label">Group Name:</label>
+                            <label class="col-sm-4 col-xs-4 control-label">ชื่อกลุ่ม:</label>
                             <div class="col-sm-8 col-xs-8">
-                                <input class="form-control" id="focusedInput" type="text" placeholder="Group Name" name="eq_name">
+                                <input class="form-control" id="focusedInput" type="text" placeholder="ชื่อกลุ่มของคน/อุปกรณ์" name="eq_name">
                             </div>
-                            <label class="col-sm-4 col-xs-4 control-label">Cost/Hour:</label>
+                            <label class="col-sm-4 col-xs-4 control-label">ราคา/ชั่วโมง:</label>
                             <div class="col-sm-8 col-xs-8">
-                              <input class="form-control" id="focusedInput" type="text" placeholder="Bath" name="eq_cost">
+                              <input class="form-control" id="focusedInput" type="text" placeholder="ราคาคน/อุปกรณ์คิดเป็นชั่วโมง" name="eq_cost">
                             </div>
                         </div>
                         <div class="col-sm-6">
-                            <button type="save" class="btn btn-success">SAVE</button>
+                            <button type="save" class="btn btn-success">บันทึก</button>
                         </div>
                         <div class="col-sm-4">
-                            <button class="btn btn-danger">CANCEL</button>
+                            <button class="btn btn-danger">ยกเลิก</button>
                         </div>
                     </form>
                 </div>

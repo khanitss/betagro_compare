@@ -1,13 +1,12 @@
 <div class="row">
   <div class="col-md-12">
-    loop Man eqiupment
     <table class="table">
       <thead>
         <tr>
-          <th>Man/Equipment</th>
-          <th>Quantity</th>
-          <th>Unit</th>
-          <th>Cost</th>
+          <th>คน/อุปกรณ์</th>
+          <th>จำนวน</th>
+          <th>หน่วย</th>
+          <th>ราคา</th>
         </tr>
       </thead>
 

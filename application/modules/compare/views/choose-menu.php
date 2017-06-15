@@ -1,4 +1,3 @@
-<!-- Content Section START -->
 <div class="block-header clearfix">
   <h2 class="pull-left">Choose Standard Menu</h2>
   <ul class="breadcrumb pull-right">
@@ -7,23 +6,32 @@
   </ul>
 </div>
 
-    <div class="row">
-      <?php foreach ($food_standard_list as $key => $value) {?>
-          <div class="col-md-3">
-            <div class="card">
-              <div class="card card-padding">
-                <a href="<?php echo site_url('compare/choose_menu2_page/'.$value['food_id']);?>">
-                <div class="row">
-                  <div class="col-md-12">
-                      <img src="<?php echo base_url('file/items_img/003.jpg');?>" class="img-responsive img-thumbnail" />
-                  </div>
-                </div>
-                <div class="row text-center" style="margin-top: 10px;">
-                  <strong><?php echo $value['food_name'];?></strong>
-                </div>
-                </a>
+<div class="row">
+  <?php foreach ($food_standard_list as $key => $value) {?>
+    <div class="col-md-3">
+      <div class="card">
+        <div class="card card-padding">
+          <a href="<?php echo site_url('compare/choose_menu2_page/'.$value['food_id']);?>">
+
+            <br>
+
+            <div class="row">
+              <div class="col-md-12 text-center">
+                <img src="<?php echo base_url('images_compare/'.$value['food_pic']);?>" class="img-responsive img-thumbnail" />
               </div>
-             </div>
-          </div>
-      <?php }?>
+            </div>
+
+            <div class="row text-center" style="margin-top: 10px;">
+              <strong>
+                <?php
+                  $food_name=($value['food_name']!=''? $value['food_name'] : 'ไม่ได้ระบุ...');
+                  echo $food_name;
+                ?>
+              </strong>
+            </div>
+          </a>
+        </div>
+      </div>
     </div>
+    <?php }?>
+  </div>

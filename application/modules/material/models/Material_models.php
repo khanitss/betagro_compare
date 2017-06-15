@@ -13,7 +13,7 @@ class Material_models extends CI_Model{
                     'default_file'  =>'no-image.png'
                 );
         $cat_pic = $this->myupload->upload_file($prop);
-
+        $timestam = date('Y-m-d H:i:s');
         $input = array(
         	'cat_name' 		=> $this->input->post('cat_name'),
             'cat_type'      => '0',

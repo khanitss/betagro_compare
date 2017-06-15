@@ -5,10 +5,10 @@ class Compare extends MX_Controller {
 
 	public function __construct()
 	{
-    	parent::__construct();
-      $this->load->module('init_sys/Init_sys');
-      $this->load->model('compare/Compare_model');
-  }
+		parent::__construct();
+		$this->load->module('init_sys/Init_sys');
+		$this->load->model('compare/Compare_model');
+	}
 
 	public function choose_menu1_page()
 	{
@@ -22,7 +22,6 @@ class Compare extends MX_Controller {
 	public function choose_menu2_page()
 	{
 		$this->set_standard_food_id();
-
 		$qstr1=array('food_type'=>1);
 		$results = $this->Compare_model->get_food_list($qstr1);
 		$data['food_betagro_list'] = $results;

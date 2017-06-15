@@ -12,15 +12,15 @@
 
       <tbody>
         <?php
-        foreach($standard as $key => $value){?>
+        foreach($betagro as $key => $value){?>
           <tr>
             <td class="text-center"><?php echo $value['mat_name'];?></td>
             <td class="text-center"><?php echo $value['mat_quantity'];?></td>
             <td class="text-center"><?php echo $value['mat_unit'];?></td>
             <td class="text-center"><?php echo $value['mat_cost'];?></td>
           </tr>
-        <?php }?>
-      </tbody>
-    </table>
+          <?php }?>
+        </tbody>
+      </table>
   </div>
 </div>

@@ -1,7 +1,4 @@
- <?php
-          $attr = array('class' => 'form-horizontal');
-          echo form_open('product/add_product',$attr);
-  ?>
+
   <div class="block-header clearfix">
   <h2 class="pull-left">Add Betagro Product</h2>
   <ul class="breadcrumb pull-right">
@@ -10,13 +7,11 @@
     <li><a href="#">Add Betagro Product</a></li>
   </ul>
 </div>
-
+ <?php
+          $attr = array('class' => 'form-horizontal');
+          echo form_open_multipart('product/add_product',$attr);
+  ?>
 <div class="row">
-
-        <?php
-        $attr = array('class' => 'form-horizontal');
-        echo form_open_multipart('product/add_product',$attr);
-        ?>
   <div class="col-sm-2"></div>
     <div class="col-sm-8">
       <div class="card" align="center">
@@ -26,7 +21,7 @@
             </span>
             <span class="fileinput-exists">Change
             </span>
-              <input type="file" name="...">
+              <input type="file" name="upload_file">
           </span>
           <span class="fileinput-filename">
           </span>

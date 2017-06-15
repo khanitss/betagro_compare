@@ -1,8 +1,6 @@
-<?php 
-
-  $attr = array('class'=>'form-horizontal');
-  echo form_open('material/add_raw_material',$attr);
- ?>
+<
+ <?php $attr = array('class' => 'form-horizontal');
+  echo form_open_multipart('material/add_raw_material', $attr);?>
 
 <div class="block-header clearfix">
   <h2 class="pull-left">Add Raw Material</h2>
@@ -24,14 +22,14 @@
             </span>
             <span class="fileinput-exists">Change
             </span>
-              <input type="file" name="...">
+              <input type="file" name="upload_file">
           </span>
           <span class="fileinput-filename">
           </span>
             <a href="#" class="close fileinput-exists" data-dismiss="fileinput">&times;</a>
             <h4>Add Raw Material</h4>
             <div class="card-body card-padding">
-              <form class="form-horizontal">
+              
                 <div class="form-group">
                   <label class="col-sm-2 col-xs-2 control-label">Name :</label>
                   <div class="col-sm-10 col-xs-10">
@@ -52,13 +50,13 @@
                 </div>
                   <div class="row">
                     <div class="col-sm-6">
-                      <button type="save" class="btn btn-success">Save</button>
+                    <button type="save" class="btn btn-success" >Save</a></button>
                     </div>
                     <div class="col-sm-6">
-                      <button type="cancel" class="btn btn-danger">Cancel</button>
+                     <button type="cancel" class="btn btn-danger">Cancel</button>
                     </div>
                   </div>
-              </form>
+              
             </div>
 
 <?php echo form_close();?>

@@ -25,7 +25,7 @@
     ?>
     <div class="col-sm-3">
       <div class="thumbnail img-check">
-        <a href="<?php echo site_url('food/add_mat_group/'.$value['cat_id']);?>" class="text-center">
+        <a href="<?php echo site_url('material/material_d_page/'.$value['cat_id']);?>" class="text-center">
           <input id="item1" value="val1" class="hidden" autocomplete="off" >
           <img src="<?php echo base_url('images_compare/'.$value['cat_pic']);?>" alt="light" style="width:96%" class="img-thumbnail">
           <div class="caption">

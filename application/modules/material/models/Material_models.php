@@ -31,29 +31,78 @@ class Material_models extends CI_Model{
 		return $result;
 	}
 
-		// public function delete_material($id){
-		//  	$this->db->delete('material', array('mat_id' => $id));
-
-		// }
-
-	public function add_raw_material($input){
-		$this->db->insert('material',$input);
-	}
-	
-	public function get_raw_material($id){
+	public function get_group_material($cat_id){
 		$result = $this->db->select('*')
-		->where('mat_id',$id)
-		->from('material')
+		->from('cat_material')
+		->where('cat_id',$cat_id)
 		->get()
 		->result_array();
 		return $result;
 	}
 
-	public function update_material($id){
+		// public function delete_material($id){
+		//  	$this->db->delete('material', array('mat_id' => $id));
+
+		// }
+
+	public function add_raw_material()
+	{
+		$this->load->module('upload/Myupload');
+        $prop = array(
+                    'upload_path'   =>'./images_compare/',
+                    'allowed_types' =>'jpg|jpeg|png',
+                    'txt_upload'    =>'upload_file',
+                    'txt_unlink'    =>$this->input->post('file_old'),
+                    'default_file'  =>'no-image.png'
+                );
+
+        $mat_pic = $this->myupload->upload_file($prop);
+        $cate_id = $this->session->userdata('select_items_one');
+
+        $timestamp = date('Y-m-d H:i:s');    
+        $this->load->model('Material_models');
+        $input = array(
+        	'mat_name' 	=> $this->input->post('mat_name'),
+            'mat_quantity' 			=> $this->input->post('mat_quantity'),
+            'mat_unit' 				=> $this->input->post('mat_unit'),
+            'mat_cost' 				=> $this->input->post('mat_cost'),
+            'mat_type' 				=> '0',
+            'mat_status' 			=> '1',
+            'mat_pic'   			=> $mat_pic,
+            'mat_id'				=> $mat_id,
+            'cat_id'				=> $cate_id,
+            'created'       		=> $timestamp,
+            'lastupdate'    		=> $timestamp,
+        );
+
+		$this->db->insert('material',$input);
+	}
+
+	public function get_raw_material($qstr='')
+	{
+		if (!empty($qstr)) {
+			$this->db->where($qstr);
+		}
+
+		$result = $this->db->get('material')->result_array();
+		return $result;
+	}
+
+	public function get_id_material($qstr=''){
+		
+		if (!empty($qstr)) {
+			$this->db->where($qstr);
+		}
+
+		$result = $this->db->get('material')->result_array();
+		return $result;
+	}
+
+	public function update_material($mat_id){
 		$data = array(
 			'mat_name' => $this->input->post('mat_name')
 			);
-		$this->db->where('mat_id', $id);
+		$this->db->where('mat_id', $mat_id);
 		$this->db->update('material', $data);
 		
 

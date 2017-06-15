@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>BETAGRO COMPARE</title>
-    
+
     <script src="<?php echo base_url('vendors/jquery/dist/jquery.min.js');?>"></script>
     <script src="<?php echo base_url('vendors/bootstrap/dist/js/bootstrap.min.js');?>"></script>
 
@@ -20,13 +20,15 @@
     <link href="<?php echo base_url('vendors/flag-icons/css/flag-icon.min.css');?>" rel="stylesheet">
     <link href="<?php echo base_url('vendors/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.min.css');?>" rel="stylesheet">
 
+    <!-- Google front -->
+    <link href="https://fonts.googleapis.com/css?family=Kanit" rel="stylesheet">
     <!-- Dashplus CSS -->
     <link href="<?php echo base_url('dist/css/dashplus_1.min.css');?>" rel="stylesheet">
     <link href="<?php echo base_url('dist/css/dashplus_2.min.css');?>" rel="stylesheet">
 
 </head>
 
-<body class="layout-fixed-left-menu left-sidebar-toggled">
+<body class="layout-fixed-left-menu left-sidebar-toggled" style="font-family: 'Kanit', sans-serif;">
     <!-- HEADER/TOPBAR SECTION -->
     <?php $this->load->view('header'); ?>
 

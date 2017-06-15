@@ -22,7 +22,12 @@
             </div>
 
             <div class="row text-center" style="margin-top: 10px;">
-              <strong><?php echo $value['food_name'];?></strong>
+              <strong>
+                <?php
+                  $food_name=($value['food_name']!=''? $value['food_name'] : 'ไม่ได้ระบุ...');
+                  echo $food_name;
+                ?>
+              </strong>
             </div>
           </a>
         </div>

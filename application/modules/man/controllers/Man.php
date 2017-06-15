@@ -4,6 +4,7 @@ class Man extends MX_Controller {
 	public function __construct() {
 		parent::__construct();
 		$this->load->module('init_sys/Init_sys');
+		$this->load->model('man/Man_models');
         // $this->load->model('vendor/Vendor_model');
 	}
 	public function man_page() {

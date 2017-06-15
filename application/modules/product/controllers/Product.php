@@ -20,7 +20,10 @@ class Product extends MX_Controller {
 		$this->init_sys->content($data);
 	}
 	public function product_edit(){
+		$this->load->model('Product_models');
 		$data['content']='product/edit-product';
+		$mat_id = $this->uri->segment(3);
+		$data['product_details'] = $this->Product_models->get_product_details($mat_id);
 		$this->init_sys->content($data);
 	}
 	public function add_product(){
@@ -29,19 +32,6 @@ class Product extends MX_Controller {
         $this->load->model('Product_models');
         $timestam = date('Y-m-d H:i:s');
         $this->Product_models->add_product();
-		// $timestam = date('Y-m-d H:i:s');
-		// $this->load->model('Product_models');
-		// $input = array(	'mat_name' => $this->input->post('mat_name'),
-		// 	'mat_quantity' => $this->input->post('mat_quantity'),
-		// 	'mat_cost' => $this->input->post('mat_cost'),
-		// 	'mat_unit' => $this->input->post('mat_unit'),
-		// 	'mat_type' => '1',
-		// 	'mat_status' => '1',
-		// 	'created'       => $timestam,
-		// 	'lastupdate'    => $timestam,
-		// 	);
-		// $this->Product_models->add_product($input);
-	// $this->session->set_flashdata('alert',true);
 		redirect('product/product_page');
 
 	}
@@ -56,6 +46,14 @@ class Product extends MX_Controller {
 		$this->load->model('Product_models');
 		$id = $this->uri->segment(3);
 		$this->Product_models->delete_product($id);
+		redirect('product/product_page');
+	}
+	
+	public function update_product_details(){
+		$this->load->model('Product_models');
+		$timestam = date('Y-m-d H:i:s');
+		$mat_id = $this->uri->segment(3);
+		$this->Product_models->update_product_details($mat_id);
 		redirect('product/product_page');
 	}
 

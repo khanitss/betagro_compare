@@ -6,14 +6,16 @@ class Material extends MX_Controller {
     public function __construct() {
         parent::__construct();
         $this->load->module('init_sys/Init_sys');
+        $this->load->model('Material/Material_models');
     }
 
     public function material_page() {
+
         $data['content']='material/group';
         $data['material_list'] = $this->get_mate_group();
         $this->init_sys->content($data);
     }
-    
+
     public function material_d_page() {
         $data['content']='material/raw-material-page';
         $data['raw_material_list'] = $this->get_raw_material();
@@ -36,7 +38,7 @@ class Material extends MX_Controller {
     }
     public function add_mate_group(){
         $data['material_list'] = $this->get_mate_group();
-        
+
         $this->load->model('Material_models');
         $timestam = date('Y-m-d H:i:s');
         $this->Material_models->add_mate_group();
@@ -49,7 +51,7 @@ class Material extends MX_Controller {
         $result = $this->Material_models->get_mate_group();
         //echo '<pre>', print_r($result);
         return $result;
-        
+
     }
     public function add_raw_material(){
         $this->load->module('upload/Myupload');
@@ -62,7 +64,7 @@ class Material extends MX_Controller {
                 );
         $mat_pic = $this->myupload->upload_file($prop);
 
-        $timestam = date('Y-m-d H:i:s');    
+        $timestam = date('Y-m-d H:i:s');
         $this->load->model('Material_models');
         $input = array('mat_name' => $this->input->post('mat_name'),
             'mat_quantity' => $this->input->post('mat_quantity'),
@@ -85,7 +87,7 @@ class Material extends MX_Controller {
         $result = $this->Material_models->get_raw_material();
         //echo '<pre>', print_r($result);
         return $result;
-        
+
     }
 
     public function update_material(){
@@ -97,4 +99,3 @@ class Material extends MX_Controller {
         redirect('material/material_d_page');
 }
 }//end class
-

@@ -17,6 +17,7 @@
             <td class="text-center"><?php echo $value['eq_quantity']; ?></td>
             <td class="text-center"><?php echo $value['eq_unit']; ?></td>
             <td class="text-center"><?php echo $value['eq_cost']; ?></td>
+            <!-- $eq_standard_cost=$eq_standard_cost+<?php echo $value['mat_cost'];?>; -->
           </tr>
         <?php }?>
       </tbody>

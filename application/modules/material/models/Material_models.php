@@ -25,7 +25,7 @@ class Material_models extends CI_Model{
             );
 		$this->db->insert('cat_material',$input);
 	}
-	
+
 	public function get_mate_group(){
 		$result = $this->db->get('cat_material')->result_array();
 		return $result;
@@ -39,7 +39,7 @@ class Material_models extends CI_Model{
 	public function add_raw_material($input){
 		$this->db->insert('material',$input);
 	}
-	
+
 	public function get_raw_material($id){
 		$result = $this->db->select('*')
 		->where('mat_id',$id)
@@ -55,7 +55,7 @@ class Material_models extends CI_Model{
 			);
 		$this->db->where('mat_id', $id);
 		$this->db->update('material', $data);
-		
+
 
 	}
 

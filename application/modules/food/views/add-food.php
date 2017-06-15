@@ -16,11 +16,14 @@
                 <h2>Add Food</h2>
             </div>
 
+            <?php $attr = array('class' => 'form-horizontal');
+            echo form_open_multipart('food/set_food_menu', $attr);?>
+
             <div class="fileinput fileinput-new card-body card-padding" data-provides="fileinput" align="center">
                 <span class="btn btn-default btn-file m-r-10">
                     <span class="fileinput-new"><img src="<?php echo base_url('dist/images/icons/addButton.png');?>" width="75%" alt=""></span>
                     <span class="fileinput-exists">Change</span>
-                    <input type="file" name="...">
+                    <input type="file" name="upload_file">
                 </span>
                 <span class="fileinput-filename"></span>
                 <a href="#" class="close fileinput-exists" data-dismiss="fileinput">&times;</a>
@@ -32,9 +35,6 @@
     <div class="col-sm-8">
         <div class="card">
             <div class="card-body card-padding">
-
-                <?php $attr = array('class' => 'form-horizontal');
-                echo form_open('food/set_food_menu', $attr);?>
 
                 <div class="form-group">
                     <label class="radio-inline"><input type="radio" name="food_type" checked="checked" value="0">Standard Recipe</label>
@@ -98,108 +98,57 @@
         </br>
 
         <!-- Modal -->
-        <div id="myAddRawModal" class="modal fade" role="dialog">
+        
+        </div>
+    </div>
+
+    <div class="col-sm-4">
+        <div class="card">
+            <div class="card-header">
+                <h2>Man / Equipment</h2>
+            </div>
+            <div align="center">
+                <a href="#">
+                    <img src="<?php echo base_url('dist/images/icons/addButton.png');?>" data-toggle="modal" data-target="#myAddEquipModal" alt="addEquip" style="width:50%">
+                </a>
+            </div>
+        </br>
+
+        <!-- Modal -->
+        <div id="myAddEquipModal" class="modal fade" role="dialog">
             <div class="modal-dialog">
 
                 <!-- Modal content-->
                 <div class="modal-content">
                     <div class="modal-header">
                         <button type="button" class="close" data-dismiss="modal">&times;</button>
-                        <h4 class="modal-title">Add Raw Material</h4>
+                        <h4 class="modal-title">Add Man/Equipment</h4>
                     </div>
                     <div class="modal-body">
-                        <div class="col-md-4 text-center">
-                            <a href="#">
-                                <img src="<?php echo base_url('dist/images/material/sunnok.jpg');?>" alt="light" style="max-height:100px" class="img-thumbnail">
-                            </a>
-                            <input id="item1" value="val1" class="hidden" autocomplete="off">
-                            <div class="caption">
-                                <p>สันนอก</p>
-                            </div>
-                        </div>
-                        <div class="col-md-4 text-center">
-                            <a href="#">
-                                <img src="<?php echo base_url('dist/images/material/sunnai.jpg');?>" alt="light" style="max-height:100px" class="img-thumbnail">
-                            </a>
-                            <input id="item2" value="val1" class="hidden" autocomplete="off">
-                            <div class="caption">
-                                <p>สันใน</p>
-                            </div>
-                        </div>
-                        <div class="col-md-4 text-center">
-                            <a href="#">
-                                <img src="<?php echo base_url('dist/images/material/porkmin.jpg');?>" alt="light" style="max-height:100px" class="img-thumbnail">
-                            </a>
-                            <input id="item3" value="val1" class="hidden" autocomplete="off">
-                            <div class="caption">
-                                <p>หมูบด</p>
-                            </div>
-                        </div>
-                        <div class="col-md-4 text-center">
-                            <a href="#">
-                                <img src="<?php echo base_url('dist/images/material/khapig.png');?>" alt="light" style="max-height:100px" class="img-thumbnail">
-                            </a>
-                            <input id="item4" value="val1" class="hidden" autocomplete="off">
-                            <div class="caption">
-                                <p>ขาหมู</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="modal-footer">
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
+                        <?php
+                        foreach ($man_list as $key => $value) {
+                            ?>
 
-<div class="col-sm-4">
-    <div class="card">
-        <div class="card-header">
-            <h2>Man / Equipment</h2>
-        </div>
-        <div align="center">
-            <a href="#">
-                <img src="<?php echo base_url('dist/images/icons/addButton.png');?>" data-toggle="modal" data-target="#myAddEquipModal" alt="addEquip" style="width:50%">
-            </a>
-        </div>
-    </br>
+                            <div class="col-md-4 text-center">
+                                <a href="#">
+                                    <img src="<?php echo base_url('dist/images/menu/12041301524825.jpg');?>" alt="light" style="max-height:100px" class="img-thumbnail">
+                                </a>
+                                <input id="item1" value="val1" class="hidden" autocomplete="off">
+                                <div class="caption">
+                                    <p><?php echo $value['eq_name'];?> : <?php echo $value['eq_cost'];?> Baht</p>
+                                </div>
+                            </div>
 
-    <!-- Modal -->
-    <div id="myAddEquipModal" class="modal fade" role="dialog">
-        <div class="modal-dialog">
-
-            <!-- Modal content-->
-            <div class="modal-content">
-                <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal">&times;</button>
-                    <h4 class="modal-title">Add Raw Material</h4>
-                </div>
-                <div class="modal-body">
-                    <?php
-                    foreach ($man_list as $key => $value) {
+                            <?php
+                        }
                         ?>
 
-                        <div class="col-md-4 text-center">
-                            <a href="#">
-                                <img src="<?php echo base_url('dist/images/menu/12041301524825.jpg');?>" alt="light" style="max-height:100px" class="img-thumbnail">
-                            </a>
-                            <input id="item1" value="val1" class="hidden" autocomplete="off">
-                            <div class="caption">
-                                <p><?php echo $value['eq_name'];?> : <?php echo $value['eq_cost'];?> Baht</p>
-                            </div>
-                        </div>
-
-                        <?php
-                    }
-                    ?>
-
+                    </div>
+                    <div class="modal-footer"></div>
                 </div>
-                <div class="modal-footer"></div>
             </div>
         </div>
     </div>
-</div>
 </div>
 <div class="col-sm-2"></div>
 </div>

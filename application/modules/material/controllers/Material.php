@@ -9,7 +9,7 @@ class Material extends MX_Controller {
     }
 
     public function material_page() {
-        $data['content']='material/add-raw-group';
+        $data['content']='material/group';
         $data['material_list'] = $this->get_mate_group();
         $this->init_sys->content($data);
     }
@@ -22,8 +22,8 @@ class Material extends MX_Controller {
     public function edit_page() {
         $this->load->model('Material_models');
         $data['content']='material/edit-material';
-        // $id = $this->uri->segment(3);
-        // $data['raw_detail'] = $this->Material_models->get_raw_material($id);
+        $id = $this->uri->segment(3);
+        $data['raw_detail'] = $this->Material_models->get_raw_material($id);
         $this->init_sys->content($data);
     }
     public function raw_page() {
@@ -31,7 +31,7 @@ class Material extends MX_Controller {
         $this->init_sys->content($data);
     }
     public function material_group_page() {
-        $data['content']='material/material-group';
+        $data['content']='material/add-group';
         $this->init_sys->content($data);
     }
     public function add_mate_group(){

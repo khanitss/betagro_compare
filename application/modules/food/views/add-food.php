@@ -24,8 +24,8 @@
                 </span>
                 <span class="fileinput-filename"></span>
                 <a href="#" class="close fileinput-exists" data-dismiss="fileinput">&times;</a>
-                <h4></h4>
             </div>
+            
         </div>
     </div>
 

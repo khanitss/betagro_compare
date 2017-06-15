@@ -21,8 +21,8 @@
             ?>
                 <div class="col-md-3">
                     <div class="thumbnail img-check">
-                        <center><a href= "<?php echo site_url ('man/man_edit');?>">
-                            <label for="cb1"> <img src="<?php echo base_url('dist/images/menu/12041301524825.jpg');?>"  alt="light" width="250" height="300"></lable></a>
+                        <center>
+                            <label for="cb1"> <img src="<?php echo base_url('images_compare/'.$value['eq_pic']);?>"  alt="light" width="250" height="300"></lable>
                             </center>
                             <div class="caption">
                                 <center><p><?php echo $value['eq_name'];?> : <?php echo $value['eq_cost'];?> Baht</p></center>

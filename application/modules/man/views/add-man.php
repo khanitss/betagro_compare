@@ -6,14 +6,15 @@
         <li><a href="#">Add Man/Equipment</a></li>
     </ul>
 </div>
+<div class="row">
           <?php 
           $attr = array('class' => 'form-horizontal');
-          echo form_open('man/add_man',$attr);
+          echo form_open_multipart('man/add_man',$attr);
           ?>
-<div class="row">
     <div class="col-sm-2"></div>
     <div class="col-sm-8">
         <div class="card" align="center">
+
             <div class="fileinput fileinput-new card-body card-padding" data-provides="fileinput">
                 <span class="btn btn-default btn-file m-r-5">
                     <span class="fileinput-new"><img src="<?php echo base_url ('dist/images/icons/addButton.png');?>" width="50%" alt="">
@@ -25,6 +26,7 @@
                 </span>
                 <a href="#" class="close fileinput-exists" data-dismiss="fileinput">&times;</a>
                 <h4>Add Man/Equipment</h4>
+
                 <div class="card-body card-padding">
                     <form class="form-horizontal">
                         <div class="form-group">

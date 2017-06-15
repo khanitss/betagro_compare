@@ -7,7 +7,7 @@
     <li><a href="#">เพิ่ม ผลิตภัณฑ์เบทาโกร</a></li>
   </ul>
 </div>
- <?php
+ <?php 
           $attr = array('class' => 'form-horizontal');
           echo form_open_multipart('product/add_product',$attr);
   ?>

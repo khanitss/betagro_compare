@@ -47,6 +47,12 @@ class Product extends MX_Controller {
 		return $result;
 		
 	}
+	public function delete_product(){
+		$this->load->model('Product_models');
+		$id = $this->uri->segment(3);
+		$this->Product_models->delete_product($id);
+		redirect('product/product_page');
+	}
 
 
 }//end class

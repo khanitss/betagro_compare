@@ -38,10 +38,10 @@
                             </div>
                         </div>
                         <div class="col-sm-6">
-                            <button type="save" class="btn btn-success">Save</button>
+                            <button type="save" class="btn btn-success">SAVE</button>
                         </div>
                         <div class="col-sm-4">
-                            <a href="<?php echo site_url ('man/man_page');?>" class="btn btn-danger">Cancel</a>
+                            <button class="btn btn-danger">CANCEL</button>
                         </div>
                     </form>
                 </div>

@@ -13,7 +13,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 		}
 
 		public function delete_product($id){
-			$this->db->delete('material', array('id' => $id));
+			$this->db->delete('material', array('mat_id' => $id));
 		}
 
 

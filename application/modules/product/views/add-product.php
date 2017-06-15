@@ -49,10 +49,10 @@
                 </div>
                   <div class="row">
                     <div class="col-sm-6">
-                      <button type="save" class="btn btn-success">Save</button>
+                      <button type="save" class="btn btn-success">SAVE</button>
                     </div>
                     <div class="col-sm-4">
-                      <a href="<?php echo site_url ('product/product_page');?>" type="cancel" class="btn btn-danger">Cancel</a>
+                      <a href="<?php echo site_url ('product/product_page');?>" type="cancel" class="btn btn-danger">CANCEL</a>
                     </div>
                   </div>
               </form>

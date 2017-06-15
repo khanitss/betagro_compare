@@ -25,7 +25,7 @@
                 <span class="fileinput-filename"></span>
                 <a href="#" class="close fileinput-exists" data-dismiss="fileinput">&times;</a>
             </div>
-            
+
         </div>
     </div>
 
@@ -33,51 +33,51 @@
         <div class="card">
             <div class="card-body card-padding">
 
-                    <?php $attr = array('class' => 'form-horizontal');
-                    echo form_open('food/set_food_menu', $attr);?>
+                <?php $attr = array('class' => 'form-horizontal');
+                echo form_open('food/set_food_menu', $attr);?>
 
-                    <div class="form-group">
-                        <label class="radio-inline"><input type="radio" name="food_type" checked="checked" value="0">Standard Recipe</label>
-                        <label class="radio-inline"><input type="radio" name="food_type" value="1">Betagro Recipe</label>
+                <div class="form-group">
+                    <label class="radio-inline"><input type="radio" name="food_type" checked="checked" value="0">Standard Recipe</label>
+                    <label class="radio-inline"><input type="radio" name="food_type" value="1">Betagro Recipe</label>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-2 col-xs-3 control-label">Name :</label>
+                    <div class="col-sm-9 col-xs-9">
+                        <input class="form-control" id="focusedInput" type="text" placeholder="Food Name" name="food_name">
                     </div>
-                    <div class="form-group">
-                        <label class="col-sm-2 col-xs-3 control-label">Name :</label>
-                        <div class="col-sm-9 col-xs-9">
-                            <input class="form-control" id="focusedInput" type="text" placeholder="Food Name" name="food_name">
-                        </div>
-                    </div>
+                </div>
 
-                    <div class="form-group">
-                        <label class="col-sm-2 col-xs-3 control-label">For :</label>
-                        <div class="col-sm-9 col-xs-9">
-                            <input class="form-control" id="focusedInput" type="text" placeholder="Number" name="food_for">
-                        </div>
+                <div class="form-group">
+                    <label class="col-sm-2 col-xs-3 control-label">For :</label>
+                    <div class="col-sm-9 col-xs-9">
+                        <input class="form-control" id="focusedInput" type="text" placeholder="Number" name="food_for">
                     </div>
+                </div>
 
-                    <div class="form-group">
-                        <label class="col-sm-2 col-xs-3 control-label">Unit :</label>
-                        <div class="col-sm-9 col-xs-9">
-                            <input class="form-control" id="focusedInput" type="text" placeholder="Unit" name="food_unit">
-                        </div>
+                <div class="form-group">
+                    <label class="col-sm-2 col-xs-3 control-label">Unit :</label>
+                    <div class="col-sm-9 col-xs-9">
+                        <input class="form-control" id="focusedInput" type="text" placeholder="Unit" name="food_unit">
                     </div>
+                </div>
 
-                    <div class="form-group">
-                        <label class="col-sm-2 col-xs-3 control-label">Time :</label>
-                        <div class="col-sm-8 col-xs-6">
-                            <input class="form-control" id="focusedInput" type="text" placeholder="Number" name="food_time">
-                        </div>
-                        <label class="col-sm-1 col-xs-2 control-label">Minutes</label>
-                        <div class="col-sm-1"></div>
+                <div class="form-group">
+                    <label class="col-sm-2 col-xs-3 control-label">Time :</label>
+                    <div class="col-sm-8 col-xs-6">
+                        <input class="form-control" id="focusedInput" type="text" placeholder="Number" name="food_time">
                     </div>
+                    <label class="col-sm-1 col-xs-2 control-label">Minutes</label>
+                    <div class="col-sm-1"></div>
+                </div>
 
-                    <div class="form-group">
-                        <div class="col-sm-10"></div>
-                        <div class="col-sm-2">
-                            <button type="submit" class="btn btn-success btn-lg">submit</button>
-                        </div>
+                <div class="form-group">
+                    <div class="col-sm-10"></div>
+                    <div class="col-sm-2">
+                        <button type="submit" class="btn btn-success btn-lg">submit</button>
                     </div>
+                </div>
 
-                    <?php echo form_close();?>
+                <?php echo form_close();?>
 
             </div>
         </div>
@@ -176,54 +176,26 @@
                     <h4 class="modal-title">Add Raw Material</h4>
                 </div>
                 <div class="modal-body">
-                    <div class="col-md-4 text-center">
-                        <a href="#">
-                            <img src="<?php echo base_url('dist/images/menu/12041301524825.jpg');?>" alt="light" style="max-height:100px" class="img-thumbnail">
-                        </a>
-                        <input id="item1" value="val1" class="hidden" autocomplete="off">
-                        <div class="caption">
-                            <p>Helper : 250 / hour</p>
+                    <?php
+                    foreach ($man_list as $key => $value) {
+                        ?>
+
+                        <div class="col-md-4 text-center">
+                            <a href="#">
+                                <img src="<?php echo base_url('dist/images/menu/12041301524825.jpg');?>" alt="light" style="max-height:100px" class="img-thumbnail">
+                            </a>
+                            <input id="item1" value="val1" class="hidden" autocomplete="off">
+                            <div class="caption">
+                                <p><?php echo $value['eq_name'];?> : <?php echo $value['eq_cost'];?> Baht</p>
+                            </div>
                         </div>
-                    </div>
-                    <div class="col-md-4 text-center">
-                        <a href="#">
-                            <img src="<?php echo base_url('dist/images/menu/images.jpg');?>" alt="light" style="max-height:100px" class="img-thumbnail">
-                        </a>
-                        <input id="item2" value="val1" class="hidden" autocomplete="off">
-                        <div class="caption">
-                            <p>Cheff : 300 / hour</p>
-                        </div>
-                    </div>
-                    <div class="col-md-4 text-center">
-                        <a href="#">
-                            <img src="<?php echo base_url('dist/images/menu/930660_91485537.jpg');?>" alt="light" style="max-height:100px" class="img-thumbnail">
-                        </a>
-                        <input id="item3" value="val1" class="hidden" autocomplete="off">
-                        <div class="caption">
-                            <p>Cheff : 250 / hour</p>
-                        </div>
-                    </div>
-                    <div class="col-md-4 text-center">
-                        <a href="#">
-                            <img src="<?php echo base_url('dist/images/menu/gas-refill.jpg');?>" alt="light" style="max-height:100px" class="img-thumbnail">
-                        </a>
-                        <input id="item4" value="val1" class="hidden" autocomplete="off">
-                        <div class="caption">
-                            <p>Gas : 60 / hour</p>
-                        </div>
-                    </div>
-                    <div class="col-md-4 text-center">
-                        <a href="#">
-                            <img src="<?php echo base_url('dist/images/menu/worldgas-15-kg.jpg');?>" alt="light" style="max-height:100px" class="img-thumbnail">
-                        </a>
-                        <input id="item5" value="val1" class="hidden" autocomplete="off">
-                        <div class="caption">
-                            <p>Gas : 35 / hour</p>
-                        </div>
-                    </div>
+
+                        <?php
+                    }
+                    ?>
+
                 </div>
-                <div class="modal-footer">
-                </div>
+                <div class="modal-footer"></div>
             </div>
         </div>
     </div>

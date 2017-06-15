@@ -1,14 +1,11 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
-
 class Man extends MX_Controller {
-
 	public function __construct() {
 		parent::__construct();
 		$this->load->module('init_sys/Init_sys');
         // $this->load->model('vendor/Vendor_model');
 	}
-
 	public function man_page() {
 		$data['content']='man/man';
 		$data['man_list'] = $this->get_man();
@@ -35,7 +32,6 @@ class Man extends MX_Controller {
 		$this->Man_models->add_man($input);
 	// $this->session->set_flashdata('alert',true);
 		redirect('man/man_page');
-
 	}
 	public function get_man (){
 		$this->load->model('Man_models');
@@ -50,5 +46,4 @@ class Man extends MX_Controller {
 		$this->Man_models->delete_man($id);
 		redirect('man/man_page');
 	}
-
 }//end class

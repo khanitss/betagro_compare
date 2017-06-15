@@ -19,7 +19,7 @@
                     <span class="fileinput-new"><img src="<?php echo base_url ('dist/images/icons/addButton.png');?>" width="50%" alt="">
                     </span>
                     <span class="fileinput-exists">Change</span>
-                    <input type="file" name="...">
+                    <input type="file" name="upload_file">
                 </span>
                 <span class="fileinput-filename">
                 </span>

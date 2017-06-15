@@ -1,12 +1,11 @@
-        <div class="block-header clearfix">
+<div class="block-header clearfix">
             <h2 class="pull-left">Edit Man/Equipment</h2>
             <ul class="breadcrumb pull-right">
-                <li><a href="index.html">Home</a></li>
+                <li><a href="<?php echo site_url ('dashboard/home');?>">Home</a></li>
                 <li><a href="<?php echo site_url ('man/man_page');?>">Man/Equipment</a></li>
-                <li><a href="#">Edit Man/Equipment</a></li>
+                <li><a href="<?php echo site_url ('man/edit_man/'.$this->uri->segment(3));?>">Edit Man/Equipment</a></li>
             </ul>
         </div>
-
         <div class="container">
             <div class="row">
                 <div class="col-sm-6">
@@ -44,4 +43,3 @@
                     </div>
                 </div>
             </div>
-        

@@ -21,6 +21,7 @@ class Food extends MX_Controller {
 		$this->load->model('Food_model');
 		$data['content']='food/add-food';
 		$data['man_list'] = $this->Food_model->get_man();
+		$data['mat_list'] = $this->Food_model->get_mat();
 		$this->init_sys->content($data);
 	}
 

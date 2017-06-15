@@ -35,7 +35,7 @@
                 <div class="col-md-3">
                     <div class="thumbnail img-check">
                         <a href="<?php echo site_url('food/food_details/'.$value['food_id']);?>" class="text-center">
-                            <img src="<?php echo base_url('dist/images/menu/s_ขาหมู.jpg');?>" alt="light" style="width:90%" class="img-thumbnail">
+                            <img src="<?php echo base_url('images_compare/'.$value['food_pic']);?>" alt="light" style="width:90%" class="img-thumbnail">
                             <input id="item1" value="val1" class="hidden" autocomplete="off">
                             <div class="caption">
                                 <p><?php echo $value['food_name'];?></p>

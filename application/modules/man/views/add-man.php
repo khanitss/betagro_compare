@@ -6,6 +6,10 @@
         <li><a href="#">Add Man/Equipment</a></li>
     </ul>
 </div>
+          <?php 
+          $attr = array('class' => 'form-horizontal');
+          echo form_open('man/add_man',$attr);
+          ?>
 <div class="row">
     <div class="col-sm-2"></div>
     <div class="col-sm-8">
@@ -26,18 +30,18 @@
                         <div class="form-group">
                             <label class="col-sm-4 col-xs-4 control-label">Group Name:</label>
                             <div class="col-sm-8 col-xs-8">
-                                <input class="form-control" id="focusedInput" type="text" placeholder="Group Name">
+                                <input class="form-control" id="focusedInput" type="text" placeholder="Group Name" name="eq_name">
                             </div>
                             <label class="col-sm-4 col-xs-4 control-label">Cost/Hour:</label>
                             <div class="col-sm-8 col-xs-8">
-                              <input class="form-control" id="focusedInput" type="text" placeholder="Bath">
+                              <input class="form-control" id="focusedInput" type="text" placeholder="Bath" name="eq_cost">
                             </div>
                         </div>
                         <div class="col-sm-6">
-                            <a href="<?php echo site_url ('man/man_page');?>" type="save" class="btn btn-success">Save</a>
+                            <button type="save" class="btn btn-success">SAVE</button>
                         </div>
                         <div class="col-sm-4">
-                            <a href="<?php echo site_url ('man/man_page');?>" class="btn btn-danger">Cancel</a>
+                            <button class="btn btn-danger">CANCEL</button>
                         </div>
                     </form>
                 </div>
@@ -45,3 +49,4 @@
         </div>
     </div>
 </div>
+          <?php echo form_close();?>

@@ -1,10 +1,10 @@
 <!-- Content Section START -->
 <div class="block-header clearfix">
-    <h2 class="pull-left">Food Detail</h2>
+    <h2 class="pull-left">Food Details</h2>
     <ul class="breadcrumb pull-right">
         <li><a href="<?php echo site_url('dashboard/home');?>">Home</a></li>
         <li><a href="<?php echo site_url('food/food_page');?>">Food Menu</a></li>
-        <li><a href="<?php echo site_url('food/food_details');?>">Food Details</a></li>
+        <li><a href="<?php echo site_url('food/food_details/'.$this->uri->segment(3));?>">Food Details</a></li>
     </ul>
 </div>
 
@@ -12,33 +12,44 @@
 <div class="row">
     <div class="col-sm-6">
         <div class="card ">
+
+            <?php foreach ($food_details as $key => $value)
+            {
+                ?>
                 <div class="card-header">
-                    <h2>ขาหมูน้ำแดง</h2>
+                    <h2><?php echo $value['food_name'];?></h2>
                 </div>
                 <div class="card-body card-padding">
                     <img class="center-block" src="<?php echo base_url('dist/images/menu/s_ขาหมู.jpg');?>" class="img-thumbnail" style="width:75%">
                     <p></p>
                     <form class="form-horizontal">
                         <div class="form-group">
-                            <label class="col-sm-3 col-xs-3 text-right control-label">For :</label>
-                            <div class="col-sm-9 col-xs-9">
-                                <p class="form-control-static">1</p>
+                            <label class="col-sm-4 col-xs-3 text-right control-label">For :</label>
+                            <div class="col-sm-8 col-xs-9">
+                                <p class="form-control-static"><?php echo $value['food_for'];?></p>
                             </div>
-                            <label class="col-sm-3 col-xs-3 text-right control-label">Unit :</label>
-                            <div class="col-sm-9 col-xs-9">
-                                <p class="form-control-static">Dish</p>
+                            <label class="col-sm-4 col-xs-3 text-right control-label">Unit :</label>
+                            <div class="col-sm-8 col-xs-9">
+                                <p class="form-control-static"><?php echo $value['food_unit'];?></p>
                             </div>
-                            <label class="col-sm-3 col-xs-3 text-right control-label">Time :</label>
-                            <div class="col-sm-9 col-xs-9">
-                                <p class="form-control-static">30 Minutes</p>
+                            <label class="col-sm-4 col-xs-3 text-right control-label">Time :</label>
+                            <div class="col-sm-8 col-xs-9">
+                                <p class="form-control-static"><?php echo $value['food_time'];?> Minutes</p>
+                                <br></br>
                             </div>
-                            <label class="col-sm-3 col-xs-3 text-right control-label">Total :</label>
-                            <div class="col-sm-9 col-xs-9">
-                                <p class="form-control-static">300 Baht</p>
+                            <div class="col-sm-4 col-xs-4"></div>
+                            <div class="col-sm-2 col-xs-2 text-center" >
+                                <img src=<?php echo base_url('dist/images/icons/Dollar-Sign-icon.png'); ?> alt="Cinque Terre" width="40px" height="40px">
+                            </div>
+                            <div class="col-sm-6 col-xs-6">
+                                <p class="form-control-static"><strong>300 Baht<strong></p>
                             </div>
                         </div>
                     </form>
                 </div>
+                <?php
+            }
+            ?>
         </div>
     </div>
     <div class="col-sm-6">
@@ -131,7 +142,7 @@
     <div class="row">
         <div class="col-sm-7 col-xs-1"></div>
         <div class="col-sm-2 col-xs-5">
-            <a href="<?php echo site_url('food/edit_food');?>" type="button" class="btn btn-success btn-lg btn-block">Edit</a>
+            <a href="<?php echo site_url('food/edit_food/'.$value['food_id']);?>" type="button" class="btn btn-success btn-lg btn-block">Edit</a>
         </div>
         <div class="col-sm-2 col-xs-5">
             <a href="<?php echo site_url('food/food_page');?>" type="button" class="btn btn-danger btn-lg btn-block">BACK</a>

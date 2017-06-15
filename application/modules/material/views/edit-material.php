@@ -1,67 +1,65 @@
-        <div class="block-header clearfix">
-            <h2 class="pull-left">Edit Material</h2>
-            <ul class="breadcrumb pull-right">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="">Setting</a></li>
-                <li><a href="<?php echo site_url ('material/material_page');?>"> Raw Material Group</a></li>
-                <li><a href="<?php echo site_url ('material/material_d_page');?>"> Raw Material</a></li>
-                <li><a href="#">Edit Material</a></li>
-            </ul>
-        </div>
+<?php 
 
-        
+$attr = array('class'=>'form-horizontal');
+echo form_open('material/update_material/'.$this->uri->segment(3),$attr);
+?>
 
-        <div class="container">
-            <div class="row">
-                <div class="col-sm-3"></div>
-                <div class="col-sm-6">
-                    <div class="card ">
-                        <div class="row">
-                            </br>
-                            <div class="col-sm-9 col-xs-8"></div>
-                            <div class="col-sm-3 col-xs-4 text-center">
-                                <a href ="<?php echo site_url ('material/material_d_page');?>" class="btn btn-warning" >DELETE</a>
-                            </div>
-                        </div>
-                        <div class="card-body card-padding "> 
-                            <img class="center-block" src="<?php echo base_url('dist/images/material/sunnok.jpg');?>" class="img-thumbnail" alt="Cinque Terre" style="width:45%" >
-
-                            <div class="card-body card-padding">
-                                <form class="form-horizontal">
-                                    <div class="form-group">
-                                        <label class="col-sm-4 col-xs-4 control-label">Material Name:</label>
-                                        <div class="col-sm-8 col-xs-8">
-                                            <input class="form-control" id="focusedInput" type="text" placeholder="Material Name">
-                                        </div>
-                                        <label class="col-sm-4 col-xs-4 control-label">Quantity:</label>
-                                        <div class="col-sm-8 col-xs-8">
-                                            <input class="form-control" id="focusedInput" type="text" placeholder="Quantity">
-                                        </div>
-                                        <label class="col-sm-4 col-xs-4 control-label">Unit:</label>
-                                        <div class="col-sm-8 col-xs-8">
-                                            <input class="form-control" id="focusedInput" type="text" placeholder="Unit">
-                                        </div>
-                                        <label class="col-sm-4 col-xs-4 control-label">Cost:</label>
-                                        <div class="col-sm-8 col-xs-8">
-                                            <input class="form-control" id="focusedInput" type="text" placeholder="Baht">
-                                        </div>
-                                    </div>
-                                </form>
-                            </div>
-                            <div class="row">
-                                <div class="col-sm-4"></div>
-                                <div class="col-sm-3">
-                                    <a href="<?php echo site_url ('material/material_d_page');?>" type="save" class="btn btn-success ">SAVE</a>
-                                </div>
-                                <div class="col-sm-3">
-                                <a href="<?php echo site_url ('material/material_d_page');?>" type="save" class="btn btn-danger">BACK</a>
-                                </div>
-                                
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-sm-3"></div>
-                </div>
+<div class="block-header clearfix">
+  <h2 class="pull-left">Edit Raw Material</h2>
+  <ul class="breadcrumb pull-right">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="index.html">Setting</a></li>
+    <li><a href="<?php echo site_url ('material/material_page');?>"> Raw Material Group</a></li>
+    <li><a href="<?php echo site_url ('material/material_d_page');?>">Raw Material</a></li>
+    <li><a href="<?php echo site_url ('material/raw_page');?>">Add Raw Material</a></li>
+</ul>
+</div>
+<div class="row">
+  <div class="col-sm-2"></div>
+  <div class="col-sm-8">
+      <div class="card" align="center">
+        <div class="fileinput fileinput-new card-body card-padding" data-provides="fileinput">
+          <span class="btn btn-default btn-file m-r-5">
+            <span class="fileinput-new"><img src="<?php echo base_url ('dist/images/icons/addButton.png');?>" width="50%" alt="">
+            </span>
+            <span class="fileinput-exists">Change
+            </span>
+            <input type="file" name="...">
+        </span>
+        <span class="fileinput-filename">
+        </span>
+        <a href="#" class="close fileinput-exists" data-dismiss="fileinput">&times;</a>
+        <h4>Add Raw Material</h4>
+        <div class="card-body card-padding">
+          <form class="form-horizontal">
+            <div class="form-group">
+              <label class="col-sm-2 col-xs-2 control-label">Name :</label>
+              <div class="col-sm-10 col-xs-10">
+                <input class="form-control" id="focusedInput" type="text" placeholder="Material Name" name="mat_name" value="">
             </div>
-        
+            <label class="col-sm-2 col-xs-2 control-label">Quanlity :</label>
+            <div class="col-sm-10 col-xs-10">
+                <input class="form-control" id="focusedInput" type="text" placeholder="Quanlity" name="mat_quantity">
+            </div>
+            <label class="col-sm-2 col-xs-2 control-label">Unit :</label>
+            <div class="col-sm-10 col-xs-10">
+                <input class="form-control" id="focusedInput" type="text" placeholder="Unit" name="mat_unit">
+            </div>
+            <label class="col-sm-2 col-xs-2 control-label">Cost :</label>
+            <div class="col-sm-10 col-xs-10">
+                <input class="form-control" id="focusedInput" type="text" placeholder="Bath" name="mat_cost">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-6">
+              <button type="save" class="btn btn-success">Save</button>
+          </div>
+          <div class="col-sm-6">
+              <button type="cancel" class="btn btn-danger">Cancel</button>
+          </div>
+      </div>
+  </form>
+ 
+</div>
+
+<?php echo form_close();?>

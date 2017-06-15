@@ -9,25 +9,92 @@ class Material extends MX_Controller {
     }
 
     public function material_page() {
-        $data['content']='material/add-raw-group';
+        $data['content']='material/group';
+        $data['material_list'] = $this->get_mate_group();
         $this->init_sys->content($data);
     }
     
     public function material_d_page() {
-        $data['content']='material/add-raw-material-page';
+        $data['content']='material/raw-material-page';
+        $data['raw_material_list'] = $this->get_raw_material();
         $this->init_sys->content($data);
     }
     public function edit_page() {
+        $this->load->model('Material_models');
         $data['content']='material/edit-material';
+        $id = $this->uri->segment(3);
+        $data['raw_detail'] = $this->Material_models->get_raw_material($id);
         $this->init_sys->content($data);
     }
     public function raw_page() {
-        $data['content']='material/raw-material';
+        $data['content']='material/add-material';
         $this->init_sys->content($data);
     }
     public function material_group_page() {
-        $data['content']='material/material-group';
+        $data['content']='material/add-group';
         $this->init_sys->content($data);
     }
+    public function add_mate_group(){
+        $data['material_list'] = $this->get_mate_group();
+        
+        $this->load->model('Material_models');
+        $timestam = date('Y-m-d H:i:s');
+        $this->Material_models->add_mate_group();
+        //$this->session->set_flashdata('alert', true);
+        redirect('material/material_page');
 
+    }
+    public function get_mate_group (){
+        $this->load->model('Material_models');
+        $result = $this->Material_models->get_mate_group();
+        //echo '<pre>', print_r($result);
+        return $result;
+        
+    }
+    public function add_raw_material(){
+        $this->load->module('upload/Myupload');
+        $prop = array(
+                    'upload_path'   =>'./images_compare/',
+                    'allowed_types' =>'jpg|jpeg|png',
+                    'txt_upload'    =>'upload_file',
+                    'txt_unlink'    =>$this->input->post('file_old'),
+                    'default_file'  =>'no-image.png'
+                );
+        $mat_pic = $this->myupload->upload_file($prop);
+
+        $timestam = date('Y-m-d H:i:s');    
+        $this->load->model('Material_models');
+        $input = array('mat_name' => $this->input->post('mat_name'),
+            'mat_quantity' => $this->input->post('mat_quantity'),
+            'mat_unit' => $this->input->post('mat_unit'),
+            'mat_cost' => $this->input->post('mat_cost'),
+            'mat_type' => '0',
+            'mat_status' => '1',
+            'mat_pic'   => $mat_pic,
+            'created'       => $timestam,
+            'lastupdate'    => $timestam,
+
+            );
+        $this->Material_models->add_raw_material($input);
+        //$this->session->set_flashdata('alert', true);
+        redirect('material/material_d_page');
+
+    }
+    public function get_raw_material (){
+        $this->load->model('Material_models');
+        $result = $this->Material_models->get_raw_material();
+        //echo '<pre>', print_r($result);
+        return $result;
+        
+    }
+
+    public function update_material(){
+        //$data['show_mat'] = $this->get_raw_material();
+        $this->load->model('Meterial_models');
+        $timestam = date('Y-m-d H:i:s');
+        $id = $this->uri->segment(3);
+        $this->Material_models->update_material();
+        redirect('material/material_d_page');
+}
 }//end class
+

@@ -12,7 +12,7 @@
                 <div class="col-sm-6">
                     <div class="card ">
                         <div class="card-body card-padding"> 
-                            <h2>Edit Man/Equipment</h2>
+                            <h2>Test </h2>
                             <img class="center-block" src="http://elanyeri.com/images/AdverImages/27/12041301524825.jpg" class="img-thumbnail" alt="Cinque Terre" style="width:45%" >
                             <div class="card-body card-padding">
                                 <form class="form-horizontal">
@@ -33,7 +33,7 @@
                                 </div>
                                 <div class="col-sm-3">
                                 </div>
-                                <a href="<?php echo site_url ('man/man_page');?>" type="save" class="btn btn-success ">SAVE</a>
+                                <button type="save" class="btn btn-success ">SAVE</button>
                                 <div class="col-sm-4">
                                 </div>
                                 <div class="col-sm-3"></div>

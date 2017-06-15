@@ -12,7 +12,7 @@
   <div class="col-sm-10 col-xs-8"></div>
   <div class="col-sm-2 col-xs-4 text-center">
     <a href ="<?php echo site_url ('material/material_group_page');?>" class="btn btn-success" > Raw Material Group</a>
-    
+
   </div>
 </div>
 </br>
@@ -25,9 +25,9 @@
     ?>
     <div class="col-sm-3">
       <div class="thumbnail img-check">
-        <a href="<?php echo site_url('material/material_d_page');?>" class="text-center">
+        <a href="<?php echo site_url('food/add_mat_group/'.$value['cat_id']);?>" class="text-center">
           <input id="item1" value="val1" class="hidden" autocomplete="off" >
-          <img src="<?php echo base_url('dist/images/material/pig.png');?>" alt="light" style="width:96%" class="img-thumbnail">
+          <img src="<?php echo base_url('images_compare/'.$value['cat_pic']);?>" alt="light" style="width:96%" class="img-thumbnail">
           <div class="caption">
             <p><?php echo $value['cat_name'];?></p>
 
@@ -38,7 +38,7 @@
     <?php 
   }
   ?> 
-  
+
 </div>
 </div>
 </div>

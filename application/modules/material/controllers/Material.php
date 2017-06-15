@@ -27,7 +27,7 @@ class Material extends MX_Controller {
         $this->init_sys->content($data);
     }
     public function raw_page() {
-        $data['content']='material/add-raw-material';
+        $data['content']='material/add-material';
         $this->init_sys->content($data);
     }
     public function material_group_page() {
@@ -35,17 +35,11 @@ class Material extends MX_Controller {
         $this->init_sys->content($data);
     }
     public function add_mate_group(){
-        $timestam = date('Y-m-d H:i:s');
-
+        $data['material_list'] = $this->get_mate_group();
+        
         $this->load->model('Material_models');
-        $input = array('cat_name' => $this->input->post('cat_name'),
-            'cat_type' => '0',
-            'cat_status' => '1',
-            'created'       => $timestam,
-            'lastupdate'    => $timestam,
-
-            );
-        $this->Material_models->add_mate_group($input);
+        $timestam = date('Y-m-d H:i:s');
+        $this->Material_models->add_mate_group();
         //$this->session->set_flashdata('alert', true);
         redirect('material/material_page');
 
@@ -58,16 +52,16 @@ class Material extends MX_Controller {
         
     }
     public function add_raw_material(){
-        $this->load->module('upload/myupload');
+        $this->load->module('upload/Myupload');
         $prop = array(
                     'upload_path'   =>'./images_compare/',
                     'allowed_types' =>'jpg|jpeg|png',
                     'txt_upload'    =>'upload_file',
                     'txt_unlink'    =>$this->input->post('file_old'),
-                    'default_file'  =>'default.jpg',
+                    'default_file'  =>'no-image.png'
                 );
+        $mat_pic = $this->myupload->upload_file($prop);
 
-    $file_name = $this->myupload->upload_file($prop);
         $timestam = date('Y-m-d H:i:s');    
         $this->load->model('Material_models');
         $input = array('mat_name' => $this->input->post('mat_name'),
@@ -76,6 +70,7 @@ class Material extends MX_Controller {
             'mat_cost' => $this->input->post('mat_cost'),
             'mat_type' => '0',
             'mat_status' => '1',
+            'mat_pic'   => $mat_pic,
             'created'       => $timestam,
             'lastupdate'    => $timestam,
 

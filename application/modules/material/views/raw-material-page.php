@@ -26,7 +26,7 @@
         ?>
         <div class="col-sm-3">
           <div class="thumbnail img-check">
-                <a href="<?php echo site_url('material/edit_page/'.$this->uri->segment(3));?>" class="text-center">
+                <a href="<?php echo site_url('material/edit_page/'.$value['mat_id']);?>" class="text-center">
                     <input id="item1" value="val1" class="hidden" autocomplete="off" name="mat_name" >
                     <img src="<?php echo base_url('dist/images/material/sunnok.jpg');?>" alt="light" style="width:96%" class="img-thumbnail">
                     <div class="caption">

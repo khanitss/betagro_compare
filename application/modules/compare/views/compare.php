@@ -18,6 +18,7 @@
   </div>
 </div>
 
+
 </br>
 
 <div class="row">
@@ -26,7 +27,7 @@
     </div>
 
     <div class="col-md-6">
-      betagro
+      <?php $this->load->view('compare/profile_betagro_panel');?>
     </div>
 
 </div>

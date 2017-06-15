@@ -1,5 +1,6 @@
 <div class="row">
   <div class="col-md-12">
+    loop Man eqiupment
     <table class="table">
       <thead>
         <tr>
@@ -11,7 +12,7 @@
       </thead>
 
       <tbody>
-        <?php foreach($standard as $key => $value){?>
+        <?php foreach($betagro as $key => $value){?>
           <tr>
             <td class="text-center"><?php echo $value['eq_name']; ?></td>
             <td class="text-center"><?php echo $value['eq_quantity']; ?></td>
@@ -19,7 +20,10 @@
             <td class="text-center"><?php echo $value['eq_cost']; ?></td>
           </tr>
         <?php }?>
-      </tbody>
-    </table>
+        </tbody>
+      </table>
   </div>
+</div>
+
+</div>
 </div>

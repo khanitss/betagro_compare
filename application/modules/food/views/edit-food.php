@@ -28,7 +28,6 @@
         <?php foreach ($food_details as $key => $value)
         {
             ?>
-
             <div class="card-header">
                 <h2><?php echo $value['food_name'];?></h2>
             </div>
@@ -40,6 +39,13 @@
             echo form_open('food/update_food_details/'.$this->uri->segment(3), $attr);?>
 
             <form class="form-horizontal">
+                <div class="form-group">
+                    <label class="col-sm-3 col-xs-3 text-right control-label">Name :</label>
+                    <div class="col-sm-8 col-xs-8">
+                        <input class="form-control" id="focusedInput" type="text" name="food_name" placeholder="<?php echo $value['food_name'];?>">
+                    </div>
+                    <div class="col-sm-1 col-xs-1"></div>
+                </div>
                 <div class="form-group">
                     <label class="col-sm-3 col-xs-3 text-right control-label">For :</label>
                     <div class="col-sm-8 col-xs-8">

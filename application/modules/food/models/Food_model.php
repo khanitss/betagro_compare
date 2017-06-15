@@ -30,8 +30,14 @@ class Food_model extends CI_Model{
         return $result;
     }
 
+    public function get_man(){
+        $result = $this->db->get('equipment')->result_array();
+        return $result;
+    }
+
     public function update_food_details($food_id){
-        $input = array(	'food_for'		=> $this->input->post('food_for'),
+        $input = array(	'food_name'		=> $this->input->post('food_name'),
+                        'food_for'		=> $this->input->post('food_for'),
 						'food_unit'		=> $this->input->post('food_unit'),
 						'food_time'		=> $this->input->post('food_time'),
 						'lastupdate'	=> $timestam

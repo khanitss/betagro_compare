@@ -88,16 +88,6 @@ class Material_models extends CI_Model{
 		return $result;
 	}
 
-	public function get_id_material($qstr=''){
-		
-		if (!empty($qstr)) {
-			$this->db->where($qstr);
-		}
-
-		$result = $this->db->get('material')->result_array();
-		return $result;
-	}
-
 	public function get_material_details($mat_id){
 			$result = $this->db->select('*')
 			->where('mat_id',$mat_id)
@@ -107,14 +97,54 @@ class Material_models extends CI_Model{
 			return $result;
 		}
 	public function update_material($mat_id){
+			$this->load->module('upload/Myupload');
+        $prop = array(
+                    'upload_path'	=>'./images_compare/',
+                    'allowed_types'	=>'jpg|jpeg|png',
+                    'txt_upload'	=>'upload_file',
+                    'txt_unlink'	=>$this->input->post('file_old'),
+                    'default_file'	=>'no-image.png'
+                );
+        $mat_pic = $this->myupload->upload_file($prop);
+
 			$input = array(	'mat_name' 		=> $this->input->post('mat_name'),
 							'mat_quantity' 	=> $this->input->post('mat_quantity'),
 							'mat_cost' 		=> $this->input->post('mat_cost'),
 							'mat_unit' 		=> $this->input->post('mat_unit'),
+							'mat_pic'		=> $mat_pic,
+							'cat_id'		=> $cat_id,
+							'mat_id'		=> $mat_id,
 							'lastupdate'	=> $timestam
 					);
+			if ($cat_id==0){
+				unset($input['cat_id']);
+			}
+
+			if($input['mat_pic'] == 'no-image.png'){
+                unset($input['mat_pic']);
+            }
+            if($input['mat_name'] == null){
+                unset($input['mat_name']);
+             }
+
+            if($input['mat_quantity'] == null){
+                unset($input['mat_quantity']);
+             }
+
+            if($input['mat_unit'] == null){
+                unset($input['mat_unit']);
+             }
+
+             if($input['mat_cost'] == null){
+                unset($input['mat_cost']);
+             }
+
         	$this->db->where('mat_id',$mat_id);
         	$this->db->update('material',$input);
+		}
+
+	public function delete_material($mat_id){
+			$this->db->delete('material', array('mat_id' => $mat_id));
 		}
 
 }

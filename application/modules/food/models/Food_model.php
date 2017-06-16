@@ -31,6 +31,7 @@ class Food_model extends CI_Model{
                     );
 
         $this->db->insert('food',$input);
+        return $this->db->insert_id();
     }
 
     public function get_food_details($food_id){

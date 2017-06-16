@@ -1,17 +1,17 @@
 
 <div class="block-header clearfix">
-  <h2 class="pull-left"> Raw Material Group</h2>
+  <h2 class="pull-left"> กลุ่มของวัตถุดิบ</h2>
   <ul class="breadcrumb pull-right">
-    <li><a href="<?php echo site_url ('dashboard/home');?>">Home</a></li>
-    <li><a href="">Setting</a></li>
-    <li><a href="<?php echo site_url ('material/material_page');?>"> Raw Material Group</a></li>
+    <li><a href="<?php echo site_url ('dashboard/home');?>">หน้าหลัก</a></li>
+    <li><a href="">ตั้งค่า</a></li>
+    <li><a href="<?php echo site_url ('material/material_page');?>">กลุ่มของวัตถุดิบ</a></li>
   </ul>
 </div>
 
 <div class="row">
   <div class="col-sm-10 col-xs-8"></div>
   <div class="col-sm-2 col-xs-4 text-center">
-    <a href ="<?php echo site_url ('material/material_group_page');?>" class="btn btn-success" > Raw Material Group</a>
+    <a href ="<?php echo site_url ('material/material_group_page');?>" class="btn btn-success" >เพิ่มกลุ่มของวัตถุดิบ</a>
 
   </div>
 </div>
@@ -27,9 +27,9 @@
       <div class="thumbnail img-check">
         <center><a href="<?php echo site_url('material/material_d_page/'.$value['cat_id']);?>" class="text-center">
           <input id="item1" value="val1" class="hidden" autocomplete="off" >
-          <label for="cb1"><img src="<?php echo base_url('images_compare/'.$value['cat_pic']);?>" alt="light" width="120" height="120"></label></a></center>
+          <label for="cb1"><img src="<?php echo base_url('images_compare/'.$value['cat_pic']);?>" alt="light" width="150 " height="150"></label></a></center>
           <div class="caption">
-            <p><?php echo $value['cat_name'];?></p>
+            <center><p><?php echo $value['cat_name'];?></p></center>
 
           </div>
       </div>

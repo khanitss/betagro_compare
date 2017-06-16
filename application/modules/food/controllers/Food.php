@@ -20,8 +20,21 @@ class Food extends MX_Controller {
 	public function add_food() {
 		$this->load->model('Food_model');
 		$data['content']='food/add-food';
+		$this->init_sys->content($data);
+	}
+
+	public function add_food_details() {
+		$data['alert'] = $this->session->flashdata('alert');
+		$this->load->model('Food_model');
+		$food_id = $this->uri->segment(3);
+		$data['content']='food/add-food-details.php';
+		$data['food_details'] = $this->Food_model->get_food_details($food_id);
 		$data['man_list'] = $this->Food_model->get_man();
 		$data['mat_list'] = $this->Food_model->get_mat();
+		$data['mat_details'] = $this->Food_model->get_mat_details($food_id);
+		$data['eq_details'] = $this->Food_model->get_eq_details($food_id);
+		// echo print_r($data['food_details']);
+		// exit();
 		$this->init_sys->content($data);
 	}
 
@@ -32,9 +45,6 @@ class Food extends MX_Controller {
 		$data['food_details'] = $this->Food_model->get_food_details($food_id);
 		$data['mat_details'] = $this->Food_model->get_mat_details($food_id);
 		$data['eq_details'] = $this->Food_model->get_eq_details($food_id);
-		// echo '<pre>', print_r($data['mat_details']);
-		// echo '<pre>', print_r($data['eq_details']);
-		// exit();
 		$this->init_sys->content($data);
 	}
 
@@ -54,9 +64,9 @@ class Food extends MX_Controller {
 	public function set_food_menu(){
 		$this->load->model('Food_model');
 		$timestam = date('Y-m-d H:i:s');
-		$this->Food_model->set_food_menu();
+		$last_id = $this->Food_model->set_food_menu();
 		$this->session->set_flashdata('alert', 1);
-		redirect('food/food_page');
+		redirect('food/add_food_details/'.$last_id);
 	}
 
 	public function get_food_menu(){
@@ -103,7 +113,17 @@ class Food extends MX_Controller {
 		$mat_id = $this->uri->segment(4);
 		$this->Food_model->set_mat_detail($food_id,$mat_id);
 		$this->session->set_flashdata('alert', 1);
-		redirect('food/food_page');
+		redirect('food/edit_food/'.$food_id);
+	}
+
+	public function set_mat_detail2(){
+		$this->load->model('Food_model');
+		$timestam = date('Y-m-d H:i:s');
+		$food_id = $this->uri->segment(3);
+		$mat_id = $this->uri->segment(4);
+		$this->Food_model->set_mat_detail($food_id,$mat_id);
+		$this->session->set_flashdata('alert', 1);
+		redirect('food/add_food_details/'.$food_id);
 	}
 
 	public function set_eq_detail(){
@@ -113,7 +133,17 @@ class Food extends MX_Controller {
 		$eq_id = $this->uri->segment(4);
 		$this->Food_model->set_eq_detail($food_id,$eq_id);
 		$this->session->set_flashdata('alert', 1);
-		redirect('food/food_page');
+		redirect('food/edit_food/'.$food_id);
+	}
+
+	public function set_eq_detail2(){
+		$this->load->model('Food_model');
+		$timestam = date('Y-m-d H:i:s');
+		$food_id = $this->uri->segment(3);
+		$eq_id = $this->uri->segment(4);
+		$this->Food_model->set_eq_detail($food_id,$eq_id);
+		$this->session->set_flashdata('alert', 1);
+		redirect('food/add_food_details/'.$food_id);
 	}
 
 }

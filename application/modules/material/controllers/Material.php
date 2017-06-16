@@ -33,14 +33,12 @@ class Material extends MX_Controller {
 
     //edit page
     public function edit_page() {
-        
-        $this->load->model('Product_models');
-        $data['content']='product/edit-product';
         $mat_id = $this->uri->segment(3);
-        $data['material_details'] = $this->Material_models->get_material_details($mat_id);
+        $data['content']='material/edit-material';
+        $data['material_detail'] = $this->Material_models->get_material_details($mat_id);
         $this->init_sys->content($data);
     }
-    }
+    
     
 
     //page show
@@ -77,11 +75,12 @@ class Material extends MX_Controller {
     //Add Material
     public function add_raw_material()
     {
-        $cat_id = $this->session->userdata('select_items_one');
+        $mat_id = $this->session->userdata('select_items_one');
         $this->Material_models->add_raw_material();
-        redirect('material/material_d_page/'.$cat_id);
+        redirect('material/material_d_page/'.$mat_id);
 
     }
+
     public function get_raw_material (){
         $this->load->model('Material_models');
         $result = $this->Material_models->get_raw_material();
@@ -90,13 +89,24 @@ class Material extends MX_Controller {
         
     }
 
-    //Update no finish
-    public function update_pmaterial(){
-        $this->load->model('Material_models');
+    //Update form edit
+    public function update_material(){
         $timestam = date('Y-m-d H:i:s');
+        $cat_id = $this->session->userdata('select_items_one');
         $mat_id = $this->uri->segment(3);
-        $this->Material_models->update_product_details($mat_id);
-        redirect('material/material_d_page'.$mat_id);
+        $this->Material_models->update_material($mat_id);
+        redirect('material/material_d_page/'.$cat_id);
+    
+
+    }
+
+    //delete 
+     public function delete_material(){
+        $this->load->model('Material_models');
+        $cat_id = $this->session->userdata('select_items_one');
+        $mat_id = $this->uri->segment(3);
+        $this->Material_models->delete_material($mat_id);
+         redirect('material/material_d_page/'.$cat_id);
     }
 }//end class
 

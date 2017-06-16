@@ -78,20 +78,10 @@ class Material_models extends CI_Model{
 		$this->db->insert('material',$input);
 	}
 
-	public function get_raw_material($qstr='')
+	public function get_raw_material($qstr_cate='')
 	{
-		if (!empty($qstr)) {
-			$this->db->where($qstr);
-		}
-
-		$result = $this->db->get('material')->result_array();
-		return $result;
-	}
-
-	public function get_id_material($qstr=''){
-		
-		if (!empty($qstr)) {
-			$this->db->where($qstr);
+		if (empty($qstr_cate)) {
+			$this->db->where($qstr_cate);
 		}
 
 		$result = $this->db->get('material')->result_array();
@@ -107,14 +97,21 @@ class Material_models extends CI_Model{
 			return $result;
 		}
 	public function update_material($mat_id){
+
 			$input = array(	'mat_name' 		=> $this->input->post('mat_name'),
 							'mat_quantity' 	=> $this->input->post('mat_quantity'),
 							'mat_cost' 		=> $this->input->post('mat_cost'),
 							'mat_unit' 		=> $this->input->post('mat_unit'),
+							'cat_id'		=> $cat_id,
+							'mat_id'		=> $mat_id,
 							'lastupdate'	=> $timestam
 					);
         	$this->db->where('mat_id',$mat_id);
         	$this->db->update('material',$input);
+		}
+
+	public function delete_material($mat_id){
+			$this->db->delete('material', array('mat_id' => $mat_id));
 		}
 
 }

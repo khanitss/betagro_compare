@@ -23,7 +23,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 							'created'       => $timestam,
 							'lastupdate'    => $timestam,
 							'mat_pic'       => $mat_pic
-						);
+						);     
 		$this->db->insert('material',$input);
 		}
 	

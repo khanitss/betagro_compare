@@ -40,8 +40,8 @@ foreach ($product_details as $key => $value){
                             <div class="row">
                                 <div class="col-sm-2"></div>
                                 <div class="col-sm-3"></div>
-                                <a href="<?php echo site_url ('product/update_product_details');?>" type="save" class="btn btn-success ">บันทึก
-                                </a>
+                                <button type="save" class="btn btn-success ">บันทึก
+                                </button>
                                 <div class="col-sm-4"></div>
                                 <div class="col-sm-3"></div>
                                 <a href="<?php echo site_url ('product/product_page');?>" type="back" class="btn btn-danger">กลับ

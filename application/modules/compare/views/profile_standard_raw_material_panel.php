@@ -13,16 +13,25 @@
       <tbody>
         <?php
         foreach($standard as $key => $value){?>
-          <?php
-          //$this->load->view('compare/cal_standard_raw_cost');
-          ?>
+          <div >
+            <?php
+
+            $sum = 0;
+            foreach ($mat_standard as $key => $value)
+            {
+              $sum += $value['mat_cost'];
+            }
+            ?>
           <tr>
             <td class="text-center"><?php echo $value['mat_name'];?></td>
             <td class="text-center"><?php echo $value['mat_quantity'];?></td>
             <td class="text-center"><?php echo $value['mat_unit'];?></td>
             <td class="text-center"><?php echo $value['mat_cost'];?></td>
+            <?php }?>
+            <td colspan="3"class="text-center">รวมค่า วัตถุดิบ <?php echo $value['eq_cost']; ?></td>
+            <td class="text-center"><?php echo $sum; ?>บาท</td>
           </tr>
-        <?php }?>
+        </div>
       </tbody>
     </table>
   </div>

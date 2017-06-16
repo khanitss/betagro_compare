@@ -11,11 +11,26 @@
         </div>
 
         <div class=" col-sm-2 d-inline-flex p-2">
-          <?php
-          //$this->load->view('compare/cal_total_betagro_cost');
-          ?>
-          <h1>511</h1></div>
-      </div>
+          <div >
+            <?php
+            $food_time = 0;
+            foreach ($betagro as $key => $value)
+            {
+              $food_time += $value['food_time'];
+            }
+            $sum = 0;
+            foreach ($mat_betagro as $key => $value)
+            {
+              $sum += $value['mat_cost'];
+            }
+            foreach ($eq_betagro as $key => $value)
+            {
+              $sum += $value['eq_cost']*($food_time/60);
+            }
+            ?>
+            <h1><?php echo $sum; ?></h1></div>
+          </div>
+        </div>
 
       </br>
 
@@ -55,7 +70,7 @@
 <hr>
 
 <?php
-// $this->load->view('compare/profile_betagro_raw_material_panel');
-// $this->load->view('compare/profile_betagro_equipment_panel');
+$this->load->view('compare/profile_betagro_raw_material_panel');
+$this->load->view('compare/profile_betagro_equipment_panel');
 ?>
 </hr>

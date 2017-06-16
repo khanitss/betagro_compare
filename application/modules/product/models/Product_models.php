@@ -50,8 +50,24 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 							'mat_quantity' 	=> $this->input->post('mat_quantity'),
 							'mat_cost' 		=> $this->input->post('mat_cost'),
 							'mat_unit' 		=> $this->input->post('mat_unit'),
-							'lastupdate'	=> $timestam
-					);
+							'lastupdate'	=> $timestam,
+							'mat_pic'       => $mat_pic      
+							 );              
+                    if($input['mat_pic'] == 'no-image.png'){
+                        unset($input['food_pic']);
+                    }
+                    if($input['mat_name'] == null){
+                        unset($input['mat_name']);
+                    }
+                    if($input['mat_quantity'] == null){
+                        unset($input['mat_quantity']);
+                    }
+                    if($input['mat_cost'] == null){
+                        unset($input['mat_cost']);
+                    }
+                    if($input['mat_unit'] == null){
+                        unset($input['mat_unit']);
+                    }
         	$this->db->where('mat_id',$mat_id);
         	$this->db->update('material',$input);
 		}

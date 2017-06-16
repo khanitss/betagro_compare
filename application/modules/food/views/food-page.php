@@ -3,17 +3,17 @@
 if ($alert == '1') {
     ?>
     <div class="alert alert-success">
-        <strong>Save Data Success!</strong>
+        <strong>บันทึกข้อมูลสำเร็จ</strong>
         <button type="button" class="close" data-dismiss="alert">&times;</button>
     </div>
     <?php
 }?>
 
 <div class="block-header clearfix">
-    <h2 class="pull-left">Menu</h2>
+    <h2 class="pull-left">เมนูอาหาร</h2>
     <ul class="breadcrumb pull-right">
-        <li><a href="<?php echo site_url('dashboard/home');?>">Home</a></li>
-        <li><a href="">Food Menu</a></li>
+        <li><a href="<?php echo site_url('dashboard/home');?>">หน้าหลัก</a></li>
+        <li><a href="">รายการอาหาร</a></li>
     </ul>
 </div>
 
@@ -22,14 +22,14 @@ if ($alert == '1') {
     <div class="col-sm-10 col-xs-8"></div>
     <div class="col-sm-2 col-xs-4 text-center">
         <a href="<?php echo site_url('food/add_food');?>">
-            <button class="btn btn-success btn-block">Add Menu</button>
+            <button class="btn btn-success btn-block">เพิ่มเมนู</button>
         </a>
     </div>
 </div>
 
 <div class="row">
     <div class="block-header">
-        <h4>Standard Menu</h4>
+        <h4>เมนูทั่วไป</h4>
     </div>
     <div class="form-group">
         <?php
@@ -56,7 +56,7 @@ if ($alert == '1') {
 
 <div class="row">
     <div class="block-header">
-        <h4>Betagro Menu</h4>
+        <h4>เมนูเบทาโกร</h4>
     </div>
     <div class="form-group">
         <?php

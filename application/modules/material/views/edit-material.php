@@ -16,6 +16,9 @@ echo form_open('material/update_material/'.$this->uri->segment(3),$attr);
 </div>
 <div class="row">
   <div class="col-sm-2"></div>
+    <?php
+      foreach ($product_details as $key => $value){
+    ?>
   <div class="col-sm-8">
       <div class="card" align="center">
         <div class="fileinput fileinput-new card-body card-padding" data-provides="fileinput">
@@ -31,7 +34,7 @@ echo form_open('material/update_material/'.$this->uri->segment(3),$attr);
         <a href="#" class="close fileinput-exists" data-dismiss="fileinput">&times;</a>
         <h4>Add Raw Material</h4>
         <div class="card-body card-padding">
-          <form class="form-horizontal">
+          
             <div class="form-group">
               <label class="col-sm-2 col-xs-2 control-label">Name :</label>
               <div class="col-sm-10 col-xs-10">
@@ -58,8 +61,11 @@ echo form_open('material/update_material/'.$this->uri->segment(3),$attr);
               <button type="cancel" class="btn btn-danger">Cancel</button>
           </div>
       </div>
-  </form>
- 
+  
+    <?php 
+    }
+
+    ?>
 </div>
 
 <?php echo form_close();?>

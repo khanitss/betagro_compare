@@ -34,14 +34,12 @@ class Material extends MX_Controller {
     //edit page
     public function edit_page() {
         
+        $this->load->model('Product_models');
+        $data['content']='product/edit-product';
         $mat_id = $this->uri->segment(3);
-        $qstr_sess=array('select_items_one'=>$mat_id);
-        $this->session->set_userdata($qstr_sess);
-        $qstr_material=array('mat_id'=>$mat_id);
-        $data['raw_detail'] = $this->Material_models->get_id_material($qstr_material);
-        
-        $data['content']='material/edit-material';
+        $data['material_details'] = $this->Material_models->get_material_details($mat_id);
         $this->init_sys->content($data);
+    }
     }
     
 
@@ -93,17 +91,12 @@ class Material extends MX_Controller {
     }
 
     //Update no finish
-    public function update_material(){
-        $mat_id = $this->session->userdata('select_items_one');
-        $this->Material_models->update_material();
-        redirect('material/material_d_page/'.$mat_id);
-
-        //$data['show_mat'] = $this->get_raw_material();
-        // $this->load->model('Meterial_models');
-        // $timestam = date('Y-m-d H:i:s');
-        // $id = $this->uri->segment(3);
-        // $this->Material_models->update_material();
-        // redirect('material/material_d_page');
-}
+    public function update_pmaterial(){
+        $this->load->model('Material_models');
+        $timestam = date('Y-m-d H:i:s');
+        $mat_id = $this->uri->segment(3);
+        $this->Material_models->update_product_details($mat_id);
+        redirect('material/material_d_page'.$mat_id);
+    }
 }//end class
 

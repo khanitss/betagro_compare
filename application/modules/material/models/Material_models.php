@@ -98,14 +98,23 @@ class Material_models extends CI_Model{
 		return $result;
 	}
 
+	public function get_material_details($mat_id){
+			$result = $this->db->select('*')
+			->where('mat_id',$mat_id)
+			->from('material')
+			->get()
+			->result_array();
+			return $result;
+		}
 	public function update_material($mat_id){
-		$data = array(
-			'mat_name' => $this->input->post('mat_name')
-			);
-		$this->db->where('mat_id', $mat_id);
-		$this->db->update('material', $data);
-		
-
-	}
+			$input = array(	'mat_name' 		=> $this->input->post('mat_name'),
+							'mat_quantity' 	=> $this->input->post('mat_quantity'),
+							'mat_cost' 		=> $this->input->post('mat_cost'),
+							'mat_unit' 		=> $this->input->post('mat_unit'),
+							'lastupdate'	=> $timestam
+					);
+        	$this->db->where('mat_id',$mat_id);
+        	$this->db->update('material',$input);
+		}
 
 }

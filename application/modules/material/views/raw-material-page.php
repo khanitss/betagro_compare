@@ -31,7 +31,7 @@
             <div class="thumbnail img-check">
                 <center><a href="<?php echo site_url('material/edit_page/'.$value['mat_id']);?>" class="text-center">
           <input id="item1" value="val1" class="hidden" autocomplete="off" >
-          <label for="cb1"><img src="<?php echo base_url('images_compare/'.$value['mat_pic']);?>" alt="light" width="120" height="120"></label></a></center>
+          <label for="cb1"><img src="<?php echo base_url('images_compare/'.$value['mat_pic']);?>" alt="light" width="150" height="150"></label></a></center>
                     <div class="caption">
                         <CENTER><p>
                             <?php echo $value['mat_name'];?> <?php echo $value['mat_quantity'];?> <?php echo $value['mat_unit'];?> <?php echo $value['mat_cost'];?>  บาท

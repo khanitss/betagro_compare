@@ -80,7 +80,7 @@ class Material_models extends CI_Model{
 
 	public function get_raw_material($qstr='')
 	{
-		if (empty($qstr)) {
+		if (!empty($qstr)) {
 			$this->db->where($qstr);
 		}
 
@@ -106,6 +106,9 @@ class Material_models extends CI_Model{
 							'mat_id'		=> $mat_id,
 							'lastupdate'	=> $timestam
 					);
+			if ($cat_id==0){
+				unset($input['cat_id']);
+			}
         	$this->db->where('mat_id',$mat_id);
         	$this->db->update('material',$input);
 		}

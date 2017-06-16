@@ -18,7 +18,8 @@
       <div class="card" align="center">
         <div class="fileinput fileinput-new card-body card-padding" data-provides="fileinput">
           <span class="btn btn-default btn-file m-r-5">
-            <span class="fileinput-new"><img src="<?php echo base_url ('dist/images/icons/addButton.png');?>" width="50%" alt="">
+            <span class="fileinput-new">
+                <img src="<?php echo base_url ('dist/images/icons/addButton.png');?>" width="50%" alt="">
             </span>
             <span class="fileinput-exists">Change
             </span>

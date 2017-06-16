@@ -106,10 +106,10 @@ class Material extends MX_Controller {
     //delete 
      public function delete_material(){
         $this->load->model('Material_models');
-        $mat_id = $this->session->userdata('select_items_one');
-        $this->Material_models->update_material($mat_id);
+        $cat_id = $this->session->userdata('select_items_one');
+        $mat_id = $this->uri->segment(3);
         $this->Material_models->delete_material($mat_id);
-        redirect('material/material_d_page/'.$mat_id);
+         redirect('material/material_d_page/'.$cat_id);
     }
 }//end class
 

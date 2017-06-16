@@ -78,10 +78,10 @@ class Material_models extends CI_Model{
 		$this->db->insert('material',$input);
 	}
 
-	public function get_raw_material($qstr_cate='')
+	public function get_raw_material($qstr='')
 	{
-		if (empty($qstr_cate)) {
-			$this->db->where($qstr_cate);
+		if (empty($qstr)) {
+			$this->db->where($qstr);
 		}
 
 		$result = $this->db->get('material')->result_array();

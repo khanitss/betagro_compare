@@ -12,6 +12,9 @@
 
       <tbody>
         <?php foreach($betagro as $key => $value){?>
+          <?php
+          //$this->load->view('compare/cal_betagro_equip_cost');
+          ?>
           <tr>
             <td class="text-center"><?php echo $value['eq_name']; ?></td>
             <td class="text-center"><?php echo $value['eq_quantity']; ?></td>

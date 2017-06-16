@@ -12,12 +12,14 @@
 
       <tbody>
         <?php foreach($standard as $key => $value){?>
+          <?php
+          //$this->load->view('compare/cal_standard_equip_cost');
+          ?>
           <tr>
             <td class="text-center"><?php echo $value['eq_name']; ?></td>
             <td class="text-center"><?php echo $value['eq_quantity']; ?></td>
             <td class="text-center"><?php echo $value['eq_unit']; ?></td>
             <td class="text-center"><?php echo $value['eq_cost']; ?></td>
-            <!-- $eq_standard_cost=$eq_standard_cost+<?php echo $value['mat_cost'];?>; -->
           </tr>
         <?php }?>
       </tbody>

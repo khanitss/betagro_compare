@@ -10,17 +10,18 @@
 
 <!-- col standard-->
 <div class="row">
-    <div class="col-sm-6">
+    <div class="col-sm-5">
         <div class="card ">
 
             <?php foreach ($food_details as $key => $value)
             {
                 ?>
+
                 <div class="card-header">
                     <h2><?php echo $value['food_name'];?></h2>
                 </div>
                 <div class="card-body card-padding">
-                    <img class="center-block" src="<?php echo base_url('dist/images/menu/s_ขาหมู.jpg');?>" class="img-thumbnail" style="width:75%">
+                    <img class="center-block" src="<?php echo base_url('images_compare/'.$value['food_pic']);?>" class="img-thumbnail" style="width:75%">
                     <p></p>
                     <form class="form-horizontal">
                         <div class="form-group">
@@ -42,66 +43,59 @@
                                 <img src=<?php echo base_url('dist/images/icons/Dollar-Sign-icon.png'); ?> alt="Cinque Terre" width="40px" height="40px">
                             </div>
                             <div class="col-sm-6 col-xs-6">
-                                <p class="form-control-static"><strong>300 Baht<strong></p>
+                                <?php
+                                $food_time = 0;
+                                foreach ($food_details as $key => $value)
+                                {
+                                    $food_time += $value['food_time'];
+                                }
+                                $sum = 0;
+                                foreach ($mat_details as $key => $value)
+                                {
+                                    $sum += $value['mat_cost'];
+                                }
+                                foreach ($eq_details as $key => $value)
+                                {
+                                    $sum += $value['eq_cost']*($food_time/60);
+                                }
+                                ?>
+                                <p class="form-control-static"><strong><?php echo $sum; ?>&nbsp;&nbsp;&nbsp;&nbsp;บาท</strong></p>
                             </div>
                         </div>
                     </form>
                 </div>
+
                 <?php
             }
             ?>
+
         </div>
     </div>
-    <div class="col-sm-6">
+    <div class="col-sm-7">
         <div class="card">
-
             <div class="card-body card-padding">
                 <table class="table">
                     <thead>
                         <tr>
-                            <th>Raw Material</th>
-                            <th>Quantity</th>
-                            <th>Unit</th>
-                            <th>Cost</th>
+                            <th class="text-center">Raw Material</th>
+                            <th class="text-center">Quantity</th>
+                            <th class="text-center">Unit</th>
+                            <th class="text-center">Cost</th>
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
-                            <td>ขาหมู</td>
-                            <td>1</td>
-                            <td>ขา</td>
-                            <td>300</td>
-                        </tr>
-                        <tr>
-                            <td>คะน้า</td>
-                            <td>0.5</td>
-                            <td>กก.</td>
-                            <td>10</td>
-                        </tr>
-                        <tr>
-                            <td>ลูกกระวาน</td>
-                            <td>1</td>
-                            <td>กรัม</td>
-                            <td>1.5</td>
-                        </tr>
-                        <tr>
-                            <td>ไข่</td>
-                            <td>1</td>
-                            <td>ฟอง</td>
-                            <td>4</td>
-                        </tr>
-                        <tr>
-                            <td>อบเชย</td>
-                            <td>2.5</td>
-                            <td>กรัม</td>
-                            <td>2.5</td>
-                        </tr>
-                        <tr>
-                            <td>โปั๊ยกั๊ก</td>
-                            <td>2.5</td>
-                            <td>กรัม</td>
-                            <td>2.5</td>
-                        </tr>
+                        <?php foreach ($mat_details as $key => $value)
+                        {
+                            ?>
+                            <tr>
+                                <td class="text-center"><?php echo $value['mat_name'];?></td>
+                                <td class="text-center"><?php echo $value['mat_quantity'];?></td>
+                                <td class="text-center"><?php echo $value['mat_unit'];?></td>
+                                <td class="text-center"><?php echo $value['mat_cost'];?>&nbsp; บาท</td>
+                            </tr>
+                            <?php
+                        }
+                        ?>
                     </tbody>
                 </table>
             </div>
@@ -110,43 +104,38 @@
                 <table class="table">
                     <thead>
                         <tr>
-                            <th>Man/Equipment</th>
-                            <th>Quantity</th>
-                            <th>Unit</th>
-                            <th>Cost</th>
+                            <th class="text-center">Man / Equipment</th>
+                            <th class="text-center">Quantity</th>
+                            <th class="text-center">Cost / Hr</th>
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
-                            <td>Chef</td>
-                            <td>1</td>
-                            <td>คน</td>
-                            <td>200</td>
-                        </tr>
-                        <tr>
-                            <td>Gas</td>
-                            <td>1</td>
-                            <td>Hour</td>
-                            <td>400</td>
-                        </tr>
+                        <?php foreach ($eq_details as $key => $value)
+                        {
+                            ?>
+                            <tr>
+                                <td class="text-center"><?php echo $value['eq_name'];?></td>
+                                <td class="text-center">1</td>
+                                <td class="text-center"><?php echo $value['eq_cost'];?>&nbsp; บาท</td>
+                            </tr>
+                            <?php
+                        }
+                        ?>
                     </tbody>
                 </table>
             </div>
+
+
         </div>
-    </div>
-</div>
-
-</div>
-
-<div>
-    <div class="row">
-        <div class="col-sm-7 col-xs-1"></div>
-        <div class="col-sm-2 col-xs-5">
+        <div class="col-sm-2 col-xs-2"></div>
+        <div class="col-sm-4 col-xs-4">
             <a href="<?php echo site_url('food/edit_food/'.$value['food_id']);?>" type="button" class="btn btn-success btn-lg btn-block">Edit</a>
         </div>
-        <div class="col-sm-2 col-xs-5">
+        <div class="col-sm-4 col-xs-4">
             <a href="<?php echo site_url('food/food_page');?>" type="button" class="btn btn-danger btn-lg btn-block">BACK</a>
         </div>
-        <div class="col-sm-1 col-xs-1"></div>
+        <div class="col-sm-2 col-xs-2"></div>
     </div>
+</div>
+
 </div>

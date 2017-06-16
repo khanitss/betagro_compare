@@ -9,7 +9,11 @@
             <img class="center-block" src="<?php echo base_url('dist/images/icons/Dollar-Sign-icon.png'); ?>" class="img-thumbnail"  width="40px" height="40px">
           </h2>
         </div>
-      <div class=" col-sm-2 d-inline-flex p-2"><h1>511</h1></div>
+      <div class=" col-sm-2 d-inline-flex p-2">
+        <?php
+        //$this->load->view('compare/cal_total_standard_cost');
+        ?>
+        <h1>511</h1></div>
     </div>
 
       </br>

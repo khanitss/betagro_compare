@@ -13,12 +13,14 @@
       <tbody>
         <?php
         foreach($standard as $key => $value){?>
+          <?php
+          //$this->load->view('compare/cal_standard_raw_cost');
+          ?>
           <tr>
             <td class="text-center"><?php echo $value['mat_name'];?></td>
             <td class="text-center"><?php echo $value['mat_quantity'];?></td>
             <td class="text-center"><?php echo $value['mat_unit'];?></td>
             <td class="text-center"><?php echo $value['mat_cost'];?></td>
-            <!-- $mat_standard_cost=$mat_standard_cost+<?php echo $value['mat_cost'];?>; -->
           </tr>
         <?php }?>
       </tbody>

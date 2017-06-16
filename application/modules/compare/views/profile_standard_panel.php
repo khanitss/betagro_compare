@@ -11,23 +11,7 @@
         </div>
         <div class=" col-sm-2 d-inline-flex p-2">
           <div >
-            <?php
-            $food_time = 0;
-            foreach ($standard as $key => $value)
-            {
-              $food_time += $value['food_time'];
-            }
-            $sum = 0;
-            foreach ($mat_standard as $key => $value)
-            {
-              $sum += $value['mat_cost'];
-            }
-            foreach ($eq_standard as $key => $value)
-            {
-              $sum += $value['eq_cost']*($food_time/60);
-            }
-            ?>
-            <h1><?php echo $sum; ?></h1></div>
+            <h1>$$$</h1>
           </div>
         </div>
 
@@ -35,7 +19,7 @@
 
     <div class="row">
       <div class="col-md-12">
-          <img class="center-block" src="<?php echo base_url('images_compare/'.$value['food_pic']);?>" class="img-thumbnail img-responsive" >
+          <img class="center-block" src="<?php echo base_url('images_compare/'.$value['food_pic']);?>" class="img-thumbnail "width="500px" height="450px" >
       </div>
     </div>
 

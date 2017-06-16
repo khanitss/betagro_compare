@@ -8,7 +8,6 @@ class Compare extends MX_Controller {
 		parent::__construct();
 		$this->load->module('init_sys/Init_sys');
 		$this->load->model('compare/Compare_model');
-		$this->load->module('food/Food_model');
 	}
 
 	public function choose_menu1_page()
@@ -18,7 +17,7 @@ class Compare extends MX_Controller {
 		$data['food_standard_list'] = $results;
 
 		$standard_id=$this->session->userdata('select_items_one');
-		$data['standard'] = $this->Compare_model->get_food_detail($standard_id);
+		$data['standard'] = $this->Compare_model->get_standard_food_detail($standard_id);
 
 		$data['content']='compare/choose-menu';
 		$this->init_sys->content($data);
@@ -32,7 +31,7 @@ class Compare extends MX_Controller {
 		$data['food_betagro_list'] = $results;
 
 		$betagro_id=$this->session->userdata('select_items_one');
-		$data['betagro'] = $this->Compare_model->get_food_detail($betagro_id);
+		$data['betagro'] = $this->Compare_model->get_betagro_food_detail($betagro_id);
 
 		$data['content']='compare/choose-menu-betagro';
 		$this->init_sys->content($data);
@@ -56,13 +55,12 @@ class Compare extends MX_Controller {
 
 		$betagro_id=($this->uri->segment(3)!=''? $this->uri->segment(3) : 0);
 		$standard_id=$this->session->userdata('select_items_one');
-
-		$data['standard'] = $this->Compare_model->get_food_detail($standard_id);
-		$data['betagro']= $this->Compare_model->get_food_detail($betagro_id);
-		$data['mat_standard'] =$this->Food_model->get_mat_detail($standard_id);
-		$data['mat_betagro'] =$this->Food_model->get_mat_detail($betagro_id);
-		$data['eq_standard'] =$this->Food_model->get_eq_detail($standard_id);
-		$data['eq_betagro'] =$this->Food_model->get_eq_detail($betagro_id);
+		$data['standard'] = $this->Compare_model->get_standard_food_detail($standard_id);
+		$data['betagro']= $this->Compare_model->get_betagro_food_detail($betagro_id);
+		$data['mat_standard'] =$this->Compare_model->get_standard_mat_details($standard_id);
+		$data['mat_betagro'] =$this->Compare_model->get_betagro_mat_details($betagro_id);
+		$data['eq_standard'] =$this->Compare_model->get_standard_eq_details($standard_id);
+		$data['eq_betagro'] =$this->Compare_model->get_betagro_eq_details($betagro_id);
 
 		$data['content']='compare/compare';
 		$this->init_sys->content($data);

@@ -11,27 +11,18 @@
       </thead>
 
       <tbody>
-        <?php
-        foreach($betagro as $key => $value){?>
-          <div >
-            <?php
-
-            $sum = 0;
-            foreach ($mat_betagro as $key => $value)
-            {
-              $sum += $value['mat_cost'];
-            }
-            ?>
             <tr>
+          <?php foreach($mat_betagro as $key => $value){?>
             <td class="text-center"><?php echo $value['mat_name'];?></td>
             <td class="text-center"><?php echo $value['mat_quantity'];?></td>
             <td class="text-center"><?php echo $value['mat_unit'];?></td>
             <td class="text-center"><?php echo $value['mat_cost'];?></td>
-            <?php }?>
-            <td colspan="3"class="text-center">รวมค่า วัตถุดิบ <?php echo $value['eq_cost']; ?></td>
-            <td class="text-center"><?php echo $sum; ?>บาท</td>
+          <?php }?>
+        </tr>
+        <tr>
+            <td colspan="3"class="text-center">รวมค่า วัตถุดิบ </td>
+            <td class="text-center">$$$ บาท</td>
           </tr>
-        </div>
       </tbody>
       </table>
   </div>

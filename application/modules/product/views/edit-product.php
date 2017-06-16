@@ -19,7 +19,7 @@ foreach ($product_details as $key => $value){
             <h2><?php echo $value['mat_name'];?></h2>
                 <img class="center-block" src="<?php echo base_url('images_compare/'.$value['mat_pic']);?>" class="img-thumbnail" alt="Cinque Terre" style="width:45%" >
                 <span class="fileinput-exists">Change</span>
-                        <input type="file" name="upload_file">
+                <input type="file" name="upload_file">
                 <div class="card-body card-padding">
                     <form class="form-horizontal">
                         <div class="form-group">

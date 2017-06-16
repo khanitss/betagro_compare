@@ -46,6 +46,16 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 		}
 
 		public function update_product_details($mat_id){
+        	$this->load->module('upload/Myupload');
+        	$prop = array(
+                    'upload_path'	=>'./images_compare/',
+                    'allowed_types'	=>'jpg|jpeg|png',
+                    'txt_upload'	=>'upload_file',
+                    'txt_unlink'	=>$this->input->post('file_old'),
+                    'default_file'	=>'no-image.png'
+                );
+        
+        	$mat_pic = $this->myupload->upload_file($prop);
 			$input = array(	'mat_name' 		=> $this->input->post('mat_name'),
 							'mat_quantity' 	=> $this->input->post('mat_quantity'),
 							'mat_cost' 		=> $this->input->post('mat_cost'),
@@ -54,7 +64,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 							'mat_pic'       => $mat_pic      
 							 );              
                     if($input['mat_pic'] == 'no-image.png'){
-                        unset($input['food_pic']);
+                        unset($input['mat_pic']);
                     }
                     if($input['mat_name'] == null){
                         unset($input['mat_name']);

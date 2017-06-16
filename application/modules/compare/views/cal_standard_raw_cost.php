@@ -1,3 +1,6 @@
-SELECT SUM(m)
-FROM table_name
-WHERE condition;
+<?php
+
+$this->load->set_mat_detail();
+
+
+ ?>>

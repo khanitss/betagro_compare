@@ -1,10 +1,10 @@
 <!-- Content Section START -->
 <div class="block-header clearfix">
-    <h2 class="pull-left">Food Details</h2>
+    <h2 class="pull-left">รายละเอียด</h2>
     <ul class="breadcrumb pull-right">
-        <li><a href="<?php echo site_url('dashboard/home');?>">Home</a></li>
-        <li><a href="<?php echo site_url('food/food_page');?>">Food Menu</a></li>
-        <li><a href="<?php echo site_url('food/food_details/'.$this->uri->segment(3));?>">Food Details</a></li>
+        <li><a href="<?php echo site_url('dashboard/home');?>">หน้าหลัก</a></li>
+        <li><a href="<?php echo site_url('food/food_page');?>">รายการอาหาร</a></li>
+        <li><a href="<?php echo site_url('food/food_details/'.$this->uri->segment(3));?>">รายละเอียด</a></li>
     </ul>
 </div>
 
@@ -25,18 +25,18 @@
                     <p></p>
                     <form class="form-horizontal">
                         <div class="form-group">
-                            <label class="col-sm-4 col-xs-3 text-right control-label">For :</label>
+                            <label class="col-sm-4 col-xs-3 text-right control-label">จำนวน :</label>
                             <div class="col-sm-8 col-xs-9">
                                 <p class="form-control-static"><?php echo $value['food_for'];?></p>
                             </div>
-                            <label class="col-sm-4 col-xs-3 text-right control-label">Unit :</label>
+                            <label class="col-sm-4 col-xs-3 text-right control-label">หน่วย :</label>
                             <div class="col-sm-8 col-xs-9">
                                 <p class="form-control-static"><?php echo $value['food_unit'];?></p>
                             </div>
-                            <label class="col-sm-4 col-xs-3 text-right control-label">Time :</label>
+                            <label class="col-sm-4 col-xs-3 text-right control-label">เวลา :</label>
                             <div class="col-sm-8 col-xs-9">
-                                <p class="form-control-static"><?php echo $value['food_time'];?> Minutes</p>
-                                <br></br>
+                                <p class="form-control-static"><?php echo $value['food_time'];?> นาที</p>
+                                <br/>
                             </div>
                             <div class="col-sm-4 col-xs-4"></div>
                             <div class="col-sm-2 col-xs-2 text-center" >
@@ -77,10 +77,10 @@
                 <table class="table">
                     <thead>
                         <tr>
-                            <th class="text-center">Raw Material</th>
-                            <th class="text-center">Quantity</th>
-                            <th class="text-center">Unit</th>
-                            <th class="text-center">Cost</th>
+                            <th class="text-center">วัตถุดิบ</th>
+                            <th class="text-center">จำนวน</th>
+                            <th class="text-center">หน่วย</th>
+                            <th class="text-center">ราคา</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -104,9 +104,9 @@
                 <table class="table">
                     <thead>
                         <tr>
-                            <th class="text-center">Man / Equipment</th>
-                            <th class="text-center">Quantity</th>
-                            <th class="text-center">Cost / Hr</th>
+                            <th class="text-center">คน / อุปกรณ์</th>
+                            <th class="text-center">จำนวน</th>
+                            <th class="text-center">ราคา/ชม.</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -129,10 +129,10 @@
         </div>
         <div class="col-sm-2 col-xs-2"></div>
         <div class="col-sm-4 col-xs-4">
-            <a href="<?php echo site_url('food/edit_food/'.$value['food_id']);?>" type="button" class="btn btn-success btn-lg btn-block">Edit</a>
+            <a href="<?php echo site_url('food/edit_food/'.$value['food_id']);?>" type="button" class="btn btn-success btn-lg btn-block">แก้ไข</a>
         </div>
         <div class="col-sm-4 col-xs-4">
-            <a href="<?php echo site_url('food/food_page');?>" type="button" class="btn btn-danger btn-lg btn-block">BACK</a>
+            <a href="<?php echo site_url('food/food_page');?>" type="button" class="btn btn-danger btn-lg btn-block">กลับ</a>
         </div>
         <div class="col-sm-2 col-xs-2"></div>
     </div>

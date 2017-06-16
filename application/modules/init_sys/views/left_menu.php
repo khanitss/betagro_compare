@@ -7,21 +7,21 @@
     <div class="nav-menu-wrapper mcs-overflow1">
         <ul class="nav-menu">
             <li class="nav-item">
-                <a href="<?php echo site_url('dashboard/home');?>"><i class="zmdi zmdi-palette"></i>&nbsp;<span>Dashboard</span></a>
+                <a href="<?php echo site_url('dashboard/home');?>"><i class="zmdi zmdi-palette"></i>&nbsp;<span>หน้าหลัก</span></a>
             </li>
 
             <li class="nav-item">
-                <a href="<?php echo site_url('compare/choose_menu1_page');?>"><i class="zmdi zmdi-apps"></i>&nbsp;<span>Compare Food</span></a>
+                <a href="<?php echo site_url('compare/choose_menu1_page');?>"><i class="zmdi zmdi-apps"></i>&nbsp;<span>เปรียบเทียบรายการอาหาร</span></a>
 
             </li>
 
             <li class="nav-item">
-                <a href="" class="mega-menu-toggle" data-dp-action="submenu-toggle"><i class="multi-level zmdi zmdi-border-color"></i>&nbsp;<span>Setting</span></a>
+                <a href="" class="mega-menu-toggle" data-dp-action="submenu-toggle"><i class="multi-level zmdi zmdi-border-color"></i>&nbsp;<span>ตั้งค่า</span></a>
                 <ul class="mega-menu">
-                    <li><a href="<?php echo site_url('food/food_page');?>">Foods</a></li>
-                    <li><a href="<?php echo site_url('material/material_page');?>">Materials</a></li>
-                    <li><a href="<?php echo site_url('product/product_page');?>">Betagro Products</a></li>
-                    <li><a href="<?php echo site_url('man/man_page');?>">Man & Equipments</a></li>
+                    <li><a href="<?php echo site_url('food/food_page');?>">เมนูอาหาร</a></li>
+                    <li><a href="<?php echo site_url('material/material_page');?>">วัตถุดิบ</a></li>
+                    <li><a href="<?php echo site_url('product/product_page');?>">ผลิตภัณฑ์เบทาโกร</a></li>
+                    <li><a href="<?php echo site_url('man/man_page');?>">คนและอุปกรณ์</a></li>
                 </ul>
             </li>
         </ul>

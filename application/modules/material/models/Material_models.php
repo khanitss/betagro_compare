@@ -139,6 +139,7 @@ class Material_models extends CI_Model{
                 unset($input['mat_cost']);
              }
 
+
         	$this->db->where('mat_id',$mat_id);
         	$this->db->update('material',$input);
 		}

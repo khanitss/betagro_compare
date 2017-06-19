@@ -53,7 +53,7 @@ echo form_open_multipart('material/add_raw_material', $attr);?>
                             <button type="save" class="btn btn-success btn-block">บันทึก</a></button>
                         </div>
                         <div class="col-sm-4">
-                            <a href="<?php echo site_url ('material/material_d_page');?>" type="cancel" class="btn btn-danger btn-block">ยกเลิก</a>
+                            <a href="<?php echo site_url ('material/material_d_page/'.$this->uri->segment(3));?>" type="cancel" class="btn btn-danger btn-block">ยกเลิก</a>
                         </div>
                         <div class="col-sm-2"></div>
                     </div>

@@ -33,8 +33,9 @@ class Material extends MX_Controller {
 
     //edit page
     public function edit_page() {
-        $mat_id = $this->uri->segment(3);
+        $mat_id = $this->uri->segment(4);
         $data['content']='material/edit-material';
+        
         $data['material_detail'] = $this->Material_models->get_material_details($mat_id);
         $this->init_sys->content($data);
     }

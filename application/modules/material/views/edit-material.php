@@ -1,15 +1,5 @@
 <div class="block-header clearfix">
-<<<<<<< HEAD
-  <h2 class="pull-left">แก้ไขวัตถุดิบ</h2>
-  <ul class="breadcrumb pull-right">
-    <li><a href="index.html">หน้าหลัก</a></li>
-    
-    <li><a href="<?php echo site_url ('material/material_page');?>">กลุ่มของวัตถุดิบ</a></li>
-    <li><a href="">วัตถุดิบ</a></li>
-    <!-- back can't -->
-    <li><a href="<?php echo site_url ('material/edit_page');?>">แก้ไขวัตถุดิบ</a></li>
-</ul>
-=======
+
     <h2 class="pull-left">แก้ไขวัตถุดิบ</h2>
     <ul class="breadcrumb pull-right">
         <li><a href="index.html">หน้าหลัก</a></li>
@@ -17,12 +7,12 @@
         <li><a href="<?php echo site_url ('material/material_d_page');?>">วัตถุดิบ</a></li>
         <li><a href="<?php echo site_url ('material/edit_page');?>">แก้ไขวัตถุดิบ</a></li>
     </ul>
->>>>>>> b9462c4f1f4f1ba510d89376c48b356a5e9b3c69
+
 </div>
 
 <?php
 $attr = array('class' => 'form-horizontal');
-echo form_open_multipart('material/update_material/'.$this->uri->segment(3),$attr);
+echo form_open_multipart('material/update_material/'.$this->uri->segment(4),$attr);
 ?>
 <?php
 foreach ($material_detail as $key => $value){
@@ -68,7 +58,7 @@ foreach ($material_detail as $key => $value){
                                             <button type="save" class="btn btn-success btn-block">บันทึก</button>
                                         </div>
                                         <div class="col-sm-4">
-                                            <a href="<?php echo site_url ('Material/Material_d_page');?>" type="back" class="btn btn-danger btn-block">กลับ</a>
+                                            <a href="<?php echo site_url ('Material/Material_d_page/'.$this->uri->segment(3));?>" type="back" class="btn btn-danger btn-block">กลับ</a>
                                         </div>
                                         <div class="col-sm-2"></div>
                                     </div>

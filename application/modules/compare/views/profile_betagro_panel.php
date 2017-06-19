@@ -1,4 +1,8 @@
+
+
 <?php foreach($betagro as $key => $value){?>
+
+
 <div class="card ">
   <div class="card-body card-padding">
 
@@ -11,17 +15,16 @@
         </div>
 
         <div class=" col-sm-2 d-inline-flex p-2">
-          <?php
-          //$this->load->view('compare/cal_total_betagro_cost');
-          ?>
-          <h1>511</h1></div>
-      </div>
+          <div >
+            <h1>$$$</h1>
+          </div>
+        </div>
 
       </br>
 
       <div class="row">
         <div class="col-md-12">
-          <img class="center-block" src="<?php echo base_url('images_compare/'.$value['food_pic']);?>" class="img-thumbnail img-responsive" >
+          <img class="center-block" src="<?php echo base_url('images_compare/'.$value['food_pic']);?>" class="img-thumbnail " width="500px" height="450px">
         </div>
       </div>
 
@@ -31,7 +34,6 @@
         <div class="col-sm-3">
           <img class="center-block" src="<?php echo base_url('dist/images/icons/checkin.png');?>" class="img-thumbnail img-responsive"  width="50px" height="50px">
         </div>
-
         <div class="col-sm-3 d-inline-flex p-2"><pre><?php echo $value['food_for'];?></pre></div>
       </div>
 
@@ -50,12 +52,13 @@
         </div>
         <div class="col-sm-3 d-inline-flex p-2"><pre><?php echo $value['food_time'];?></pre></div>
       </div>
-<?php }?>
 
 <hr>
 
 <?php
-// $this->load->view('compare/profile_betagro_raw_material_panel');
-// $this->load->view('compare/profile_betagro_equipment_panel');
+$this->load->view('compare/profile_betagro_raw_material_panel');
+$this->load->view('compare/profile_betagro_equipment_panel');
 ?>
 </hr>
+
+<?php }?>

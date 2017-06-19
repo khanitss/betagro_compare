@@ -17,7 +17,7 @@ class Compare extends MX_Controller {
 		$data['food_standard_list'] = $results;
 
 		$standard_id=$this->session->userdata('select_items_one');
-		$data['standard'] = $this->Compare_model->get_food_detail($standard_id);
+		$data['standard'] = $this->Compare_model->get_standard_food_detail($standard_id);
 
 		$data['content']='compare/choose-menu';
 		$this->init_sys->content($data);
@@ -30,8 +30,8 @@ class Compare extends MX_Controller {
 		$results = $this->Compare_model->get_food_list($qstr1);
 		$data['food_betagro_list'] = $results;
 
-		$standard_id=$this->session->userdata('select_items_one');
-		$data['betagro'] = $this->Compare_model->get_food_detail($betagro_id);
+		$betagro_id=$this->session->userdata('select_items_one');
+		$data['betagro'] = $this->Compare_model->get_betagro_food_detail($betagro_id);
 
 		$data['content']='compare/choose-menu-betagro';
 		$this->init_sys->content($data);
@@ -52,13 +52,16 @@ class Compare extends MX_Controller {
 	}
 
 	public function compare_page() {
+
 		$betagro_id=($this->uri->segment(3)!=''? $this->uri->segment(3) : 0);
 		$standard_id=$this->session->userdata('select_items_one');
+		$data['standard'] = $this->Compare_model->get_standard_food_detail($standard_id);
+		$data['betagro']= $this->Compare_model->get_betagro_food_detail($betagro_id);
+		$data['mat_standard'] =$this->Compare_model->get_standard_mat_details($standard_id);
+		$data['mat_betagro'] =$this->Compare_model->get_betagro_mat_details($betagro_id);
+		$data['eq_standard'] =$this->Compare_model->get_standard_eq_details($standard_id);
+		$data['eq_betagro'] =$this->Compare_model->get_betagro_eq_details($betagro_id);
 
-		$data['standard'] = $this->Compare_model->get_food_detail($standard_id);
-		$data['betagro']= $this->Compare_model->get_food_detail($betagro_id);
-
-		// echo '<pre>', print_r($data);exit();
 		$data['content']='compare/compare';
 		$this->init_sys->content($data);
 	}

@@ -11,19 +11,19 @@
       </thead>
 
       <tbody>
-        <?php
-        foreach($betagro as $key => $value){?>
-          <?php
-          //$this->load->view('compare/cal_betagro_raw_cost');
-          ?>
-          <tr>
+            <tr>
+          <?php foreach($mat_betagro as $key => $value){?>
             <td class="text-center"><?php echo $value['mat_name'];?></td>
             <td class="text-center"><?php echo $value['mat_quantity'];?></td>
             <td class="text-center"><?php echo $value['mat_unit'];?></td>
             <td class="text-center"><?php echo $value['mat_cost'];?></td>
-          </tr>
           <?php }?>
-        </tbody>
+        </tr>
+        <tr>
+            <td colspan="3"class="text-center">รวมค่า วัตถุดิบ </td>
+            <td class="text-center">$$$ บาท</td>
+          </tr>
+      </tbody>
       </table>
   </div>
 </div>

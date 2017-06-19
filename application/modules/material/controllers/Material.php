@@ -33,10 +33,8 @@ class Material extends MX_Controller {
 
     //edit page
     public function edit_page() {
-        
-        $this->load->model('Material_models');
-        $data['content']='material/edit-material';
         $mat_id = $this->uri->segment(3);
+        $data['content']='material/edit-material';
         $data['material_detail'] = $this->Material_models->get_material_details($mat_id);
         $this->init_sys->content($data);
     }
@@ -93,7 +91,6 @@ class Material extends MX_Controller {
 
     //Update form edit
     public function update_material(){
-        $this->load->model('Material_models');
         $timestam = date('Y-m-d H:i:s');
         $cat_id = $this->session->userdata('select_items_one');
         $mat_id = $this->uri->segment(3);

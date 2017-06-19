@@ -9,18 +9,17 @@
             <img class="center-block" src="<?php echo base_url('dist/images/icons/Dollar-Sign-icon.png'); ?>" class="img-thumbnail"  width="40px" height="40px">
           </h2>
         </div>
-      <div class=" col-sm-2 d-inline-flex p-2">
-        <?php
-        //$this->load->view('compare/cal_total_standard_cost');
-        ?>
-        <h1>511</h1></div>
-    </div>
+        <div class=" col-sm-2 d-inline-flex p-2">
+          <div >
+            <h1>$$$</h1>
+          </div>
+        </div>
 
       </br>
 
     <div class="row">
       <div class="col-md-12">
-          <img class="center-block" src="<?php echo base_url('images_compare/'.$value['food_pic']);?>" class="img-thumbnail img-responsive" >
+          <img class="center-block" src="<?php echo base_url('images_compare/'.$value['food_pic']);?>" class="img-thumbnail "width="500px" height="450px" >
       </div>
     </div>
 
@@ -54,7 +53,7 @@
 <hr>
 
 <?php
-// $this->load->view('compare/profile_standard_raw_material_panel');
-// $this->load->view('compare/profile_standard_equipment_panel');
+$this->load->view('compare/profile_standard_raw_material_panel');
+$this->load->view('compare/profile_standard_equipment_panel');
 ?>
 </hr>

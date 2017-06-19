@@ -11,17 +11,18 @@
       </thead>
 
       <tbody>
-        <?php foreach($betagro as $key => $value){?>
-          <?php
-          //$this->load->view('compare/cal_betagro_equip_cost');
-          ?>
-          <tr>
-            <td class="text-center"><?php echo $value['eq_name']; ?></td>
-            <td class="text-center"><?php echo $value['eq_quantity']; ?></td>
-            <td class="text-center"><?php echo $value['eq_unit']; ?></td>
-            <td class="text-center"><?php echo $value['eq_cost']; ?></td>
-          </tr>
-        <?php }?>
+            <tr>
+              <?php foreach($eq_betagro as $key => $value){?>
+              <td class="text-center"><?php echo $value['eq_name']; ?></td>
+              <td class="text-center">1</td>
+              <td class="text-center"></td>
+              <td class="text-center"><?php echo $value['eq_cost']; ?></td>
+              <?php }?>
+            </tr>
+            <tr>
+              <td colspan="3"class="text-center">รวมค่า คน/อุปกรณ์ </td>
+              <td class="text-center">$$$ บาท</td>
+            </tr>
         </tbody>
       </table>
   </div>

@@ -11,18 +11,19 @@
       </thead>
 
       <tbody>
-        <?php
-        foreach($standard as $key => $value){?>
-          <?php
-          //$this->load->view('compare/cal_standard_raw_cost');
-          ?>
           <tr>
+            <?php foreach($mat_standard as $key => $value){?>
             <td class="text-center"><?php echo $value['mat_name'];?></td>
             <td class="text-center"><?php echo $value['mat_quantity'];?></td>
             <td class="text-center"><?php echo $value['mat_unit'];?></td>
             <td class="text-center"><?php echo $value['mat_cost'];?></td>
+            <?php }?>
           </tr>
-        <?php }?>
+          <tr>
+            <td colspan="3"class="text-center">รวมค่า วัตถุดิบ </td>
+            <td class="text-center">$$$ บาท</td>
+          </tr>
+        </div>
       </tbody>
     </table>
   </div>

@@ -36,7 +36,7 @@ foreach ($eq_standard as $key => $value)
 
                 <div class="col-sm-3 col-xs-3">
                     <div >
-                        <h2><?php echo $sum;?> บาท</h2>
+                        <h2><?php echo $int = (int)$sum;?> บาท</h2>
                     </div>
                 </div>
             </div>

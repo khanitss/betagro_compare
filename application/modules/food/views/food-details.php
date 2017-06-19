@@ -14,6 +14,7 @@ foreach ($eq_details as $key => $value)
 {
     $sum += $value['eq_cost']*($food_time/60);
 }
+$int = (int)$sum;
 ?>
 
 <!-- Content Section START -->
@@ -73,7 +74,7 @@ foreach ($eq_details as $key => $value)
                             </div>
                             <div class="col-sm-6 col-xs-6">
 
-                                <p class="form-control-static"><strong><?php echo $sum; ?>&nbsp;&nbsp;&nbsp;&nbsp;บาท</strong></p>
+                                <p class="form-control-static"><strong><?php echo $int; ?>&nbsp;&nbsp;&nbsp;&nbsp;บาท</strong></p>
                             </div>
                         </div>
                     </form>

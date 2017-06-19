@@ -24,7 +24,7 @@ if ($alert == '1') {
     <div class="col-sm-10 col-xs-8"></div>
     <div class="col-sm-2 col-xs-4 text-center">
         <a href="<?php echo site_url('food/food_details/'.$this->uri->segment(3));?>">
-            <button class="btn btn-danger btn-block">Back</button>
+            <button class="btn btn-danger btn-block">กลับ</button>
         </a>
     </div>
 </div>
@@ -133,7 +133,6 @@ if ($alert == '1') {
                                                             <a href="<?php echo site_url('food/set_mat_detail/'.$this->uri->segment(3).'/'.$value['mat_id']);?>">
                                                                 <img src="<?php echo base_url('images_compare/'.$value['mat_pic']);?>" alt="light" style="max-height:100px" class="img-thumbnail">
                                                             </a>
-                                                            <input id="item1" value="val1" class="hidden" autocomplete="off">
                                                             <p class="caption"><?php echo $value['mat_name'];?> <?php echo $value['mat_quantity'];?> <?php echo $value['mat_unit'];?></p>
                                                         </div>
                                                         <?php
@@ -202,7 +201,6 @@ if ($alert == '1') {
                                                         <a href="<?php echo site_url('food/set_eq_detail/'.$this->uri->segment(3).'/'.$value['eq_id']);?>">
                                                             <img src="<?php echo base_url('images_compare/'.$value['eq_pic']);?>" alt="light" style="max-height:100px" class="img-thumbnail">
                                                         </a>
-                                                        <input id="item1" value="val1" class="hidden" autocomplete="off">
                                                         <p class="caption"><?php echo $value['eq_name'];?> : <?php echo $value['eq_cost'];?> บาท</p>
                                                     </div>
 

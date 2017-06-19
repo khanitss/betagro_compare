@@ -28,6 +28,17 @@ foreach ($eq_details as $key => $value)
 
 <!-- col standard-->
 <div class="row">
+    <div class="col-sm-10 col-xs-8"></div>
+    <div class="col-sm-2 col-xs-4 text-center">
+        <a href="<?php echo site_url('food/food_page');?>">
+            <button class="btn btn-danger btn-block">กลับ</button>
+        </a>
+    </div>
+</div>
+
+<br/>
+
+<div class="row">
     <div class="col-sm-5">
         <div class="card ">
 
@@ -134,11 +145,12 @@ foreach ($eq_details as $key => $value)
         <div class="col-sm-4 col-xs-4">
             <a href="<?php echo site_url('food/edit_food/'.$value['food_id']);?>" type="button" class="btn btn-success btn-lg btn-block">แก้ไข</a>
         </div>
-        <div class="col-sm-4 col-xs-4">
-            <a href="<?php echo site_url('food/food_page');?>" type="button" class="btn btn-danger btn-lg btn-block">กลับ</a>
-        </div>
+        <?php $attr = array('class' => 'form-horizontal');
+        echo form_open('food/delete_food/'.$this->uri->segment(3), $attr);?>
+        <a class="col-sm-4 col-xs-4 text-center" href="<?php echo site_url('food/delete_food');?>">
+            <button class="btn btn-danger btn-lg btn-block">ลบ</button>
+        </a>
+        <?php echo form_close();?>
         <div class="col-sm-2 col-xs-2"></div>
     </div>
-</div>
-
 </div>

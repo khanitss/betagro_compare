@@ -7,6 +7,14 @@ if ($alert == '1') {
         <button type="button" class="close" data-dismiss="alert">&times;</button>
     </div>
     <?php
+}
+elseif ($alert == '2') {
+    ?>
+    <div class="alert alert-success">
+        <strong>ลบข้อมูลสำเร็จ</strong>
+        <button type="button" class="close" data-dismiss="alert">&times;</button>
+    </div>
+    <?php
 }?>
 
 <div class="block-header clearfix">
@@ -41,8 +49,7 @@ if ($alert == '1') {
                 <div class="col-md-3">
                     <div class="card">
                         <a href="<?php echo site_url('food/food_details/'.$value['food_id']);?>" class="text-center">
-                            <img src="<?php echo base_url('images_compare/'.$value['food_pic']);?>" class="img-thumbnail">
-                            <input id="item1" value="val1" class="hidden" autocomplete="off">
+                            <img src="<?php echo base_url('images_compare/'.$value['food_pic']);?>" class="img-thumbnail"/>
                             <p class="caption" style="margin-top: 10px;">
                                 <strong>
                                     <?php echo $value['food_name'];?> <?php echo $value['food_for'];?> <?php echo $value['food_unit'];?>
@@ -72,9 +79,12 @@ if ($alert == '1') {
                 <div class="col-md-3">
                     <div class="card">
                         <a href="<?php echo site_url('food/food_details/'.$value['food_id']);?>" class="text-center">
-                            <img src="<?php echo base_url('images_compare/'.$value['food_pic']);?>" class="img-thumbnail">
-                            <input id="item1" value="val1" class="hidden" autocomplete="off">
-                            <p class="caption" style="margin-top: 10px;"><strong><?php echo $value['food_name'];?> <?php echo $value['food_for'];?> <?php echo $value['food_unit'];?></strong></p>
+                            <img src="<?php echo base_url('images_compare/'.$value['food_pic']);?>" class="img-thumbnail"/>
+                            <p class="caption" style="margin-top: 10px;">
+                                <strong>
+                                    <?php echo $value['food_name'];?> <?php echo $value['food_for'];?> <?php echo $value['food_unit'];?>
+                                </strong>
+                            </p>
                         </a>
                     </div>
                 </div>

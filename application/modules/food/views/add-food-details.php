@@ -80,7 +80,6 @@ if ($alert == '1') {
                                                         <a href="<?php echo site_url('food/set_mat_detail2/'.$this->uri->segment(3).'/'.$value['mat_id']);?>">
                                                             <img src="<?php echo base_url('images_compare/'.$value['mat_pic']);?>" alt="light" style="max-height:100px" class="img-thumbnail">
                                                         </a>
-                                                        <input id="item1" value="val1" class="hidden" autocomplete="off">
                                                         <div class="caption">
                                                             <p><?php echo $value['mat_name'];?> <?php echo $value['mat_quantity'];?> <?php echo $value['mat_unit'];?></p>
                                                         </div>
@@ -129,7 +128,6 @@ if ($alert == '1') {
                                                     <a href="<?php echo site_url('food/set_eq_detail2/'.$this->uri->segment(3).'/'.$value['eq_id']);?>">
                                                         <img src="<?php echo base_url('images_compare/'.$value['eq_pic']);?>" alt="light" style="max-height:100px" class="img-thumbnail">
                                                     </a>
-                                                    <input id="item1" value="val1" class="hidden" autocomplete="off">
                                                     <div class="caption">
                                                         <p><?php echo $value['eq_name'];?> : <?php echo $value['eq_cost'];?> บาท</p>
                                                     </div>

@@ -48,7 +48,7 @@ elseif ($alert == '2') {
             <div class="col-sm-3">
                 <div class="card">
                     <a href="<?php echo site_url('food/food_details/'.$value['food_id']);?>" class="text-center">
-                        <img src="<?php echo base_url('images_compare/'.$value['food_pic']);?>" class="img-thumbnail"/>
+                        <center><img src="<?php echo base_url('images_compare/'.$value['food_pic']);?>" class="img-thumbnail" style="width: auto; height: 180px;"/><center>
                         <p class="caption" style="margin-top: 10px;">
                             <strong>
                                 <?php echo $value['food_name'];?> <?php echo $value['food_for'];?> <?php echo $value['food_unit'];?>
@@ -76,7 +76,7 @@ elseif ($alert == '2') {
             <div class="col-sm-3">
                 <div class="card">
                     <a href="<?php echo site_url('food/food_details/'.$value['food_id']);?>" class="text-center">
-                        <img src="<?php echo base_url('images_compare/'.$value['food_pic']);?>" class="img-thumbnail"/>
+                        <center><img src="<?php echo base_url('images_compare/'.$value['food_pic']);?>" class="img-thumbnail" style="width: auto; height: 180px;"/></center>
                         <p class="caption" style="margin-top: 10px;">
                             <strong>
                                 <?php echo $value['food_name'];?> <?php echo $value['food_for'];?> <?php echo $value['food_unit'];?>

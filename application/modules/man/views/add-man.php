@@ -43,7 +43,7 @@
                             <button type="save" class="btn btn-success">บันทึก</button>
                         </div>
                         <div class="col-sm-4">
-                            <button class="btn btn-danger">ยกเลิก</button>
+                           <a href="<?php echo site_url ('man/man_page');?>" type="cancel" class="btn btn-danger btn-block">ยกเลิก</a>
                         </div>
                     </form>
                 </div>

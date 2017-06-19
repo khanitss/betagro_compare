@@ -39,11 +39,12 @@
                                 <input class="form-control" id="focusedInput" type="text" placeholder="ราคาคน/อุปกรณ์คิดเป็นชั่วโมง" name="eq_cost">
                             </div>
                         </div>
-                        <div class="col-sm-6">
-                            <button type="save" class="btn btn-success">บันทึก</button>
+                        <div class="col-sm-2"></div>
+                        <div class="col-sm-4">
+                            <button type="save" class="btn btn-block btn-success">บันทึก</button>
                         </div>
                         <div class="col-sm-4">
-                            <button class="btn btn-danger">ยกเลิก</button>
+                           <a href="<?php echo site_url ('man/man_page');?>" type="cancel" class="btn btn-danger btn-block">ยกเลิก</a>
                         </div>
                     </form>
                 </div>

@@ -1,11 +1,11 @@
 <!-- Calculate -->
 <?php
 $food_time = 0;
-foreach ($standard as $key => $value)
+$sum = 0;
+foreach ($betagro as $key => $value)
 {
     $food_time += $value['food_time'];
 }
-$sum = 0;
 foreach ($eq_betagro as $key => $value)
 {
     $sum += $value['eq_cost']*($food_time/60);
@@ -42,7 +42,7 @@ foreach ($eq_betagro as $key => $value)
                 </tr>
                 <tr>
                     <td colspan="3" class="text-center"><strong>รวมค่า คน/อุปกรณ์</strong></td>
-                    <td colspan="1" class="text-center"><strong><?php echo $int = (int)$sum;?> บาท</strong></td>
+                    <td class="text-center"><strong><?php echo $int = (int)$sum;?> บาท</strong></td>
                 </tr>
             </tbody>
         </table>

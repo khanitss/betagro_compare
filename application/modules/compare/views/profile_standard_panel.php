@@ -1,11 +1,11 @@
 <!-- Calculate -->
 <?php
 $food_time = 0;
+$sum = 0;
 foreach ($standard as $key => $value)
 {
     $food_time += $value['food_time'];
 }
-$sum = 0;
 foreach ($mat_standard as $key => $value)
 {
     $sum += $value['mat_cost'];
@@ -24,19 +24,19 @@ foreach ($eq_standard as $key => $value)
         <div class="card-body card-padding">
 
             <div class="row">
-                <div class="col-sm-7 col-xs-7">
-                    <h2><?php echo $value['food_name'];?></h2>
+                <div class="col-sm-6 col-xs-7">
+                    <h3><?php echo $value['food_name'];?></h3>
                 </div>
 
                 <div class="col-sm-2 col-xs-2">
-                    <h2>
-                        <img class="center-block" src="<?php echo base_url('dist/images/icons/Dollar-Sign-icon.png');?>" width="40px" height="40px">
-                    </h2>
+                    <h3>
+                        <img class="center-block" src="<?php echo base_url('dist/images/icons/Dollar-Sign-icon.png');?>" width="30px" height="30px">
+                    </h3>
                 </div>
 
-                <div class="col-sm-3 col-xs-3">
+                <div class="col-sm-4 col-xs-3">
                     <div >
-                        <h2><?php echo $int = (int)$sum;?> บาท</h2>
+                        <h3><?php echo $int = (int)$sum;?> บาท</h3>
                     </div>
                 </div>
             </div>

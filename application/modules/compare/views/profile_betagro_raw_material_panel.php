@@ -37,7 +37,7 @@ foreach ($mat_betagro as $key => $value)
                 </tr>
                 <tr>
                     <td colspan="3" class="text-center"><strong>รวมค่า วัตถุดิบ</strong></td>
-                    <td colspan="1" class="text-center"><strong><?php echo $int = (int)$sum;?> บาท</strong></td>
+                    <td class="text-center"><strong><?php echo $int = (int)$sum;?> บาท</strong></td>
                 </tr>
             </tbody>
         </table>

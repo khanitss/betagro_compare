@@ -39,58 +39,54 @@ elseif ($alert == '2') {
     <div class="block-header">
         <h4>เมนูทั่วไป</h4>
     </div>
-    <div class="form-group">
-        <?php
-        foreach ($food_list as $key => $value) {
-            ?>
-            <?php if($value['food_type'] == '0' and $value['food_status'] == '1')
-            {
-                ?>
-                <div class="col-md-3">
-                    <div class="card">
-                        <a href="<?php echo site_url('food/food_details/'.$value['food_id']);?>" class="text-center">
-                            <img src="<?php echo base_url('images_compare/'.$value['food_pic']);?>" class="img-thumbnail"/>
-                            <p class="caption" style="margin-top: 10px;">
-                                <strong>
-                                    <?php echo $value['food_name'];?> <?php echo $value['food_for'];?> <?php echo $value['food_unit'];?>
-                                </strong>
-                            </p>
-                        </a>
-                    </div>
-                </div>
-                <?php
-            }
-        }
+    <?php
+    foreach ($food_list as $key => $value) {
         ?>
-    </div>
+        <?php if($value['food_type'] == '0' and $value['food_status'] == '1')
+        {
+            ?>
+            <div class="col-sm-3">
+                <div class="card">
+                    <a href="<?php echo site_url('food/food_details/'.$value['food_id']);?>" class="text-center">
+                        <img src="<?php echo base_url('images_compare/'.$value['food_pic']);?>" class="img-thumbnail"/>
+                        <p class="caption" style="margin-top: 10px;">
+                            <strong>
+                                <?php echo $value['food_name'];?> <?php echo $value['food_for'];?> <?php echo $value['food_unit'];?>
+                            </strong>
+                        </p>
+                    </a>
+                </div>
+            </div>
+            <?php
+        }
+    }
+    ?>
 </div>
 
 <div class="row">
     <div class="block-header">
         <h4>เมนูเบทาโกร</h4>
     </div>
-    <div class="form-group">
-        <?php
-        foreach ($food_list as $key => $value) {
-            ?>
-            <?php if ($value['food_type'] == '1' and $value['food_status'] == '1')
-            {
-                ?>
-                <div class="col-md-3">
-                    <div class="card">
-                        <a href="<?php echo site_url('food/food_details/'.$value['food_id']);?>" class="text-center">
-                            <img src="<?php echo base_url('images_compare/'.$value['food_pic']);?>" class="img-thumbnail"/>
-                            <p class="caption" style="margin-top: 10px;">
-                                <strong>
-                                    <?php echo $value['food_name'];?> <?php echo $value['food_for'];?> <?php echo $value['food_unit'];?>
-                                </strong>
-                            </p>
-                        </a>
-                    </div>
-                </div>
-                <?php
-            }
-        }
+    <?php
+    foreach ($food_list as $key => $value) {
         ?>
-    </div>
+        <?php if ($value['food_type'] == '1' and $value['food_status'] == '1')
+        {
+            ?>
+            <div class="col-sm-3">
+                <div class="card">
+                    <a href="<?php echo site_url('food/food_details/'.$value['food_id']);?>" class="text-center">
+                        <img src="<?php echo base_url('images_compare/'.$value['food_pic']);?>" class="img-thumbnail"/>
+                        <p class="caption" style="margin-top: 10px;">
+                            <strong>
+                                <?php echo $value['food_name'];?> <?php echo $value['food_for'];?> <?php echo $value['food_unit'];?>
+                            </strong>
+                        </p>
+                    </a>
+                </div>
+            </div>
+            <?php
+        }
+    }
+    ?>
 </div>

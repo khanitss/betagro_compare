@@ -43,6 +43,15 @@ class Food_model extends CI_Model{
         return $result;
     }
 
+    public function delete_food($food_id){
+        $input = array(
+                    'food_status'   => '0',
+                    'lastupdate'	=> $timestam
+                    );
+                    $this->db->where('food_id',$food_id);
+                    $this->db->update('food',$input);
+    }
+
     public function update_food_details($food_id){
         $this->load->module('upload/Myupload');
         $prop = array(
@@ -54,12 +63,13 @@ class Food_model extends CI_Model{
                 );
         $food_pic = $this->myupload->upload_file($prop);
 
-        $input = array(	'food_name'		=> $this->input->post('food_name'),
-                        'food_for'		=> $this->input->post('food_for'),
-                        'food_unit'		=> $this->input->post('food_unit'),
-                        'food_time'		=> $this->input->post('food_time'),
-                        'food_pic'      => $food_pic,
-                        'lastupdate'	=> $timestam
+        $input = array(
+                    'food_name'		=> $this->input->post('food_name'),
+                    'food_for'		=> $this->input->post('food_for'),
+                    'food_unit'		=> $this->input->post('food_unit'),
+                    'food_time'		=> $this->input->post('food_time'),
+                    'food_pic'      => $food_pic,
+                    'lastupdate'	=> $timestam
                     );
                     if($input['food_pic'] == 'no-image.png'){
                         unset($input['food_pic']);

@@ -12,8 +12,6 @@ class Food extends MX_Controller {
 		$data['alert'] = $this->session->flashdata('alert');
 		$data['content']='food/food-page';
 		$data['food_list'] = $this->get_food_menu();
-		// echo $data['food_list'];
-		// exit;
 		$this->init_sys->content($data);
 	}
 
@@ -33,8 +31,6 @@ class Food extends MX_Controller {
 		$data['mat_list'] = $this->Food_model->get_mat();
 		$data['mat_details'] = $this->Food_model->get_mat_details($food_id);
 		$data['eq_details'] = $this->Food_model->get_eq_details($food_id);
-		// echo print_r($data['food_details']);
-		// exit();
 		$this->init_sys->content($data);
 	}
 
@@ -59,6 +55,15 @@ class Food extends MX_Controller {
 		$data['man_list'] = $this->Food_model->get_man();
 		$data['mat_list'] = $this->Food_model->get_mat();
 		$this->init_sys->content($data);
+	}
+
+	public function delete_food(){
+		$this->load->model('Food_model');
+		$timestam = date('Y-m-d H:i:s');
+		$food_id = $this->uri->segment(3);
+		$this->Food_model->delete_food($food_id);
+		$this->session->set_flashdata('alert', 2);
+		redirect('food/food_page');
 	}
 
 	public function set_food_menu(){

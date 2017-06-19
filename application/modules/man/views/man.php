@@ -21,7 +21,7 @@
             ?>
                 <div class="col-md-3">
                     <div class="thumbnail img-check">
-                        <center>
+                        <center><a href= "<?php echo site_url ('man/man_edit/'.$value['eq_id']);?>">
                             <label for="cb1"> <img src="<?php echo base_url('images_compare/'.$value['eq_pic']);?>"  alt="light" width="120" height="160"></lable>
                             </center>
                             <div class="caption">

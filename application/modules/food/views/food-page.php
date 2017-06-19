@@ -35,7 +35,7 @@ if ($alert == '1') {
         <?php
         foreach ($food_list as $key => $value) {
             ?>
-            <?php if($value['food_type'] == '0')
+            <?php if($value['food_type'] == '0' and $value['food_status'] == '1')
             {
                 ?>
                 <div class="col-md-3">
@@ -43,7 +43,11 @@ if ($alert == '1') {
                         <a href="<?php echo site_url('food/food_details/'.$value['food_id']);?>" class="text-center">
                             <img src="<?php echo base_url('images_compare/'.$value['food_pic']);?>" class="img-thumbnail">
                             <input id="item1" value="val1" class="hidden" autocomplete="off">
-                            <p class="caption" style="margin-top: 10px;"><strong><?php echo $value['food_name'];?> <?php echo $value['food_for'];?> <?php echo $value['food_unit'];?></strong></p>
+                            <p class="caption" style="margin-top: 10px;">
+                                <strong>
+                                    <?php echo $value['food_name'];?> <?php echo $value['food_for'];?> <?php echo $value['food_unit'];?>
+                                </strong>
+                            </p>
                         </a>
                     </div>
                 </div>
@@ -62,7 +66,7 @@ if ($alert == '1') {
         <?php
         foreach ($food_list as $key => $value) {
             ?>
-            <?php if ($value['food_type'] == '1')
+            <?php if ($value['food_type'] == '1' and $value['food_status'] == '1')
             {
                 ?>
                 <div class="col-md-3">

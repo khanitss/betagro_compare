@@ -4,9 +4,10 @@
   <h2 class="pull-left">แก้ไขวัตถุดิบ</h2>
   <ul class="breadcrumb pull-right">
     <li><a href="index.html">หน้าหลัก</a></li>
-    <li><a href="index.html">Setting</a></li>
+    
     <li><a href="<?php echo site_url ('material/material_page');?>">กลุ่มของวัตถุดิบ</a></li>
-    <li><a href="<?php echo site_url ('material/material_d_page');?>">วัตถุดิบ</a></li>
+    <li><a href="">วัตถุดิบ</a></li>
+    <!-- back can't -->
     <li><a href="<?php echo site_url ('material/edit_page');?>">แก้ไขวัตถุดิบ</a></li>
 </ul>
 </div>

@@ -5,9 +5,10 @@
               <li><a href="<?php echo site_url ('dashboard/home');?>">หน้าหลัก</a></li>
               <li><a href="">ตั้งค่า</a></li>
               <li><a href="<?php echo site_url('material/material_page');?>">กลุ่มของวัตถุดิบ</a></li>
-              <li><a href="<?php echo site_url('material/material_d_page');?>">วัตถุดิบ</a></li>
+              <li><a href="<?php echo site_url('material/material_d_page/'.$this->uri->segment(3));?>">วัตถุดิบ</a></li>
             </ul>
           </div>
+          
           
 
           <div class="row">

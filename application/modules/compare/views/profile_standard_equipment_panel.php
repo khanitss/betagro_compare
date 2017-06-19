@@ -1,11 +1,11 @@
 <!-- Calculate -->
 <?php
 $food_time = 0;
+$sum = 0;
 foreach ($standard as $key => $value)
 {
     $food_time += $value['food_time'];
 }
-$sum = 0;
 foreach ($eq_standard as $key => $value)
 {
     $sum += $value['eq_cost']*($food_time/60);

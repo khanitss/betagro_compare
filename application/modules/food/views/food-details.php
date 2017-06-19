@@ -1,3 +1,21 @@
+<!-- Calculate -->
+<?php
+$food_time = 0;
+foreach ($food_details as $key => $value)
+{
+    $food_time += $value['food_time'];
+}
+$sum = 0;
+foreach ($mat_details as $key => $value)
+{
+    $sum += $value['mat_cost'];
+}
+foreach ($eq_details as $key => $value)
+{
+    $sum += $value['eq_cost']*($food_time/60);
+}
+?>
+
 <!-- Content Section START -->
 <div class="block-header clearfix">
     <h2 class="pull-left">รายละเอียด</h2>
@@ -43,22 +61,7 @@
                                 <img src=<?php echo base_url('dist/images/icons/Dollar-Sign-icon.png'); ?> alt="Cinque Terre" width="40px" height="40px">
                             </div>
                             <div class="col-sm-6 col-xs-6">
-                                <?php
-                                $food_time = 0;
-                                foreach ($food_details as $key => $value)
-                                {
-                                    $food_time += $value['food_time'];
-                                }
-                                $sum = 0;
-                                foreach ($mat_details as $key => $value)
-                                {
-                                    $sum += $value['mat_cost'];
-                                }
-                                foreach ($eq_details as $key => $value)
-                                {
-                                    $sum += $value['eq_cost']*($food_time/60);
-                                }
-                                ?>
+
                                 <p class="form-control-static"><strong><?php echo $sum; ?>&nbsp;&nbsp;&nbsp;&nbsp;บาท</strong></p>
                             </div>
                         </div>

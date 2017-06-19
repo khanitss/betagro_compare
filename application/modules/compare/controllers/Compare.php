@@ -60,6 +60,8 @@ class Compare extends MX_Controller {
 		$data['mat_standard'] =$this->Compare_model->get_standard_mat_details($standard_id);
 		$data['mat_betagro'] =$this->Compare_model->get_betagro_mat_details($betagro_id);
 		$data['eq_standard'] =$this->Compare_model->get_standard_eq_details($standard_id);
+		// echo print_r($data['eq_standard']);
+		// exit();
 		$data['eq_betagro'] =$this->Compare_model->get_betagro_eq_details($betagro_id);
 
 		$data['content']='compare/compare';

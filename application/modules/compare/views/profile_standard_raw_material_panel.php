@@ -1,30 +1,45 @@
-<div class="row">
-  <div class="col-md-12">
-    <table class="table">
-      <thead>
-        <tr>
-          <th>วัตถุดิบ</th>
-          <th>จำนวน</th>
-          <th>หน่วย</th>
-          <th>ราคา</th>
-        </tr>
-      </thead>
+<!-- Calculate -->
+<?php
+$sum = 0;
+foreach ($mat_standard as $key => $value)
+{
+    $sum += $value['mat_cost'];
+}
+?>
+<!-- Calculate -->
 
-      <tbody>
-          <tr>
-            <?php foreach($mat_standard as $key => $value){?>
-            <td class="text-center"><?php echo $value['mat_name'];?></td>
-            <td class="text-center"><?php echo $value['mat_quantity'];?></td>
-            <td class="text-center"><?php echo $value['mat_unit'];?></td>
-            <td class="text-center"><?php echo $value['mat_cost'];?></td>
-            <?php }?>
-          </tr>
-          <tr>
-            <td colspan="3"class="text-center">รวมค่า วัตถุดิบ </td>
-            <td class="text-center">$$$ บาท</td>
-          </tr>
-        </div>
-      </tbody>
-    </table>
-  </div>
+<div class="row">
+    <div class="col-md-12">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th class="text-center">วัตถุดิบ</th>
+                    <th class="text-center">จำนวน</th>
+                    <th class="text-center">หน่วย</th>
+                    <th class="text-center">ราคา</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                <tr>
+                    <?php foreach($mat_standard as $key => $value)
+                    {
+                        ?>
+                        <tr>
+                            <td class="text-center"><?php echo $value['mat_name'];?></td>
+                            <td class="text-center"><?php echo $value['mat_quantity'];?></td>
+                            <td class="text-center"><?php echo $value['mat_unit'];?></td>
+                            <td class="text-center"><?php echo $value['mat_cost']*1;?> บาท</td>
+                        </tr>
+                        <?php
+                    }
+                    ?>
+                </tr>
+                <tr>
+                    <td colspan="3" class="text-center"><strong>รวมค่า วัตถุดิบ</strong></td>
+                    <td class="text-center"><strong><?php echo $sum;?> บาท</strong></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
 </div>

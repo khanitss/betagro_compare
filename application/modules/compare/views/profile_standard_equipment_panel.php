@@ -1,30 +1,50 @@
-<div class="row">
-  <div class="col-md-12">
-    <table class="table">
-      <thead>
-        <tr>
-          <th>คน/อุปกรณ์</th>
-          <th>จำนวน</th>
-          <th>หน่วย</th>
-          <th>ราคา</th>
-        </tr>
-      </thead>
+<!-- Calculate -->
+<?php
+$food_time = 0;
+foreach ($standard as $key => $value)
+{
+    $food_time += $value['food_time'];
+}
+$sum = 0;
+foreach ($eq_standard as $key => $value)
+{
+    $sum += $value['eq_cost']*($food_time/60);
+}
+?>
+<!-- Calculate -->
 
-      <tbody>
-            <tr>
-              <?php foreach($eq_standard as $key => $value){?>
-              <td class="text-center"><?php echo $value['eq_name']; ?></td>
-              <td class="text-center">1</td>
-              <td class="text-center"></td>
-              <td class="text-center"><?php echo $value['eq_cost']; ?></td>
-              <?php }?>
-            </tr>
-            <tr>
-              <td colspan="3"class="text-center">รวมค่า คน/อุปกรณ์ </td>
-              <td class="text-center">$$$ บาท</td>
-            </tr>
-          </div>
-      </tbody>
-    </table>
-  </div>
+<div class="row">
+    <div class="col-md-12">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th class="text-center">คน/อุปกรณ์</th>
+                    <th class="text-center">จำนวน</th>
+                    <th/>
+                    <th class="text-center">ราคา</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                <tr>
+                    <?php foreach($eq_standard as $key => $value)
+                    {
+                        ?>
+                        <tr>
+                            <td class="text-center"><?php echo $value['eq_name'];?></td>
+                            <td class="text-center">1</td>
+                            <td/>
+                            <td class="text-center"><?php echo $value['eq_cost']*($food_time/60);?> บาท</td>
+                        </tr>
+                        <?php
+                    }
+                    ?>
+                </tr>
+                <tr>
+                    <td colspan="3" class="text-center"><strong>รวมค่า คน/อุปกรณ์</strong></td>
+                    <td class="text-center"><strong><?php echo $sum;?> บาท</strong></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
 </div>

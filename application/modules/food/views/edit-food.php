@@ -8,6 +8,15 @@ if ($alert == '1') {
     </div>
     <?php
 }?>
+<?php
+if ($alert == '2') {
+    ?>
+    <div class="alert alert-success">
+        <strong>ลบข้อมูลสำเร็จ</strong>
+        <button type="button" class="close" data-dismiss="alert">&times;</button>
+    </div>
+    <?php
+}?>
 
 <div class="block-header clearfix">
     <h2 class="pull-left">แก้ไขรายละเอียด</h2>

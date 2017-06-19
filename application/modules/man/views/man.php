@@ -1,40 +1,40 @@
-   <div class="block-header clearfix">
+<div class="block-header clearfix">
     <h2 class="pull-left">คน/อุปกรณ์</h2>
     <ul class="breadcrumb pull-right">
         <li><a href="index.html">หน้าหลัก</a></li>
         <li><a href="#">คน/อุปกรณ์</a></li>
     </ul>
 </div>
+
 <div class="row">
     <div class="col-sm-10 col-xs-8"></div>
     <div class="col-sm-2 col-xs-4 text-center">
         <a href="<?php echo site_url('man/man_add');?>">
-            <button class="btn btn-success">เพิ่ม คน/อุปกรณ์</button>
+            <button class="btn btn-success btn-block">เพิ่มคน/อุปกรณ์</button>
         </a>
     </div>
 </div>
+<br/>
+
 <div class="row">
-    <form method="get">
-        <div class="form-group">
-            <?php
-            foreach ($man_list as $key => $value) {
-            ?>
-                <div class="col-md-3">
-                    <div class="thumbnail img-check">
-                        <center><a href= "<?php echo site_url ('man/man_edit/'.$value['eq_id']);?>">
-                            <label for="cb1"> <img src="<?php echo base_url('images_compare/'.$value['eq_pic']);?>"  alt="light" width="120" height="160"></lable>
-                            </center>
-                            <div class="caption">
-                                <center><p><?php echo $value['eq_name'];?> : <?php echo $value['eq_cost'];?> บาท</p></center>
-                                <div class="col-sm-9">
-                                </div>
-                                <a href="<?php echo site_url('man/delete_man/'.$value['eq_id']);?>" type="delete" class="btn btn-danger">ลบ</a>
-                            </div>
-                    </div>
+    <?php
+    foreach ($man_list as $key => $value)
+    {
+        ?>
+        <div class="col-sm-3">
+            <div class="thumbnail">
+                <center>
+                    <a href= "<?php echo site_url ('man/man_edit/'.$value['eq_id']);?>">
+                        <img src="<?php echo base_url('images_compare/'.$value['eq_pic']);?>" width="160px" height="120px">
+                    </a>
+                </center>
+                <div class="caption">
+                    <center><p><?php echo $value['eq_name'];?> : <?php echo $value['eq_cost'];?> บาท</p></center>
+                    <a href="<?php echo site_url('man/delete_man/'.$value['eq_id']);?>" type="delete" class="btn btn-danger">ลบ</a>
                 </div>
-            <?php
-            }
-            ?>
+            </div>
         </div>
-    </from> 
+        <?php
+    }
+    ?>
 </div>

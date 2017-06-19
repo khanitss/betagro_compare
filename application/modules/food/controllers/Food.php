@@ -88,7 +88,7 @@ class Food extends MX_Controller {
 		$food_id = $this->uri->segment(3);
 		$this->Food_model->update_food_details($food_id);
 		$this->session->set_flashdata('alert', 1);
-		redirect('food/food_page');
+		redirect('food/food_details/'.$food_id);
 	}
 
 	public function delete_mat_detail(){
@@ -97,8 +97,8 @@ class Food extends MX_Controller {
 		$food_id = $this->uri->segment(3);
 		$mat_id = $this->uri->segment(4);
 		$this->Food_model->delete_mat_detail($food_id,$mat_id);
-		$this->session->set_flashdata('alert', 0);
-		redirect('food/food_page');
+		$this->session->set_flashdata('alert', 2);
+		redirect('food/edit_food/'.$food_id);
 	}
 
 	public function delete_eq_detail(){
@@ -107,8 +107,8 @@ class Food extends MX_Controller {
 		$food_id = $this->uri->segment(3);
 		$eq_id = $this->uri->segment(4);
 		$this->Food_model->delete_eq_detail($food_id,$eq_id);
-		$this->session->set_flashdata('alert', 0);
-		redirect('food/food_page');
+		$this->session->set_flashdata('alert', 2);
+		redirect('food/edit_food/'.$food_id);
 	}
 
 	public function set_mat_detail(){

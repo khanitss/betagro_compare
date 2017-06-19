@@ -23,8 +23,7 @@
         <div class="col-sm-3">
             <div class="thumbnail img-check">
                 <center><a href="<?php echo site_url('material/material_d_page/'.$value['cat_id']);?>" class="text-center">
-                    <input id="item1" value="val1" class="hidden" autocomplete="off" >
-                    <label for="cb1"><img src="<?php echo base_url('images_compare/'.$value['cat_pic']);?>" alt="light" width="160px" height="120px"></label></a>
+                <img src="<?php echo base_url('images_compare/'.$value['cat_pic']);?>" style="width: auto; height: 180px;"></a>
                 </center>
                 <div class="caption">
                     <center>

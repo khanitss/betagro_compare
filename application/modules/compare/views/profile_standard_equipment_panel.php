@@ -34,7 +34,7 @@ foreach ($eq_standard as $key => $value)
                             <td class="text-center"><?php echo $value['eq_name'];?></td>
                             <td class="text-center">1</td>
                             <td/>
-                            <td class="text-center"><?php echo $value['eq_cost']*($food_time/60);?> บาท</td>
+                            <td class="text-center"><?php echo $int = (int)($value['eq_cost']*($food_time/60));?> บาท</td>
                         </tr>
                         <?php
                     }
@@ -42,7 +42,7 @@ foreach ($eq_standard as $key => $value)
                 </tr>
                 <tr>
                     <td colspan="3" class="text-center"><strong>รวมค่า คน/อุปกรณ์</strong></td>
-                    <td class="text-center"><strong><?php echo $sum;?> บาท</strong></td>
+                    <td class="text-center"><strong><?php echo $int = (int)$sum;?> บาท</strong></td>
                 </tr>
             </tbody>
         </table>

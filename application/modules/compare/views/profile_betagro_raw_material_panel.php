@@ -29,7 +29,7 @@ foreach ($mat_betagro as $key => $value)
                             <td class="text-center"><?php echo $value['mat_name'];?></td>
                             <td class="text-center"><?php echo $value['mat_quantity'];?></td>
                             <td class="text-center"><?php echo $value['mat_unit'];?></td>
-                            <td class="text-center"><?php echo $value['mat_cost']*1;?> บาท</td>
+                            <td class="text-center"><?php echo $int = (int)($value['mat_cost']*1);?> บาท</td>
                         </tr>
                         <?php
                     }
@@ -37,7 +37,7 @@ foreach ($mat_betagro as $key => $value)
                 </tr>
                 <tr>
                     <td colspan="3" class="text-center"><strong>รวมค่า วัตถุดิบ</strong></td>
-                    <td colspan="1" class="text-center"><strong><?php echo $sum;?> บาท</strong></td>
+                    <td colspan="1" class="text-center"><strong><?php echo $int = (int)$sum;?> บาท</strong></td>
                 </tr>
             </tbody>
         </table>

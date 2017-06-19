@@ -40,7 +40,7 @@
                     <center>
                         <a href="<?php echo site_url('material/edit_page/'.$value['mat_id']);?>" class="text-center">
                             <input id="item1" value="val1" class="hidden" autocomplete="off" >
-                            <label for="cb1"><img src="<?php echo base_url('images_compare/'.$value['mat_pic']);?>" alt="light" width="160px" height="120px"></label>
+                            <label for="cb1"><img src="<?php echo base_url('images_compare/'.$value['mat_pic']);?>" style="width: auto; height: 180px;"></label>
                         </a>
                     </center>
                     <div class="caption">

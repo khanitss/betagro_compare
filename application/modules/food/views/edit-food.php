@@ -131,7 +131,7 @@ if ($alert == '1') {
                                                         ?>
                                                         <div class="col-sm-4 col-xs-4 text-center">
                                                             <a href="<?php echo site_url('food/set_mat_detail/'.$this->uri->segment(3).'/'.$value['mat_id']);?>">
-                                                                <img src="<?php echo base_url('dist/images/material/sunnok.jpg');?>" alt="light" style="max-height:100px" class="img-thumbnail">
+                                                                <img src="<?php echo base_url('images_compare/'.$value['mat_pic']);?>" alt="light" style="max-height:100px" class="img-thumbnail">
                                                             </a>
                                                             <input id="item1" value="val1" class="hidden" autocomplete="off">
                                                             <p class="caption"><?php echo $value['mat_name'];?> <?php echo $value['mat_quantity'];?> <?php echo $value['mat_unit'];?></p>
@@ -200,7 +200,7 @@ if ($alert == '1') {
 
                                                     <div class="col-sm-4 col-xs-4  text-center">
                                                         <a href="<?php echo site_url('food/set_eq_detail/'.$this->uri->segment(3).'/'.$value['eq_id']);?>">
-                                                            <img src="<?php echo base_url('dist/images/menu/12041301524825.jpg');?>" alt="light" style="max-height:100px" class="img-thumbnail">
+                                                            <img src="<?php echo base_url('images_compare/'.$value['eq_pic']);?>" alt="light" style="max-height:100px" class="img-thumbnail">
                                                         </a>
                                                         <input id="item1" value="val1" class="hidden" autocomplete="off">
                                                         <p class="caption"><?php echo $value['eq_name'];?> : <?php echo $value['eq_cost'];?> บาท</p>

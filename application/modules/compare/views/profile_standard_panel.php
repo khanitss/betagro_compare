@@ -1,60 +1,82 @@
-<?php foreach($standard as $key => $value){?>
-<div class="card ">
-  <div class="card-body card-padding">
-
-    <div class="row" >
-      <div class=" col-sm-7"><h2><?php echo $value['food_name'];?></h2></div>
-      <div class="col-sm-3 text-right">
-          <h2>
-            <img class="center-block" src="<?php echo base_url('dist/images/icons/Dollar-Sign-icon.png'); ?>" class="img-thumbnail"  width="40px" height="40px">
-          </h2>
-        </div>
-      <div class=" col-sm-2 d-inline-flex p-2">
-        <?php
-        //$this->load->view('compare/cal_total_standard_cost');
-        ?>
-        <h1>511</h1></div>
-    </div>
-
-      </br>
-
-    <div class="row">
-      <div class="col-md-12">
-          <img class="center-block" src="<?php echo base_url('images_compare/'.$value['food_pic']);?>" class="img-thumbnail img-responsive" >
-      </div>
-    </div>
-
-      </br>
-
-    <div class="row">
-        <div class="col-sm-3">
-          <img class="center-block" src="<?php echo base_url('dist/images/icons/checkin.png');?>" class="img-thumbnail img-responsive"  width="50px" height="50px">
-        </div>
-        <div class="col-sm-3 d-inline-flex p-2"><pre><?php echo $value['food_for'];?></pre></div>
-      </div>
-
-      </br>
-
-      <div class="row">
-        <div class="col-sm-3"></div>
-        <div class=" col-sm-3 d-inline-flex p-2"><pre><?php echo $value['food_unit'];?></pre></div>
-      </div>
-
-      </br>
-
-      <div class="row">
-        <div class="col-sm-3">
-          <img class="center-block" src="<?php echo base_url('dist/images/icons/time.png');?>" class="img-thumbnail" alt="Cinque Terre" width="50px" height="50">
-        </div>
-        <div class="col-sm-3 d-inline-flex p-2"><pre><?php echo $value['food_time'];?></pre></div>
-      </div>
-</div>
-</div>
-<?php }?>
-<hr>
-
+<!-- Calculate -->
 <?php
-// $this->load->view('compare/profile_standard_raw_material_panel');
-// $this->load->view('compare/profile_standard_equipment_panel');
+$food_time = 0;
+foreach ($standard as $key => $value)
+{
+    $food_time += $value['food_time'];
+}
+$sum = 0;
+foreach ($mat_standard as $key => $value)
+{
+    $sum += $value['mat_cost'];
+}
+foreach ($eq_standard as $key => $value)
+{
+    $sum += $value['eq_cost']*($food_time/60);
+}
 ?>
-</hr>
+<!-- Calculate -->
+
+<?php foreach($standard as $key => $value)
+{
+    ?>
+    <div class="card">
+        <div class="card-body card-padding">
+
+            <div class="row">
+                <div class="col-sm-7 col-xs-7">
+                    <h2><?php echo $value['food_name'];?></h2>
+                </div>
+
+                <div class="col-sm-2 col-xs-2">
+                    <h2>
+                        <img class="center-block" src="<?php echo base_url('dist/images/icons/Dollar-Sign-icon.png');?>" width="40px" height="40px">
+                    </h2>
+                </div>
+
+                <div class="col-sm-3 col-xs-3">
+                    <div >
+                        <h2><?php echo $sum;?> บาท</h2>
+                    </div>
+                </div>
+            </div>
+
+            <br/>
+
+            <div class="form-group">
+                <img class="center-block" src="<?php echo base_url('images_compare/'.$value['food_pic']);?>" width="500px" height="350px">
+            </div>
+
+            <br/>
+
+            <div class="row">
+                <div class="col-sm-3 col-xs-3"></div>
+                <div class="col-sm-2 col-xs-2">
+                    <img class="center-block" src="<?php echo base_url('dist/images/icons/checkin.png');?>" width="40px" height="40px">
+                </div>
+                <div class="col-sm-3 col-xs-3 d-inline-flex p-2"><pre><?php echo $value['food_for'];?> <?php echo $value['food_unit'];?></pre></div>
+            </div>
+
+            <br/>
+
+            <div class="row">
+                <div class="col-sm-3 col-xs-3"></div>
+                <div class="col-sm-2 col-xs-2">
+                    <img class="center-block" src="<?php echo base_url('dist/images/icons/time.png');?>" width="40px" height="40px">
+                </div>
+                <div class="col-sm-3 col-xs-3 d-inline-flex p-2"><pre><?php echo $value['food_time'];?> นาที</pre></div>
+            </div>
+
+        </div>
+
+        <hr/>
+
+        <?php
+        $this->load->view('compare/profile_standard_raw_material_panel');
+        $this->load->view('compare/profile_standard_equipment_panel');
+        ?>
+    </div>
+
+    <?php
+}
+?>

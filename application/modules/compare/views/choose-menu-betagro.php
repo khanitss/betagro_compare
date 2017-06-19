@@ -11,46 +11,32 @@
   <div class="col-sm-10 col-xs-8"></div>
   <div class="col-sm-2 col-xs-4 text-right">
     <a href="<?php echo site_url('compare/choose_menu1_page');?>">
-      <button class="btn btn-success">กลับ</button>
+      <button class="btn btn-danger btn-block">กลับ</button>
     </a>
   </div>
 </div>
 
-</br>
+<br/>
 
-<div class="row">
-  <?php foreach ($food_betagro_list as $key => $value) {?>
-    <div class="col-md-3">
-        <div class="card card-padding">
-          <a href="<?php echo site_url('compare/compare_page/'.$value['food_id']);?>">
-
-            <br>
-
-            <div class="row">
-              <div class="col-md-12 text-center">
-                <img src="<?php echo base_url('images_compare/'.$value['food_pic']);?>" class="img-responsive img-thumbnail" width="400px" height="400px"/>
+  <div class="row">
+      <div class="form-group">
+          <?php foreach ($food_betagro_list as $key => $value)
+          {
+              ?>
+              <div class="col-md-3">
+                  <div class="card">
+                      <a href="<?php echo site_url('compare/compare_page/'.$value['food_id']);?>" class="text-center">
+                          <img src="<?php echo base_url('images_compare/'.$value['food_pic']);?>" class="img-thumbnail"/>
+                          <p class="caption" style="margin-top: 10px;">
+                              <strong>
+                                  <?php echo $value['food_name'];?> <?php echo $value['food_for'];?> <?php echo $value['food_unit'];?>
+                              </strong>
+                          </p>
+                      </a>
+                  </div>
               </div>
-            </div>
-
-            <div class="row text-center" style="margin-top: 10px;">
-              <strong>
-                <?php
-                  $food_name=($value['food_name']!=''? $value['food_name'] : 'ไม่ได้ระบุ...');
-                  echo $food_name;?>
-              <?php foreach ($betagro as $key => $value) {?>
-                <?php
-                  $food_for=($value['food_for']!=''? $value['food_for'] : 'ไม่ได้ระบุ...');
-                  echo $food_for;?>
-                <?php
-                  $food_unit=($value['food_unit']!=''? $value['food_unit'] : 'ไม่ได้ระบุ...');
-                  echo $food_unit;
-                ?>
-                  <?php }?>
-              </strong>
-            </div>
-
-          </a>
-        </div>
+              <?php
+          }
+          ?>
       </div>
-    <?php }?>
   </div>

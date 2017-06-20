@@ -26,6 +26,7 @@ class Material extends MX_Controller {
     {
         $data['alert'] = $this->session->flashdata('alert');
         $cat_id = $this->uri->segment(3);
+        $data['alert'] = $this->session->flashdata('alert');
         $qstr_sess=array('select_items_one'=>$cat_id);
         $this->session->set_userdata($qstr_sess);
         $qstr_cate=array('cat_id'=>$cat_id);

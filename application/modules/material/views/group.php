@@ -1,12 +1,4 @@
-<?php
-if ($alert == '1') {
-    ?>
-    <div class="alert alert-success">
-        <strong>เพอ่มข้อมูลสำเร็จ</strong>
-        <button type="button" class="close" data-dismiss="alert">&times;</button>
-    </div>
-    <?php
-}?>
+
 
 <div class="block-header clearfix">
     <h2 class="pull-left"> กลุ่มของวัตถุดิบ</h2>
@@ -33,7 +25,7 @@ if ($alert == '1') {
         <div class="col-sm-3">
             <div class="thumbnail img-check">
                 <center><a href="<?php echo site_url('material/material_d_page/'.$value['cat_id']);?>" class="text-center">
-                <img src="<?php echo base_url('images_compare/'.$value['cat_pic']);?>" style="width: auto; height: 180px;"></a>
+                <img src="<?php echo base_url('images_compare/'.$value['cat_pic']);?>" style="width: auto; height: 180px; margin-top: 10px;"></a>
                 </center>
                 <div class="caption">
                     <center>

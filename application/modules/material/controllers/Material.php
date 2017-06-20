@@ -24,6 +24,7 @@ class Material extends MX_Controller {
     public function material_d_page() 
     {
         $cat_id = $this->uri->segment(3);
+        $data['alert'] = $this->session->flashdata('alert');
         $qstr_sess=array('select_items_one'=>$cat_id);
         $this->session->set_userdata($qstr_sess);
         $qstr_cate=array('cat_id'=>$cat_id);
@@ -36,7 +37,7 @@ class Material extends MX_Controller {
     public function edit_page() {
         $mat_id = $this->uri->segment(4);
         $data['content']='material/edit-material';
-        
+        $data['alert'] = $this->session->flashdata('alert');
         $data['material_detail'] = $this->Material_models->get_material_details($mat_id);
         $this->init_sys->content($data);
     }

@@ -1,12 +1,4 @@
-<?php
-if ($alert == '1') {
-    ?>
-    <div class="alert alert-success">
-        <strong>เพอ่มข้อมูลสำเร็จ</strong>
-        <button type="button" class="close" data-dismiss="alert">&times;</button>
-    </div>
-    <?php
-}?>
+
 
 <div class="block-header clearfix">
     <h2 class="pull-left"> กลุ่มของวัตถุดิบ</h2>

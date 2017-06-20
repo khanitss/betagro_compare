@@ -1,8 +1,6 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
-
 class Compare_model extends CI_Model {
-
   public function get_food_list($qstr)
   {
     $items='*';
@@ -11,7 +9,6 @@ class Compare_model extends CI_Model {
                     ->where($qstr)
                     ->get()
                     ->result_array();
-
     return $results;
   }
   public function get_standard_food_detail($standard_id)
@@ -22,7 +19,6 @@ class Compare_model extends CI_Model {
                     ->where('food_id',$standard_id)
                     ->get()
                     ->result_array();
-
     return $results;
   }
   public function get_betagro_food_detail($betagro_id)
@@ -33,7 +29,6 @@ class Compare_model extends CI_Model {
                     ->where('food_id',$betagro_id)
                     ->get()
                     ->result_array();
-
     return $results;
   }
   public function get_standard_mat_details($standard_id){
@@ -54,7 +49,6 @@ class Compare_model extends CI_Model {
               ->result_array();
       return $result;
   }
-
   public function get_standard_eq_details($standard_id){
       $result = $this->db->select('*')
               ->from('equipment')

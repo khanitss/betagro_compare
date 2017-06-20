@@ -21,7 +21,7 @@ foreach ($food_details as $key => $value)
     <div class="col-sm-10 col-xs-8"></div>
     <div class="col-sm-2 col-xs-4 text-center">
         <a href="<?php echo site_url('food/food_details/'.$this->uri->segment(3));?>">
-            <button class="btn btn-danger btn-block">กลับ</button>
+            <button class="btn btn-warning btn-block">กลับ</button>
         </a>
     </div>
 </div>

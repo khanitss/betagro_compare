@@ -71,6 +71,7 @@ class Material_models extends CI_Model{
             'mat_pic'   			=> $mat_pic,
             'mat_id'				=> $mat_id,
             'cat_id'				=> $cate_id,
+        
             'created'       		=> $timestamp,
             'lastupdate'    		=> $timestamp,
         );

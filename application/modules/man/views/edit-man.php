@@ -25,7 +25,7 @@ echo form_open_multipart('man/update_man_details/'.$this->uri->segment(3),$attr)
                         <div class="card-body card-padding text-center">
                             <div class="fileinput fileinput-new card-body card-padding" data-provides="fileinput" align="center">
                                 <span class="btn btn-default btn-file m-r-10">
-                                    <span class="fileinput-new"><img src="<?php echo base_url('images_compare/'.$value['eq_pic']);?>" width="100%"></span>
+                                    <span class="fileinput-new"><img src="<?php echo base_url('images_compare/'.$value['eq_pic']);?>" style="width: auto; height: 300px; margin-top: 10px;"></span>
                                     <span class="fileinput-exists">Change</span>
                                     <input type="file" name="upload_file">
                                 </span>
@@ -52,7 +52,7 @@ echo form_open_multipart('man/update_man_details/'.$this->uri->segment(3),$attr)
                                     <button class="btn btn-success btn-block">บันทึก</button>
                                 </div>
                                 <div class="col-sm-4">
-                                    <a href="<?php echo site_url ('man/man_page');?>" type="back" class="btn btn-danger btn-block">กลับ</a>
+                                    <a href="<?php echo site_url ('man/man_page');?>" type="back" class="btn btn-warning btn-block">กลับ</a>
                                 </div>
                                 <div class="col-sm-2"></div>
                             </div>

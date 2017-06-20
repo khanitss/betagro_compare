@@ -3,14 +3,15 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Dashboard extends MX_Controller {
 
-  public function __construct() {
-    parent::__construct();
-    $this->load->module('init_sys/Init_sys');
-  }
+    public function __construct() {
+        parent::__construct();
+        $this->load->module('init_sys/Init_sys');
+    }
 
-  public function home() {
-    $data['content'] ='dashboard/dashboard';
-    $this->init_sys->content($data);
-  }
+    public function home() {
+        $data['alert'] = $this->session->flashdata('alert');
+        $data['content'] ='dashboard/dashboard';
+        $this->init_sys->content($data);
+    }
 
 }//end class

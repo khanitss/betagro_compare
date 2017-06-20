@@ -24,20 +24,18 @@ foreach ($eq_standard as $key => $value)
         <div class="card-body card-padding">
 
             <div class="row">
-                <div class="col-sm-6 col-xs-7">
+                <div class="col-sm-7 col-xs-7">
                     <h3><?php echo $value['food_name'];?></h3>
                 </div>
 
-                <div class="col-sm-2 col-xs-2">
+                <div class="col-sm-1 col-xs-1">
                     <h3>
                         <img class="center-block" src="<?php echo base_url('dist/images/icons/Dollar-Sign-icon.png');?>" width="30px" height="30px">
                     </h3>
                 </div>
 
-                <div class="col-sm-4 col-xs-3">
-                    <div >
-                        <h3><?php echo $int = (int)$sum;?> บาท</h3>
-                    </div>
+                <div class="col-sm-4 col-xs-4 text-center">
+                    <h3><?php echo number_format($sum);?> บาท</h3>
                 </div>
             </div>
 
@@ -73,6 +71,9 @@ foreach ($eq_standard as $key => $value)
 
         <?php
         $this->load->view('compare/profile_standard_raw_material_panel');
+        ?>
+        <hr/>
+        <?php
         $this->load->view('compare/profile_standard_equipment_panel');
         ?>
     </div>

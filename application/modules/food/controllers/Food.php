@@ -16,6 +16,7 @@ class Food extends MX_Controller {
 	}
 
 	public function add_food() {
+		$data['alert'] = $this->session->flashdata('alert');
 		$this->load->model('Food_model');
 		$data['content']='food/add-food';
 		$this->init_sys->content($data);
@@ -35,6 +36,7 @@ class Food extends MX_Controller {
 	}
 
 	public function food_details() {
+		$data['alert'] = $this->session->flashdata('alert');
 		$this->load->model('Food_model');
 		$data['content']='food/food-details';
 		$food_id = $this->uri->segment(3);
@@ -45,8 +47,8 @@ class Food extends MX_Controller {
 	}
 
 	public function edit_food() {
-		$this->load->model('Food_model');
 		$data['alert'] = $this->session->flashdata('alert');
+		$this->load->model('Food_model');
 		$data['content']='food/edit-food';
 		$food_id = $this->uri->segment(3);
 		$data['food_details'] = $this->Food_model->get_food_details($food_id);

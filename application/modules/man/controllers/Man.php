@@ -8,16 +8,19 @@ class Man extends MX_Controller {
         // $this->load->model('vendor/Vendor_model');
 	}
 	public function man_page() {
+		$data['alert'] = $this->session->flashdata('alert');
 		$data['content']='man/man';
 		$data['man_list'] = $this->get_man();
 		$this->init_sys->content($data);
 		// echo "string";
 	}
 	public function man_add(){
+		$data['alert'] = $this->session->flashdata('alert');
 		$data['content']='man/add-man';
 		$this->init_sys->content($data);
 	}
 	public function man_edit(){
+		$data['alert'] = $this->session->flashdata('alert');
 		$data['content']='man/edit-man';
 		$eq_id = $this->uri->segment(3);
 		$data['man_details'] = $this->Man_models->get_man_details($eq_id);
@@ -25,11 +28,10 @@ class Man extends MX_Controller {
 	}
 	public function add_man(){
 		$data['man_list'] = $this->get_man();
-        
         $this->load->model('Man_models');
         $timestam = date('Y-m-d H:i:s');
         $this->Man_models->add_man();
-	// $this->session->set_flashdata('alert',true);
+		$this->session->set_flashdata('alert', 1);
 		redirect('man/man_page');
 	}
 	public function get_man (){
@@ -37,12 +39,13 @@ class Man extends MX_Controller {
 		$result = $this->Man_models->get_man();
 		//echo '<pre>', print_r($result);
 		return $result;
-		
+
 	}
 	public function delete_man(){
 		$this->load->model('Man_models');
 		$id = $this->uri->segment(3);
 		$this->Man_models->delete_man($id);
+		$this->session->set_flashdata('alert', 2);
 		redirect('man/man_page');
 	}
 	public function update_man_details(){
@@ -50,6 +53,7 @@ class Man extends MX_Controller {
 		$timestam = date('Y-m-d H:i:s');
 		$eq_id = $this->uri->segment(3);
 		$this->Man_models->update_man_details($eq_id);
+		$this->session->set_flashdata('alert', 1);
 		redirect('man/man_page');
 	}
 

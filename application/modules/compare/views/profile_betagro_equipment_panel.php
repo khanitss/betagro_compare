@@ -18,10 +18,10 @@ foreach ($eq_betagro as $key => $value)
         <table class="table">
             <thead>
                 <tr>
-                    <th class="text-center">คน/อุปกรณ์</th>
-                    <th class="text-center">จำนวน</th>
+                    <th class="text-center"><strong>คน/อุปกรณ์</strong></th>
+                    <th class="text-center"><strong>จำนวน</strong></th>
                     <th/>
-                    <th class="text-center">ราคา</th>
+                    <th class="text-center"><strong>ราคา (บาท)</strong></th>
                 </tr>
             </thead>
 
@@ -34,7 +34,7 @@ foreach ($eq_betagro as $key => $value)
                             <td class="text-center"><?php echo $value['eq_name'];?></td>
                             <td class="text-center">1</td>
                             <td/>
-                            <td class="text-center"><?php echo $int = (int)($value['eq_cost']*($food_time/60));?> บาท</td>
+                            <td class="text-center"><?php echo number_format($value['eq_cost']*($food_time/60),2);?></td>
                         </tr>
                         <?php
                     }
@@ -42,9 +42,20 @@ foreach ($eq_betagro as $key => $value)
                 </tr>
                 <tr>
                     <td colspan="3" class="text-center"><strong>รวมค่า คน/อุปกรณ์</strong></td>
-                    <td class="text-center"><strong><?php echo $int = (int)$sum;?> บาท</strong></td>
+                    <td class="text-center"><strong><?php echo number_format($sum,2);?> บาท</strong></td>
                 </tr>
             </tbody>
         </table>
+        <div class="form-group">
+            <div class="col-sm-4 col-xs-4"></div>
+            <div class="col-sm-1 col-xs-1">
+                <h3>
+                    <img class="center-block" src="<?php echo base_url('dist/images/icons/Dollar-Sign-icon.png');?>" width="25px" height="25px">
+                </h3>
+            </div>
+            <div class="col-sm-4 col-xs-4">
+                <h3><?php echo number_format($sum);?> บาท</h3>
+            </div>
+        </div>
     </div>
 </div>

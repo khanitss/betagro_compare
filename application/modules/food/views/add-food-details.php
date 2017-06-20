@@ -1,14 +1,4 @@
 <!-- Content Section START -->
-<?php
-if ($alert == '1') {
-    ?>
-    <div class="alert alert-success">
-        <strong>บันทึกข้อมูลสำเร็จ</strong>
-        <button type="button" class="close" data-dismiss="alert">&times;</button>
-    </div>
-    <?php
-}?>
-
 <div class="block-header clearfix">
     <h2 class="pull-left">เพิ่มรายการอาหาร</h2>
     <ul class="breadcrumb pull-right">
@@ -76,11 +66,11 @@ if ($alert == '1') {
                                                 <?php
                                                 foreach ($mat_list as $key => $value) {
                                                     ?>
-                                                    <div class="col-md-4 text-center">
+                                                    <div class="col-md-3 col-xs-6">
                                                         <a href="<?php echo site_url('food/set_mat_detail2/'.$this->uri->segment(3).'/'.$value['mat_id']);?>">
-                                                            <img src="<?php echo base_url('images_compare/'.$value['mat_pic']);?>" alt="light" style="max-height:100px" class="img-thumbnail">
+                                                            <img src="<?php echo base_url('images_compare/'.$value['mat_pic']);?>" style="width: auto; height: 100px;" class="img-thumbnail">
                                                         </a>
-                                                        <div class="caption">
+                                                        <div class="caption text-center">
                                                             <p><?php echo $value['mat_name'];?> <?php echo $value['mat_quantity'];?> <?php echo $value['mat_unit'];?></p>
                                                         </div>
                                                     </div>
@@ -124,12 +114,12 @@ if ($alert == '1') {
                                             foreach ($man_list as $key => $value) {
                                                 ?>
 
-                                                <div class="col-md-4 text-center">
+                                                <div class="col-md-3 col-xs-6">
                                                     <a href="<?php echo site_url('food/set_eq_detail2/'.$this->uri->segment(3).'/'.$value['eq_id']);?>">
-                                                        <img src="<?php echo base_url('images_compare/'.$value['eq_pic']);?>" alt="light" style="max-height:100px" class="img-thumbnail">
+                                                        <img src="<?php echo base_url('images_compare/'.$value['eq_pic']);?>" style="width: auto; height: 100px;" class="img-thumbnail">
                                                     </a>
-                                                    <div class="caption">
-                                                        <p><?php echo $value['eq_name'];?> : <?php echo $value['eq_cost'];?> บาท</p>
+                                                    <div class="caption text-center">
+                                                        <p><?php echo $value['eq_name'];?></p>
                                                     </div>
                                                 </div>
 

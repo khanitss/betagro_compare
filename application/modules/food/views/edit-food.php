@@ -1,21 +1,9 @@
 <!-- Content Section START -->
 <?php
-if ($alert == '1') {
-    ?>
-    <div class="alert alert-success">
-        <strong>บันทึกข้อมูลสำเร็จ</strong>
-        <button type="button" class="close" data-dismiss="alert">&times;</button>
-    </div>
-    <?php
-}?>
-<?php
-if ($alert == '2') {
-    ?>
-    <div class="alert alert-success">
-        <strong>ลบข้อมูลสำเร็จ</strong>
-        <button type="button" class="close" data-dismiss="alert">&times;</button>
-    </div>
-    <?php
+$food_time = 0;
+foreach ($food_details as $key => $value)
+{
+    $food_time += $value['food_time'];
 }?>
 
 <div class="block-header clearfix">
@@ -57,7 +45,7 @@ if ($alert == '2') {
                 <div class="card-body card-padding text-center">
                     <div class="fileinput fileinput-new card-body card-padding" data-provides="fileinput" align="center">
                         <span class="btn btn-default btn-file m-r-10">
-                            <span class="fileinput-new"><img src="<?php echo base_url('images_compare/'.$value['food_pic']);?>" width="75%" alt=""></span>
+                            <span class="fileinput-new"><img src="<?php echo base_url('images_compare/'.$value['food_pic']);?>" width="75%"></span>
                             <span class="fileinput-exists">Change</span>
                             <input type="file" name="upload_file">
                         </span>
@@ -79,13 +67,13 @@ if ($alert == '2') {
                         <div class="col-sm-1 col-xs-1"></div>
 
                         <label class="col-sm-3 col-xs-3 text-right control-label">หน่วย :</label>
-                        <div class="col-sm-8 col-xs-9">
+                        <div class="col-sm-8 col-xs-8">
                             <input class="form-control" id="focusedInput" type="text" name="food_unit" placeholder="<?php echo $value['food_unit'];?>">
                         </div>
                         <div class="col-sm-1 col-xs-1"></div>
 
                         <label class="col-sm-3 col-xs-3 text-right control-label">เวลา :</label>
-                        <div class="col-sm-8 col-xs-9">
+                        <div class="col-sm-8 col-xs-8">
                             <input class="form-control" id="focusedInput" type="text" name="food_time" placeholder="<?php echo $value['food_time'];?> นาที">
                         </div>
                         <div class="col-sm-1 col-xs-1"></div>
@@ -117,7 +105,7 @@ if ($alert == '2') {
                             <th class="text-center">วัตถุดิบ</th>
                             <th class="text-center">จำนวน</th>
                             <th class="text-center">หน่วย</th>
-                            <th class="text-center">ราคา</th>
+                            <th class="text-center">ราคา (บาท)</th>
                             <th class="text-center">
                                 <a href="#">
                                     <img class="center-block" src="<?php echo base_url('dist/images/icons/addButton.png');?>" data-toggle="modal" data-target="#myAddRawModal" alt="addRaw" style="max-width:25px">
@@ -138,9 +126,9 @@ if ($alert == '2') {
                                                     <?php
                                                     foreach ($mat_list as $key => $value) {
                                                         ?>
-                                                        <div class="col-sm-4 col-xs-4 text-center">
+                                                        <div class="col-md-3 col-xs-6">
                                                             <a href="<?php echo site_url('food/set_mat_detail/'.$this->uri->segment(3).'/'.$value['mat_id']);?>">
-                                                                <img src="<?php echo base_url('images_compare/'.$value['mat_pic']);?>" alt="light" style="max-height:100px" class="img-thumbnail">
+                                                                <img src="<?php echo base_url('images_compare/'.$value['mat_pic']);?>" style="width: auto; height: 100px;" class="img-thumbnail">
                                                             </a>
                                                             <p class="caption"><?php echo $value['mat_name'];?> <?php echo $value['mat_quantity'];?> <?php echo $value['mat_unit'];?></p>
                                                         </div>
@@ -166,7 +154,7 @@ if ($alert == '2') {
                                 <td class="text-center"><?php echo $value['mat_name'];?></td>
                                 <td class="text-center"><?php echo $value['mat_quantity'];?></td>
                                 <td class="text-center"><?php echo $value['mat_unit'];?></td>
-                                <td class="text-center"><?php echo $value['mat_cost'];?>&nbsp; บาท</td>
+                                <td class="text-center"><?php echo $value['mat_cost'];?></td>
                                 <td class="text-center">
                                     <a href="<?php echo site_url('food/delete_mat_detail/'.$this->uri->segment(3).'/'.$value['mat_id']);?>">
                                         <img class="center-block" src="<?php echo base_url('dist/images/icons/delButton.png');?>" style="max-width:25px">
@@ -186,7 +174,7 @@ if ($alert == '2') {
                         <tr>
                             <th class="text-center">คน / อุปกรณ์</th>
                             <th class="text-center">จำนวน</th>
-                            <th class="text-center">ราคา/ชม.</th>
+                            <th class="text-center">ราคา (บาท)</th>
                             <th class="text-center">
                                 <a href="#">
                                     <img class="center-block" src="<?php echo base_url('dist/images/icons/addButton.png');?>" data-toggle="modal" data-target="#myAddEquipModal" alt="addEquip" style="max-width:25px">
@@ -206,11 +194,11 @@ if ($alert == '2') {
                                                 foreach ($man_list as $key => $value) {
                                                     ?>
 
-                                                    <div class="col-sm-4 col-xs-4  text-center">
+                                                    <div class="col-md-3 col-xs-6">
                                                         <a href="<?php echo site_url('food/set_eq_detail/'.$this->uri->segment(3).'/'.$value['eq_id']);?>">
-                                                            <img src="<?php echo base_url('images_compare/'.$value['eq_pic']);?>" alt="light" style="max-height:100px" class="img-thumbnail">
+                                                            <img src="<?php echo base_url('images_compare/'.$value['eq_pic']);?>" style="max-height:100px" class="img-thumbnail">
                                                         </a>
-                                                        <p class="caption"><?php echo $value['eq_name'];?> : <?php echo $value['eq_cost'];?> บาท</p>
+                                                        <p class="caption"><?php echo $value['eq_name'];?></p>
                                                     </div>
 
                                                     <?php
@@ -232,7 +220,7 @@ if ($alert == '2') {
                             <tr>
                                 <td class="text-center"><?php echo $value['eq_name'];?></td>
                                 <td class="text-center">1</td>
-                                <td class="text-center"><?php echo $value['eq_cost'];?> &nbsp; บาท</td>
+                                <td class="text-center"><?php echo number_format($value['eq_cost']*($food_time/60),2);?></td>
                                 <td class="text-center">
                                     <a href="<?php echo site_url('food/delete_eq_detail/'.$this->uri->segment(3).'/'.$value['eq_id']);?>">
                                         <img class="center-block" src="<?php echo base_url('dist/images/icons/delButton.png');?>" style="max-width:25px">

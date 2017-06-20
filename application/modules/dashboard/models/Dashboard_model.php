@@ -51,7 +51,7 @@ class Dashboard_model extends CI_Model {
 		$row_finish = $obj_finish->num_rows();
 		$array = array(
 										'row_work' 				=> $row_work,
-										'row_finish' 			=> $row_finish 
+										'row_finish' 			=> $row_finish
 									);
 
 		return $array;
@@ -78,7 +78,7 @@ class Dashboard_model extends CI_Model {
 		$row_finish = $obj_finish->num_rows();
 		$array = array(
 										'row_work' 				=> $row_work,
-										'row_finish' 			=> $row_finish 
+										'row_finish' 			=> $row_finish
 									);
 
 		return $array;
@@ -106,13 +106,13 @@ class Dashboard_model extends CI_Model {
 		$row_finish = $obj_finish->num_rows();
 		$array = array(
 										'row_work' 				=> $row_work,
-										'row_finish' 			=> $row_finish 
+										'row_finish' 			=> $row_finish
 									);
 
 		return $array;
 	}
 	public function get_chart_newemployee()
-	{ 
+	{
 		for($month=1;$month<=12;$month++){
 			$result[] = $this->db
 							->where('MONTH(work_list_date_start)',$month)
@@ -126,7 +126,7 @@ class Dashboard_model extends CI_Model {
 
 	}
 	public function get_chart_transfer()
-	{ 
+	{
 		for($month=1;$month<=12;$month++){
 			$result[] = $this->db
 							->where('MONTH(work_list_date_start)',$month)
@@ -140,7 +140,7 @@ class Dashboard_model extends CI_Model {
 
 	}
 	public function get_chart_adjust()
-	{ 
+	{
 		for($month=1;$month<=12;$month++){
 			$result[] = $this->db
 							->where('MONTH(work_list_date_start)',$month)
@@ -154,7 +154,7 @@ class Dashboard_model extends CI_Model {
 
 	}
 	public function get_chart_resign()
-	{ 
+	{
 		for($month=1;$month<=12;$month++){
 			$result[] = $this->db
 							->where('MONTH(work_list_date_start)',$month)
@@ -167,7 +167,7 @@ class Dashboard_model extends CI_Model {
 		return $result;
 
 	}
-	
+
 	public function get_event_all($user_type_id)
 	{
 		for($month=1;$month<=12;$month++){
@@ -175,45 +175,45 @@ class Dashboard_model extends CI_Model {
 							select DISTINCT work_list.*
 							from work_list left join work_task on work_list.work_type_id = work_task.work_type_id
 							where work_list.work_list_status != 4
-								and MONTH(work_list.work_list_date_start) = '.$month.' 
+								and MONTH(work_list.work_list_date_start) = '.$month.'
 								and YEAR(work_list.work_list_date_start) = '.date('Y').'
 							    and work_task.user_type_id = '.$user_type_id.'
 						')->num_rows();
 		}
 		return $result;
 	}
-	
+
 	public function get_event_completed($user_type_id)
 	{
-		for($month=1;$month<=12;$month++){        
+		for($month=1;$month<=12;$month++){
 			$result[] = $this->db->query('
 							select DISTINCT work_list.*
 							from work_list left join work_task on work_list.work_type_id = work_task.work_type_id
 							where work_list.work_list_status = 3
-								and MONTH(work_list.work_list_date_start) = '.$month.' 
+								and MONTH(work_list.work_list_date_start) = '.$month.'
 								and YEAR(work_list.work_list_date_start) = '.date('Y').'
 							    and work_task.user_type_id = '.$user_type_id.'
 						')->num_rows();
 		}
 		return $result;
 	}
-	
+
 	public function get_event_remain($user_type_id)
 	{
 		for($month=1;$month<=12;$month++){
 			$result[] = $this->db->query('
 							select DISTINCT work_list.*
 							from work_list left join work_task on work_list.work_type_id = work_task.work_type_id
-							where (work_list.work_list_status = 1 
+							where (work_list.work_list_status = 1
 								or work_list.work_list_status = 2)
-								and MONTH(work_list.work_list_date_start) = '.$month.' 
+								and MONTH(work_list.work_list_date_start) = '.$month.'
 								and YEAR(work_list.work_list_date_start) = '.date('Y').'
 							    and work_task.user_type_id = '.$user_type_id.'
 						')->num_rows();
 		}
 		return $result;
 	}
-	
+
 	public function get_event_new($user_type_id)
 	{
 		for($month=1;$month<=12;$month++){
@@ -262,7 +262,7 @@ class Dashboard_model extends CI_Model {
 
 		$query = array(
 						'row_remain'	=> $query1,
-						'row_new'		=> $query2 
+						'row_new'		=> $query2
 					);
 
 		return $query;

@@ -22,21 +22,16 @@
 
 <div class="row">
     <div class="col-md-6">
-        <div class="form-group">
-            <div class="col-xs-1"></div>
-            <div class="card-header">
-                <h3>เมนูทั่วไป</h3>
-            </div>
+        <div class="card-header">
+            <h3>เมนูทั่วไป</h3>
         </div>
         <?php $this->load->view('compare/profile_standard_panel');?>
     </div>
 
-    <div class="col-md-6"><div class="form-group">
-        <div class="col-xs-1"></div>
+    <div class="col-md-6">
         <div class="card-header">
             <h3>เมนูเบทาโกร</h3>
         </div>
-    </div>
         <?php $this->load->view('compare/profile_betagro_panel');?>
     </div>
 

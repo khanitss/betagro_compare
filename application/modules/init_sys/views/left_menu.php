@@ -20,7 +20,7 @@
                 <ul class="mega-menu">
                     <li><a href="<?php echo site_url('food/food_page');?>">เมนูอาหาร</a></li>
                     <li><a href="<?php echo site_url('material/material_page');?>">วัตถุดิบ</a></li>
-                    <li><a href="<?php echo site_url('product/product_page');?>">ผลิตภัณฑ์เบทาโกร</a></li>
+                    <li><a href="<?php echo site_url('product/material_page');?>">ผลิตภัณฑ์เบทาโกร</a></li>
                     <li><a href="<?php echo site_url('man/man_page');?>">คนและอุปกรณ์</a></li>
                 </ul>
             </li>

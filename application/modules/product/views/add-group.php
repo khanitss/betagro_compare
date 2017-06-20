@@ -1,15 +1,15 @@
 <div class="block-header clearfix">
-    <h2 class="pull-left">เพิ่มกลุ่มของวัตถุดิบ</h2>
+    <h2 class="pull-left">เพิ่มกลุ่มของผลิตภัณฑ์เบทาโกร</h2>
     <ul class="breadcrumb pull-right">
         <li><a href="<?php echo site_url('dashboard/home');?>">หน้าหลัก</a></li>
-        <li><a href="<?php echo site_url ('material/material_page');?>">กลุ่มของวัตถุดิบ</a></li>
-        <li><a href="<?php echo site_url ('material/material_group_page');?>">เพิ่มกลุ่มของวัตถุดิบ</a></li>
+        <li><a href="<?php echo site_url ('product/material_page');?>">กลุ่มของผลิตภัณฑ์เบทาโกร</a></li>
+        <li><a href="<?php echo site_url ('product/material_group_page');?>">เพิ่มกลุ่มของผลิตภัณฑ์เบทาโกร</a></li>
     </ul>
 </div>
 
 <div class="row">
     <?php $attr = array('class' => 'form-horizontal');
-    echo form_open_multipart('material/add_mate_group', $attr);?>
+    echo form_open_multipart('product/add_mate_group', $attr);?>
 
     <div class="col-sm-3"></div>
     <div class="col-sm-6">
@@ -27,13 +27,13 @@
                 </span>
                 <a href="#" class="close fileinput-exists" data-dismiss="fileinput">&times;</a>
             </div>
-            <h4>เพิ่มกลุ่มของวัตถุดิบ</h4>
+            <h4>เพิ่มกลุ่มของผลิตภัณฑ์เบทาโกร</h4>
 
             <div class="card-body card-padding">
                 <div class="form-group">
                     <label class="col-sm-2 col-xs-2 control-label">ชื่อ :</label>
                     <div class="col-sm-9 col-xs-9">
-                        <input class="form-control" id="focusedInput" type="text" placeholder="ชื่อของกลุ่มวัตถุดิบ" name="cat_name">
+                        <input class="form-control" id="focusedInput" type="text" placeholder="ชื่อของกลุ่มผลิตภัณฑ์เบทาโกร" name="cat_name">
                     </div>
                 </div>
                 <div class="row">
@@ -42,7 +42,7 @@
                         <button type="save" class="btn btn-success btn-lg btn-block">บันทึก</button>
                     </div>
                     <div class="col-sm-4">
-                        <a href="<?php echo site_url ('material/material_page');?>" type="cancel" class="btn btn-danger btn-lg btn-block">ยกเลิก</a>
+                        <a href="<?php echo site_url ('product/material_page');?>" type="cancel" class="btn btn-danger btn-lg btn-block">ยกเลิก</a>
                     </div>
                     <div class="col-sm-3"></div>
                 </div>

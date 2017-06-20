@@ -14,7 +14,6 @@ foreach ($eq_details as $key => $value)
 {
     $sum += $value['eq_cost']*($food_time/60);
 }
-$int = (int)$sum;
 ?>
 
 <!-- Content Section START -->

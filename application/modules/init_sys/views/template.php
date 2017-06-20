@@ -22,9 +22,21 @@
 
     <!-- Google front -->
     <link href="https://fonts.googleapis.com/css?family=Kanit" rel="stylesheet">
+
     <!-- Dashplus CSS -->
     <link href="<?php echo base_url('dist/css/dashplus_1.min.css');?>" rel="stylesheet">
     <link href="<?php echo base_url('dist/css/dashplus_2.min.css');?>" rel="stylesheet">
+
+    <!-- PieChart -->
+    <base href="http://demos.telerik.com/kendo-ui/pie-charts/index">
+    <style>html { font-size: 14px; font-family: Arial, Helvetica, sans-serif; }</style>
+    <title></title>
+    <link rel="stylesheet" href="https://kendo.cdn.telerik.com/2017.2.504/styles/kendo.common-material.min.css" />
+    <link rel="stylesheet" href="https://kendo.cdn.telerik.com/2017.2.504/styles/kendo.material.min.css" />
+    <link rel="stylesheet" href="https://kendo.cdn.telerik.com/2017.2.504/styles/kendo.material.mobile.min.css" />
+
+    <script src="https://kendo.cdn.telerik.com/2017.2.504/js/jquery.min.js"></script>
+    <script src="https://kendo.cdn.telerik.com/2017.2.504/js/kendo.all.min.js"></script>
 
 </head>
 
@@ -73,6 +85,7 @@
     <script src="<?php echo base_url('vendors/Waves/dist/waves.min.js');?>"></script>
     <script src="<?php echo base_url('vendors/sweetalert/dist/sweetalert.min.js');?>"></script>
     <script src="<?php echo base_url('vendors/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.concat.min.js');?>"></script>
+
     <!-- <script src="<?php echo base_url('vendors/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.concat.min.js');?>"></script> -->
     <!-- <script src="<?php echo base_url('vendors/bootstrap-growl/bootstrap-growl.min.js');?>"></script> -->
     <!-- <script src="<?php echo base_url('vendors/bootstrap-wizard/jquery.bootstrap.wizard.min.js');?>"></script> -->

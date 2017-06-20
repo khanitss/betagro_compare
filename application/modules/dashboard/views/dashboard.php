@@ -1,266 +1,304 @@
+<!-- Sum menu -->
+<?php
+$sumStandard = 0;
+$sumBetagor = 0;
+foreach ($food_list as $key => $value){
+    if($value['food_type'] == '0' and $value['food_status'] == '1')
+    {
+        $sumStandard++;
+    }
+    elseif($value['food_type'] == '1' and $value['food_status'] == '1')
+    {
+        $sumBetagor++;
+    }
+
+}
+?>
+
+<?php
+$sum1 = 0;
+$sum2 = 0;
+$sum3 = 0;
+$sum4 = 0;
+$sum5 = 0;
+$sum6 = 0;
+$sum7 = 0;
+$sum8 = 0;
+$sum9 = 0;
+
+foreach ($material_list as $key => $value){
+    if($value['cat_id'] == '4')
+    {
+        $sum1++;
+    }
+    elseif($value['cat_id'] == '5')
+    {
+        $sum2++;
+    }
+    elseif($value['cat_id'] == '6')
+    {
+        $sum3++;
+    }
+    elseif($value['cat_id'] == '7')
+    {
+        $sum4++;
+    }
+    elseif($value['cat_id'] == '8')
+    {
+        $sum5++;
+    }
+    elseif($value['cat_id'] == '9')
+    {
+        $sum6++;
+    }
+    elseif($value['cat_id'] == '11')
+    {
+        $sum7++;
+    }
+    elseif($value['cat_id'] == '12')
+    {
+        $sum8++;
+    }
+    elseif($value['mat_type'] == '1')
+    {
+        $sum9++;
+    }
+
+}
+?>
+
+<!-- PieChart -->
+<script>
+var sumStandard = '<?=$sumStandard;?>';
+var sumBetagor = '<?=$sumBetagor;?>';
+function createChart() {
+    $("#chart").kendoChart({
+        seriesDefaults: {
+            labels: {
+                visible: true,
+                background: "transparent",
+                template: "#= category #"
+            }
+        },
+        series: [{
+            type: "pie",
+            startAngle: 150,
+            data: [{
+                category: "รายการอาหารเบทาโกร",
+                value: sumBetagor,
+                color: "#9de219"
+            },{
+                category: "รายการอาหารทั่วไป",
+                value: sumStandard,
+                color: "#006666"
+            }]
+        }],
+        tooltip: {
+            visible: true,
+            format: "{0} เมนู"
+        }
+    });
+}
+
+$(document).ready(createChart);
+$(document).bind("kendo:skinChange", createChart);
+</script>
+
+<script>
+var sum1 = '<?=$sum1;?>';
+var sum2 = '<?=$sum2;?>';
+var sum3 = '<?=$sum3;?>';
+var sum4 = '<?=$sum4;?>';
+var sum5 = '<?=$sum5;?>';
+var sum6 = '<?=$sum6;?>';
+var sum7 = '<?=$sum7;?>';
+var sum8 = '<?=$sum8;?>';
+var sum9 = '<?=$sum9;?>';
+function createChart2() {
+    $("#chart2").kendoChart({
+        seriesDefaults: {
+            labels: {
+                visible: true,
+                background: "transparent",
+                template: "#= category #"
+            }
+        },
+        series: [{
+            type: "pie",
+            startAngle: 70,
+            data: [{
+                category: "หมู",
+                value: sum1,
+                color: "#FFFF66"
+            },{
+                category: "วัว",
+                value: sum2,
+                color: "#FFCC66"
+            },{
+                category: "ไก่",
+                value: sum6,
+                color: "#FF9966"
+            },{
+                category: "อาหารทะเล",
+                value: sum5,
+                color: "#FF6666"
+            },{
+                category: "ผัก",
+                value: sum3,
+                color: "#FF3366"
+            },{
+                category: "เครื่องเทศ",
+                value: sum4,
+                color: "#66FFCC"
+            },{
+                category: "เครื่องปรุง",
+                value: sum8,
+                color: "#66CCCC"
+            },{
+                category: "น้ำมันประกอบอาหาร",
+                value: sum7,
+                color: "#6699CC"
+            },{
+                category: "ผลิตภัณฑ์เบทาโกร",
+                value: sum9,
+                color: "#33CC33"
+            }]
+        }],
+        tooltip: {
+            visible: true,
+            format: "{0} รายการ"
+        }
+    });
+}
+
+$(document).ready(createChart2);
+$(document).bind("kendo:skinChange", createChart2);
+</script>
+
+<!-- Content Section START -->
 <div class="block-header clearfix">
-    <h2 class="pull-left">Dashboard</h2>
+    <h2 class="pull-left">หน้าหลัก</h2>
     <ul class="breadcrumb pull-right">
-        <li><a href="<?php echo site_url('dashboard/home');?>">Dashboard</a></li>
+        <li><a href="<?php echo site_url('dashboard/home');?>">หน้าหลัก</a></li>
     </ul>
 </div>
 
-<div class="row">
-    <div class="col-sm-4">
-        <!-- Todo -->
-        <div id="todo1" class="card card-todo-list" style="min-height: 512px">
-            <div class="card-header ch-alt">
-                <h2>Todo Lists <small>Manage your Todo Lists</small></h2>
+<div class="col-sm-8">
+    <div class="row">
+        <div class="card">
+            <div class="card-header">
+                <h2>รายการอาหารทั้งหมด</h2>
             </div>
-            <div class="card-body card-padding">
-                <div class="todo-add"> <i class="ta-btn zmdi zmdi-plus c-black" data-dp-action="todo-form-open"></i>
-                    <div class="ta-block">
-                        <textarea placeholder="What you want to do..."></textarea>
-                        <div class="tab-actions"> <a data-dp-action="todo-form-close" href="" class="c-red"><i class="zmdi zmdi-close"></i></a> <a data-dp-action="todo-form-close" href="" class="c-green"><i class="zmdi zmdi-check"></i></a> </div>
+            <div class="card-body">
+                <div id="chart"></div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="card">
+            <div class="card-header">
+                <h2>รายการวัตถุดิบทั้งหมด</h2>
+            </div>
+            <div class="card-body">
+                <div id="chart2"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="col-sm-4">
+    <!-- contacts -->
+    <div class="card card-contact-list" style="min-height: 512px">
+        <div class="card-header">
+            <h2>รายชื่อ</h2>
+        </div>
+        <div class="card-body p-b-20">
+            <div class="list-group">
+                <a class="list-group-item media" href="">
+                    <div class="pull-left">
+                        <img class="lg-item-img" src="<?php echo base_url('dist/images/profile-pics/1.jpg');?>" alt="">
                     </div>
-                </div>
-                <div class="list-group">
-                    <div class="list-group-item media">
+                    <div class="media-body">
+                        <div class="pull-left">
+                            <div class="lg-item-heading">David Belle</div>
+                            <small class="lg-item-text">david@gmail.com</small>
+                        </div>
                         <div class="pull-right">
-                            <ul class="actions">
-                                <li class="dropdown"> <a href="#" data-toggle="dropdown"> <i class="zmdi zmdi-more-vert"></i> </a>
-                                    <ul class="dropdown-menu dropdown-menu-right">
-                                        <li><a href="">Delete</a></li>
-                                        <li><a href="">Archive</a></li>
-                                    </ul>
-                                </li>
-                            </ul>
-                        </div>
-                        <div class="media-body">
-                            <div class="checkbox">
-                                <label>
-                                    <input type="checkbox">
-                                    <i class="input-helper"></i> <span>
-                                        <div class="lgi-heading">Get video on company culture. Get reviewed by Tim</div>
-                                        <small class="lgi-text">assigned to Jenny</small> </span>
-                                    </label>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="list-group-item media">
-                            <div class="pull-right">
-                                <ul class="actions">
-                                    <li class="dropdown"> <a href="#" data-toggle="dropdown"> <i class="zmdi zmdi-more-vert"></i> </a>
-                                        <ul class="dropdown-menu dropdown-menu-right">
-                                            <li><a href="">Delete</a></li>
-                                            <li><a href="">Archive</a></li>
-                                        </ul>
-                                    </li>
-                                </ul>
-                            </div>
-                            <div class="media-body">
-                                <div class="checkbox">
-                                    <label>
-                                        <input type="checkbox">
-                                        <i class="input-helper"></i> <span>
-                                            <div class="lgi-heading">Create training material and upload on Intranet. Circulate email with link</div>
-                                            <small class="lgi-text">assigned to Allen</small> </span>
-                                        </label>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="list-group-item media">
-                                <div class="pull-right">
-                                    <ul class="actions">
-                                        <li class="dropdown"> <a href="#" data-toggle="dropdown"> <i class="zmdi zmdi-more-vert"></i> </a>
-                                            <ul class="dropdown-menu dropdown-menu-right">
-                                                <li><a href="">Delete</a></li>
-                                                <li><a href="">Archive</a></li>
-                                            </ul>
-                                        </li>
-                                    </ul>
-                                </div>
-                                <div class="media-body">
-                                    <div class="checkbox">
-                                        <label>
-                                            <input type="checkbox">
-                                            <i class="input-helper"></i> <span>
-                                                <div class="lgi-heading">Get video on company culture. Get reviewed by Tim</div>
-                                                <small class="lgi-text">assigned to Jenny</small> </span>
-                                            </label>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="list-group-item media">
-                                    <div class="pull-right">
-                                        <ul class="actions">
-                                            <li class="dropdown"> <a href="#" data-toggle="dropdown"> <i class="zmdi zmdi-more-vert"></i> </a>
-                                                <ul class="dropdown-menu dropdown-menu-right">
-                                                    <li><a href="">Delete</a></li>
-                                                    <li><a href="">Archive</a></li>
-                                                </ul>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                    <div class="media-body">
-                                        <div class="checkbox">
-                                            <label>
-                                                <input type="checkbox">
-                                                <i class="input-helper"></i> <span>
-                                                    <div class="lgi-heading">Create training material and upload on Intranet. Circulate email with link</div>
-                                                    <small class="lgi-text">assigned to Allen</small> </span>
-                                                </label>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+                            <div class="lg-item-heading">PR Manager</div>
                         </div>
                     </div>
-
-                    <div class="col-sm-4">
-                        <!-- activities -->
-                        <div class="card" style="min-height: 512px">
-                            <div class="card-body card-padding">
-                                <div class="widget">
-                                    <header class="widget-header">
-                                        <h4 class="widget-title">Activities</h4>
-                                    </header>
-                                    <hr class="widget-separator">
-                                    <div class="widget-body">
-                                        <div class="streamline">
-                                            <div class="sl-item sl-primary">
-                                                <div class="sl-content">
-                                                    <small class="text-muted">5 mins ago</small>
-                                                    <p>Williams has just joined Project X</p>
-                                                </div>
-                                            </div>
-                                            <div class="sl-item sl-danger">
-                                                <div class="sl-content">
-                                                    <small class="text-muted">25 mins ago</small>
-                                                    <p>Jane has sent a request for access to the project folder</p>
-                                                </div>
-                                            </div>
-                                            <div class="sl-item sl-success">
-                                                <div class="sl-content">
-                                                    <small class="text-muted">40 mins ago</small>
-                                                    <p>Kate added you to her team</p>
-                                                </div>
-                                            </div>
-                                            <div class="sl-item">
-                                                <div class="sl-content">
-                                                    <small class="text-muted">45 minutes ago</small>
-                                                    <p>John has finished his task</p>
-                                                </div>
-                                            </div>
-                                            <div class="sl-item sl-warning">
-                                                <div class="sl-content">
-                                                    <small class="text-muted">55 mins ago</small>
-                                                    <p>Jim shared a folder with you</p>
-                                                </div>
-                                            </div>
-                                            <div class="sl-item">
-                                                <div class="sl-content">
-                                                    <small class="text-muted">60 minutes ago</small>
-                                                    <p>John has finished his task</p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                </div>
-                            </div>
+                </a>
+                <a class="list-group-item media" href="">
+                    <div class="pull-left">
+                        <img class="lg-item-img" src="<?php echo base_url('dist/images/profile-pics/2.jpg');?>" alt="">
+                    </div>
+                    <div class="media-body">
+                        <div class="pull-left">
+                            <div class="lg-item-heading">Chris Morris</div>
+                            <small class="lg-item-text">chris@hotmail.com</small>
+                        </div>
+                        <div class="pull-right">
+                            <div class="lg-item-heading">Director at Bingo</div>
                         </div>
                     </div>
-                    <div class="col-sm-4">
-                        <!-- contacts -->
-                        <div class="card card-contact-list" style="min-height: 512px">
-                            <div class="card-header">
-                                <h2>Contacts</h2>
-                            </div>
-                            <div class="card-body p-b-20">
-                                <div class="list-group">
-                                    <a class="list-group-item media" href="">
-                                        <div class="pull-left">
-                                            <img class="lg-item-img" src="<?php echo base_url('dist/images/profile-pics/1.jpg');?>" alt="">
-                                        </div>
-                                        <div class="media-body">
-                                            <div class="pull-left">
-                                                <div class="lg-item-heading">David Belle</div>
-                                                <small class="lg-item-text">david@gmail.com</small>
-                                            </div>
-                                            <div class="pull-right">
-                                                <div class="lg-item-heading">PR Manager</div>
-                                            </div>
-                                        </div>
-                                    </a>
-                                    <a class="list-group-item media" href="">
-                                        <div class="pull-left">
-                                            <img class="lg-item-img" src="<?php echo base_url('dist/images/profile-pics/2.jpg');?>" alt="">
-                                        </div>
-                                        <div class="media-body">
-                                            <div class="pull-left">
-                                                <div class="lg-item-heading">Chris Morris</div>
-                                                <small class="lg-item-text">chris@hotmail.com</small>
-                                            </div>
-                                            <div class="pull-right">
-                                                <div class="lg-item-heading">Director at Bingo</div>
-                                            </div>
-                                        </div>
-                                    </a>
-                                    <a class="list-group-item media" href="">
-                                        <div class="pull-left">
-                                            <img class="lg-item-img" src="<?php echo base_url('dist/images/profile-pics/3.jpg');?>" alt="">
-                                        </div>
-                                        <div class="media-body">
-                                            <div class="pull-left">
-                                                <div class="lg-item-heading">Fredric Mitchell Jr.</div>
-                                                <small class="lg-item-text">fredric@gmail.com</small>
-                                            </div>
-                                            <div class="pull-right">
-                                                <div class="lg-item-heading">PR Manager</div>
-                                            </div>
-                                        </div>
-                                    </a>
-                                    <a class="list-group-item media" href="">
-                                        <div class="pull-left">
-                                            <img class="lg-item-img" src="<?php echo base_url('dist/images/profile-pics/4.jpg');?>" alt="">
-                                        </div>
-                                        <div class="media-body">
-                                            <div class="pull-left">
-                                                <div class="lg-item-heading">Glenn Jecobs</div>
-                                                <small class="lg-item-text">glenn@hotmail.com</small>
-                                            </div>
-                                            <div class="pull-right">
-                                                <div class="lg-item-heading">Assistan</div>
-                                            </div>
-                                        </div>
-                                    </a>
-                                    <a class="list-group-item media" href="">
-                                        <div class="pull-left">
-                                            <img class="lg-item-img" src="<?php echo base_url('dist/images/profile-pics/4.jpg');?>" alt="">
-                                        </div>
-                                        <div class="media-body">
-                                            <div class="pull-left">
-                                                <div class="lg-item-heading">Bill Phillips</div>
-                                                <small class="lg-item-text">billphillips@yahoo.com</small>
-                                            </div>
-                                            <div class="pull-right">
-                                                <div class="lg-item-heading">PR Manager</div>
-                                            </div>
-                                        </div>
-                                    </a>
-                                    <a class="list-group-item media" href="">
-                                        <div class="pull-left">
-                                            <img class="lg-item-img" src="<?php echo base_url('dist/images/profile-pics/2.jpg');?>" alt="">
-                                        </div>
-                                        <div class="media-body">
-                                            <div class="pull-left">
-                                                <div class="lg-item-heading">Chris Morris</div>
-                                                <small class="lg-item-text">chris@hotmail.com</small>
-                                            </div>
-                                            <div class="pull-right">
-                                                <div class="lg-item-heading">Director at Bingo</div>
-                                            </div>
-                                        </div>
-                                    </a>
-                                </div>
-                            </div>
+                </a>
+                <a class="list-group-item media" href="">
+                    <div class="pull-left">
+                        <img class="lg-item-img" src="<?php echo base_url('dist/images/profile-pics/3.jpg');?>" alt="">
+                    </div>
+                    <div class="media-body">
+                        <div class="pull-left">
+                            <div class="lg-item-heading">Fredric Mitchell Jr.</div>
+                            <small class="lg-item-text">fredric@gmail.com</small>
+                        </div>
+                        <div class="pull-right">
+                            <div class="lg-item-heading">PR Manager</div>
                         </div>
                     </div>
-                </div>
+                </a>
+                <a class="list-group-item media" href="">
+                    <div class="pull-left">
+                        <img class="lg-item-img" src="<?php echo base_url('dist/images/profile-pics/4.jpg');?>" alt="">
+                    </div>
+                    <div class="media-body">
+                        <div class="pull-left">
+                            <div class="lg-item-heading">Glenn Jecobs</div>
+                            <small class="lg-item-text">glenn@hotmail.com</small>
+                        </div>
+                        <div class="pull-right">
+                            <div class="lg-item-heading">Assistan</div>
+                        </div>
+                    </div>
+                </a>
+                <a class="list-group-item media" href="">
+                    <div class="pull-left">
+                        <img class="lg-item-img" src="<?php echo base_url('dist/images/profile-pics/4.jpg');?>" alt="">
+                    </div>
+                    <div class="media-body">
+                        <div class="pull-left">
+                            <div class="lg-item-heading">Bill Phillips</div>
+                            <small class="lg-item-text">billphillips@yahoo.com</small>
+                        </div>
+                        <div class="pull-right">
+                            <div class="lg-item-heading">PR Manager</div>
+                        </div>
+                    </div>
+                </a>
+                <a class="list-group-item media" href="">
+                    <div class="pull-left">
+                        <img class="lg-item-img" src="<?php echo base_url('dist/images/profile-pics/2.jpg');?>" alt="">
+                    </div>
+                    <div class="media-body">
+                        <div class="pull-left">
+                            <div class="lg-item-heading">Chris Morris</div>
+                            <small class="lg-item-text">chris@hotmail.com</small>
+                        </div>
+                        <div class="pull-right">
+                            <div class="lg-item-heading">Director at Bingo</div>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
+</div>

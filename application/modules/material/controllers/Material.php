@@ -15,6 +15,7 @@ class Material extends MX_Controller {
     {
         $data['alert'] = $this->session->flashdata('alert');
         $data['content']='material/group';
+        $data['alert'] = $this->session->flashdata('alert');
         $data['material_list'] = $this->get_mate_group();
         $cat_id = $this->uri->segment(3);
         $data['raw_detail'] = $this->Material_models->get_group_material($cat_id);

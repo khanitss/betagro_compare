@@ -91,10 +91,10 @@ foreach ($eq_details as $key => $value)
                 <table class="table">
                     <thead>
                         <tr>
-                            <th class="text-center">วัตถุดิบ</th>
-                            <th class="text-center">จำนวน</th>
-                            <th class="text-center">หน่วย</th>
-                            <th class="text-center">ราคา (บาท)</th>
+                            <th class="text-center"><strong>วัตถุดิบ</strong></th>
+                            <th class="text-center"><strong>จำนวน</strong></th>
+                            <th class="text-center"><strong>หน่วย</strong></th>
+                            <th class="text-center"><strong>ราคา (บาท)</strong></th>
                         </tr>
                     </thead>
                     <tbody>
@@ -118,10 +118,10 @@ foreach ($eq_details as $key => $value)
                 <table class="table">
                     <thead>
                         <tr>
-                            <th class="text-center">คน / อุปกรณ์</th>
-                            <th class="text-center">จำนวน</th>
+                            <th class="text-center"><strong>คน / อุปกรณ์</strong></th>
+                            <th class="text-center"><strong>จำนวน</strong></th>
                             <th/>
-                            <th class="text-center">ราคา (บาท)</th>
+                            <th class="text-center"><strong>ราคา (บาท)</strong></th>
                         </tr>
                     </thead>
                     <tbody>

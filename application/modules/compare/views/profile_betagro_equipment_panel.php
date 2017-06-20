@@ -46,16 +46,5 @@ foreach ($eq_betagro as $key => $value)
                 </tr>
             </tbody>
         </table>
-        <div class="form-group">
-            <div class="col-sm-4 col-xs-4"></div>
-            <div class="col-sm-1 col-xs-1">
-                <h3>
-                    <img class="center-block" src="<?php echo base_url('dist/images/icons/Dollar-Sign-icon.png');?>" width="25px" height="25px">
-                </h3>
-            </div>
-            <div class="col-sm-4 col-xs-4">
-                <h3><?php echo number_format($sum);?> บาท</h3>
-            </div>
-        </div>
     </div>
 </div>

@@ -65,17 +65,30 @@ foreach ($eq_standard as $key => $value)
                 <div class="col-sm-3 col-xs-3 d-inline-flex p-2"><pre><?php echo $value['food_time'];?> นาที</pre></div>
             </div>
 
+
+
+            <hr/>
+
+            <?php
+            $this->load->view('compare/profile_standard_raw_material_panel');
+            ?>
+            <hr/>
+            <?php
+            $this->load->view('compare/profile_standard_equipment_panel');
+            ?>
+
+            <div class="form-group">
+                <div class="col-sm-7 col-xs-7"></div>
+                <div class="col-sm-1 col-xs-1">
+                    <h3>
+                        <img class="center-block" src="<?php echo base_url('dist/images/icons/Dollar-Sign-icon.png');?>" width="25px" height="25px">
+                    </h3>
+                </div>
+                <div class="col-sm-4 col-xs-4">
+                    <h3><?php echo number_format($sum);?> บาท</h3>
+                </div>
+            </div>
         </div>
-
-        <hr/>
-
-        <?php
-        $this->load->view('compare/profile_standard_raw_material_panel');
-        ?>
-        <hr/>
-        <?php
-        $this->load->view('compare/profile_standard_equipment_panel');
-        ?>
     </div>
 
     <?php

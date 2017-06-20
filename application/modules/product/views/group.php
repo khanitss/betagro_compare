@@ -22,7 +22,12 @@
 <div class="row">
     <!-- show img -->
     <?php foreach ($material_list as $key => $value)
+<<<<<<< HEAD
+    {
+        if ($value['mat_type']==1){
+=======
     { if ($value['cat_type']==1){
+>>>>>>> 11142a3dc213948b8d44d7c9081c45ebb1e7356c
         ?>
 
         <div class="col-sm-3">
@@ -38,6 +43,7 @@
             </div>
         </div>
         <?php
+        }
     }
 }
     ?>

@@ -26,7 +26,7 @@
                 <div class="thumbnail">
                     <center>
                         <a href= "<?php echo site_url('product/product_edit/'.$value['mat_id']);?>">
-                            <img src="<?php echo base_url('images_compare/'.$value['mat_pic']);?>" style="width: auto; height: 180px;">
+                            <img src="<?php echo base_url('images_compare/'.$value['mat_pic']);?>" style="width: auto; height: 180px; margin-top: 10px;">
                         </a>
                     </center>
                     <div class="caption">

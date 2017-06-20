@@ -41,10 +41,6 @@ class Material extends MX_Controller {
         $data['alert'] = $this->session->flashdata('alert');
         $mat_id = $this->uri->segment(4);
         $data['content']='material/edit-material';
-<<<<<<< HEAD
-        $data['alert'] = $this->session->flashdata('alert');
-=======
->>>>>>> 65959eedc364735510176e2d89e90e569af71f4f
         $data['material_detail'] = $this->Material_models->get_material_details($mat_id);
         $this->init_sys->content($data);
     }

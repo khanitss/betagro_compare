@@ -4,7 +4,7 @@ echo form_open_multipart('material/add_raw_material', $attr);?>
 <div class="block-header clearfix">
     <h2 class="pull-left">เพิ่มวัตถุดิบ</h2>
     <ul class="breadcrumb pull-right">
-        <li><a href="index.html">หน้าหลัก</a></li>
+        <li><a href="<?php echo site_url('dashboard/home');?>">หน้าหลัก</a></li>
         <li><a href="<?php echo site_url ('material/material_page');?>">กลุ่มของวัตถุดิบ</a></li>
         <li><a href="<?php echo site_url ('material/material_d_page');?>">วัตถุดิบ</a></li>
         <li><a href="<?php echo site_url ('material/raw_page');?>">เพิ่มวัตถุดิบ</a></li>

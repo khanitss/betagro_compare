@@ -1,7 +1,7 @@
 <div class="block-header clearfix">
     <h2 class="pull-left">เพิ่มกลุ่มของวัตถุดิบ</h2>
     <ul class="breadcrumb pull-right">
-        <li><a href="index.html">หน้าหลัก</a></li>
+        <li><a href="<?php echo site_url('dashboard/home');?>">หน้าหลัก</a></li>
         <li><a href="<?php echo site_url ('material/material_page');?>">กลุ่มของวัตถุดิบ</a></li>
         <li><a href="<?php echo site_url ('material/material_group_page');?>">เพิ่มกลุ่มของวัตถุดิบ</a></li>
     </ul>

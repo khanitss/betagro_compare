@@ -17,7 +17,7 @@
                 <div class="col-md-3">
                     <div class="card">
                         <a href="<?php echo site_url('compare/choose_menu2_page/'.$value['food_id']);?>" class="text-center">
-                            <center><img src="<?php echo base_url('images_compare/'.$value['food_pic']);?>" class="img-thumbnail" style="width: auto; height: 180px;"/></center>
+                            <center><img src="<?php echo base_url('images_compare/'.$value['food_pic']);?>" class="img-thumbnail" style="margin-top: 10px; width: auto; height: 180px;"/></center>
                             <p class="caption" style="margin-top: 10px;">
                                 <strong>
                                     <?php echo $value['food_name'];?> <?php echo $value['food_for'];?> <?php echo $value['food_unit'];?>

@@ -12,6 +12,7 @@ class Compare extends MX_Controller {
 
 	public function choose_menu1_page()
 	{
+		$data['alert'] = $this->session->flashdata('alert');
 		$qstr=array('food_type'=>0);
 		$results = $this->Compare_model->get_food_list($qstr);
 		$data['food_standard_list'] = $results;
@@ -23,8 +24,27 @@ class Compare extends MX_Controller {
 		$this->init_sys->content($data);
 	}
 
+	public function compare_page()
+	{
+		$data['alert'] = $this->session->flashdata('alert');
+		$betagro_id=($this->uri->segment(3)!=''? $this->uri->segment(3) : 0);
+		$standard_id=$this->session->userdata('select_items_one');
+		$data['standard'] = $this->Compare_model->get_standard_food_detail($standard_id);
+		$data['betagro']= $this->Compare_model->get_betagro_food_detail($betagro_id);
+		$data['mat_standard'] =$this->Compare_model->get_standard_mat_details($standard_id);
+		$data['mat_betagro'] =$this->Compare_model->get_betagro_mat_details($betagro_id);
+		$data['eq_standard'] =$this->Compare_model->get_standard_eq_details($standard_id);
+		// echo print_r($data['eq_standard']);
+		// exit();
+		$data['eq_betagro'] =$this->Compare_model->get_betagro_eq_details($betagro_id);
+
+		$data['content']='compare/compare';
+		$this->init_sys->content($data);
+	}
+
 	public function choose_menu2_page()
 	{
+		$data['alert'] = $this->session->flashdata('alert');
 		$this->set_standard_food_id();
 		$qstr1=array('food_type'=>1);
 		$results = $this->Compare_model->get_food_list($qstr1);
@@ -50,23 +70,5 @@ class Compare extends MX_Controller {
 		$qstr=array('select_items_one'=>$id);
 		$this->session->set_userdata($qstr);
 	}
-
-	public function compare_page() {
-
-		$betagro_id=($this->uri->segment(3)!=''? $this->uri->segment(3) : 0);
-		$standard_id=$this->session->userdata('select_items_one');
-		$data['standard'] = $this->Compare_model->get_standard_food_detail($standard_id);
-		$data['betagro']= $this->Compare_model->get_betagro_food_detail($betagro_id);
-		$data['mat_standard'] =$this->Compare_model->get_standard_mat_details($standard_id);
-		$data['mat_betagro'] =$this->Compare_model->get_betagro_mat_details($betagro_id);
-		$data['eq_standard'] =$this->Compare_model->get_standard_eq_details($standard_id);
-		// echo print_r($data['eq_standard']);
-		// exit();
-		$data['eq_betagro'] =$this->Compare_model->get_betagro_eq_details($betagro_id);
-
-		$data['content']='compare/compare';
-		$this->init_sys->content($data);
-	}
-
 
 }//end class

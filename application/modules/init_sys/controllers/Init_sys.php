@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Init_sys extends MX_Controller 
+class Init_sys extends MX_Controller
 {
 	public $init = array(
 							'initbody'			=>'init_sys/template',

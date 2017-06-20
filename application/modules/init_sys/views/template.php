@@ -43,9 +43,26 @@
                 if (isset($nav) && $rows_nav !='') {
                     $this->load->view('init_sys/nav_bar');
                 }
+                $data['alert'] = $this->session->flashdata('alert');
+                if ($alert == '1') {
+                    ?>
+                    <div class="alert alert-success">
+                        <strong>บันทึกข้อมูลสำเร็จ</strong>
+                        <button type="button" class="close" data-dismiss="alert">&times;</button>
+                    </div>
+                    <?php
+                }
+                elseif ($alert == '2') {
+                    ?>
+                    <div class="alert alert-warning">
+                        <strong>ลบข้อมูลสำเร็จ</strong>
+                        <button type="button" class="close" data-dismiss="alert">&times;</button>
+                    </div>
+                    <?php
+                }?>
 
-                $this->load->view($content);
-                ?>
+                <?php $this->load->view($content);?>
+
             </div>
         </section>
         <!-- Content Section END -->
@@ -69,9 +86,9 @@
 
     <!-- <script type="text/javascript">
     $(document).ready(function() {
-        bootgrid();
-    });
-    </script> -->
+    bootgrid();
+});
+</script> -->
 
 </body>
 </html>

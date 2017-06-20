@@ -74,7 +74,7 @@ $int = (int)$sum;
                             </div>
                             <div class="col-sm-6 col-xs-6">
 
-                                <p class="form-control-static"><strong><?php echo $int; ?>&nbsp;&nbsp;&nbsp;&nbsp;บาท</strong></p>
+                                <p class="form-control-static"><strong><?php echo number_format($sum,2); ?>&nbsp;&nbsp;&nbsp;&nbsp;บาท</strong></p>
                             </div>
                         </div>
                     </form>
@@ -95,7 +95,7 @@ $int = (int)$sum;
                             <th class="text-center">วัตถุดิบ</th>
                             <th class="text-center">จำนวน</th>
                             <th class="text-center">หน่วย</th>
-                            <th class="text-center">ราคา</th>
+                            <th class="text-center">ราคา (บาท)</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -106,7 +106,7 @@ $int = (int)$sum;
                                 <td class="text-center"><?php echo $value['mat_name'];?></td>
                                 <td class="text-center"><?php echo $value['mat_quantity'];?></td>
                                 <td class="text-center"><?php echo $value['mat_unit'];?></td>
-                                <td class="text-center"><?php echo $value['mat_cost'];?>&nbsp; บาท</td>
+                                <td class="text-center"><?php echo $value['mat_cost'];?>&nbsp;</td>
                             </tr>
                             <?php
                         }
@@ -121,7 +121,8 @@ $int = (int)$sum;
                         <tr>
                             <th class="text-center">คน / อุปกรณ์</th>
                             <th class="text-center">จำนวน</th>
-                            <th class="text-center">ราคา/ชม.</th>
+                            <th/>
+                            <th class="text-center">ราคา (บาท)</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -131,7 +132,8 @@ $int = (int)$sum;
                             <tr>
                                 <td class="text-center"><?php echo $value['eq_name'];?></td>
                                 <td class="text-center">1</td>
-                                <td class="text-center"><?php echo $value['eq_cost'];?>&nbsp; บาท</td>
+                                <td/>
+                                <td class="text-center"><?php echo number_format($value['eq_cost']*($food_time/60),2);?></td>
                             </tr>
                             <?php
                         }

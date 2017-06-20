@@ -1,22 +1,4 @@
 <!-- Content Section START -->
-<?php
-if ($alert == '1') {
-    ?>
-    <div class="alert alert-success">
-        <strong>บันทึกข้อมูลสำเร็จ</strong>
-        <button type="button" class="close" data-dismiss="alert">&times;</button>
-    </div>
-    <?php
-}
-elseif ($alert == '2') {
-    ?>
-    <div class="alert alert-success">
-        <strong>ลบข้อมูลสำเร็จ</strong>
-        <button type="button" class="close" data-dismiss="alert">&times;</button>
-    </div>
-    <?php
-}?>
-
 <div class="block-header clearfix">
     <h2 class="pull-left">เมนูอาหาร</h2>
     <ul class="breadcrumb pull-right">
@@ -48,7 +30,7 @@ elseif ($alert == '2') {
             <div class="col-sm-3">
                 <div class="card">
                     <a href="<?php echo site_url('food/food_details/'.$value['food_id']);?>" class="text-center">
-                        <center><img src="<?php echo base_url('images_compare/'.$value['food_pic']);?>" class="img-thumbnail" style="width: auto; height: 180px;"/><center>
+                        <center><img src="<?php echo base_url('images_compare/'.$value['food_pic']);?>" class="img-thumbnail" style="margin-top: 10px; width: auto; height: 180px;"/><center>
                         <p class="caption" style="margin-top: 10px;">
                             <strong>
                                 <?php echo $value['food_name'];?> <?php echo $value['food_for'];?> <?php echo $value['food_unit'];?>

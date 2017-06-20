@@ -3,8 +3,7 @@
 
     <ul class="breadcrumb pull-right">
         <li><a href="<?php echo site_url('dashboard/home');?>">หน้าหลัก</a></li>
-        <li><a href="<?php echo site_url('compare/choose_menu1_page');?>">เมนูทั่วไป</a></li>
-        <li><a href="<?php echo site_url('compare/choose_menu2_page');?>">เมนูเบทาโกร</a></li>
+        <li><a href="<?php echo site_url('compare/choose_menu1_page');?>">เลือกเมนู</a></li>
         <li><a href="">เปรียบเทียบ</a></li>
     </ul>
 </div>

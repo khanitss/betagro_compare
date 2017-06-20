@@ -13,7 +13,7 @@
     <div class="col-sm-10 col-xs-8"></div>
     <div class="col-sm-2 col-xs-4 text-right">
         <a href="<?php echo site_url('compare/choose_menu1_page');?>">
-            <button class="btn btn-danger btn-block">กลับ</button>
+            <button class="btn btn-warning btn-block">กลับ</button>
         </a>
     </div>
 </div>

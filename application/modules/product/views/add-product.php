@@ -52,7 +52,7 @@ echo form_open_multipart('product/add_product',$attr);
                                 <button type="save" class="btn btn-success btn-block">บันทึก</button>
                             </div>
                             <div class="col-sm-4">
-                                <a href="<?php echo site_url ('product/product_page');?>" type="cancel" class="btn btn-danger btn-block">ยกเลิก</a>
+                                <a href="<?php echo site_url ('product/product_page'.$this->uri->segment(3));?>" type="cancel" class="btn btn-danger btn-block">ยกเลิก</a>
                             </div>
                             <div class="col-sm-2"></div>
                         </div>

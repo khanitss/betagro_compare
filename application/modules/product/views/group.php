@@ -22,6 +22,7 @@
     <!-- show img -->
     <?php foreach ($material_list as $key => $value)
     {
+        if ($value['mat_type']==1){
         ?>
 
         <div class="col-sm-3">
@@ -37,6 +38,7 @@
             </div>
         </div>
         <?php
+        }
     }
     ?>
 </div>

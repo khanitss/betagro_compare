@@ -52,7 +52,7 @@ echo form_open_multipart('man/update_man_details/'.$this->uri->segment(3),$attr)
                                     <button class="btn btn-success btn-block">บันทึก</button>
                                 </div>
                                 <div class="col-sm-4">
-                                    <a href="<?php echo site_url ('man/man_page');?>" type="back" class="btn btn-danger btn-block">กลับ</a>
+                                    <a href="<?php echo site_url ('man/man_page');?>" type="back" class="btn btn-warning btn-block">กลับ</a>
                                 </div>
                                 <div class="col-sm-2"></div>
                             </div>

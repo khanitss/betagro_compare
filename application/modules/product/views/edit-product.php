@@ -57,7 +57,7 @@ foreach ($product_details as $key => $value){
                             <button type="save" class="btn btn-success btn-block">บันทึก</button>
                         </div>
                         <div class="col-sm-4">
-                            <a href="<?php echo site_url ('product/product_page');?>" type="back" class="btn btn-danger btn-block">กลับ</a>
+                            <a href="<?php echo site_url ('product/product_page');?>" type="back" class="btn btn-warning btn-block">กลับ</a>
                         </div>
                         <div class="col-sm-2"></div>
                     </div>

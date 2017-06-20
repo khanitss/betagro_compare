@@ -32,7 +32,7 @@ $int = (int)$sum;
     <div class="col-sm-10 col-xs-8"></div>
     <div class="col-sm-2 col-xs-4 text-center">
         <a href="<?php echo site_url('food/food_page');?>">
-            <button class="btn btn-danger btn-block">กลับ</button>
+            <button class="btn btn-warning btn-block">กลับ</button>
         </a>
     </div>
 </div>
@@ -153,7 +153,11 @@ $int = (int)$sum;
         <a class="col-sm-4 col-xs-4 text-center" href="<?php echo site_url('food/delete_food');?>">
             <button class="btn btn-danger btn-lg btn-block">ลบ</button>
         </a>
+        
+        </div>
+        </div>
         <?php echo form_close();?>
         <div class="col-sm-2 col-xs-2"></div>
+        <br/>
     </div>
 </div>

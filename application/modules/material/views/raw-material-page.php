@@ -30,7 +30,7 @@
         if ($value['mat_type']==0){
             ?>
             <div class="col-sm-3">
-
+            
                 <div class="thumbnail img-check">
                     <center>
                         <a href="<?php echo site_url('material/edit_page/'.$this->uri->segment(3).'/'.$value['mat_id']);?>" class="text-center">

@@ -17,11 +17,13 @@
 </div>
 <br/>
 
+
 <div class="row">
     <!-- show img -->
     <?php foreach ($material_list as $key => $value)
     {
         ?>
+
         <div class="col-sm-3">
             <div class="thumbnail img-check">
                 <center><a href="<?php echo site_url('material/material_d_page/'.$value['cat_id']);?>" class="text-center">

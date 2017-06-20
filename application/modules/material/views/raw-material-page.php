@@ -3,7 +3,7 @@
             <h2 class="pull-left">วัตถุดิบ</h2>
             <ul class="breadcrumb pull-right">
               <li><a href="<?php echo site_url ('dashboard/home');?>">หน้าหลัก</a></li>
-              <li><a href="">ตั้งค่า</a></li>
+              
               <li><a href="<?php echo site_url('material/material_page');?>">กลุ่มของวัตถุดิบ</a></li>
               <li><a href="<?php echo site_url('material/material_d_page/'.$this->uri->segment(3));?>">วัตถุดิบ</a></li>
             </ul>
@@ -30,7 +30,7 @@
         if ($value['mat_type']==0){
             ?>
             <div class="col-sm-3">
-            
+
                 <div class="thumbnail img-check">
                     <center>
                         <a href="<?php echo site_url('material/edit_page/'.$this->uri->segment(3).'/'.$value['mat_id']);?>" class="text-center">

@@ -7,7 +7,11 @@
         <li><a href="<?php echo site_url('food/add_food');?>">เพิ่มรายการอาหาร</a></li>
     </ul>
 </div>
-<br/>
+<div class="col-sm-10"></div>
+<div class="col-sm-2">
+    <a type="button" href="<?php echo site_url('food/food_page');?>" type="cancel" class="btn btn-warning btn-block">กลับ</a>
+</div>
+<br/><br/>
 
 <div class="row">
 
@@ -73,9 +77,7 @@
                         <div class="col-sm-4 col-xs-4">
                             <a class="btn btn-success btn-lg btn-block" data-toggle="modal" data-target="#saveModal">เพิ่ม</a>
                         </div>
-                        <div class="col-sm-4 col-xs-4">
-                            <a type="button" href="<?php echo site_url('food/food_page');?>" class="btn btn-warning btn-lg btn-block">กลับ</a>
-                        </div>
+                        <div class="col-sm-4 col-xs-4"></div>
                     </div>
                     <!-- Modal -->
                     <div id="saveModal" class="modal fade" role="dialog">

@@ -71,15 +71,14 @@
                     <div class="form-group">
                         <div class="col-sm-4 col-xs-4"></div>
                         <div class="col-sm-4 col-xs-4">
-                            <a class="btn btn-success btn-lg btn-block" data-toggle="modal" data-target="#myAddRawModal">เพิ่ม</a>
-
+                            <a class="btn btn-success btn-lg btn-block" data-toggle="modal" data-target="#saveModal">เพิ่ม</a>
                         </div>
                         <div class="col-sm-4 col-xs-4">
                             <a type="button" href="<?php echo site_url('food/food_page');?>" class="btn btn-warning btn-lg btn-block">กลับ</a>
                         </div>
                     </div>
                     <!-- Modal -->
-                    <div id="myAddRawModal" class="modal fade" role="dialog">
+                    <div id="saveModal" class="modal fade" role="dialog">
                         <div class="modal-dialog">
 
                             <!-- Modal content-->

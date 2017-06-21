@@ -149,14 +149,39 @@ foreach ($eq_details as $key => $value)
         </div>
         <?php $attr = array('class' => 'form-horizontal');
         echo form_open('food/delete_food/'.$this->uri->segment(3), $attr);?>
-        <a class="col-sm-4 col-xs-4 text-center" href="<?php echo site_url('food/delete_food');?>">
-            <button class="btn btn-danger btn-lg btn-block">ลบ</button>
-        </a>
-        
+        <div class="col-sm-4 col-xs-4">
+            <a type="button" class="btn btn-danger btn-lg btn-block" data-toggle="modal" data-target="#deleteModal">ลบ</a>
         </div>
-        </div>
-        <?php echo form_close();?>
-        <div class="col-sm-2 col-xs-2"></div>
-        <br/>
     </div>
+    <!-- Modal -->
+    <div id="deleteModal" class="modal fade" role="dialog">
+        <div class="modal-dialog">
+
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title">ยืนยันการลบข้อมูล?</h4>
+                </div>
+
+                <div class="modal-body">
+                    <div class="col-sm-4"></div>
+                    <div class="col-sm-4">
+                        <button type="submit" class="btn btn-success btn-lg btn-block" href="<?php echo site_url('food/delete_food');?>">ยืนยัน</button>
+                    </div>
+                    <div class="col-sm-4">
+                        <a type="button" data-dismiss="modal" class="btn btn-danger btn-lg btn-block">ยกเลิก</a>
+                    </div>
+                </div>
+
+                <div class="modal-footer">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<?php echo form_close();?>
+<div class="col-sm-2 col-xs-2"></div>
+<br/>
+</div>
 </div>

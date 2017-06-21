@@ -18,6 +18,11 @@ echo form_open_multipart('product/update_material/'.$this->uri->segment(4),$attr
 <?php
 foreach ($material_detail as $key => $value){
     ?>
+<div class="col-sm-10"></div>
+<div class="col-sm-2">
+    <a href="<?php echo site_url ('product/Material_d_page/'.$this->uri->segment(3));?>" type="cancel" class="btn btn-warning btn-block">กลับ</a>
+</div>
+<br/>
     <div class="row">
         <div class="col-sm-2"></div>
         <div class="col-sm-8">
@@ -54,14 +59,11 @@ foreach ($material_detail as $key => $value){
                                         <input class="form-control" id="focusedInput" type="text" name="mat_cost" placeholder="<?php echo $value['mat_cost'];?>"></div></div>
                                     </div>
                                     <div class="row">
-                                        <div class="col-sm-2"></div>
+                                        <div class="col-sm-4"></div>
                                         <div class="col-sm-4">
                                             <a class="btn btn-success btn-lg btn-block" data-toggle="modal" data-target="#myAddRawModal">บันทึก</a>
                                         </div>
-                                        <div class="col-sm-4">
-                                            <a href="<?php echo site_url ('product/Material_d_page/'.$this->uri->segment(3));?>" type="back" class="btn btn-warning btn-lg btn-block">กลับ</a>
-                                        </div>
-                                        <div class="col-sm-2"></div>
+                                        <div class="col-sm-4"></div>
                                     </div>
                                     <div id="myAddRawModal" class="modal fade" role="dialog">
                         <div class="modal-dialog">

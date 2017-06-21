@@ -28,7 +28,6 @@
     <link href="<?php echo base_url('dist/css/dashplus_2.min.css');?>" rel="stylesheet">
 
     <!-- PieChart -->
-    <base href="http://demos.telerik.com/kendo-ui/pie-charts/index">
     <style>html { font-size: 14px; font-family: Arial, Helvetica, sans-serif; }</style>
     <title></title>
     <link rel="stylesheet" href="https://kendo.cdn.telerik.com/2017.2.504/styles/kendo.common-material.min.css" />

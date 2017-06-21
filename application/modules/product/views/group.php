@@ -24,6 +24,10 @@
     <?php foreach ($material_list as $key => $value)
 
     { if ($value['cat_type']==1){
+<<<<<<< HEAD
+=======
+
+>>>>>>> 68920dadfa7bdabe9b2dacb602b53f437102a20f
         ?>
 
         <div class="col-sm-3">
@@ -40,7 +44,12 @@
         </div>
         <?php
         }
+<<<<<<< HEAD
     }
 
+=======
+    
+}
+>>>>>>> 68920dadfa7bdabe9b2dacb602b53f437102a20f
     ?>
 </div>

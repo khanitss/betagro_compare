@@ -221,7 +221,7 @@ $(document).bind("kendo:skinChange", createChart2);
                     if($value['food_type'] == '1' and $value['food_status'] == '1' and $i <= 10)
                     {
                         ?>
-                        <a class="list-group-item media" href="<?php echo site_url('food/food_details/'.$value['food_id']);?>">
+                        <a class="list-group-item media" href="<?php echo site_url('compare/choose_menu2_page/'.$value['food_id']);?>">
                             <div class="pull-left">
                                 <img  src="<?php echo base_url('images_compare/'.$value['food_pic']);?>" width="120px" height="90px">
                             </div>

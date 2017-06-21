@@ -210,94 +210,30 @@ $(document).bind("kendo:skinChange", createChart2);
     <!-- contacts -->
     <div class="card card-contact-list" style="min-height: 512px">
         <div class="card-header">
-            <h2>รายชื่อ</h2>
+            <h2>รายการอาหารที่ใช้วัตถุกิบจาก betagro</h2>
         </div>
         <div class="card-body p-b-20">
             <div class="list-group">
-                <a class="list-group-item media" href="">
-                    <div class="pull-left">
-                        <img class="lg-item-img" src="<?php echo base_url('dist/images/profile-pics/1.jpg');?>" alt="">
-                    </div>
-                    <div class="media-body">
-                        <div class="pull-left">
-                            <div class="lg-item-heading">David Belle</div>
-                            <small class="lg-item-text">david@gmail.com</small>
-                        </div>
-                        <div class="pull-right">
-                            <div class="lg-item-heading">PR Manager</div>
-                        </div>
-                    </div>
-                </a>
-                <a class="list-group-item media" href="">
-                    <div class="pull-left">
-                        <img class="lg-item-img" src="<?php echo base_url('dist/images/profile-pics/2.jpg');?>" alt="">
-                    </div>
-                    <div class="media-body">
-                        <div class="pull-left">
-                            <div class="lg-item-heading">Chris Morris</div>
-                            <small class="lg-item-text">chris@hotmail.com</small>
-                        </div>
-                        <div class="pull-right">
-                            <div class="lg-item-heading">Director at Bingo</div>
-                        </div>
-                    </div>
-                </a>
-                <a class="list-group-item media" href="">
-                    <div class="pull-left">
-                        <img class="lg-item-img" src="<?php echo base_url('dist/images/profile-pics/3.jpg');?>" alt="">
-                    </div>
-                    <div class="media-body">
-                        <div class="pull-left">
-                            <div class="lg-item-heading">Fredric Mitchell Jr.</div>
-                            <small class="lg-item-text">fredric@gmail.com</small>
-                        </div>
-                        <div class="pull-right">
-                            <div class="lg-item-heading">PR Manager</div>
-                        </div>
-                    </div>
-                </a>
-                <a class="list-group-item media" href="">
-                    <div class="pull-left">
-                        <img class="lg-item-img" src="<?php echo base_url('dist/images/profile-pics/4.jpg');?>" alt="">
-                    </div>
-                    <div class="media-body">
-                        <div class="pull-left">
-                            <div class="lg-item-heading">Glenn Jecobs</div>
-                            <small class="lg-item-text">glenn@hotmail.com</small>
-                        </div>
-                        <div class="pull-right">
-                            <div class="lg-item-heading">Assistan</div>
-                        </div>
-                    </div>
-                </a>
-                <a class="list-group-item media" href="">
-                    <div class="pull-left">
-                        <img class="lg-item-img" src="<?php echo base_url('dist/images/profile-pics/4.jpg');?>" alt="">
-                    </div>
-                    <div class="media-body">
-                        <div class="pull-left">
-                            <div class="lg-item-heading">Bill Phillips</div>
-                            <small class="lg-item-text">billphillips@yahoo.com</small>
-                        </div>
-                        <div class="pull-right">
-                            <div class="lg-item-heading">PR Manager</div>
-                        </div>
-                    </div>
-                </a>
-                <a class="list-group-item media" href="">
-                    <div class="pull-left">
-                        <img class="lg-item-img" src="<?php echo base_url('dist/images/profile-pics/2.jpg');?>" alt="">
-                    </div>
-                    <div class="media-body">
-                        <div class="pull-left">
-                            <div class="lg-item-heading">Chris Morris</div>
-                            <small class="lg-item-text">chris@hotmail.com</small>
-                        </div>
-                        <div class="pull-right">
-                            <div class="lg-item-heading">Director at Bingo</div>
-                        </div>
-                    </div>
-                </a>
+                <?php
+                $i = 1;
+                foreach ($food_list as $key => $value)
+                {
+                    if($value['food_type'] == '1' and $value['food_status'] == '1' and $i <= 10)
+                    {
+                        ?>
+                        <a class="list-group-item media" href="<?php echo site_url('food/food_details/'.$value['food_id']);?>">
+                            <div class="pull-left">
+                                <img  src="<?php echo base_url('images_compare/'.$value['food_pic']);?>" width="120px" height="90px">
+                            </div>
+                            <div class="pull-left">
+                                <h4 class="lg-item-heading"><center><?php echo $value['food_name'];?></center></h4>
+                            </div>
+                        </a>
+                        <?php
+                        $i++;
+                    }
+                }
+                ?>
             </div>
         </div>
     </div>

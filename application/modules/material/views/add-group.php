@@ -6,8 +6,16 @@
         <li><a href="<?php echo site_url ('material/material_group_page');?>">เพิ่มกลุ่มของวัตถุดิบ</a></li>
     </ul>
 </div>
+<<<<<<< HEAD
 
 
+=======
+<div class="col-sm-10"></div>
+<div class="col-sm-2">
+    <a href="<?php echo site_url ('material/material_page');?>"  type="cancel" class="btn btn-warning btn-block">กลับ</a>
+</div>
+<br/>
+>>>>>>> adead54f5b9bb812dc69ec37136226645487556a
 <div class="row">
     <?php $attr = array('class' => 'form-horizontal');
     echo form_open_multipart('material/add_mate_group', $attr);?>
@@ -46,11 +54,17 @@
                     </div>
                 </div>
                 <div class="row">
-                    <div class="col-sm-2"></div>
+                    <div class="col-sm-4"></div>
                     <div class="col-sm-4">
                         <a class="btn btn-success btn-lg btn-block" data-toggle="modal" data-target="#myAddRawModal">บันทึก</a>
                     </div>
+<<<<<<< HEAD
                    
+=======
+                    <div class="col-sm-4"></div>
+                
+
+>>>>>>> adead54f5b9bb812dc69ec37136226645487556a
                         <div class="col-sm-3"></div>
                         </div>
                     </div>

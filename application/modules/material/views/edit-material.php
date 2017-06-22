@@ -24,6 +24,11 @@ echo form_open_multipart('material/update_material/'.$this->uri->segment(4),$att
 <?php
 foreach ($material_detail as $key => $value){
     ?>
+    <div class="col-sm-10"></div>
+<div class="col-sm-2">
+    <a href="<?php echo site_url ('Material/Material_d_page/'.$this->uri->segment(3));?>"  type="cancel" class="btn btn-warning btn-block">กลับ</a>
+</div>
+<br/>
     <div class="row">
         <div class="col-sm-2"></div>
         <div class="col-sm-8">
@@ -64,7 +69,10 @@ foreach ($material_detail as $key => $value){
                                         <div class="col-sm-4">
                                             <a class="btn btn-success btn-lg btn-block" data-toggle="modal" data-target="#myAddRawModal">บันทึก</a>
                                         </div>
+<<<<<<< HEAD
                                         
+=======
+>>>>>>> adead54f5b9bb812dc69ec37136226645487556a
                                         <div class="col-sm-4"></div>
                                     </div>
                                 </div>

@@ -210,7 +210,7 @@ $(document).bind("kendo:skinChange", createChart2);
     <!-- contacts -->
     <div class="card card-contact-list" style="min-height: 512px">
         <div class="card-header">
-            <h2>รายการอาหารที่ใช้วัตถุกิบจาก betagro</h2>
+            <h2>รายการอาหาร</h2>
         </div>
         <div class="card-body p-b-20">
             <div class="list-group">
@@ -218,10 +218,10 @@ $(document).bind("kendo:skinChange", createChart2);
                 $i = 1;
                 foreach ($food_list as $key => $value)
                 {
-                    if($value['food_type'] == '1' and $value['food_status'] == '1' and $i <= 10)
+                    if($value['food_type'] == '0' and $value['food_status'] == '1' and $i <= 10)
                     {
                         ?>
-                        <a class="list-group-item media" href="<?php echo site_url('food/food_details/'.$value['food_id']);?>">
+                        <a class="list-group-item media" href="<?php echo site_url('compare/choose_menu2_page/'.$value['food_id']);?>">
                             <div class="pull-left">
                                 <img  src="<?php echo base_url('images_compare/'.$value['food_pic']);?>" width="120px" height="90px">
                             </div>

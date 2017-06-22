@@ -6,6 +6,9 @@ foreach ($food_details as $key => $value)
     $food_time += $value['food_time'];
 }?>
 
+<?php $attr = array('class' => 'form-horizontal');
+echo form_open_multipart('food/update_food_details/'.$this->uri->segment(3), $attr);?>
+
 <div class="block-header clearfix">
     <h2 class="pull-left">แก้ไขรายละเอียด</h2>
     <ul class="breadcrumb pull-right">
@@ -34,9 +37,6 @@ foreach ($food_details as $key => $value)
             <?php foreach ($food_details as $key => $value)
             {
                 ?>
-
-                <?php $attr = array('class' => 'form-horizontal');
-                echo form_open_multipart('food/update_food_details/'.$this->uri->segment(3), $attr);?>
 
                 <div class="card-header">
                     <h2><?php echo $value['food_name'];?></h2>
@@ -79,14 +79,15 @@ foreach ($food_details as $key => $value)
                         <div class="col-sm-1 col-xs-1"></div>
 
                         <div class="col-sm-4 col-xs-4"></div>
-                        <a class="col-sm-4 col-xs-4 text-center" href="<?php echo site_url('food/update_food_details');?>">
+
+                        <div class="col-sm-4 col-xs-4">
                             <br/>
-                            <button class="btn btn-success btn-block">บันทึก</button>
-                        </a>
+                            <a class="btn btn-success btn-lg btn-block" data-toggle="modal" data-target="#saveModal">บันทึก</a>
+                        </div>
                         <div class="col-sm-4 col-xs-4"></div>
+
                     </div>
 
-                    <?php echo form_close();?>
 
                 </div>
 
@@ -95,6 +96,7 @@ foreach ($food_details as $key => $value)
             ?>
 
         </div>
+
     </div>
     <div class="col-sm-7">
         <div class="card">
@@ -110,39 +112,6 @@ foreach ($food_details as $key => $value)
                                 <a href="#">
                                     <img class="center-block" src="<?php echo base_url('dist/images/icons/addButton.png');?>" data-toggle="modal" data-target="#myAddRawModal" alt="addRaw" style="max-width:25px">
                                 </a>
-                                <!-- Modal -->
-                                <div id="myAddRawModal" class="modal fade" role="dialog">
-                                    <div class="modal-dialog">
-
-                                        <!-- Modal content-->
-                                        <div class="modal-content">
-                                            <div class="modal-header">
-                                                <button type="button" class="close" data-dismiss="modal">&times;</button>
-                                                <h4 class="modal-title">เพิ่มวัตถุดิบ</h4>
-                                            </div>
-
-                                            <div class="modal-body">
-                                                <div class="form-gruop">
-                                                    <?php
-                                                    foreach ($mat_list as $key => $value) {
-                                                        ?>
-                                                        <div class="col-md-3 col-xs-6">
-                                                            <a href="<?php echo site_url('food/set_mat_detail/'.$this->uri->segment(3).'/'.$value['mat_id']);?>">
-                                                                <img src="<?php echo base_url('images_compare/'.$value['mat_pic']);?>" style="width: auto; height: 100px;" class="img-thumbnail">
-                                                            </a>
-                                                            <p class="caption"><?php echo $value['mat_name'];?> <?php echo $value['mat_quantity'];?> <?php echo $value['mat_unit'];?></p>
-                                                        </div>
-                                                        <?php
-                                                    }
-                                                    ?>
-                                                </div>
-                                            </div>
-
-                                            <div class="modal-footer">
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
                             </th>
                         </tr>
                     </thead>
@@ -179,37 +148,6 @@ foreach ($food_details as $key => $value)
                                 <a href="#">
                                     <img class="center-block" src="<?php echo base_url('dist/images/icons/addButton.png');?>" data-toggle="modal" data-target="#myAddEquipModal" alt="addEquip" style="max-width:25px">
                                 </a>
-                                <!-- Modal -->
-                                <div id="myAddEquipModal" class="modal fade" role="dialog">
-                                    <div class="modal-dialog">
-
-                                        <!-- Modal content-->
-                                        <div class="modal-content">
-                                            <div class="modal-header">
-                                                <button type="button" class="close" data-dismiss="modal">&times;</button>
-                                                <h4 class="modal-title">เพิ่มคน / อุปกรณ์</h4>
-                                            </div>
-                                            <div class="modal-body">
-                                                <?php
-                                                foreach ($man_list as $key => $value) {
-                                                    ?>
-
-                                                    <div class="col-md-3 col-xs-6">
-                                                        <a href="<?php echo site_url('food/set_eq_detail/'.$this->uri->segment(3).'/'.$value['eq_id']);?>">
-                                                            <img src="<?php echo base_url('images_compare/'.$value['eq_pic']);?>" style="max-height:100px" class="img-thumbnail">
-                                                        </a>
-                                                        <p class="caption"><?php echo $value['eq_name'];?></p>
-                                                    </div>
-
-                                                    <?php
-                                                }
-                                                ?>
-                                            </div>
-                                            <div class="modal-footer">
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
                             </th>
                         </tr>
                     </thead>
@@ -236,3 +174,94 @@ foreach ($food_details as $key => $value)
         </div>
     </div>
 </div>
+
+<!-- Modal -->
+<div id="saveModal" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title">ยืนยันการลบข้อมูล?</h4>
+            </div>
+
+            <div class="modal-body">
+                <div class="col-sm-4"></div>
+                <div class="col-sm-4">
+                    <button type="submit" class="btn btn-success btn-lg btn-block">ยืนยัน</button>
+                </div>
+                <div class="col-sm-4">
+                    <a type="button" data-dismiss="modal" class="btn btn-danger btn-lg btn-block">ยกเลิก</a>
+                </div>
+            </div>
+
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+<div id="myAddRawModal" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title">เพิ่มวัตถุดิบ</h4>
+            </div>
+
+            <div class="modal-body">
+                <div class="form-gruop">
+                    <?php
+                    foreach ($mat_list as $key => $value) {
+                        ?>
+                        <div class="col-md-3 col-xs-6">
+                            <a href="<?php echo site_url('food/set_mat_detail/'.$this->uri->segment(3).'/'.$value['mat_id']);?>">
+                                <img src="<?php echo base_url('images_compare/'.$value['mat_pic']);?>" style="width: auto; height: 100px;" class="img-thumbnail">
+                            </a>
+                            <p class="caption"><?php echo $value['mat_name'];?> <?php echo $value['mat_quantity'];?> <?php echo $value['mat_unit'];?></p>
+                        </div>
+                        <?php
+                    }
+                    ?>
+                </div>
+            </div>
+
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+<div id="myAddEquipModal" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title">เพิ่มคน / อุปกรณ์</h4>
+            </div>
+            <div class="modal-body">
+                <?php
+                foreach ($man_list as $key => $value) {
+                    ?>
+
+                    <div class="col-md-3 col-xs-6">
+                        <a href="<?php echo site_url('food/set_eq_detail/'.$this->uri->segment(3).'/'.$value['eq_id']);?>">
+                            <img src="<?php echo base_url('images_compare/'.$value['eq_pic']);?>" style="max-height:100px" class="img-thumbnail">
+                        </a>
+                        <p class="caption"><?php echo $value['eq_name'];?></p>
+                    </div>
+
+                    <?php
+                }
+                ?>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+<?php echo form_close();?>

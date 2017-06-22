@@ -15,6 +15,11 @@ echo form_open_multipart('man/update_man_details/'.$this->uri->segment(3),$attr)
 {
     ?>
     <div class="container">
+    <div class="col-sm-10"></div>
+<div class="col-sm-2">
+    <a href="<?php echo site_url ('man/man_page');?>" type="cancel" class="btn btn-warning btn-block">กลับ</a>
+</div>
+<br/>
         <div class="row">
             <div class="col-sm-2"></div>
             <div class="col-sm-8">
@@ -47,14 +52,11 @@ echo form_open_multipart('man/update_man_details/'.$this->uri->segment(3),$attr)
                                 </form>
                             </div>
                             <div class="row">
-                                <div class="col-sm-2"></div>
+                                <div class="col-sm-4"></div>
                                 <div class="col-sm-4">
                                     <a class="btn btn-success btn-lg btn-block" data-toggle="modal" data-target="#myAddRawModal">บันทึก</a>
                                 </div>
-                                <div class="col-sm-4">
-                                    <a href="<?php echo site_url ('man/man_page');?>" type="back" class="btn btn-warning btn-lg btn-block">กลับ</a>
-                                </div>
-                                <div class="col-sm-2"></div>
+                                <div class="col-sm-4"></div>
                             </div>
                             <div id="myAddRawModal" class="modal fade" role="dialog">
                         <div class="modal-dialog">

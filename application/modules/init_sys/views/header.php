@@ -6,7 +6,7 @@
         <li class="header-logo hidden-xs">
             <a href="<?php echo site_url('');?>">BETAGRO compare</a>
         </li>
-        <li class="pull-right">
+        <!-- <li class="pull-right">
             <ul class="header-menu">
                 <li class="dropdown menu-notifications">
                     <a data-toggle="dropdown" href="">
@@ -156,6 +156,6 @@
                     </ul>
                 </li>
             </ul>
-        </li>
+        </li> -->
     </ul>
 </header>

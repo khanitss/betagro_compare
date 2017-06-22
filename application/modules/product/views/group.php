@@ -2,7 +2,7 @@
 
 
 <div class="block-header clearfix">
-    <h2 class="pull-left"> กลุ่มของผลิตภัณฑ์เบทาโกร</h2>
+    <h2 class="pull-left">กลุ่มผลิตภัณฑ์เบทาโกร</h2>
     <ul class="breadcrumb pull-right">
         <li><a href="<?php echo site_url ('dashboard/home');?>">หน้าหลัก</a></li>
         <li><a href="<?php echo site_url ('product/material_page');?>">กลุ่มของผลิตภัณฑ์เบทาโกร</a></li>
@@ -12,7 +12,7 @@
 <div class="row">
     <div class="col-sm-10 col-xs-8"></div>
     <div class="col-sm-2 col-xs-4 text-center">
-        <a href ="<?php echo site_url ('product/material_group_page');?>" class="btn btn-success btn-block" >เพิ่มกลุ่มของผลิตภัณฑ์เบทาโกร</a>
+        <a href ="<?php echo site_url ('product/material_group_page');?>" class="btn btn-success btn-block" >เพิ่มกลุ่มผลิตภัณฑ์เบทาโกร</a>
 
     </div>
 </div>

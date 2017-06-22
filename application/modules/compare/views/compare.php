@@ -1,10 +1,10 @@
 <div class="block-header clearfix">
-    <h2 class="pull-left">เปรียบเทียบ</h2>
+    <h2 class="pull-left">เปรียบเทียบรายการอาหาร</h2>
 
     <ul class="breadcrumb pull-right">
         <li><a href="<?php echo site_url('dashboard/home');?>">หน้าหลัก</a></li>
         <li><a href="<?php echo site_url('compare/choose_menu1_page');?>">เลือกเมนู</a></li>
-        <li><a href="">เปรียบเทียบ</a></li>
+        <li><a href="">เปรียบเทียบรายการอาหาร</a></li>
     </ul>
 </div>
 

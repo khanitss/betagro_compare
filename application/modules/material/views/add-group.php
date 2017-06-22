@@ -7,9 +7,18 @@
     </ul>
 </div>
 
+
 <div class="row">
     <?php $attr = array('class' => 'form-horizontal');
     echo form_open_multipart('material/add_mate_group', $attr);?>
+
+    
+                <div class="row">
+                    <div class="col-sm-10"></div>  
+                    <div class="col-sm-2"> 
+                         <a href="<?php echo site_url ('material/material_page');?>" type="cancel" class="btn btn-warning btn-lg btn-block">กลับ</a>
+                    </div>
+                </div>
 
     <div class="col-sm-3"></div>
     <div class="col-sm-6">
@@ -41,11 +50,7 @@
                     <div class="col-sm-4">
                         <a class="btn btn-success btn-lg btn-block" data-toggle="modal" data-target="#myAddRawModal">บันทึก</a>
                     </div>
-                    <div class="col-sm-4">
-                        <a href="<?php echo site_url ('material/material_page');?>" type="cancel" class="btn btn-danger btn-lg btn-block">ยกเลิก</a>
-                    </div>
-                
-
+                   
                         <div class="col-sm-3"></div>
                         </div>
                     </div>

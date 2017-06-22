@@ -11,6 +11,14 @@ echo form_open_multipart('material/add_raw_material', $attr);?>
     </ul>
 </div>
 
+    <div class="row">
+                    <div class="col-sm-10"></div>  
+                    <div class="col-sm-2"> 
+                         <a href="<?php echo site_url ('material/material_d_page/'.$this->uri->segment(3));?>" type="cancel" class="btn btn-warning btn-block btn-lg">กลับ</a>
+                    </div>
+                </div>
+
+
 <div class="row">
     <div class="col-sm-3"></div>
     <div class="col-sm-6">
@@ -52,9 +60,7 @@ echo form_open_multipart('material/add_raw_material', $attr);?>
                         <div class="col-sm-4">
                             <a class="btn btn-success btn-lg btn-block" data-toggle="modal" data-target="#myAddRawModal">บันทึก</a></a>
                         </div>
-                        <div class="col-sm-4">
-                            <a href="<?php echo site_url ('material/material_d_page/'.$this->uri->segment(3));?>" type="cancel" class="btn btn-danger btn-block btn-lg">ยกเลิก</a>
-                        </div>
+                        
 
                         <div class="col-sm-2"></div>
                     </div>

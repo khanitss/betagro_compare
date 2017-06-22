@@ -6,17 +6,19 @@
         <li><a href="<?php echo site_url ('product/material_group_page');?>">เพิ่มกลุ่มของผลิตภัณฑ์เบทาโกร</a></li>
     </ul>
 </div>
-<div class="col-sm-10"></div>
-<div class="col-sm-2">
-    <a href="<?php echo site_url ('product/material_page');?>" type="cancel" class="btn btn-warning btn-block">กลับ</a>
+<div class="form-group">
+    <div class="col-sm-10"></div>
+    <div class="col-sm-2">
+        <a href="<?php echo site_url ('product/material_page');?>" type="cancel" class="btn btn-warning btn-block">กลับ</a>
+    </div>
+    <br/>
 </div>
-<br/>
-<div class="row">
-    <?php $attr = array('class' => 'form-horizontal');
-    echo form_open_multipart('product/add_mate_group', $attr);?>
 
-    <div class="col-sm-3"></div>
-    <div class="col-sm-6">
+<?php $attr = array('class' => 'form-horizontal');
+echo form_open_multipart('product/add_mate_group', $attr);?>
+<div class="row">
+    <div class="col-sm-2"></div>
+    <div class="col-sm-8">
         <div class="card" align="center">
 
             <div class="fileinput fileinput-new card-body card-padding" data-provides="fileinput">
@@ -48,33 +50,33 @@
 
                     <div class="col-sm-4"></div>
                 </div>
-                <div id="myAddRawModal" class="modal fade" role="dialog">
-                        <div class="modal-dialog">
-
-                            <!-- Modal content-->
-                            <div class="modal-content">
-                                <div class="modal-header">
-                                    <button type="button" class="close" data-dismiss="modal">&times;</button>
-                                    <h4 class="modal-title">ยืนยันข้อมูล?</h4>
-                                </div>
-
-                                <div class="modal-body">
-                                    <div class="col-sm-4"></div>
-                                    <div class="col-sm-4">
-                                        <button type="submit" class="btn btn-success btn-lg btn-block">ยืนยัน</button>
-                                    </div>
-                                    <div class="col-sm-4">
-                                        <a type="button" data-dismiss="modal" class="btn btn-danger btn-lg btn-block">ยกเลิก</a>
-                                    </div>
-                                </div>
-
-                                <div class="modal-footer">
-                                </div>
-                            </div>
-                        </div>
-                </div>
             </div>
 
+        </div>
+    </div>
+    <div id="myAddRawModal" class="modal fade" role="dialog">
+        <div class="modal-dialog">
+
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title">ยืนยันข้อมูล?</h4>
+                </div>
+
+                <div class="modal-body">
+                    <div class="col-sm-4"></div>
+                    <div class="col-sm-4">
+                        <button type="submit" class="btn btn-success btn-lg btn-block">ยืนยัน</button>
+                    </div>
+                    <div class="col-sm-4">
+                        <a type="button" data-dismiss="modal" class="btn btn-danger btn-lg btn-block">ยกเลิก</a>
+                    </div>
+                </div>
+
+                <div class="modal-footer">
+                </div>
+            </div>
         </div>
     </div>
     <?php echo form_close();?>

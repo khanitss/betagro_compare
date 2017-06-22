@@ -9,13 +9,14 @@
 </div>
 <br/>
 
-<div class="row">
+<div class="form-group">
     <div class="col-sm-10 col-xs-10"></div>
     <div class="col-sm-2 col-xs-2">
         <a type="button" href="<?php echo site_url('food/food_page');?>" class="btn btn-success btn-block">เสร็จสิ้น</a>
     </div>
+    <br/>
 </div>
-<br/>
+
 
 <div class="row">
     <div class="card col-sm-12">

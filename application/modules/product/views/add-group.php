@@ -17,8 +17,8 @@
 <?php $attr = array('class' => 'form-horizontal');
 echo form_open_multipart('product/add_mate_group', $attr);?>
 <div class="row">
-    <div class="col-sm-2"></div>
-    <div class="col-sm-8">
+    <div class="col-sm-3"></div>
+    <div class="col-sm-6">
         <div class="card" align="center">
 
             <div class="fileinput fileinput-new card-body card-padding" data-provides="fileinput">
@@ -48,7 +48,7 @@ echo form_open_multipart('product/add_mate_group', $attr);?>
                         <a class="btn btn-success btn-lg btn-block" data-toggle="modal" data-target="#myAddRawModal">บันทึก</a>
                     </div>
 
-                    <div class="col-sm-4"></div>
+                    <div class="col-sm-3"></div>
                 </div>
             </div>
 

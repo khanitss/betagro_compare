@@ -1,4 +1,9 @@
 
+<?php
+$attr = array('class' => 'form-horizontal');
+echo form_open_multipart('product/update_material/'.$this->uri->segment(4),$attr);
+?>
+
 <div class="block-header clearfix">
 
     <h2 class="pull-left">แก้ไขผลิตภัณฑ์เบทาโกร</h2>
@@ -16,16 +21,13 @@
     </div>
 </div>
 
-<?php
-$attr = array('class' => 'form-horizontal');
-echo form_open_multipart('product/update_material/'.$this->uri->segment(4),$attr);
-?>
+
 <?php
 foreach ($material_detail as $key => $value){
     ?>
     <div class="row">
-        <div class="col-sm-2"></div>
-        <div class="col-sm-8">
+        <div class="col-sm-3"></div>
+        <div class="col-sm-6">
             <div class="card ">
                 <div class="card-body card-padding">
                     <h2><?php echo $value['mat_name'];?></h2>
@@ -40,7 +42,7 @@ foreach ($material_detail as $key => $value){
                             <a href="#" class="close fileinput-exists" data-dismiss="fileinput">&times;</a>
                         </div>
                         <div class="card-body card-padding">
-                            <form class="form-horizontal">
+                            
                                 <div class="form-group">
                                     <label class="col-sm-2 col-xs-2 control-label">ชื่อ :</label>
                                     <div class="col-sm-10 col-xs-10">
@@ -63,39 +65,41 @@ foreach ($material_detail as $key => $value){
                                         <div class="col-sm-4">
                                             <a class="btn btn-success btn-lg btn-block" data-toggle="modal" data-target="#myAddRawModal">บันทึก</a>
                                         </div>
-                                        <div class="col-sm-4"></div>
                                     </div>
-                                    <div id="myAddRawModal" class="modal fade" role="dialog">
-                                        <div class="modal-dialog">
-
-                                            <!-- Modal content-->
-                                            <div class="modal-content">
-                                                <div class="modal-header">
-                                                    <button type="button" class="close" data-dismiss="modal">&times;</button>
-                                                    <h4 class="modal-title">ยืนยันข้อมูล?</h4>
-                                                </div>
-
-                                                <div class="modal-body">
-                                                    <div class="col-sm-4"></div>
-                                                    <div class="col-sm-4">
-                                                        <button type="submit" class="btn btn-success btn-lg btn-block">ยืนยัน</button>
-                                                    </div>
-                                                    <div class="col-sm-4">
-                                                        <a type="button" data-dismiss="modal" class="btn btn-danger btn-lg btn-block">ยกเลิก</a>
-                                                    </div>
-                                                </div>
-
-                                                <div class="modal-footer">
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
+                                    
                                 </div>
-                            </form>
+                            
                         </div>
                     </div>
                 </div>
-                <div class="col-sm-8"></div>
+                <div class="col-sm-3"></div>
+            </div>
+        </div>
+    </div>
+
+        <div id="myAddRawModal" class="modal fade" role="dialog">
+            <div class="modal-dialog">
+
+                <!-- Modal content-->
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <h4 class="modal-title">ยืนยันข้อมูล?</h4>
+                    </div>
+
+                    <div class="modal-body">
+                        <div class="col-sm-4"></div>
+                        <div class="col-sm-4">
+                            <button type="submit" class="btn btn-success btn-lg btn-block">ยืนยัน</button>
+                        </div>
+                        <div class="col-sm-4">
+                            <a type="button" data-dismiss="modal" class="btn btn-danger btn-lg btn-block">ยกเลิก</a>
+                        </div>
+                    </div>
+
+                    <div class="modal-footer">
+                    </div>
+                </div>
             </div>
         </div>
         <?php

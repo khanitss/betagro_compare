@@ -34,7 +34,7 @@
                 <div class="thumbnail img-check">
                     <center>
                         <a href="<?php echo site_url('product/edit_page/'.$this->uri->segment(3).'/'.$value['mat_id']);?>" class="text-center">
-                            <img src="<?php echo base_url('images_compare/'.$value['mat_pic']);?>" style="width: auto; height: 180px; margin-top : 10px; ">
+                            <img src="<?php echo base_url('images_compare/'.$value['mat_pic']);?>" style="width: auto; height: 150px; margin-top : 10px; ">
                         </a>
                     </center>
                     <div class="caption">
@@ -45,7 +45,11 @@
                         </center>
                         <a class="btn btn-danger" data-toggle="modal" data-target="#myAddRawModal">ลบ</a>
                     </div>
-                    <div id="myAddRawModal" class="modal fade" role="dialog">
+                </div>
+            </div>
+            
+
+            <div id="myAddRawModal" class="modal fade" role="dialog">
                         <div class="modal-dialog">
 
                             <!-- Modal content-->
@@ -69,9 +73,8 @@
                                 </div>
                             </div>
                         </div>
-                </div>
-                </div>
             </div>
+
             <?php
         }
     }

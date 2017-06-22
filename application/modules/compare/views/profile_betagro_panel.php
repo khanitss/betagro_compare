@@ -42,7 +42,7 @@ foreach ($eq_betagro as $key => $value)
             <br/>
 
             <div class="form-group">
-                <img class="center-block" src="<?php echo base_url('images_compare/'.$value['food_pic']);?>" width="100%">
+                <img class="center-block" src="<?php echo base_url('images_compare/'.$value['food_pic']);?>" width="100%" height="350px">
             </div>
 
             <br/>

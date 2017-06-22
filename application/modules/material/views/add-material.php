@@ -10,12 +10,15 @@ echo form_open_multipart('material/add_raw_material', $attr);?>
         <li><a href="<?php echo site_url ('material/raw_page');?>">เพิ่มวัตถุดิบ</a></li>
     </ul>
 </div>
-    <div class="row">
-                    <div class="col-sm-10"></div>  
-                    <div class="col-sm-2"> 
-                         <a href="<?php echo site_url ('material/material_d_page/'.$this->uri->segment(3));?>" type="cancel" class="btn btn-warning btn-block ">กลับ</a>
-                    </div>
+
+<div class="form-group">
+    <div class="col-sm-10 col-xs-6"></div>
+    <div class="col-sm-2 col-xs-6 text-center">
+        <a href="<?php echo site_url ('material/material_d_page/'.$this->uri->segment(3));?>" type="cancel" class="btn btn-warning btn-block ">กลับ</a>
     </div>
+    <br/>
+</div>
+
 <div class="row">
     <div class="col-sm-2"></div>
     <div class="col-sm-8">
@@ -53,16 +56,11 @@ echo form_open_multipart('material/add_raw_material', $attr);?>
                         </div>
                     </div>
                     <div class="row">
-
-                        
-
-                        <div class="col-sm-4"></div>
-                        <div class="col-sm-4">
+                        <div class="col-sm-4 col-xs-4"></div>
+                        <div class="col-sm-4 col-xs-4">
                             <a class="btn btn-success btn-lg btn-block" data-toggle="modal" data-target="#myAddRawModal">บันทึก</a>
                         </div>
-                        <div class="col-sm-4"></div>
-
-                        
+                        <div class="col-sm-4 col-xs-4"></div>
                     </div>
                 </div>
             </div>
@@ -78,15 +76,15 @@ echo form_open_multipart('material/add_raw_material', $attr);?>
         <div class="modal-content">
             <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal">&times;</button>
-                <h4 class="modal-title">ยืนยันข้อมูล?</h4>
+                <h4 class="modal-title">ยืนยันการบันทึกข้อมูล?</h4>
             </div>
 
             <div class="modal-body">
-                <div class="col-sm-4"></div>
-                <div class="col-sm-4">
+                <div class="col-sm-4 col-xs-4"></div>
+                <div class="col-sm-4 col-xs-4">
                     <button type="submit" class="btn btn-success btn-lg btn-block">ยืนยัน</button>
                 </div>
-                <div class="col-sm-4">
+                <div class="col-sm-4 col-xs-4">
                     <a type="button" data-dismiss="modal" class="btn btn-danger btn-lg btn-block">ยกเลิก</a>
                 </div>
             </div>

@@ -28,8 +28,8 @@ foreach ($eq_details as $key => $value)
 
 <!-- col standard-->
 <div class="row">
-    <div class="col-sm-10 col-xs-8"></div>
-    <div class="col-sm-2 col-xs-4 text-center">
+    <div class="col-sm-10 col-xs-6"></div>
+    <div class="col-sm-2 col-xs-6 text-center">
         <a href="<?php echo site_url('food/food_page');?>">
             <button class="btn btn-warning btn-block">กลับ</button>
         </a>
@@ -179,9 +179,7 @@ foreach ($eq_details as $key => $value)
             </div>
         </div>
     </div>
+    <div class="col-sm-2 col-xs-2"></div>
+    <br/>
 </div>
 <?php echo form_close();?>
-<div class="col-sm-2 col-xs-2"></div>
-<br/>
-</div>
-</div>

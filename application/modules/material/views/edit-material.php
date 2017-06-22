@@ -12,18 +12,20 @@ echo form_open_multipart('material/update_material/'.$this->uri->segment(4),$att
         <li><a href="<?php echo site_url ('material/edit_page');?>">แก้ไขวัตถุดิบ</a></li>
     </ul>
 </div>
+
 <div class="form-group">
-    <div class="col-sm-10"></div>
-    <div class="col-sm-2">
+    <div class="col-sm-10 col-xs-6"></div>
+    <div class="col-sm-2 col-xs-6 text-center">
         <a href="<?php echo site_url ('Material/Material_d_page/'.$this->uri->segment(3));?>"  type="cancel" class="btn btn-warning btn-block">กลับ</a>
     </div>
+    <br/>
 </div>
 
 <?php
 $attr = array('class' => 'form-horizontal');
 echo form_open_multipart('material/update_material/'.$this->uri->segment(4),$attr);
 ?>
-               
+
 <?php
 foreach ($material_detail as $key => $value){
     ?>
@@ -44,58 +46,56 @@ foreach ($material_detail as $key => $value){
                             <a href="#" class="close fileinput-exists" data-dismiss="fileinput">&times;</a>
                         </div>
                         <div class="card-body card-padding">
-                            <form class="form-horizontal">
-                                <div class="form-group">
-                                    <label class="col-sm-2 col-xs-2 control-label">ชื่อ :</label>
-                                    <div class="col-sm-10 col-xs-10">
-                                        <input class="form-control" id="focusedInput" type="text" name="mat_name" placeholder="<?php echo $value['mat_name'];?>">
-                                    </div>
-                                    <label class="col-sm-2 col-xs-2 control-label">จำนวน :</label>
-                                    <div class="col-sm-10 col-xs-10">
-                                        <input class="form-control" id="focusedInput" type="text" name="mat_quantity" placeholder="<?php echo $value['mat_quantity'];?>">
-                                    </div>
-                                    <label class="col-sm-2 col-xs-2 control-label">หน่วย :</label>
-                                    <div class="col-sm-10 col-xs-10">
-                                        <input class="form-control" id="focusedInput" type="text" name="mat_unit" placeholder="<?php echo $value['mat_unit'];?>">
-                                    </div>
-                                    <label class="col-sm-2 col-xs-2 control-label">ราคา :</label>
-                                    <div class="col-sm-10 col-xs-10">
-                                        <input class="form-control" id="focusedInput" type="text" name="mat_cost" placeholder="<?php echo $value['mat_cost'];?>"></div></div>
-                                    </div>
-                                    <div class="row">
-                                        <div class="col-sm-4"></div>
-                                        <div class="col-sm-4">
-                                            <a class="btn btn-success btn-lg btn-block" data-toggle="modal" data-target="#myAddRawModal">บันทึก</a>
-                                        </div>
+                            <div class="form-group">
+                                <label class="col-sm-2 col-xs-4 control-label">ชื่อ :</label>
+                                <div class="col-sm-10 col-xs-8">
+                                    <input class="form-control" id="focusedInput" type="text" name="mat_name" placeholder="<?php echo $value['mat_name'];?>">
+                                </div>
+                                <label class="col-sm-2 col-xs-4 control-label">จำนวน :</label>
+                                <div class="col-sm-10 col-xs-8">
+                                    <input class="form-control" id="focusedInput" type="text" name="mat_quantity" placeholder="<?php echo $value['mat_quantity'];?>">
+                                </div>
+                                <label class="col-sm-2 col-xs-4 control-label">หน่วย :</label>
+                                <div class="col-sm-10 col-xs-8">
+                                    <input class="form-control" id="focusedInput" type="text" name="mat_unit" placeholder="<?php echo $value['mat_unit'];?>">
+                                </div>
+                                <label class="col-sm-2 col-xs-4 control-label">ราคา :</label>
+                                <div class="col-sm-10 col-xs-8">
+                                    <input class="form-control" id="focusedInput" type="text" name="mat_cost" placeholder="<?php echo $value['mat_cost'];?>">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-4 col-xs-4"></div>
+                            <div class="col-sm-4 col-xs-4">
+                                <a class="btn btn-success btn-lg btn-block" data-toggle="modal" data-target="#saveModal">บันทึก</a>
+                            </div>
+                            <div class="col-sm-4 col-xs-4"></div>
+                        </div>
 
-                                        <div class="col-sm-4"></div>
-                                    </div>
-                            
                     </div>
                 </div>
             </div>
         </div>
-        <div class="col-sm-8"></div>
     </div>
 
-
     <!-- Modal -->
-    <div id="myAddRawModal" class="modal fade" role="dialog">
+    <div id="saveModal" class="modal fade" role="dialog">
         <div class="modal-dialog">
 
             <!-- Modal content-->
             <div class="modal-content">
                 <div class="modal-header">
                     <button type="button" class="close" data-dismiss="modal">&times;</button>
-                    <h4 class="modal-title">ยืนยันข้อมูล?</h4>
+                    <h4 class="modal-title">ยืนยันการบันทึกข้อมูล?</h4>
                 </div>
 
                 <div class="modal-body">
-                    <div class="col-sm-4"></div>
-                    <div class="col-sm-4">
+                    <div class="col-sm-4 col-xs-4"></div>
+                    <div class="col-sm-4 col-xs-4">
                         <button type="submit" class="btn btn-success btn-lg btn-block">ยืนยัน</button>
                     </div>
-                    <div class="col-sm-4">
+                    <div class="col-sm-4 col-xs-4">
                         <a type="button" data-dismiss="modal" class="btn btn-danger btn-lg btn-block">ยกเลิก</a>
                     </div>
                 </div>

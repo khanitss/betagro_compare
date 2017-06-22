@@ -8,6 +8,11 @@ class Food_model extends CI_Model{
         return $result;
     }
 
+    public function get_mate_group(){
+		$result = $this->db->get('cat_material')->result_array();
+		return $result;
+	}
+
     public function set_food_menu(){
         $this->load->module('upload/Myupload');
         $prop = array(

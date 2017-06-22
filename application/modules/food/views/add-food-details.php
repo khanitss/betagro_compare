@@ -7,16 +7,14 @@
         <li><a href="<?php echo site_url('food/add_food');?>">เพิ่มรายการอาหาร</a></li>
     </ul>
 </div>
-<br/>
 
 <div class="form-group">
-    <div class="col-sm-10 col-xs-10"></div>
-    <div class="col-sm-2 col-xs-2">
+    <div class="col-sm-10 col-xs-6"></div>
+    <div class="col-sm-2 col-xs-6 text-center">
         <a type="button" href="<?php echo site_url('food/food_page');?>" class="btn btn-success btn-block">เสร็จสิ้น</a>
     </div>
     <br/>
 </div>
-
 
 <div class="row">
     <div class="card col-sm-12">
@@ -24,7 +22,7 @@
         <?php foreach ($food_details as $key => $value)
         {
             ?>
-            <div class="col-sm-7">
+            <div class="col-sm-6">
                 <div class="row">
                     <div class="card-body card-padding col-sm-6">
                         <img class="text-center" src="<?php echo base_url('images_compare/'.$value['food_pic']);?>" class="img-thumbnail" style="width:100%">
@@ -46,46 +44,10 @@
                             </div>
                             <div class="card-body card-padding text-center">
                                 <a href="#">
-                                    <img src="<?php echo base_url('dist/images/icons/addButton.png');?>" data-toggle="modal" data-target="#myAddRawModal" alt="addRaw" style="width:50%">
+                                    <img src="<?php echo base_url('dist/images/icons/addButton.png');?>" data-toggle="modal" data-target="#myAddRawModal2" alt="addRaw" style="width:50%">
                                 </a>
                             </div>
                             <br/>
-
-                            <!-- Modal -->
-                            <div id="myAddRawModal" class="modal fade" role="dialog">
-                                <div class="modal-dialog">
-
-                                    <!-- Modal content-->
-                                    <div class="modal-content">
-                                        <div class="modal-header">
-                                            <button type="button" class="close" data-dismiss="modal">&times;</button>
-                                            <h4 class="modal-title">เพิ่มวัตถุดิบ</h4>
-                                        </div>
-
-                                        <div class="modal-body">
-                                            <div class="form_group">
-                                                <?php
-                                                foreach ($mat_list as $key => $value) {
-                                                    ?>
-                                                    <div class="col-md-3 col-xs-6">
-                                                        <a href="<?php echo site_url('food/set_mat_detail2/'.$this->uri->segment(3).'/'.$value['mat_id']);?>">
-                                                            <img src="<?php echo base_url('images_compare/'.$value['mat_pic']);?>" style="width: auto; height: 100px;" class="img-thumbnail">
-                                                        </a>
-                                                        <div class="caption text-center">
-                                                            <p><?php echo $value['mat_name'];?> <?php echo $value['mat_quantity'];?> <?php echo $value['mat_unit'];?></p>
-                                                        </div>
-                                                    </div>
-                                                    <?php
-                                                }
-                                                ?>
-                                            </div>
-                                        </div>
-
-                                        <div class="modal-footer">
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
                         </div>
                     </div>
                     <div class="col-sm-6">
@@ -99,44 +61,11 @@
                                 </a>
                             </div>
                             <br/>
-
-                            <!-- Modal -->
-                            <div id="myAddEquipModal" class="modal fade" role="dialog">
-                                <div class="modal-dialog">
-
-                                    <!-- Modal content-->
-                                    <div class="modal-content">
-                                        <div class="modal-header">
-                                            <button type="button" class="close" data-dismiss="modal">&times;</button>
-                                            <h4 class="modal-title">เพิ่มคน / อุปกรณ์</h4>
-                                        </div>
-                                        <div class="modal-body">
-                                            <?php
-                                            foreach ($man_list as $key => $value) {
-                                                ?>
-
-                                                <div class="col-md-3 col-xs-6">
-                                                    <a href="<?php echo site_url('food/set_eq_detail2/'.$this->uri->segment(3).'/'.$value['eq_id']);?>">
-                                                        <img src="<?php echo base_url('images_compare/'.$value['eq_pic']);?>" style="width: auto; height: 100px;" class="img-thumbnail">
-                                                    </a>
-                                                    <div class="caption text-center">
-                                                        <p><?php echo $value['eq_name'];?></p>
-                                                    </div>
-                                                </div>
-
-                                                <?php
-                                            }
-                                            ?>
-                                        </div>
-                                        <div class="modal-footer"></div>
-                                    </div>
-                                </div>
-                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="card-body card-padding col-sm-5">
+            <div class="card-body card-padding col-sm-6">
                 <div class="card">
                     <div class="card-body card-padding">
                         <table class="table">
@@ -189,8 +118,6 @@
                             </tbody>
                         </table>
                     </div>
-
-
                 </div>
             </div>
             <?php
@@ -198,3 +125,6 @@
         ?>
     </div>
 </div>
+<!-- Modal -->
+<?php $this->load->view('food/myAddRawModal2');?>
+<?php $this->load->view('food/myAddEquipModal2');?>

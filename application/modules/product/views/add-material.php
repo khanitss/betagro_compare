@@ -10,16 +10,18 @@ echo form_open_multipart('product/add_raw_material', $attr);?>
         <li><a href="<?php echo site_url ('product/raw_page');?>">เพิ่มผลิตภัณฑ์เบทาโกร</a></li>
     </ul>
 </div>
+
 <div class="form-group">
-    <div class="col-sm-10"></div>
-    <div class="col-sm-2">
+    <div class="col-sm-10 col-xs-6"></div>
+    <div class="col-sm-2 col-xs-6 text-center">
         <a href="<?php echo site_url ('product/material_d_page/'.$this->uri->segment(3));?>" type="cancel" class="btn btn-warning btn-block">กลับ</a>
     </div>
+    <br/>
 </div>
 
 <div class="row">
-    <div class="col-sm-3"></div>
-    <div class="col-sm-6">
+    <div class="col-sm-2"></div>
+    <div class="col-sm-8">
         <div class="card" align="center">
             <div class="fileinput fileinput-new card-body card-padding" data-provides="fileinput">
                 <span class="btn btn-default btn-file m-r-5">
@@ -36,62 +38,58 @@ echo form_open_multipart('product/add_raw_material', $attr);?>
                 <div class="card-body card-padding">
 
                     <div class="form-group">
-                        <label class="col-sm-4 col-xs-2 control-label">ชื่อผลิตภัณฑ์:</label>
-                        <div class="col-sm-8 col-xs-10">
+                        <label class="col-sm-2 col-xs-4 control-label">ชื่อผลิตภัณฑ์:</label>
+                        <div class="col-sm-10 col-xs-8">
                             <input class="form-control" id="focusedInput" type="text" placeholder="ชื่อผลิตภัณฑ์เบทาโกร" name="mat_name">
                         </div>
-                        <label class="col-sm-4 col-xs-2 control-label">จำนวน :</label>
-                        <div class="col-sm-8 col-xs-10">
+                        <label class="col-sm-2 col-xs-4 control-label">จำนวน :</label>
+                        <div class="col-sm-10 col-xs-8">
                             <input class="form-control" id="focusedInput" type="text" placeholder="จำนวนของผลิตภัณฑ์เบทาโกร" name="mat_quantity">
                         </div>
-                        <label class="col-sm-4 col-xs-2 control-label">หน่วย :</label>
-                        <div class="col-sm-8 col-xs-10">
+                        <label class="col-sm-2 col-xs-4 control-label">หน่วย :</label>
+                        <div class="col-sm-10 col-xs-8">
                             <input class="form-control" id="focusedInput" type="text" placeholder="หน่วยของผลิตภัณฑ์เบทาโกร เช่น กิโลกรัม กรัม เป็นต้น" name="mat_unit">
                         </div>
-                        <label class="col-sm-4 col-xs-2 control-label">ราคา :</label>
-                        <div class="col-sm-8 col-xs-10">
+                        <label class="col-sm-2 col-xs-4 control-label">ราคา :</label>
+                        <div class="col-sm-10 col-xs-8">
                             <input class="form-control" id="focusedInput" type="text" placeholder="ราคาของผลิตภัณฑ์เบทาโกร" name="mat_cost">
                         </div>
                     </div>
                     <div class="row">
-                        <div class="col-sm-4"></div>
-                        <div class="col-sm-4">
+                        <div class="col-sm-4 col-xs-4"></div>
+                        <div class="col-sm-4 col-xs-4">
                             <a class="btn btn-success btn-lg btn-block" data-toggle="modal" data-target="#myAddRawModal">บันทึก</a>
                         </div>
-
-                        <div class="col-sm-3"></div>
+                        <div class="col-sm-4 col-xs-4"></div>
                     </div>
-                    
                 </div>
             </div>
         </div>
     </div>
-
-                    <div id="myAddRawModal" class="modal fade" role="dialog">
-                        <div class="modal-dialog">
-
-                            <!-- Modal content-->
-                            <div class="modal-content">
-                                <div class="modal-header">
-                                    <button type="button" class="close" data-dismiss="modal">&times;</button>
-                                    <h4 class="modal-title">ยืนยันข้อมูล?</h4>
-                                </div>
-
-                                <div class="modal-body">
-                                    <div class="col-sm-4"></div>
-                                    <div class="col-sm-4">
-                                        <button type="submit" class="btn btn-success btn-lg btn-block">ยืนยัน</button>
-                                    </div>
-                                    <div class="col-sm-4">
-                                        <a type="button" data-dismiss="modal" class="btn btn-danger btn-lg btn-block">ยกเลิก</a>
-                                    </div>
-                                </div>
-
-                                <div class="modal-footer">
-                                </div>
-                            </div>
-                        </div>
-                    </div>
 </div>
+<div id="myAddRawModal" class="modal fade" role="dialog">
+    <div class="modal-dialog">
 
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title">ยืนยันการบันทึกข้อมูล?</h4>
+            </div>
+
+            <div class="modal-body">
+                <div class="col-sm-4 col-xs-4"></div>
+                <div class="col-sm-4 col-xs-4">
+                    <button type="submit" class="btn btn-success btn-lg btn-block">ยืนยัน</button>
+                </div>
+                <div class="col-sm-4 col-xs-4">
+                    <a type="button" data-dismiss="modal" class="btn btn-danger btn-lg btn-block">ยกเลิก</a>
+                </div>
+            </div>
+
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
 <?php echo form_close();?>

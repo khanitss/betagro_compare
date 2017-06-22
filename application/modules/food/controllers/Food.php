@@ -32,6 +32,7 @@ class Food extends MX_Controller {
 		$data['mat_list'] = $this->Food_model->get_mat();
 		$data['mat_details'] = $this->Food_model->get_mat_details($food_id);
 		$data['eq_details'] = $this->Food_model->get_eq_details($food_id);
+		$data['material_list'] = $this->Food_model->get_mate_group();
 		$this->init_sys->content($data);
 	}
 
@@ -56,6 +57,7 @@ class Food extends MX_Controller {
 		$data['eq_details'] = $this->Food_model->get_eq_details($food_id);
 		$data['man_list'] = $this->Food_model->get_man();
 		$data['mat_list'] = $this->Food_model->get_mat();
+		$data['material_list'] = $this->Food_model->get_mate_group();
 		$this->init_sys->content($data);
 	}
 

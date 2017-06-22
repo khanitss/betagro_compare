@@ -26,6 +26,7 @@ $sum7 = 0;
 $sum8 = 0;
 $sum9 = 0;
 $sum10 = 0;
+$i = 0;
 
 foreach ($material_list as $key => $value){
     if($value['cat_id'] == '1')
@@ -134,43 +135,43 @@ function createChart2() {
             data: [{
                 category: "หมู",
                 value: sum1,
-                color: "#FFFF66"
+                color: "#CBAB8D"
             },{
                 category: "วัว",
                 value: sum2,
-                color: "#FFCC66"
+                color: "#FFDDDD"
             },{
                 category: "ไก่",
                 value: sum3,
-                color: "#FF9966"
+                color: "#FDB4BF"
             },{
                 category: "อาหารทะเล",
                 value: sum4,
-                color: "#FF6666"
+                color: "#FF9797"
             },{
                 category: "ผัก",
                 value: sum5,
-                color: "#FF3366"
+                color: "#F9A484"
             },{
                 category: "น้ำมันประกอบอาหาร",
                 value: sum6,
-                color: "#6699CC"
+                color: "#EFA694"
             },{
                 category: "เครื่องเทศ",
                 value: sum7,
-                color: "#66FFCC"
+                color: "#FFBE7D"
             },{
                 category: "ผลิตภัณฑ์เบทาโกร",
                 value: sum8,
-                color: "#FF6666"
+                color: "#D0B3E1"
             },{
                 category: "หมูเบทาโกร",
                 value: sum9,
-                color: "#FFFF66"
+                color: "#B3B3D9"
             },{
                 category: "ไก่เบทาโกร",
                 value: sum10,
-                color: "#6699CC"
+                color: "#C0C0C0"
             }]
         }],
         tooltip: {
@@ -192,7 +193,7 @@ $(document).bind("kendo:skinChange", createChart2);
     </ul>
 </div>
 
-<div class="col-sm-8">
+<div class="col-sm-7">
     <div class="row">
         <div class="card">
             <div class="card-header">
@@ -215,7 +216,7 @@ $(document).bind("kendo:skinChange", createChart2);
     </div>
 </div>
 
-<div class="col-sm-4">
+<div class="col-sm-5">
     <!-- contacts -->
     <div class="card card-contact-list" style="min-height: 512px">
         <div class="card-header">
@@ -235,7 +236,7 @@ $(document).bind("kendo:skinChange", createChart2);
                                 <img  src="<?php echo base_url('images_compare/'.$value['food_pic']);?>" class="img-thumbnail" width="120px" height="90px">
                             </div>
                             <div class="pull-left">
-                                <h4 class="lg-item-heading"><center><?php echo $value['food_name'];?></center></h4>
+                                <h5 class="lg-item-heading"><center><?php echo $value['food_name'];?></center></h5>
                             </div>
                         </a>
                         <?php

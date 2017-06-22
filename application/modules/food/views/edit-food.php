@@ -21,8 +21,8 @@ echo form_open_multipart('food/update_food_details/'.$this->uri->segment(3), $at
 
 <!-- col standard-->
 <div class="row">
-    <div class="col-sm-10 col-xs-8"></div>
-    <div class="col-sm-2 col-xs-4 text-center">
+    <div class="col-sm-10 col-xs-6"></div>
+    <div class="col-sm-2 col-xs-6 text-center">
         <a href="<?php echo site_url('food/food_details/'.$this->uri->segment(3));?>">
             <button class="btn btn-warning btn-block">กลับ</button>
         </a>
@@ -176,92 +176,8 @@ echo form_open_multipart('food/update_food_details/'.$this->uri->segment(3), $at
 </div>
 
 <!-- Modal -->
-<div id="saveModal" class="modal fade" role="dialog">
-    <div class="modal-dialog">
-
-        <!-- Modal content-->
-        <div class="modal-content">
-            <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal">&times;</button>
-                <h4 class="modal-title">ยืนยันการลบข้อมูล?</h4>
-            </div>
-
-            <div class="modal-body">
-                <div class="col-sm-4"></div>
-                <div class="col-sm-4">
-                    <button type="submit" class="btn btn-success btn-lg btn-block">ยืนยัน</button>
-                </div>
-                <div class="col-sm-4">
-                    <a type="button" data-dismiss="modal" class="btn btn-danger btn-lg btn-block">ยกเลิก</a>
-                </div>
-            </div>
-
-            <div class="modal-footer">
-            </div>
-        </div>
-    </div>
-</div>
-<div id="myAddRawModal" class="modal fade" role="dialog">
-    <div class="modal-dialog">
-
-        <!-- Modal content-->
-        <div class="modal-content">
-            <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal">&times;</button>
-                <h4 class="modal-title">เพิ่มวัตถุดิบ</h4>
-            </div>
-
-            <div class="modal-body">
-                <div class="form-gruop">
-                    <?php
-                    foreach ($mat_list as $key => $value) {
-                        ?>
-                        <div class="col-md-3 col-xs-6">
-                            <a href="<?php echo site_url('food/set_mat_detail/'.$this->uri->segment(3).'/'.$value['mat_id']);?>">
-                                <img src="<?php echo base_url('images_compare/'.$value['mat_pic']);?>" style="width: auto; height: 100px;" class="img-thumbnail">
-                            </a>
-                            <p class="caption"><?php echo $value['mat_name'];?><br/> <?php echo $value['mat_quantity'];?> <?php echo $value['mat_unit'];?></p>
-                        </div>
-                        <?php
-                    }
-                    ?>
-                </div>
-            </div>
-
-            <div class="modal-footer">
-            </div>
-        </div>
-    </div>
-</div>
-<div id="myAddEquipModal" class="modal fade" role="dialog">
-    <div class="modal-dialog">
-
-        <!-- Modal content-->
-        <div class="modal-content">
-            <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal">&times;</button>
-                <h4 class="modal-title">เพิ่มคน / อุปกรณ์</h4>
-            </div>
-            <div class="modal-body">
-                <?php
-                foreach ($man_list as $key => $value) {
-                    ?>
-
-                    <div class="col-md-3 col-xs-6">
-                        <a href="<?php echo site_url('food/set_eq_detail/'.$this->uri->segment(3).'/'.$value['eq_id']);?>">
-                            <img src="<?php echo base_url('images_compare/'.$value['eq_pic']);?>" style="max-height:100px" class="img-thumbnail">
-                        </a>
-                        <p class="caption"><?php echo $value['eq_name'];?></p>
-                    </div>
-
-                    <?php
-                }
-                ?>
-            </div>
-            <div class="modal-footer">
-            </div>
-        </div>
-    </div>
-</div>
+<?php $this->load->view('food/saveModal');?>
+<?php $this->load->view('food/myAddRawModal');?>
+<?php $this->load->view('food/myAddEquipModal');?>
 
 <?php echo form_close();?>

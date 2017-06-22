@@ -6,13 +6,14 @@
     </ul>
 </div>
 
-<div class="row">
-    <div class="col-sm-10 col-xs-8"></div>
-    <div class="col-sm-2 col-xs-4 text-center">
+<div class="form-group">
+    <div class="col-sm-10 col-xs-6"></div>
+    <div class="col-sm-2 col-xs-6 text-center">
         <a href="<?php echo site_url('man/man_add');?>">
             <button class="btn btn-success btn-block">เพิ่มคน/อุปกรณ์</button>
         </a>
     </div>
+    <br/>
 </div>
 <br/>
 
@@ -30,35 +31,36 @@
                 </center>
                 <div class="caption">
                     <center><p><?php echo $value['eq_name'];?> : <?php echo $value['eq_cost'];?> บาท</p></center>
-                    <a class="btn btn-danger" data-toggle="modal" data-target="#myAddRawModal">ลบ</a>
+                    <a class="btn btn-danger" data-toggle="modal" data-target="#deleteModal">ลบ</a>
                 </div>
             </div>
         </div>
-        <div id="myAddRawModal" class="modal fade" role="dialog">
-                        <div class="modal-dialog">
+        <!-- Modal-->
+        <div id="deleteModal" class="modal fade" role="dialog">
+            <div class="modal-dialog">
 
-                            <!-- Modal content-->
-                            <div class="modal-content">
-                                <div class="modal-header">
-                                    <button type="button" class="close" data-dismiss="modal">&times;</button>
-                                    <h4 class="modal-title">ยืนยันข้อมูล?</h4>
-                                </div>
+                <!-- Modal content-->
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <h4 class="modal-title">ยืนยันการลบข้อมูล?</h4>
+                    </div>
 
-                                <div class="modal-body">
-                                    <div class="col-sm-4"></div>
-                                    <div class="col-sm-4">
-                                        <a href="<?php echo site_url('man/delete_man/'.$value['eq_id']);?>" class="btn btn-success btn-lg btn-block">ยืนยัน</a>
-                                    </div>
-                                    <div class="col-sm-4">
-                                        <a type="button" data-dismiss="modal" class="btn btn-danger btn-lg btn-block">ยกเลิก</a>
-                                    </div>
-                                </div>
-
-                                <div class="modal-footer">
-                                </div>
-                            </div>
+                    <div class="modal-body">
+                        <div class="col-sm-4 col-xs-4"></div>
+                        <div class="col-sm-4 col-xs-4">
+                            <a href="<?php echo site_url('man/delete_man/'.$value['eq_id']);?>" class="btn btn-success btn-lg btn-block">ยืนยัน</a>
                         </div>
+                        <div class="col-sm-4 col-xs-4">
+                            <a type="button" data-dismiss="modal" class="btn btn-danger btn-lg btn-block">ยกเลิก</a>
+                        </div>
+                    </div>
+
+                    <div class="modal-footer">
+                    </div>
                 </div>
+            </div>
+        </div>
         <?php
     }
     ?>

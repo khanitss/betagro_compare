@@ -25,45 +25,54 @@ $sum6 = 0;
 $sum7 = 0;
 $sum8 = 0;
 $sum9 = 0;
+$sum10 = 0;
+$sum11 = 0;
 
 foreach ($material_list as $key => $value){
-    if($value['cat_id'] == '4')
+    if($value['cat_id'] == '1')
     {
         $sum1++;
     }
-    elseif($value['cat_id'] == '5')
+    elseif($value['cat_id'] == '2')
     {
         $sum2++;
     }
-    elseif($value['cat_id'] == '6')
+    elseif($value['cat_id'] == '3')
     {
         $sum3++;
     }
-    elseif($value['cat_id'] == '7')
+    elseif($value['cat_id'] == '4')
     {
         $sum4++;
     }
-    elseif($value['cat_id'] == '8')
+    elseif($value['cat_id'] == '5')
     {
         $sum5++;
     }
-    elseif($value['cat_id'] == '9')
+    elseif($value['cat_id'] == '6')
     {
         $sum6++;
     }
-    elseif($value['cat_id'] == '11')
+    elseif($value['cat_id'] == '7')
     {
         $sum7++;
     }
-    elseif($value['cat_id'] == '12')
+    elseif($value['cat_id'] == '8')
     {
         $sum8++;
     }
-    elseif($value['mat_type'] == '1')
+    elseif($value['cat_id'] == '9')
     {
         $sum9++;
     }
-
+    elseif($value['cat_id'] == '10')
+    {
+        $sum9++;
+    }
+    elseif($value['cat_id'] == '11')
+    {
+        $sum9++;
+    }
 }
 ?>
 
@@ -114,6 +123,8 @@ var sum6 = '<?=$sum6;?>';
 var sum7 = '<?=$sum7;?>';
 var sum8 = '<?=$sum8;?>';
 var sum9 = '<?=$sum9;?>';
+var sum10 = '<?=$sum10;?>';
+var sum11 = '<?=$sum11;?>';
 function createChart2() {
     $("#chart2").kendoChart({
         seriesDefaults: {
@@ -136,32 +147,40 @@ function createChart2() {
                 color: "#FFCC66"
             },{
                 category: "ไก่",
-                value: sum6,
+                value: sum3,
                 color: "#FF9966"
             },{
                 category: "อาหารทะเล",
-                value: sum5,
+                value: sum4,
                 color: "#FF6666"
             },{
                 category: "ผัก",
-                value: sum3,
+                value: sum5,
                 color: "#FF3366"
             },{
+                category: "น้ำมันประกอบอาหาร",
+                value: sum6,
+                color: "#6699CC"
+            },{
                 category: "เครื่องเทศ",
-                value: sum4,
+                value: sum7,
                 color: "#66FFCC"
             },{
-                category: "เครื่องปรุง",
+                category: "เครื่องปรุงรส",
                 value: sum8,
                 color: "#66CCCC"
             },{
-                category: "น้ำมันประกอบอาหาร",
-                value: sum7,
-                color: "#6699CC"
-            },{
                 category: "ผลิตภัณฑ์เบทาโกร",
                 value: sum9,
-                color: "#33CC33"
+                color: "#FF6666"
+            },{
+                category: "หมูเบทาโกร",
+                value: sum10,
+                color: "#FFFF66"
+            },{
+                category: "ไก่เบทาโกร",
+                value: sum11,
+                color: "#6699CC"
             }]
         }],
         tooltip: {
@@ -210,7 +229,7 @@ $(document).bind("kendo:skinChange", createChart2);
     <!-- contacts -->
     <div class="card card-contact-list" style="min-height: 512px">
         <div class="card-header">
-            <h2>รายการอาหาร</h2>
+            <h2>เปรียบเทียบรายการอาหาร</h2>
         </div>
         <div class="card-body p-b-20">
             <div class="list-group">
@@ -223,7 +242,7 @@ $(document).bind("kendo:skinChange", createChart2);
                         ?>
                         <a class="list-group-item media" href="<?php echo site_url('compare/choose_menu2_page/'.$value['food_id']);?>">
                             <div class="pull-left">
-                                <img  src="<?php echo base_url('images_compare/'.$value['food_pic']);?>" width="120px" height="90px">
+                                <img  src="<?php echo base_url('images_compare/'.$value['food_pic']);?>" class="img-thumbnail" width="120px" height="90px">
                             </div>
                             <div class="pull-left">
                                 <h4 class="lg-item-heading"><center><?php echo $value['food_name'];?></center></h4>

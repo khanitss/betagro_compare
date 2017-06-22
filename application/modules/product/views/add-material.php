@@ -10,14 +10,16 @@ echo form_open_multipart('product/add_raw_material', $attr);?>
         <li><a href="<?php echo site_url ('product/raw_page');?>">เพิ่มผลิตภัณฑ์เบทาโกร</a></li>
     </ul>
 </div>
-<div class="col-sm-10"></div>
-<div class="col-sm-2">
-    <a href="<?php echo site_url ('product/material_d_page/'.$this->uri->segment(3));?>" type="cancel" class="btn btn-warning btn-block">กลับ</a>
+<div class="form-group">
+    <div class="col-sm-10"></div>
+    <div class="col-sm-2">
+        <a href="<?php echo site_url ('product/material_d_page/'.$this->uri->segment(3));?>" type="cancel" class="btn btn-warning btn-block">กลับ</a>
+    </div>
 </div>
-<br/>
+
 <div class="row">
-    <div class="col-sm-3"></div>
-    <div class="col-sm-6">
+    <div class="col-sm-2"></div>
+    <div class="col-sm-8">
         <div class="card" align="center">
             <div class="fileinput fileinput-new card-body card-padding" data-provides="fileinput">
                 <span class="btn btn-default btn-file m-r-5">
@@ -34,20 +36,20 @@ echo form_open_multipart('product/add_raw_material', $attr);?>
                 <div class="card-body card-padding">
 
                     <div class="form-group">
-                        <label class="col-sm-4 col-xs-4 control-label">ชื่อผลิตภัณฑ์เบทาโกร:</label>
-                        <div class="col-sm-8 col-xs-8">
+                        <label class="col-sm-2 col-xs-2 control-label">ชื่อผลิตภัณฑ์:</label>
+                        <div class="col-sm-10 col-xs-10">
                             <input class="form-control" id="focusedInput" type="text" placeholder="ชื่อผลิตภัณฑ์เบทาโกร" name="mat_name">
                         </div>
-                        <label class="col-sm-4 col-xs-4 control-label">จำนวน :</label>
-                        <div class="col-sm-8 col-xs-8">
+                        <label class="col-sm-2 col-xs-2 control-label">จำนวน :</label>
+                        <div class="col-sm-10 col-xs-10">
                             <input class="form-control" id="focusedInput" type="text" placeholder="จำนวนของผลิตภัณฑ์เบทาโกร" name="mat_quantity">
                         </div>
-                        <label class="col-sm-4 col-xs-4 control-label">หน่วย :</label>
-                        <div class="col-sm-8 col-xs-8">
+                        <label class="col-sm-2 col-xs-2 control-label">หน่วย :</label>
+                        <div class="col-sm-10 col-xs-10">
                             <input class="form-control" id="focusedInput" type="text" placeholder="หน่วยของผลิตภัณฑ์เบทาโกร เช่น กิโลกรัม กรัม เป็นต้น" name="mat_unit">
                         </div>
-                        <label class="col-sm-4 col-xs-4 control-label">ราคา :</label>
-                        <div class="col-sm-8 col-xs-8">
+                        <label class="col-sm-2 col-xs-2 control-label">ราคา :</label>
+                        <div class="col-sm-10 col-xs-10">
                             <input class="form-control" id="focusedInput" type="text" placeholder="ราคาของผลิตภัณฑ์เบทาโกร" name="mat_cost">
                         </div>
                     </div>
@@ -56,7 +58,7 @@ echo form_open_multipart('product/add_raw_material', $attr);?>
                         <div class="col-sm-4">
                             <a class="btn btn-success btn-lg btn-block" data-toggle="modal" data-target="#myAddRawModal">บันทึก</a>
                         </div>
-                       
+
                         <div class="col-sm-4"></div>
                     </div>
                     <div id="myAddRawModal" class="modal fade" role="dialog">
@@ -83,7 +85,7 @@ echo form_open_multipart('product/add_raw_material', $attr);?>
                                 </div>
                             </div>
                         </div>
-                </div>
+                    </div>
                 </div>
             </div>
         </div>

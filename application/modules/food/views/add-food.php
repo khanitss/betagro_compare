@@ -7,14 +7,15 @@
         <li><a href="<?php echo site_url('food/add_food');?>">เพิ่มรายการอาหาร</a></li>
     </ul>
 </div>
-<div class="col-sm-10"></div>
-<div class="col-sm-2">
-    <a type="button" href="<?php echo site_url('food/food_page');?>" type="cancel" class="btn btn-warning btn-block">กลับ</a>
+<div class="form-group">
+    <div class="col-sm-10"></div>
+    <div class="col-sm-2">
+        <a type="button" href="<?php echo site_url('food/food_page');?>" type="cancel" class="btn btn-warning btn-block">กลับ</a>
+    </div>
+    <br/>
 </div>
-<br/><br/>
 
 <div class="row">
-
     <?php $attr = array('class' => 'form-horizontal');
     echo form_open_multipart('food/set_food_menu', $attr);?>
 

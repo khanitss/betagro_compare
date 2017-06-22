@@ -6,16 +6,19 @@
         <li><a href="#">เพิ่มคน/อุปกรณ์</a></li>
     </ul>
 </div>
-<div class="col-sm-10"></div>
-<div class="col-sm-2">
-    <a href="<?php echo site_url ('man/man_page');?>" type="cancel" class="btn btn-warning btn-block">กลับ</a>
+<div class="form-group">
+    <div class="col-sm-10"></div>
+    <div class="col-sm-2">
+        <a href="<?php echo site_url ('man/man_page');?>" type="cancel" class="btn btn-warning btn-block">กลับ</a>
+    </div>
+    <br/>
 </div>
-<br/>
+
+<?php
+$attr = array('class' => 'form-horizontal');
+echo form_open_multipart('man/add_man',$attr);
+?>
 <div class="row">
-    <?php
-    $attr = array('class' => 'form-horizontal');
-    echo form_open_multipart('man/add_man',$attr);
-    ?>
     <div class="col-sm-2"></div>
     <div class="col-sm-8">
         <div class="card" align="center">
@@ -50,30 +53,30 @@
                         <div class="col-sm-4"></div>
                     </form>
                 </div>
-                <div id="myAddRawModal" class="modal fade" role="dialog">
-                        <div class="modal-dialog">
+            </div>
+        </div>
+    </div>
+    <div id="myAddRawModal" class="modal fade" role="dialog">
+        <div class="modal-dialog">
 
-                            <!-- Modal content-->
-                            <div class="modal-content">
-                                <div class="modal-header">
-                                    <button type="button" class="close" data-dismiss="modal">&times;</button>
-                                    <h4 class="modal-title">ยืนยันข้อมูล?</h4>
-                                </div>
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title">ยืนยันข้อมูล?</h4>
+                </div>
 
-                                <div class="modal-body">
-                                    <div class="col-sm-4"></div>
-                                    <div class="col-sm-4">
-                                        <button type="submit" class="btn btn-success btn-lg btn-block">ยืนยัน</button>
-                                    </div>
-                                    <div class="col-sm-4">
-                                        <a type="button" data-dismiss="modal" class="btn btn-danger btn-lg btn-block">ยกเลิก</a>
-                                    </div>
-                                </div>
+                <div class="modal-body">
+                    <div class="col-sm-4"></div>
+                    <div class="col-sm-4">
+                        <button type="submit" class="btn btn-success btn-lg btn-block">ยืนยัน</button>
+                    </div>
+                    <div class="col-sm-4">
+                        <a type="button" data-dismiss="modal" class="btn btn-danger btn-lg btn-block">ยกเลิก</a>
+                    </div>
+                </div>
 
-                                <div class="modal-footer">
-                                </div>
-                            </div>
-                        </div>
+                <div class="modal-footer">
                 </div>
             </div>
         </div>

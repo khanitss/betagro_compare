@@ -10,26 +10,12 @@ echo form_open_multipart('material/add_raw_material', $attr);?>
         <li><a href="<?php echo site_url ('material/raw_page');?>">เพิ่มวัตถุดิบ</a></li>
     </ul>
 </div>
-<<<<<<< HEAD
-
-
     <div class="row">
                     <div class="col-sm-10"></div>  
                     <div class="col-sm-2"> 
                          <a href="<?php echo site_url ('material/material_d_page/'.$this->uri->segment(3));?>" type="cancel" class="btn btn-warning btn-block ">กลับ</a>
                     </div>
-                </div>
-
-
-=======
-<div class="form-group">
-    <div class="col-sm-10"></div>
-    <div class="col-sm-2">
-        <a href="<?php echo site_url ('material/material_d_page/'.$this->uri->segment(3));?>"  type="cancel" class="btn btn-warning btn-block">กลับ</a>
     </div>
-</div>
->>>>>>> 5ce5a2d82288435254b55991daf432b64e895b3f
-
 <div class="row">
     <div class="col-sm-2"></div>
     <div class="col-sm-8">

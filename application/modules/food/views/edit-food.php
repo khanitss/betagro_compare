@@ -220,7 +220,7 @@ echo form_open_multipart('food/update_food_details/'.$this->uri->segment(3), $at
                             <a href="<?php echo site_url('food/set_mat_detail/'.$this->uri->segment(3).'/'.$value['mat_id']);?>">
                                 <img src="<?php echo base_url('images_compare/'.$value['mat_pic']);?>" style="width: auto; height: 100px;" class="img-thumbnail">
                             </a>
-                            <p class="caption"><?php echo $value['mat_name'];?> <?php echo $value['mat_quantity'];?> <?php echo $value['mat_unit'];?></p>
+                            <p class="caption"><?php echo $value['mat_name'];?><br/> <?php echo $value['mat_quantity'];?> <?php echo $value['mat_unit'];?></p>
                         </div>
                         <?php
                     }

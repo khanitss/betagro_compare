@@ -20,14 +20,11 @@ echo form_open_multipart('material/update_material/'.$this->uri->segment(4),$att
 </div>
 
 <?php
-<<<<<<< HEAD
 $attr = array('class' => 'form-horizontal');
 echo form_open_multipart('material/update_material/'.$this->uri->segment(4),$attr);
 ?>
                
 <?php
-=======
->>>>>>> 5ce5a2d82288435254b55991daf432b64e895b3f
 foreach ($material_detail as $key => $value){
     ?>
     <div class="row">
@@ -47,7 +44,6 @@ foreach ($material_detail as $key => $value){
                             <a href="#" class="close fileinput-exists" data-dismiss="fileinput">&times;</a>
                         </div>
                         <div class="card-body card-padding">
-<<<<<<< HEAD
                             <form class="form-horizontal">
                                 <div class="form-group">
                                     <label class="col-sm-2 col-xs-2 control-label">ชื่อ :</label>
@@ -74,34 +70,7 @@ foreach ($material_detail as $key => $value){
 
                                         <div class="col-sm-4"></div>
                                     </div>
-=======
-                            <div class="form-group">
-                                <label class="col-sm-2 col-xs-2 control-label">ชื่อ :</label>
-                                <div class="col-sm-10 col-xs-10">
-                                    <input class="form-control" id="focusedInput" type="text" name="mat_name" placeholder="<?php echo $value['mat_name'];?>">
->>>>>>> 5ce5a2d82288435254b55991daf432b64e895b3f
-                                </div>
-                                <label class="col-sm-2 col-xs-2 control-label">จำนวน :</label>
-                                <div class="col-sm-10 col-xs-10">
-                                    <input class="form-control" id="focusedInput" type="text" name="mat_quantity" placeholder="<?php echo $value['mat_quantity'];?>">
-                                </div>
-                                <label class="col-sm-2 col-xs-2 control-label">หน่วย :</label>
-                                <div class="col-sm-10 col-xs-10">
-                                    <input class="form-control" id="focusedInput" type="text" name="mat_unit" placeholder="<?php echo $value['mat_unit'];?>">
-                                </div>
-                                <label class="col-sm-2 col-xs-2 control-label">ราคา :</label>
-                                <div class="col-sm-10 col-xs-10">
-                                    <input class="form-control" id="focusedInput" type="text" name="mat_cost" placeholder="<?php echo $value['mat_cost'];?>">
-                                </div>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-sm-4"></div>
-                            <div class="col-sm-4">
-                                <a class="btn btn-success btn-lg btn-block" data-toggle="modal" data-target="#myAddRawModal">บันทึก</a>
-                            </div>
-                            <div class="col-sm-4"></div>
-                        </div>
+                            
                     </div>
                 </div>
             </div>

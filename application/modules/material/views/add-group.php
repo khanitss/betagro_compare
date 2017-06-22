@@ -6,22 +6,11 @@
         <li><a href="<?php echo site_url ('material/material_group_page');?>">เพิ่มกลุ่มของวัตถุดิบ</a></li>
     </ul>
 </div>
-<<<<<<< HEAD
-=======
-<div class="form-group">
-    <div class="col-sm-10"></div>
-    <div class="col-sm-2">
-        <a href="<?php echo site_url ('material/material_page');?>"  type="cancel" class="btn btn-warning btn-block">กลับ</a>
-    </div>
-    <br/>
-</div>
->>>>>>> 5ce5a2d82288435254b55991daf432b64e895b3f
 
 <div class="row">
     <?php $attr = array('class' => 'form-horizontal');
     echo form_open_multipart('material/add_mate_group', $attr);?>
 
-<<<<<<< HEAD
     
                 <div class="row">
                     <div class="col-sm-10"></div>  
@@ -32,10 +21,6 @@
 
     <div class="col-sm-3"></div>
     <div class="col-sm-6">
-=======
-    <div class="col-sm-2"></div>
-    <div class="col-sm-8">
->>>>>>> 5ce5a2d82288435254b55991daf432b64e895b3f
         <div class="card" align="center">
 
             <div class="fileinput fileinput-new card-body card-padding" data-provides="fileinput">
@@ -65,14 +50,6 @@
                         <a class="btn btn-success btn-lg btn-block" data-toggle="modal" data-target="#myAddRawModal">บันทึก</a>
                     </div>
                     <div class="col-sm-4"></div>
-
-<<<<<<< HEAD
-                        </div>
-                    </div>
-=======
-
-                    <div class="col-sm-3"></div>
->>>>>>> 5ce5a2d82288435254b55991daf432b64e895b3f
                 </div>
             </div>
         </div>

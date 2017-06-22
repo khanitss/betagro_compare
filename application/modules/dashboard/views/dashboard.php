@@ -26,7 +26,6 @@ $sum7 = 0;
 $sum8 = 0;
 $sum9 = 0;
 $sum10 = 0;
-$sum11 = 0;
 
 foreach ($material_list as $key => $value){
     if($value['cat_id'] == '1')
@@ -67,11 +66,7 @@ foreach ($material_list as $key => $value){
     }
     elseif($value['cat_id'] == '10')
     {
-        $sum9++;
-    }
-    elseif($value['cat_id'] == '11')
-    {
-        $sum9++;
+        $sum10++;
     }
 }
 ?>
@@ -124,7 +119,6 @@ var sum7 = '<?=$sum7;?>';
 var sum8 = '<?=$sum8;?>';
 var sum9 = '<?=$sum9;?>';
 var sum10 = '<?=$sum10;?>';
-var sum11 = '<?=$sum11;?>';
 function createChart2() {
     $("#chart2").kendoChart({
         seriesDefaults: {
@@ -166,20 +160,16 @@ function createChart2() {
                 value: sum7,
                 color: "#66FFCC"
             },{
-                category: "เครื่องปรุงรส",
-                value: sum8,
-                color: "#66CCCC"
-            },{
                 category: "ผลิตภัณฑ์เบทาโกร",
-                value: sum9,
+                value: sum8,
                 color: "#FF6666"
             },{
                 category: "หมูเบทาโกร",
-                value: sum10,
+                value: sum9,
                 color: "#FFFF66"
             },{
                 category: "ไก่เบทาโกร",
-                value: sum11,
+                value: sum10,
                 color: "#6699CC"
             }]
         }],

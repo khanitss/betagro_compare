@@ -1,3 +1,29 @@
+<style>
+.nav-tabs {
+    border-bottom: 2px solid #009688;
+}
+
+.nav-tabs>li>a {
+    color: #009688;
+    font-size: 16px;
+    border: 1px solid transparent;
+    border-radius: 2px 2px 0 0;
+}
+
+.nav-tabs>li>a:hover {
+    border-color: #00e6cf #00e6cf #00e6cf;
+}
+
+.nav-tabs>li.active>a, .nav-tabs>li.active>a:hover, .nav-tabs>li.active>a:focus {
+    font-size: 16px;
+    color: #ffffff;
+    background-color: #009688;
+    border: 2px solid #009688;
+    border-bottom-color: transparent;
+    cursor: default;
+}
+</style>
+
 <!-- Content Section START -->
 <div class="block-header clearfix">
     <h2 class="pull-left">เมนูอาหาร</h2>
@@ -18,33 +44,32 @@
 </div>
 
 <ul class="nav nav-tabs" id="tabContent">
-    <li class="active"><a href="#standard" data-toggle="tab"><h4>เมนูทั่วไป</h4></a></li>
-    <li><a href="#betagro" data-toggle="tab"><h4>เมนูเบทาโกร</h4></a></li>
+    <li class="active"><a href="#standard" data-toggle="tab">เมนูทั่วไป</a></li>
+    <li><a href="#betagro" data-toggle="tab">เมนูเบทาโกร</a></li>
 </ul>
 
 <div class="tab-content">
     <div class="tab-pane active" id="standard">
         <?php
-        foreach ($food_list as $key => $value)
-        {
-            if($value['food_type'] == '0' and $value['food_status'] == '1')
-            {
+        foreach ($food_list as $key => $value) {
+            if ($value['food_type'] == '0' and $value['food_status'] == '1') {
                 ?>
                 <div class="col-sm-3">
                     <div class="card">
-                        <a href="<?php echo site_url('food/food_details/'.$value['food_id']);?>" class="text-center">
+                        <a href="<?php echo site_url('food/food_details/'.$value['food_id']); ?>" class="text-center">
                             <center>
-                                <img src="<?php echo base_url('images_compare/'.$value['food_pic']);?>" class="img-thumbnail" style="margin-top: 10px; width: auto; height: 180px;"/>
+                                <img src="<?php echo base_url('images_compare/'.$value['food_pic']); ?>" class="img-thumbnail" style="margin-top: 10px; width: auto; height: 180px;"/>
                             </center>
                             <p class="caption" style="margin-top: 10px;">
                                 <strong>
-                                    <?php echo $value['food_name'];?> <?php echo $value['food_for'];?> <?php echo $value['food_unit'];?>
+                                    <?php echo $value['food_name']; ?> <?php echo $value['food_for']; ?> <?php echo $value['food_unit']; ?>
                                 </strong>
                             </p>
                         </a>
                     </div>
                 </div>
                 <?php
+
             }
         }
         ?>
@@ -54,22 +79,24 @@
         <?php
         foreach ($food_list as $key => $value) {
             ?>
-            <?php if ($value['food_type'] == '1' and $value['food_status'] == '1')
-            {
+            <?php if ($value['food_type'] == '1' and $value['food_status'] == '1') {
                 ?>
                 <div class="col-sm-3">
                     <div class="card">
-                        <a href="<?php echo site_url('food/food_details/'.$value['food_id']);?>" class="text-center">
-                            <center><img src="<?php echo base_url('images_compare/'.$value['food_pic']);?>" class="img-thumbnail" style="margin-top: 10px;width: auto; height: 180px;"/></center>
+                        <a href="<?php echo site_url('food/food_details/'.$value['food_id']); ?>" class="text-center">
+                            <center>
+                                <img src="<?php echo base_url('images_compare/'.$value['food_pic']); ?>" class="img-thumbnail" style="margin-top: 10px;width: auto; height: 180px;"/>
+                            </center>
                             <p class="caption" style="margin-top: 10px;">
                                 <strong>
-                                    <?php echo $value['food_name'];?> <?php echo $value['food_for'];?> <?php echo $value['food_unit'];?>
+                                    <?php echo $value['food_name']; ?> <?php echo $value['food_for']; ?> <?php echo $value['food_unit']; ?>
                                 </strong>
                             </p>
                         </a>
                     </div>
                 </div>
                 <?php
+
             }
         }
         ?>

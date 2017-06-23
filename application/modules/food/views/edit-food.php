@@ -85,18 +85,12 @@ echo form_open_multipart('food/update_food_details/'.$this->uri->segment(3), $at
                             <a class="btn btn-success btn-lg btn-block" data-toggle="modal" data-target="#saveModal">บันทึก</a>
                         </div>
                         <div class="col-sm-4 col-xs-4"></div>
-
                     </div>
-
-
                 </div>
-
                 <?php
             }
             ?>
-
         </div>
-
     </div>
     <div class="col-sm-7">
         <div class="card">
@@ -121,9 +115,9 @@ echo form_open_multipart('food/update_food_details/'.$this->uri->segment(3), $at
                             ?>
                             <tr>
                                 <td class="text-center"><?php echo $value['mat_name'];?></td>
-                                <td class="text-center"><?php echo $value['mat_quantity'];?></td>
+                                <td class="text-center"><?php echo $value['mat_calculate'];?></td>
                                 <td class="text-center"><?php echo $value['mat_unit'];?></td>
-                                <td class="text-center"><?php echo $value['mat_cost'];?></td>
+                                <td class="text-center"><?php echo number_format($value['mat_cost']*$value['mat_calculate'],2);?></td>
                                 <td class="text-center">
                                     <a href="<?php echo site_url('food/delete_mat_detail/'.$this->uri->segment(3).'/'.$value['mat_id']);?>">
                                         <img class="center-block" src="<?php echo base_url('dist/images/icons/delButton.png');?>" style="max-width:25px">
@@ -176,7 +170,7 @@ echo form_open_multipart('food/update_food_details/'.$this->uri->segment(3), $at
 </div>
 
 <!-- Modal -->
-<?php $this->load->view('food/saveModal');?>
+<?php $this->load->view('food/mySaveModal');?>
 <?php $this->load->view('food/myAddRawModal');?>
 <?php $this->load->view('food/myAddEquipModal');?>
 

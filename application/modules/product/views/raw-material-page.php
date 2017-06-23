@@ -30,42 +30,13 @@
                     </center>
                     <div class="caption">
                         <center>
-                            <p>
-                                <?php echo $value['mat_name'];?> <?php echo $value['mat_quantity'];?> <?php echo $value['mat_unit'];?> <?php echo $value['mat_cost'];?>  บาท
-                            </p>
+                            <p><?php echo $value['mat_name'];?> <?php echo $value['mat_quantity'];?> <?php echo $value['mat_unit'];?> <br/><?php echo $value['mat_cost'];?> บาท</p>
                         </center>
-                        <a class="btn btn-danger" data-toggle="modal" data-target="#deleteModal">ลบ</a>
                     </div>
                 </div>
             </div>
-
             <?php
         }
     }
     ?>
-    <div id="deleteModal" class="modal fade" role="dialog">
-        <div class="modal-dialog">
-
-            <!-- Modal content-->
-            <div class="modal-content">
-                <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal">&times;</button>
-                    <h4 class="modal-title">ยืนยันข้อมูล?</h4>
-                </div>
-
-                <div class="modal-body">
-                    <div class="col-sm-4"></div>
-                    <div class="col-sm-4">
-                        <a href="<?php echo site_url('product/delete_material/'.$value['mat_id']);?>" type="submit" class="btn btn-success btn-lg btn-block">ยืนยัน</a>
-                    </div>
-                    <div class="col-sm-4">
-                        <a type="button" data-dismiss="modal" class="btn btn-danger btn-lg btn-block">ยกเลิก</a>
-                    </div>
-                </div>
-
-                <div class="modal-footer">
-                </div>
-            </div>
-        </div>
-    </div>
 </div>

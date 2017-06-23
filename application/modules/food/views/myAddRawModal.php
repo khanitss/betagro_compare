@@ -36,44 +36,60 @@
 
             <div class="modal-body">
                 <ul class="nav nav-tabs" id="tabContent">
-                    <?php foreach ($material_list as $key => $value) {
-    ?>
+                    <?php foreach ($material_list as $key => $value)
+                    {
+                        ?>
                         <li><a href="#<?php echo $value['cat_name']; ?>" data-toggle="tab"><?php echo $value['cat_name']; ?></a></li>
                         <?php
 
-}
+                    }
                     ?>
                 </ul>
 
                 <div class="tab-content text-center">
 
-                    <?php foreach ($material_list as $key => $value) {
+                    <?php foreach ($material_list as $key => $value)
+                    {
                         ?>
-                        <div class="tab-pane active" id="<?php echo $value['cat_name']; ?>">
-                            <?php
-                            foreach ($mat_list as $key => $value) {
-                                if ($value['cat_id'] == $i) {
-                                    ?>
-
-                                    <div class="col-md-3 col-xs-6">
-                                        <a href="<?php echo site_url('food/set_mat_detail/'.$this->uri->segment(3).'/'.$value['mat_id']); ?>">
-                                            <img src="<?php echo base_url('images_compare/'.$value['mat_pic']); ?>" style="height:100px" class="img-thumbnail">
-                                        </a>
-                                        <h6><?php echo $value['mat_name']; ?>
-                                            <br/>
-                                            <?php echo $value['mat_quantity']?> <?php echo $value['mat_unit']?>
-                                        </h6>
-                                    </div>
-
-
-                                    <?php
-
+                        <div class="tab-pane" id="<?php echo $value['cat_name']; ?>">
+                            <table class="table">
+                                <thead>
+                                    <tr>
+                                        <th class="text-center"><strong>วัตถุดิบ</strong></th>
+                                        <th class="text-center"><strong>จำนวน</strong></th>
+                                        <th class="text-center"><strong>หน่วย</strong></th>
+                                        <th/>
+                                    </tr>
+                                </thead>
+                                <?php
+                                foreach ($mat_list as $key => $value)
+                                {
+                                    if ($value['cat_id'] == $i)
+                                    {
+                                        ?>
+                                        <tbody>
+                                            <?php $attr = array('class' => 'form-horizontal');
+                                            echo form_open_multipart('food/set_mat_detail/'.$this->uri->segment(3).'/'.$value['mat_id'], $attr);?>
+                                            <tr>
+                                                <td class="text-center"><?php echo $value['mat_name'];?></td>
+                                                <td class="text-center"><input class="form-control" id="focusedInput" type="text" name="mat_calculate" placeholder="จำนวน"></td>
+                                                <td class="text-center"><?php echo $value['mat_unit'];?></td>
+                                                <td class="text-center">
+                                                    <button type="submit" class="btn btn-success btn-block">เพิ่ม</button>
+                                                </td>
+                                            </tr>
+                                            <?php echo form_close();?>
+                                        </tbody>
+                                        <?php
+                                    }
                                 }
-                            }
-                        $i++; ?>
+                                ?>
+                                <?php
+                                $i++;
+                                ?>
+                            </table>
                         </div>
                         <?php
-
                     }
                     ?>
                 </div>

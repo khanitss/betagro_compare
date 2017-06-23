@@ -8,7 +8,7 @@ foreach ($food_details as $key => $value)
 $sum = 0;
 foreach ($mat_details as $key => $value)
 {
-    $sum += $value['mat_cost'];
+    $sum += $value['mat_cost']*$value['mat_calculate'];
 }
 foreach ($eq_details as $key => $value)
 {
@@ -103,9 +103,9 @@ foreach ($eq_details as $key => $value)
                             ?>
                             <tr>
                                 <td class="text-center"><?php echo $value['mat_name'];?></td>
-                                <td class="text-center"><?php echo $value['mat_quantity'];?></td>
+                                <td class="text-center"><?php echo $value['mat_calculate'];?></td>
                                 <td class="text-center"><?php echo $value['mat_unit'];?></td>
-                                <td class="text-center"><?php echo $value['mat_cost'];?>&nbsp;</td>
+                                <td class="text-center"><?php echo number_format($value['mat_cost']*$value['mat_calculate'],2);?></td>
                             </tr>
                             <?php
                         }
@@ -153,33 +153,9 @@ foreach ($eq_details as $key => $value)
             <a type="button" class="btn btn-danger btn-lg btn-block" data-toggle="modal" data-target="#deleteModal">ลบ</a>
         </div>
     </div>
-    <!-- Modal -->
-    <div id="deleteModal" class="modal fade" role="dialog">
-        <div class="modal-dialog">
-
-            <!-- Modal content-->
-            <div class="modal-content">
-                <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal">&times;</button>
-                    <h4 class="modal-title">ยืนยันการลบข้อมูล?</h4>
-                </div>
-
-                <div class="modal-body">
-                    <div class="col-sm-4"></div>
-                    <div class="col-sm-4">
-                        <button type="submit" class="btn btn-success btn-lg btn-block" href="<?php echo site_url('food/delete_food');?>">ยืนยัน</button>
-                    </div>
-                    <div class="col-sm-4">
-                        <a type="button" data-dismiss="modal" class="btn btn-danger btn-lg btn-block">ยกเลิก</a>
-                    </div>
-                </div>
-
-                <div class="modal-footer">
-                </div>
-            </div>
-        </div>
-    </div>
     <div class="col-sm-2 col-xs-2"></div>
     <br/>
 </div>
+<!-- Modal -->
+<?php $this->load->view('food/myDeleteModal');?>
 <?php echo form_close();?>

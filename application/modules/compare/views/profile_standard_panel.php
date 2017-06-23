@@ -8,7 +8,7 @@ foreach ($standard as $key => $value)
 }
 foreach ($mat_standard as $key => $value)
 {
-    $sum += $value['mat_cost'];
+    $sum += $value['mat_cost']*$value['mat_calculate'];
 }
 foreach ($eq_standard as $key => $value)
 {

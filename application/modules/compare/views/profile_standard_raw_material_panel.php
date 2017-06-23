@@ -3,7 +3,7 @@
 $sum = 0;
 foreach ($mat_standard as $key => $value)
 {
-    $sum += $value['mat_cost'];
+    $sum += $value['mat_cost']*$value['mat_calculate'];
 }
 ?>
 <!-- Calculate -->
@@ -29,7 +29,7 @@ foreach ($mat_standard as $key => $value)
                             <td class="text-center"><?php echo $value['mat_name'];?></td>
                             <td class="text-center"><?php echo $value['mat_quantity'];?></td>
                             <td class="text-center"><?php echo $value['mat_unit'];?></td>
-                            <td class="text-center"><?php echo $value['mat_cost'];?></td>
+                            <td class="text-center"><?php echo number_format($value['mat_cost']*$value['mat_calculate'],2);?></td>
                         </tr>
                         <?php
                     }

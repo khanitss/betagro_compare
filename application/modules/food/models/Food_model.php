@@ -105,12 +105,18 @@ class Food_model extends CI_Model{
         return $result;
     }
 
-    public function set_mat_detail($food_id,$mat_id){
+    public function set_mat_detail($food_id,$mat_id,$timestam){
         $input = array(  'food_id'      => $food_id,
                          'mat_id'       => $mat_id,
+                         'mat_calculate' => $this->input->post('mat_calculate'),
+                         'created'	=> $timestam,
                          'lastupdate'	=> $timestam
                      );
+                    //  echo '<pre>', print_r($input);
+                    //  exit;
+
         $this->db->insert('map_food',$input);
+
     }
 
     public function set_eq_detail($food_id,$eq_id){

@@ -27,7 +27,7 @@ foreach ($mat_betagro as $key => $value)
                         ?>
                         <tr>
                             <td class="text-center"><?php echo $value['mat_name'];?></td>
-                            <td class="text-center"><?php echo $value['mat_quantity'];?></td>
+                            <td class="text-center"><?php echo $value['mat_calculate'];?></td>
                             <td class="text-center"><?php echo $value['mat_unit'];?></td>
                             <td class="text-center"><?php echo number_format($value['mat_cost']*$value['mat_calculate'],2);?></td>
                         </tr>

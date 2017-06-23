@@ -81,8 +81,6 @@ class Food extends MX_Controller {
 	public function get_food_menu(){
 		$this->load->model('Food_model');
 		$result = $this->Food_model->get_food_menu();
-		// echo '<pre>', print_r($result);
-		// exit;
 		return $result;
 	}
 

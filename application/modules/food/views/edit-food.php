@@ -171,7 +171,7 @@ echo form_open_multipart('food/update_food_details/'.$this->uri->segment(3), $at
 
 <!-- Modal -->
 <?php $this->load->view('food/mySaveModal');?>
+<?php echo form_close();?>
+
 <?php $this->load->view('food/myAddRawModal');?>
 <?php $this->load->view('food/myAddEquipModal');?>
-
-<?php echo form_close();?>

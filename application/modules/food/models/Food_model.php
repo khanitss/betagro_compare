@@ -112,8 +112,6 @@ class Food_model extends CI_Model{
                          'created'	=> $timestam,
                          'lastupdate'	=> $timestam
                      );
-                    //  echo '<pre>', print_r($input);
-                    //  exit;
 
         $this->db->insert('map_food',$input);
 

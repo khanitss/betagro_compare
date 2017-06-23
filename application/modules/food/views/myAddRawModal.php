@@ -28,10 +28,10 @@
     <div class="modal-dialog">
 
         <!-- Modal content-->
-        <div class="modal-content">
+        <div class="modal-content text-center">
             <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal">&times;</button>
-                <h4 class="modal-title text-center">เพิ่มวัตถุดิบ</h4>
+                <h4 class="modal-title">เพิ่มวัตถุดิบ</h4>
             </div>
 
             <div class="modal-body">
@@ -39,14 +39,13 @@
                     <?php foreach ($material_list as $key => $value)
                     {
                         ?>
-                        <li><a href="#<?php echo $value['cat_name']; ?>" data-toggle="tab"><?php echo $value['cat_name']; ?></a></li>
+                        <li><a href="#<?php echo $value['cat_name'];?>" data-toggle="tab"><?php echo $value['cat_name']; ?></a></li>
                         <?php
-
                     }
                     ?>
                 </ul>
 
-                <div class="tab-content text-center">
+                <div class="tab-content">
 
                     <?php foreach ($material_list as $key => $value)
                     {
@@ -66,25 +65,25 @@
                                 {
                                     if ($value['cat_id'] == $i)
                                     {
+                                        $attr = array('class' => 'form-horizontal');
+                                        echo form_open('food/set_mat_detail/'.$this->uri->segment(3).'/'.$value['mat_id'], $attr);
                                         ?>
                                         <tbody>
-                                            <?php $attr = array('class' => 'form-horizontal');
-                                            echo form_open_multipart('food/set_mat_detail/'.$this->uri->segment(3).'/'.$value['mat_id'], $attr);?>
-                                            <tr>
+                                            <tr class="form-horizontal">
                                                 <td class="text-center"><?php echo $value['mat_name'];?></td>
-                                                <td class="text-center"><input class="form-control" id="focusedInput" type="text" name="mat_calculate" placeholder="จำนวน"></td>
+                                                <td class="text-center">
+                                                    <input class="form-control" id="focusedInput" type="text" name="mat_calculate" placeholder="จำนวน">
+                                                </td>
                                                 <td class="text-center"><?php echo $value['mat_unit'];?></td>
                                                 <td class="text-center">
                                                     <button type="submit" class="btn btn-success btn-block">เพิ่ม</button>
                                                 </td>
                                             </tr>
-                                            <?php echo form_close();?>
                                         </tbody>
                                         <?php
+                                        echo form_close();
                                     }
                                 }
-                                ?>
-                                <?php
                                 $i++;
                                 ?>
                             </table>

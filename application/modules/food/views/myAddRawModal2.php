@@ -41,7 +41,6 @@
                         ?>
                         <li><a href="#<?php echo $value['cat_name']; ?>" data-toggle="tab"><?php echo $value['cat_name']; ?></a></li>
                         <?php
-
                     }
                     ?>
                 </ul>
@@ -66,9 +65,7 @@
                                             <?php echo $value['mat_quantity']?> <?php echo $value['mat_unit']?>
                                         </h6>
                                     </div>
-
                                     <?php
-
                                 }
                             }
                             $i++; ?>

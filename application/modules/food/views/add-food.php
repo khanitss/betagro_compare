@@ -79,6 +79,7 @@
                     </div>
                     <div class="col-sm-4 col-xs-4"></div>
                 </div>
+                
                 <!-- Modal -->
                 <div id="saveModal" class="modal fade" role="dialog">
                     <div class="modal-dialog">

@@ -27,14 +27,14 @@
             {
                 ?>
                 <div class="col-md-3">
-                    <div class="card">
+                    <div class="thumbnail">
                         <a href="<?php echo site_url('compare/compare_page/'.$value['food_id']);?>" class="text-center">
                             <center><img src="<?php echo base_url('images_compare/'.$value['food_pic']);?>" class="img-thumbnail" style="margin-top: 10px; width: auto; height: 180px;"/></center>
-                            <p class="caption" style="margin-top: 10px;">
+                            <h5 class="caption" style="margin-top: 5px;">
                                 <strong>
-                                    <?php echo $value['food_name'];?> <?php echo $value['food_for'];?> <?php echo $value['food_unit'];?>
+                                    <?php echo $value['food_name'];?><br/><?php echo $value['food_for'];?> <?php echo $value['food_unit'];?>
                                 </strong>
-                            </p>
+                            </h5>
                         </a>
                     </div>
                 </div>

@@ -24,7 +24,7 @@
         {
             ?>
             <div class="col-sm-3">
-                <div class="thumbnail img-check">
+                <div class="thumbnail">
                     <center>
                         <a href="<?php echo site_url('material/edit_page/'.$this->uri->segment(3).'/'.$value['mat_id']);?>" class="text-center">
                             <img src="<?php echo base_url('images_compare/'.$value['mat_pic']);?>" style="width: auto; height: 180px; margin-top : 10px;">

@@ -24,14 +24,14 @@
         ?>
         <div class="col-sm-3">
             <div class="thumbnail">
-                <center>
-                    <a href= "<?php echo site_url ('man/man_edit/'.$value['eq_id']);?>">
+                <a href= "<?php echo site_url ('man/man_edit/'.$value['eq_id']);?>">
+                    <center>
                         <img src="<?php echo base_url('images_compare/'.$value['eq_pic']);?>" style="width: auto; height: 180px; margin-top: 10px;">
-                    </a>
-                </center>
-                <div class="caption">
-                    <center><p><?php echo $value['eq_name'];?> : <?php echo number_format($value['eq_cost'],2);?> บาท</p></center>
-                </div>
+                    </center>
+                    <center>
+                        <p class="caption"><?php echo $value['eq_name'];?> <br/> <?php echo number_format($value['eq_cost'],2);?> บาท</p>
+                    </center>
+                </a>
             </div>
         </div>
         <?php

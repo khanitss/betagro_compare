@@ -167,11 +167,11 @@ function createChart2() {
             },{
                 category: "หมูเบทาโกร",
                 value: sum9,
-                color: "#B3B3D9"
+                color: "#C0C0C0"
             },{
                 category: "ไก่เบทาโกร",
                 value: sum10,
-                color: "#C0C0C0"
+                color: "#B3B3D9"
             }]
         }],
         tooltip: {
@@ -233,10 +233,10 @@ $(document).bind("kendo:skinChange", createChart2);
                         ?>
                         <a class="list-group-item media" href="<?php echo site_url('compare/choose_menu2_page/'.$value['food_id']);?>">
                             <div class="pull-left">
-                                <img  src="<?php echo base_url('images_compare/'.$value['food_pic']);?>" class="img-thumbnail" width="120px" height="90px">
+                                <img  src="<?php echo base_url('images_compare/'.$value['food_pic']);?>" class="img-thumbnail" width="160px" height="90px">
                             </div>
                             <div class="pull-left">
-                                <h5 class="lg-item-heading"><center><?php echo $value['food_name'];?></center></h5>
+                                <h4 class="lg-item-heading"><?php echo $value['food_name'];?></h4>
                             </div>
                         </a>
                         <?php

@@ -26,8 +26,5 @@ user_guide_src/cilexer/pycilexer.egg-info/*
 *.sublime-workspace
 *.sublime-project
 
-#ignored application/config/*
-application/config/
-
 #ignored all file
 application/file/

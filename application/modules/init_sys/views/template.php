@@ -21,7 +21,7 @@
     <link href="<?php echo base_url('vendors/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.min.css');?>" rel="stylesheet">
 
     <!-- Google front -->
-    <link href="https://fonts.googleapis.com/css?family=Kanit" rel="stylesheet">
+    <link href="<?php echo base_url('dist/fonts/google.font.css');?>" rel="stylesheet">
 
     <!-- Dashplus CSS -->
     <link href="<?php echo base_url('dist/css/dashplus_1.min.css');?>" rel="stylesheet">
@@ -30,12 +30,12 @@
     <!-- PieChart -->
     <style>html { font-size: 14px; font-family: Arial, Helvetica, sans-serif; }</style>
     <title></title>
-    <link rel="stylesheet" href="https://kendo.cdn.telerik.com/2017.2.504/styles/kendo.common-material.min.css" />
-    <link rel="stylesheet" href="https://kendo.cdn.telerik.com/2017.2.504/styles/kendo.material.min.css" />
-    <link rel="stylesheet" href="https://kendo.cdn.telerik.com/2017.2.504/styles/kendo.material.mobile.min.css" />
+    <link rel="stylesheet" href="<?php echo base_url('dist/kendo/kendo.common-material.min.css');?>" />
+    <link rel="stylesheet" href="<?php echo base_url('dist/kendo/kendo.material.min.css');?>" />
+    <!-- <link rel="stylesheet" href="<?php echo base_url('dist/kendo/kendo.material.mobile.min.css');?>" /> -->
 
-    <script src="https://kendo.cdn.telerik.com/2017.2.504/js/jquery.min.js"></script>
-    <script src="https://kendo.cdn.telerik.com/2017.2.504/js/kendo.all.min.js"></script>
+    <!-- <script src="https://kendo.cdn.telerik.com/2017.2.504/js/jquery.min.js"></script> -->
+    <script src="<?php echo base_url('dist/kendo/kendo.all.min.js');?>"></script>
 
 </head>
 

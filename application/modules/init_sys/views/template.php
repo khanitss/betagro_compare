@@ -95,12 +95,5 @@
 
     <script src="<?php echo base_url('dist/js/dashplus.min.js');?>"></script>
     <!-- <script src="<?php echo base_url('dist/js/my-bootgrid.js');?>"></script> -->
-
-    <!-- <script type="text/javascript">
-    $(document).ready(function() {
-    bootgrid();
-});
-</script> -->
-
 </body>
 </html>

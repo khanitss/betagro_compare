@@ -4,10 +4,10 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 class Authen extends MX_Controller {
 
 	public function __construct() {
-    	parent::__construct();
-        /*$this->load->model('user/User_model');
-        $this->load->model('vendor/Vendor_model');
-        $this->load->library("Main_libs");*/
+	// parent::__construct();
+	// $this->load->model('user/User_model');
+	// $this->load->model('vendor/Vendor_model');
+	// $this->load->library("Main_libs");
     }
 
 	public function index() {

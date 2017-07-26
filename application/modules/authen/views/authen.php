@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Hotel Login</title>
+  <title>Login</title>
 
   <link rel="icon" href="<?php echo base_url('file/images/hotel-icon.png');?>" type="image/x-icon" />
   <link rel="shortcut icon" href="<?php echo base_url('file/images/hotel-icon.png');?>" type="image/x-icon" />
@@ -87,7 +87,7 @@
 
 
         <div class="input-group m-t-20">
-          <button class="btn btn-primary btn-lg btn-block waves-effect">Log In</button>
+          <button type="submit" class="btn btn-primary btn-lg btn-block waves-effect">Log In</button>
         </div>
         <?php echo form_close();?>
 

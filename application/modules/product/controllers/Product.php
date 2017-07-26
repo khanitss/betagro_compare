@@ -3,35 +3,34 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Product extends MX_Controller {
 
-
     public function __construct() {
-        parent::__construct();
+        // parent::__construct();
         $this->load->module('init_sys/Init_sys');
         $this->load->model('Product_models');
-
     }
 
     public function material_page()
     {
-        $data['alert'] = $this->session->flashdata('alert');
+        $data['txt_search_name'] = $this->input->post('txt_search_name');
+        $data['material_list'] = $this->get_mate_group($data['txt_search_name']);
         $data['content']='product/group';
-        $data['alert'] = $this->session->flashdata('alert');
-        $data['material_list'] = $this->get_mate_group();
-        $cat_id = $this->uri->segment(3);
-        $data['raw_detail'] = $this->Product_models->get_group_material($cat_id);
+
+        // $cat_id = $this->uri->segment(3);
+        // $data['raw_detail'] = $this->Product_models->get_group_material($cat_id);
         $this->init_sys->content($data);
     }
 
     public function material_d_page()
     {
-        $data['alert'] = $this->session->flashdata('alert');
-        $cat_id = $this->uri->segment(3);
-        $data['alert'] = $this->session->flashdata('alert');
-        $qstr_sess=array('select_items_one'=>$cat_id);
+        $data['txt_search_name'] = $this->input->post('txt_search_name');
+        $data['cat_id'] = ($this->uri->segment(3) !=''? $this->uri->segment(3) : $this->input->post('cat_id'));
+        $qstr_sess=array('select_items_one'=>$data['cat_id']);
         $this->session->set_userdata($qstr_sess);
-        $qstr_cate=array('cat_id'=>$cat_id);
-        $data['material_detail'] = $this->Product_models->get_raw_material($qstr_cate);
+
+        $qstr_cate=array('cat_id'=>$data['cat_id']);
+        $data['material_detail'] = $this->Product_models->get_raw_material($qstr_cate, $data['txt_search_name']);
         $data['content']='product/raw-material-page';
+        
         $this->init_sys->content($data);
     }
 
@@ -71,10 +70,9 @@ class Product extends MX_Controller {
         $this->session->set_flashdata('alert', 1);
         redirect('product/material_page/'.$cat_id);
     }
-    public function get_mate_group ()
+    public function get_mate_group($qstr ='')
     {
-        $this->load->model('Product_models');
-        $result = $this->Product_models->get_mate_group();
+        $result = $this->Product_models->get_mate_group($qstr);
         //echo '<pre>', print_r($result);
         return $result;
     }

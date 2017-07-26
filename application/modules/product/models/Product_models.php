@@ -26,7 +26,12 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 		$this->db->insert('cat_material',$input);
 	}
 	
-	public function get_mate_group(){
+	public function get_mate_group($qstr ='')
+	{
+		if ($qstr !='') {
+      $this->db->like('cat_name', $qstr, 'after'); 
+    }
+
 		$result = $this->db->get('cat_material')->result_array();
 		return $result;
 	}
@@ -79,11 +84,15 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 		$this->db->insert('material',$input);
 	}
 
-	public function get_raw_material($qstr='')
+	public function get_raw_material($qstr='', $qstr_like='')
 	{
 		if (!empty($qstr)) {
 			$this->db->where($qstr);
 		}
+
+		if ($qstr_like !='') {
+      $this->db->like('mat_name', $qstr_like, 'after'); 
+    }
 
 		$result = $this->db->get('material')->result_array();
 		return $result;

@@ -8,7 +8,7 @@
 
 <?php 
     $attr = array('class' => 'form-horizontal', 'autocomplete'=>'off');
-    echo form_open('food/material_page', $attr);
+    echo form_open('product/material_page', $attr);
 ?>
 <div class="form-group">
     <div class="col-sm-8 col-xs-4">
@@ -30,11 +30,12 @@
     foreach ($material_list as $key => $value) {?>
     <div class="col-sm-3">
         <div class="thumbnail img-check">
-            <center><a href="<?php echo site_url('product/material_d_page/'.$value['cat_id']);?>" class="text-center">
-                <img src="<?php echo base_url('images_compare/'.$value['cat_pic']);?>" style="width: auto; height: 180px; margin-top: 10px;"></a>
-            </center>
+            <a href="<?php echo site_url('product/material_d_page/'.$value['cat_id']);?>" class="text-center">
+                <img src="<?php echo base_url('images_compare/'.$value['cat_pic']);?>" style="width: auto; height: 180px; margin-top: 10px;">
+            </a>
+            
             <div class="caption text-center">
-                    <p><?php echo $value['cat_name'];?></p>
+                <p><?php echo $value['cat_name'];?></p>
             </div>
         </div>
     </div>

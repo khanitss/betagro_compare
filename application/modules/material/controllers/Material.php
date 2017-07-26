@@ -31,12 +31,13 @@ class Material extends MX_Controller {
 
     public function material_d_page()
     {
-        $data['cat_id'] = $this->uri->segment(3);
+        $data['txt_search_name'] = $this->input->post('txt_search_name');
+        $data['cat_id'] = ($this->uri->segment(3) !=''? $this->uri->segment(3) : $this->input->post('cat_id'));
         $qstr_sess=array('select_items_one'=>$data['cat_id']);
         $this->session->set_userdata($qstr_sess);
 
         $qstr_cate=array('cat_id'=>$data['cat_id']);
-        $data['material_detail'] = $this->Material_models->get_raw_material($qstr_cate);
+        $data['material_detail'] = $this->Material_models->get_raw_material($qstr_cate, $data['txt_search_name']);
         // echo '<pre>', print_r($data['material_detail']);exit();
         $data['content']='material/raw-material-page';
 
@@ -79,9 +80,9 @@ class Material extends MX_Controller {
         redirect('material/material_page/'.$cat_id);
     }
 
-    public function get_mate_group()
+    public function get_mate_group($qstr ='')
     {        
-        $result = $this->Material_models->get_mate_group();
+        $result = $this->Material_models->get_mate_group($qstr);
         return $result;
     }
 

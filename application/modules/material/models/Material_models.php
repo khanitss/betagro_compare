@@ -88,11 +88,15 @@ class Material_models extends CI_Model{
 		$this->db->insert('material',$input);
 	}
 
-	public function get_raw_material($qstr='')
+	public function get_raw_material($qstr='', $qstr_like='')
 	{
 		if (!empty($qstr)) {
 			$this->db->where($qstr);
 		}
+
+		if ($qstr_like !='') {
+      $this->db->like('mat_name', $qstr_like, 'after'); 
+    }
 
 		$result = $this->db->get('material')->result_array();
 		return $result;

@@ -7,15 +7,25 @@
     </ul>
 </div>
 
+<?php 
+    $attr = array('class' => 'form-horizontal', 'autocomplete'=>'off');
+    echo form_open('material/material_d_page', $attr);
+?>
 <div class="form-group">
-    <div class="col-sm-10 col-xs-6"></div>
-    <div class="col-sm-2 col-xs-6 text-center">
-        <a href="<?php echo site_url('material/raw_page/'.$cat_id);?>">
-            <button class="btn btn-success btn-block">เพิ่มวัตถุดิบ</button>
-        </a>
+    <div class="col-sm-8 col-xs-4">
+        <input type="text" name="txt_search_name" value="<?php echo $txt_search_name;?>" class="form-control" placeholder="ค้นหา..." style="background-color: #fff; padding-left: 7px;">
     </div>
-    <br/>
+    
+    <div class="col-sm-2 col-xs-2">
+        <input type="hidden" name="cat_id" value="<?php echo $cat_id;?>">
+        <button type="submit" class="btn btn-info btn-block">ค้นหา</button>
+    </div>
+
+    <div class="col-sm-2 col-xs-6 text-center">
+        <a href="<?php echo site_url('material/raw_page/'.$cat_id);?>" class="btn btn-success btn-block">เพิ่มวัตถุดิบ</a>
+    </div>
 </div>
+<?php echo form_close();?>
 
 <div class="row">
     <?php foreach ($material_detail as $key => $value) {?>

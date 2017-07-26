@@ -29,7 +29,12 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 			}
 		}
 	
-		public function get_man(){
+		public function get_man($qstr ='')
+		{
+			if ($qstr !='') {
+            	$this->db->like('eq_name', $qstr, 'after');
+        	}
+
 			$result = $this->db->get('equipment')->result_array();
 			return $result;
 		}

@@ -2,18 +2,20 @@
 defined('BASEPATH') OR exit('No direct script access allowed');
 class Man extends MX_Controller {
 	public function __construct() {
-		parent::__construct();
+		// parent::__construct();
 		$this->load->module('init_sys/Init_sys');
 		$this->load->model('man/Man_models');
-        // $this->load->model('vendor/Vendor_model');
 	}
-	public function man_page() {
-		$data['alert'] = $this->session->flashdata('alert');
+
+	public function man_page() 
+	{
+		$data['txt_search_name'] = $this->input->post('txt_search_name');
+		$data['man_list'] = $this->get_man($data['txt_search_name']);
 		$data['content']='man/man';
-		$data['man_list'] = $this->get_man();
+		
 		$this->init_sys->content($data);
-		// echo "string";
 	}
+
 	public function man_add(){
 		$data['alert'] = $this->session->flashdata('alert');
 		$data['content']='man/add-man';
@@ -34,10 +36,10 @@ class Man extends MX_Controller {
 		$this->session->set_flashdata('alert', 1);
 		redirect('man/man_page');
 	}
-	public function get_man (){
-		$this->load->model('Man_models');
-		$result = $this->Man_models->get_man();
-		//echo '<pre>', print_r($result);
+
+	public function get_man($qstr ='')
+	{
+		$result = $this->Man_models->get_man($qstr);
 		return $result;
 
 	}

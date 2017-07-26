@@ -6,35 +6,36 @@
     </ul>
 </div>
 
+<?php 
+    $attr = array('class' => 'form-horizontal', 'autocomplete'=>'off');
+    echo form_open('material/material_page', $attr);
+?>
 <div class="form-group">
-    <div class="col-sm-10 col-xs-6"></div>
+    <div class="col-sm-8 col-xs-4">
+        <input type="text" name="txt_search_name" value="<?php echo $txt_search_name;?>" class="form-control" placeholder="ค้นหา..." style="background-color: #fff; padding-left: 7px;">
+    </div>
+    
+    <div class="col-sm-2 col-xs-2">
+        <button type="submit" class="btn btn-info btn-block">ค้นหา</button>
+    </div>
+
     <div class="col-sm-2 col-xs-6 text-center">
         <a href ="<?php echo site_url ('material/material_group_page');?>" class="btn btn-success btn-block" >เพิ่มกลุ่มของวัตถุดิบ</a>
     </div>
-    <br/>
 </div>
+<?php echo form_close();?>
 
 <div class="row">
-    <!-- show img -->
-    <?php foreach ($material_list as $key => $value)
-    {
-        if ($value['cat_type']==0){
-            ?>
-
-            <div class="col-sm-3">
-                <div class="thumbnail">
-                    <center><a href="<?php echo site_url('material/material_d_page/'.$value['cat_id']);?>" class="text-center">
-                        <img src="<?php echo base_url('images_compare/'.$value['cat_pic']);?>" style="width: auto; height: 180px; margin-top: 10px;"></a>
-                    </center>
-                    <div class="caption">
-                        <center>
-                            <p><?php echo $value['cat_name'];?></p>
-                        </center>
-                    </div>
+    <?php foreach ($material_list as $key => $value) {?>
+        <div class="col-sm-3">
+            <div class="thumbnail">
+                <center><a href="<?php echo site_url('material/material_d_page/'.$value['cat_id']);?>" class="text-center">
+                    <img src="<?php echo base_url('images_compare/'.$value['cat_pic']);?>" style="width: auto; height: 180px; margin-top: 10px;"></a>
+                </center>
+                <div class="caption text-center">
+                    <p><?php echo $value['cat_name'];?></p>
                 </div>
             </div>
-            <?php
-        }
-    }
-    ?>
+        </div>
+    <?php }?>
 </div>

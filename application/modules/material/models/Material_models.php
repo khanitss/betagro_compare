@@ -26,15 +26,24 @@ class Material_models extends CI_Model{
 		$this->db->insert('cat_material',$input);
 	}
 	
-	public function get_mate_group(){
+	public function get_mate_group($qstr ='')
+	{
+		if ($qstr !='') {
+    	$this->db->like('cat_name', $qstr, 'after');
+    }
+		
 		$result = $this->db->get('cat_material')->result_array();
 		return $result;
 	}
 
-	public function get_group_material($cat_id){
+	public function get_group_material($qstr ='')
+	{
+		if ($qstr !='') {
+    	$this->db->like('food_name', $qstr, 'after'); 
+    }
+		
 		$result = $this->db->select('*')
 		->from('cat_material')
-		->where('cat_id',$cat_id)
 		->get()
 		->result_array();
 		return $result;

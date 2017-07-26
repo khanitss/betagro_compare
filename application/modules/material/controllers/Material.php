@@ -11,9 +11,18 @@ class Material extends MX_Controller {
 
     public function material_page()
     {
-        $cat_id = $this->uri->segment(3);
-        $data['material_list'] = $this->get_mate_group();
-        $data['raw_detail'] = $this->Material_models->get_group_material($cat_id);
+        // $cat_id = $this->uri->segment(3);
+        // $data['raw_detail'] = $this->Material_models->get_group_material($cat_id);
+        $data['txt_search_name'] = $this->input->post('txt_search_name');
+
+        $material_list = $this->get_mate_group($data['txt_search_name']);
+        $data['material_list'] = array_filter($material_list, function($value) {
+            if ($value['cat_type'] == 1) {
+                return $value;
+            }
+        });
+
+        // echo '<pre>', print_r($data['material_list']);exit();
 
         $data['content']='material/group';
         
@@ -22,12 +31,13 @@ class Material extends MX_Controller {
 
     public function material_d_page()
     {
-        $cat_id = $this->uri->segment(3);
-        $qstr_sess=array('select_items_one'=>$cat_id);
+        $data['cat_id'] = $this->uri->segment(3);
+        $qstr_sess=array('select_items_one'=>$data['cat_id']);
         $this->session->set_userdata($qstr_sess);
 
-        $qstr_cate=array('cat_id'=>$cat_id);
+        $qstr_cate=array('cat_id'=>$data['cat_id']);
         $data['material_detail'] = $this->Material_models->get_raw_material($qstr_cate);
+        // echo '<pre>', print_r($data['material_detail']);exit();
         $data['content']='material/raw-material-page';
 
         $this->init_sys->content($data);

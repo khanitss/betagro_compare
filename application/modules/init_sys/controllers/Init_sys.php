@@ -16,6 +16,7 @@ class Init_sys extends MX_Controller
 
 	public function content($data='compare/choose-menu')
 	{
+		$data['alert'] = $this->session->flashdata('alert');
 		$content=$this->load->view($this->init['initbody'], $data);
 		return $content;
 	}

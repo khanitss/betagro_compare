@@ -7,7 +7,7 @@ class Food extends MX_Controller {
 	{
 		// parent::__construct();
 		$this->load->module('init_sys/Init_sys');
-		$this->load->model('Food_model');		
+		$this->load->model('Food_model');
 	}
 
 	public function food_page() 
@@ -198,7 +198,7 @@ class Food extends MX_Controller {
 		
 		$this->Food_model->set_eq_detail($food_id,$eq_id);
 		$this->session->set_flashdata('alert', 1);
-		
+
 		redirect('food/add_food_details/'.$food_id);
 	}
 

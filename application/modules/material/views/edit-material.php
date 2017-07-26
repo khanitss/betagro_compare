@@ -16,7 +16,7 @@ echo form_open_multipart('material/update_material/'.$this->uri->segment(4),$att
 <div class="form-group">
     <div class="col-sm-10 col-xs-6"></div>
     <div class="col-sm-2 col-xs-6 text-center">
-        <a href="<?php echo site_url ('Material/Material_d_page/'.$this->uri->segment(3));?>"  type="cancel" class="btn btn-warning btn-block">กลับ</a>
+        <a href="<?php echo site_url ('material/material_d_page/'.$this->uri->segment(3));?>"  type="cancel" class="btn btn-warning btn-block">กลับ</a>
     </div>
     <br/>
 </div>

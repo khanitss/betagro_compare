@@ -3,7 +3,11 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Food_model extends CI_Model{
 
-    public function get_food_menu(){
+    public function get_food_menu($qstr ='') {
+        if ($qstr !='') {
+            $this->db->like('food_name', $qstr, 'after'); 
+        }
+
         $result = $this->db->get('food')->result_array();
         return $result;
     }

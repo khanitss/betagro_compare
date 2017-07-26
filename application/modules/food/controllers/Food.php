@@ -10,9 +10,35 @@ class Food extends MX_Controller {
 
 	public function food_page() {
 		$data['alert'] = $this->session->flashdata('alert');
+		$data['txt_search_name'] = $this->input->post('txt_search_name');
+
 		$data['content']='food/food-page';
-		$data['food_list'] = $this->get_food_menu();
+		$food_list = $this->get_food_menu($data['txt_search_name']);
+
+		$data['standard_recipe'] = $this->set_food_standard_recipe($food_list);
+		$data['betagro_recipe'] = $this->set_food_betagro_recipe($food_list);
+		// echo '<pre>', print_r($data['betagro_recipe']);exit();
 		$this->init_sys->content($data);
+	}
+
+	private function set_food_standard_recipe($qstr) {
+		$rs = array_filter($qstr, function($value) {
+			if ($value['food_type'] == 0 && $value['food_status'] == 1) {
+				return $value;
+			}
+		});
+
+		return $rs;
+	}
+
+	private function set_food_betagro_recipe($qstr) {
+		$rs = array_filter($qstr, function($value) {
+			if ($value['food_type'] == 1 && $value['food_status'] == 1) {
+				return $value;
+			}
+		});
+
+		return $rs;
 	}
 
 	public function add_food() {
@@ -78,9 +104,9 @@ class Food extends MX_Controller {
 		redirect('food/add_food_details/'.$last_id);
 	}
 
-	public function get_food_menu(){
+	public function get_food_menu($qstr ='') {
 		$this->load->model('Food_model');
-		$result = $this->Food_model->get_food_menu();
+		$result = $this->Food_model->get_food_menu($qstr);
 		return $result;
 	}
 

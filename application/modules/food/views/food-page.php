@@ -34,14 +34,24 @@
 </div>
 
 <!-- col standard-->
-<div class="row">
-    <div class="col-sm-10 col-xs-6"></div>
+<?php 
+    $attr = array('class' => 'form-horizontal', 'autocomplete'=>'off');
+    echo form_open('food/food_page', $attr);
+?>
+<div class="form-group">
+    <div class="col-sm-8 col-xs-4">
+        <input type="text" name="txt_search_name" value="<?php echo $txt_search_name;?>" class="form-control" placeholder="ค้นหา..." style="background-color: #fff; padding-left: 7px;">
+    </div>
+    
+    <div class="col-sm-2 col-xs-2">
+        <button type="submit" class="btn btn-info btn-block">ค้นหา</button>
+    </div>
+
     <div class="col-sm-2 col-xs-6 text-center">
-        <a href="<?php echo site_url('food/add_food');?>">
-            <button class="btn btn-success btn-block">เพิ่มเมนู</button>
-        </a>
+        <a href="<?php echo site_url('food/add_food');?>" class="btn btn-success btn-block">เพิ่มเมนู</a>
     </div>
 </div>
+<?php echo form_close();?>
 
 <ul class="nav nav-tabs" id="tabContent">
     <li class="active"><a href="#standard" data-toggle="tab">เมนูทั่วไป</a></li>
@@ -50,53 +60,32 @@
 
 <div class="tab-content">
     <div class="tab-pane active" id="standard">
-        <?php
-        foreach ($food_list as $key => $value) {
-            if ($value['food_type'] == '0' and $value['food_status'] == '1') {
-                ?>
-                <div class="col-sm-3">
-                    <div class="thumbnail">
-                        <a href="<?php echo site_url('food/food_details/'.$value['food_id']); ?>" class="text-center">
-                            <center>
-                                <img src="<?php echo base_url('images_compare/'.$value['food_pic']); ?>" class="img-thumbnail" style="margin-top: 10px; width: auto; height: 180px;"/>
-                            </center>
-                            <h5 class="caption" style="margin-top: 5px;">
-                                <strong>
-                                    <?php echo $value['food_name']; ?><br/><?php echo $value['food_for']; ?> <?php echo $value['food_unit']; ?>
-                                </strong>
-                            </h5>
-                        </a>
-                    </div>
+        <?php foreach ($standard_recipe as $key => $value) {?>
+            <div class="col-sm-3">
+                <div class="thumbnail">
+                    <a href="<?php echo site_url('food/food_details/'.$value['food_id']); ?>" class="text-center">
+                        <img src="<?php echo base_url('images_compare/'.$value['food_pic']); ?>" class="img-thumbnail" style="margin-top: 10px; width: auto; height: 180px;"/>
+                        <h5 class="caption" style="margin-top: 5px;">
+                            <?php echo $value['food_name']; ?><br/><?php echo $value['food_for']; ?> <?php echo $value['food_unit']; ?>
+                        </h5>
+                    </a>
                 </div>
-                <?php
-            }
-        }
-        ?>
+            </div>
+        <?php }?>
     </div>
 
     <div class="tab-pane" id="betagro">
-        <?php
-        foreach ($food_list as $key => $value) {
-            ?>
-            <?php if ($value['food_type'] == '1' and $value['food_status'] == '1') {
-                ?>
-                <div class="col-sm-3">
-                    <div class="thumbnail">
-                        <a href="<?php echo site_url('food/food_details/'.$value['food_id']); ?>" class="text-center">
-                            <center>
-                                <img src="<?php echo base_url('images_compare/'.$value['food_pic']); ?>" class="img-thumbnail" style="margin-top: 10px; width: auto; height: 180px;"/>
-                            </center>
-                            <h5 class="caption" style="margin-top: 5px;">
-                                <strong>
-                                    <?php echo $value['food_name']; ?><br/><?php echo $value['food_for']; ?> <?php echo $value['food_unit']; ?>
-                                </strong>
-                            </h5>
-                        </a>
-                    </div>
+        <?php foreach ($betagro_recipe as $key => $value) { ?>
+            <div class="col-sm-3">
+                <div class="thumbnail">
+                    <a href="<?php echo site_url('food/food_details/'.$value['food_id']); ?>" class="text-center">
+                        <img src="<?php echo base_url('images_compare/'.$value['food_pic']); ?>" class="img-thumbnail" style="margin-top: 10px; width: auto; height: 180px;"/>
+                        <h5 class="caption" style="margin-top: 5px;">
+                            <?php echo $value['food_name']; ?><br/><?php echo $value['food_for']; ?> <?php echo $value['food_unit'];?>
+                        </h5>
+                    </a>
                 </div>
-                <?php
-            }
-        }
-        ?>
+            </div>
+        <?php }?>
     </div>
 </div>

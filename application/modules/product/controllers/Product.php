@@ -37,24 +37,22 @@ class Product extends MX_Controller {
     //edit page
     public function edit_page()
     {
-        $data['alert'] = $this->session->flashdata('alert');
         $mat_id = $this->uri->segment(4);
-        $data['content']='product/edit-material';
         $data['material_detail'] = $this->Product_models->get_material_details($mat_id);
+
+        $data['content']='product/edit-material';
         $this->init_sys->content($data);
     }
 
     //page show
     public function raw_page()
     {
-        $data['alert'] = $this->session->flashdata('alert');
         $data['content']='product/add-material';
         $this->init_sys->content($data);
     }
 
     public function material_group_page()
     {
-        $data['alert'] = $this->session->flashdata('alert');
         $data['content']='product/add-group';
         $this->init_sys->content($data);
     }
@@ -64,7 +62,7 @@ class Product extends MX_Controller {
     {
         $cat_id = $this->session->userdata("cat_id");
         $data['material_list'] = $this->get_mate_group();
-        $this->load->model('Product_models');
+
         $timestam = date('Y-m-d H:i:s');
         $this->Product_models->add_mate_group();
         $this->session->set_flashdata('alert', 1);
@@ -73,7 +71,6 @@ class Product extends MX_Controller {
     public function get_mate_group($qstr ='')
     {
         $result = $this->Product_models->get_mate_group($qstr);
-        //echo '<pre>', print_r($result);
         return $result;
     }
 
@@ -88,11 +85,8 @@ class Product extends MX_Controller {
 
     public function get_raw_material ()
     {
-        $this->load->model('Product_models');
         $result = $this->Product_models->get_raw_material();
-        //echo '<pre>', print_r($result);
         return $result;
-
     }
 
     //Update form edit
@@ -109,12 +103,10 @@ class Product extends MX_Controller {
     //delete
     public function delete_material()
     {
-        $this->load->model('Product_models');
         $cat_id = $this->session->userdata('select_items_one');
         $mat_id = $this->uri->segment(3);
         $this->Product_models->delete_material($mat_id);
         $this->session->set_flashdata('alert', 2);
         redirect('product/material_d_page/'.$cat_id);
-
     }
 }//end class
